@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+
+:root {
+  --primary: #fefbee;
+  --secondary: #005e03;
+  --hotpink: #d10096;
+
+  --tertiary-light: #c90b02;
+  --tertiary: #ad0000;
+  --tertiary-dark: #a8481f;
+
+  --font-merriweather: 'Merriweather', serif;
+  --font-merriweather-sans: 'Merriweather Sans', sans-serif;
+  --font-braah-one: 'Braah One', sans-serif;
+}
+
+.braah-one {
+  font-family: 'Braah One', sans-serif;
+  font-style: normal;
+}

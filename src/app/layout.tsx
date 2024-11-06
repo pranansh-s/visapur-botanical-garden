@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import { ChakraProvider } from '@chakra-ui/react';
-import { Merriweather, Merriweather_Sans } from 'next/font/google';
+import { Braah_One, Merriweather, Merriweather_Sans } from 'next/font/google';
+import Navbar from '@/components/common/Navbar';
+import SplashScreen from '@/components/common/SpashScreen';
 import './globals.css';
+import Footer from '@/components/Footer/Footer';
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -12,6 +14,12 @@ const merriweather = Merriweather({
 const merriweatherSans = Merriweather_Sans({
   subsets: ['latin'],
   variable: '--font-merriweather-sans',
+  weight: ['400'],
+});
+
+const braahOne = Braah_One({
+  subsets: ['latin'],
+  variable: '--font-braah-one',
   weight: ['400'],
 });
 
@@ -27,13 +35,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ChakraProvider>
-        <body
-          className={`${merriweather.variable} ${merriweatherSans.variable} antialiased`}
-        >
-          {children}
-        </body>
-      </ChakraProvider>
+      <body
+        className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} bg-primary w-screen overflow-x-hidden antialiased`}
+      >
+        <SplashScreen />
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
