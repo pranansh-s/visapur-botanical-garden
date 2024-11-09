@@ -78,7 +78,6 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
         <CarouselTrack
           style={{
             transform: `translateX(-${currentIndex * itemWidth}%)`,
-            transition: currentIndex === 0 ? 'none' : 'transform 0.5s ease',
           }}
         >
           {items
@@ -148,9 +147,10 @@ const renderCarouselItem = (
           <iframe
             src={`https://www.instagram.com/p/${item.src}/embed`}
             height="275px"
+            width="100%"
             allow="encrypted-media"
             sandbox="allow-scripts allow-same-origin allow-popups"
-            style={{ overflow: 'hidden', width: '100%', border: 'none' }}
+            style={{ overflow: 'hidden', border: 'none' }}
             scrolling="no"
           />
           <Overlay style={{ opacity: overlayOpacity }} />
@@ -172,7 +172,7 @@ const CarouselContainer = tw.div`
   w-screen -translate-x-lg relative
 `;
 
-const CarouselTrack = tw(motion.div)`
+const CarouselTrack = tw.div`
   flex transition-transform duration-500
 `;
 
@@ -189,9 +189,9 @@ const Title = tw.p`
 `;
 
 const ArrowButton = tw.button`
-  absolute z-50 text-tertiary-100 text-4xl font-bold scale-y-[3] px-3 top-1/2 -translate-y-1/2
+  absolute z-50 text-tertiary-100 text-4xl font-bold scale-y-[3] px-5 top-1/2 -translate-y-1/2
 `;
 
 const Overlay = tw.div`
-  absolute inset-0 bg-black transition-opacity duration-500
+  absolute inset-0 -top-4 bg-black transition-opacity duration-500
 `;

@@ -13,6 +13,8 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { animationPreset } from '@/utils/anim';
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -22,14 +24,43 @@ const Navbar: React.FC = () => {
     );
   }, [pathname]);
 
-  const renderNavLinks = () => {
-    return (
+  return (
+    <NavbarContainer
+      style={{
+        background:
+          'linear-gradient(to bottom, var(--primary) 0%, var(--primary) 90%, transparent 100%)',
+      }}
+      initial={{ y: pathname === '/' ? 50 : 0 }}
+      animate={{ y: 0 }}
+      transition={{ ...animationPreset }}
+    >
+      <TopSection>
+        <LogoSection>
+          <StyledImage src={govtLogo1} alt="" width={40} />
+          <DividerVertical />
+          <StyledImage src={govtLogo2} alt="" width={35} />
+          <Title>Shradheya Shri Atal Bihari Vajpayee Botanical Garden</Title>
+        </LogoSection>
+        <HeaderOptions>
+          <LanguageSelect>
+            {languageOptions.map((value: ILanguageOption, idx: number) => (
+              <option key={idx} value={value.code}>
+                {value.name}
+              </option>
+            ))}
+          </LanguageSelect>
+          <Button className="text-sm" iconSize={10} postIconNode={user}>
+            Membership&apos;s Login
+          </Button>
+        </HeaderOptions>
+      </TopSection>
+      <HorizontalDivider />
       <NavLinkContainer>
         {navbarLinks.map((value: INamedLink, idx: number) => (
           <StyledNavLink
-            selected={activeIndex === idx}
             key={idx}
             href={value.href}
+            selected={activeIndex === idx}
           >
             {value.name}
           </StyledNavLink>
@@ -38,48 +69,47 @@ const Navbar: React.FC = () => {
           Buy Ticket
         </Button>
       </NavLinkContainer>
-    );
-  };
-
-  return (
-    <nav className="px-lg font-sans w-full fixed top-0 space-y-4 z-[100] bg-primary">
-      <div className="flex items-end text-sm">
-        <div className="flex space-x-2 items-end">
-          <Image src={govtLogo1} alt="" width={40} />
-          <div className="h-12 border-l-[1px] border-tertiary-200" />
-          <Image src={govtLogo2} alt="" width={35} />
-          <h2 className="text-secondary font-serif font-semibold w-48">
-            Shradheya Shri Atal Bihari Vajpayee Botanical Garden
-          </h2>
-        </div>
-        <Header>
-          <select className="bg-transparent focus:outline-none py-2">
-            {languageOptions.map((value: ILanguageOption, idx: number) => (
-              <option key={idx} value={value.code}>
-                {value.name}
-              </option>
-            ))}
-          </select>
-          <Button className="text-sm" iconSize={10} postIconNode={user}>
-            Membership&apos;s Login
-          </Button>
-        </Header>
-      </div>
-      <Divider />
-      {renderNavLinks()}
-      <Divider />
-    </nav>
+      <HorizontalDivider />
+    </NavbarContainer>
   );
 };
 
 export default memo(Navbar);
 
-const Divider = tw.hr`
-  border-tertiary-200 opacity-40
+const NavbarContainer = tw(motion.nav)`
+  px-lg pb-6 font-sans w-full fixed top-0 space-y-4 z-[100] bg-primary
 `;
 
-const Header = tw.ul`
+const TopSection = tw.div`
+  flex items-end text-sm
+`;
+
+const LogoSection = tw.div`
+  flex space-x-2 items-end
+`;
+
+const StyledImage = tw(Image)`
+  h-auto
+`;
+
+const DividerVertical = tw.div`
+  h-12 border-l-[1px] border-tertiary-200
+`;
+
+const Title = tw.h2`
+  text-secondary font-serif font-semibold w-48
+`;
+
+const HeaderOptions = tw.ul`
   ml-auto text-sm flex text-tertiary-200 font-sans font-bold space-x-3
+`;
+
+const LanguageSelect = tw.select`
+  bg-transparent focus:outline-none py-2
+`;
+
+const HorizontalDivider = tw.hr`
+  border-tertiary-200 opacity-40
 `;
 
 const NavLinkContainer = tw.ul`

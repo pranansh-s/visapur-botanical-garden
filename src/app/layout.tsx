@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} bg-primary w-screen overflow-x-hidden antialiased`}
+        className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} bg-primary min-w-screen overflow-x-clip antialiased`}
       >
         <SplashScreen />
         <Navbar />

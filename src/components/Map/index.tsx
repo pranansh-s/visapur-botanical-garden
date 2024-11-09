@@ -17,7 +17,7 @@ const Map = (): React.ReactElement => {
       <MapContainer>
         <Draggable bounds={{ left: -100, right: 100, top: -600, bottom: 0 }}>
           <DraggableMap>
-            <Image draggable={false} src={map} alt="Map" layout="responsive" />
+            <Image draggable={false} src={map} alt="Map" />
             {locations.map((location: ILocation, idx: number) => (
               <Location key={idx} {...location} />
             ))}

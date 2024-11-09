@@ -1,5 +1,5 @@
 import {
-  IButterflyInfo,
+  IAmenity,
   ICarouselItem,
   IExpandGroup,
   IImageCard,
@@ -45,6 +45,24 @@ export const glimpsesItems: ICarouselItem[] = [
   { src: '/glimpses/glimpses-2.png' },
   { src: '/glimpses/glimpses-3.png' },
 ];
+
+export const amenities: IAmenity[] = [
+  { name: 'Cafe', icon: '/amenities/food.svg' },
+  { name: 'Washroom', icon: '/amenities/washroom.svg' },
+  { name: 'Parking', icon: '/amenities/parking.svg' },
+  { name: 'Buggy Stand', icon: '/amenities/buggy.svg' },
+  { name: 'Restaurant', icon: '/amenities/restaurant.svg' },
+  { name: 'Water Coolers', icon: '/amenities/water.svg' },
+  { name: 'Feeding Room', icon: '/amenities/feeding.svg' },
+  { name: 'Souvenir Shop', icon: '/amenities/gift.svg' },
+  { name: 'Rest Shelters', icon: '/amenities/rest.svg' },
+  { name: 'Guides', icon: '/amenities/guide.svg' },
+  { name: 'Ticket Counter', icon: '/amenities/ticket.svg' },
+  { name: 'Play Area', icon: '/amenities/play.svg' },
+  { name: 'Water Fountains', icon: '/amenities/fountain.svg' },
+];
+
+export const disabledDates = [5, 10, 15, 21];
 
 export const shopPlayDineItems: ICarouselItem[] = [
   { src: '/shop/shop-1.png' },
@@ -178,70 +196,4 @@ export const locations: ILocation[] = [
   { name: 'Lorem ipsum di', left: 55.5, top: 83 },
   { name: 'Lorem ipsum di', left: 54, top: 86 },
   { name: 'Lorem ipsum di', left: 59.5, top: 87 },
-];
-
-export const butteryflies: IButterflyInfo[] = [
-  {
-    text: 'Hi! I am Baronet',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/Baronet.png',
-  },
-  {
-    text: 'Hi! I am Blue Mormon',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/BlueMormon.png',
-  },
-  {
-    text: 'Hi! I am Blue Pansy',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/BluePansy.png',
-  },
-  {
-    text: 'Hi! I am Common Bluebottle',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/CommonBluebottle.png',
-  },
-  {
-    text: 'Hi! I am Common Leopard',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/CommonLeopard.png',
-  },
-  {
-    text: 'Hi! I am Common Pierrot',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/CommonPierrot.png',
-  },
-  {
-    text: 'Hi! I am Crimson Rose',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/CrimsonRose.png',
-  },
-  {
-    text: 'Hi! I am Lime Swallowtail',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/LimeSwallowtail.png',
-  },
-  {
-    text: 'Hi! I am Striped Tiger',
-    latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
-    src: '/butterfly/StripedTiger.png',
-  },
 ];

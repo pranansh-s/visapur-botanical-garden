@@ -43,3 +43,8 @@ export interface IImageCard {
   name: string;
   src: string;
 }
+
+export interface IAmenity {
+  name: string;
+  icon: string;
+}

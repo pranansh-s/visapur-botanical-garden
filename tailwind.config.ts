@@ -19,10 +19,13 @@ const config: Config = {
           100: 'var(--tertiary-light)',
           200: 'var(--tertiary)',
           300: 'var(--tertiary-dark)',
+          table: 'var(--tertiary-table)',
         },
       },
       spacing: {
         lg: '200px',
+        md: '120px',
+        sm: '60px',
       },
       fontFamily: {
         sans: 'var(--font-merriweather)',

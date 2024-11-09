@@ -1,9 +1,8 @@
-'use client';
-
 import Link from 'next/link';
-import Heading from '../common/Heading';
 import Image from 'next/image';
 import tw from 'tailwind-styled-components';
+
+import Heading from '../common/Heading';
 
 import astronaut from '../../../public/astronaut.svg';
 import tree from '../../../public/tree.svg';
@@ -28,19 +27,19 @@ const WhoWeAre = (): React.ReactElement => {
         </Link>
       </Description>
       <BackgroundImage
-        src={train}
-        alt="Train"
-        className="h-[812px] -right-lg bottom-6"
+        src={tree}
+        alt="Tree"
+        className="h-[400px] md:h-[600px] lg:h-[752px] -right-lg bottom-6"
       />
       <BackgroundImage
         src={astronaut}
         alt="Astronaut"
-        className="w-[512px] right-0 bottom-0"
+        className="w-[300px] md:w-[384px] lg:w-[512px] sm:-right-0 -right-sm bottom-0"
       />
       <BackgroundImage
-        src={tree}
-        alt="Tree"
-        className="w-[450px] -left-lg bottom-12"
+        src={train}
+        alt="Train"
+        className="w-[200px] md:w-[350px] lg:w-[450px] xl:-left-lg lg:-left-md -left-sm bottom-6 md:bottom-12"
       />
     </Container>
   );
@@ -53,13 +52,13 @@ const Container = tw.div`
 `;
 
 const Description = tw.p`
-  font-serif text-sm text-tertiary-300 w-1/2 leading-7
+  font-serif text-tertiary-300 w-full md:w-[75%] lg:w-[60%] leading-6 md:leading-7 text-base md:text-lg lg:text-xl
 `;
 
 const ReadMore = tw.span`
-  block w-max mt-16 text-tertiary-100 font-bold
+  block w-max mt-8 md:mt-12 lg:mt-16 text-tertiary-100 font-bold text-sm md:text-base
 `;
 
 const BackgroundImage = tw(Image)`
-  absolute
+  absolute -z-10
 `;
