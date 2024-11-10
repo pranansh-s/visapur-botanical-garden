@@ -15,9 +15,9 @@ import Instagram from '@/components/Instagram';
 import Glimpses from '@/components/Glimpses';
 import ShopPlayDine from '@/components/ShopPlayDine';
 import Table from '@/components/Table';
+import WideCarousel from '@/components/Carousel/WideCarousel';
 
 import { animationPreset } from '@/utils/anim';
-import WideCarousel from '@/components/Carousel/WideCarousel';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -83,7 +83,7 @@ export default function Home() {
 }
 
 const PageContainer = tw.div`
-  xl:px-lg lg:px-md px-sm h-full space-y-6
+  xl:px-lg lg:px-md px-sm h-full space-y-16 max-w-[1536px] mx-auto
 `;
 
 const HeroSection = tw.div`
@@ -99,11 +99,11 @@ const HeroTitle = tw(motion.h1)`
 `;
 
 const HeroMainTitle = tw.p`
-  text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[1.2rem] sm:tracking-[3rem] md:tracking-[4.5rem] lg:tracking-[6rem]
+  text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[1.2rem] sm:tracking-[3rem] md:tracking-[4.5rem] md:ml-[3.5rem] lg:ml-[5rem] lg:tracking-[6rem]
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute w-[1650px] min-w-screen max-w-none top-[47%] z-[10]
+  absolute w-screen !min-w-[1650px] min-w-screen max-w-none top-[47%] z-[10]
 `;
 
 const HeroContent = tw.div`

@@ -19,7 +19,7 @@ const ButterflyCarousel: React.FC = memo(() => {
   const [throttling, setThrottling] = useState<boolean>(false);
 
   useEffect(() => {
-    const updateRadius = () => setRadius(window.innerWidth / 2);
+    const updateRadius = () => setRadius(Math.min(window.innerWidth / 2, 750));
     updateRadius();
 
     window.addEventListener('resize', updateRadius);
@@ -109,7 +109,7 @@ const ButterflyCarousel: React.FC = memo(() => {
       <BackgroundImage
         src={tree1}
         alt="tree1"
-        className="h-[200px] md:h-[300px] lg:h-[350px] -bottom-36 md:-left-16 -left-28"
+        className="h-[200px] md:h-[300px] lg:h-[350px] -bottom-36 sm:-left-[400px] -left-[280px]"
       />
       <BackgroundImage
         src={train1}
@@ -124,7 +124,7 @@ ButterflyCarousel.displayName = 'ButterflyCarousel';
 export default ButterflyCarousel;
 
 const CarouselContainer = tw.div`
-  flex items-center justify-center relative xl:-left-lg lg:-left-md -left-sm w-screen !mb-36
+  flex items-center justify-center relative w-screen max-w-[1536px] xl:-left-lg lg:-left-md -left-sm !mb-36
 `;
 
 const ShadowContainer = tw.div`
@@ -140,7 +140,7 @@ const ButterflyDescription = tw.div`
 `;
 
 const Controls = tw.div`
-  flex items-center sm:space-x-20 space-x-4 absolute lg:bottom-[16vh] md:bottom-[5vh] bottom-[-5vh]
+  flex items-center sm:space-x-20 space-x-4 absolute lg:bottom-[16vh] md:bottom-[5vh] sm:bottom-[-3vh] bottom-[-10vh] h-[200px]
 `;
 
 const CardContainer = tw.div`

@@ -39,7 +39,7 @@ const WhoWeAre = (): React.ReactElement => {
       <BackgroundImage
         src={train}
         alt="Train"
-        className="w-[200px] md:w-[350px] lg:w-[450px] xl:-left-lg lg:-left-md -left-sm bottom-6 md:bottom-12"
+        className="w-[200px] md:w-[350px] lg:w-[450px] xl:-left-lg 2xl lg:-left-md -left-sm bottom-6 md:bottom-12"
       />
     </Container>
   );
@@ -48,7 +48,7 @@ const WhoWeAre = (): React.ReactElement => {
 export default WhoWeAre;
 
 const Container = tw.div`
-  h-screen flex flex-col justify-center relative
+  h-max !mt-[400px] pb-96 flex flex-col justify-center relative
 `;
 
 const Description = tw.p`

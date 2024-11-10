@@ -14,7 +14,7 @@ const Glimpses = (): React.ReactElement => {
       <BackgroundImage
         src={honey1}
         alt="honey-1"
-        className="w-[80px] md:w-[120px] lg:w-[160px] -top-1/3 xl:-left-lg lg:-left-md -left-sm"
+        className="w-[150px] md:w-[200px] lg:w-[250px] -top-1/4 xl:-left-lg -left-md"
       />
     </GlimpsesContainer>
   );
@@ -23,7 +23,7 @@ const Glimpses = (): React.ReactElement => {
 export default Glimpses;
 
 const GlimpsesContainer = tw.div`
-  flex flex-col space-y-2 h-[575px] relative
+  flex flex-col space-y-2 h-max relative
 `;
 
 const BackgroundImage = tw(Image)`

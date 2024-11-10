@@ -15,10 +15,10 @@ const HowToReach: React.FC = memo(() => {
         How To Reach &nbsp;
         <Image width={40} src={reach} alt="" />
       </Title>
-      <Image src={reach1} alt="" />
-      <Image src={reach2} alt="" />
-      <Image src={reach3} alt="" />
-      <Image src={reach4} alt="" />
+      <ReachPath src={reach1} alt="" />
+      <ReachPath src={reach2} alt="" />
+      <ReachPath src={reach3} alt="" />
+      <ReachPath src={reach4} alt="" />
     </HowToReachContainer>
   );
 });
@@ -32,4 +32,8 @@ const HowToReachContainer = tw.div`
 
 const Title = tw.h4`
   flex items-center text-5xl text-[#711F00] mt-6 py-6 border-b-[1px] border-tertiary-200
+`;
+
+const ReachPath = tw(Image)`
+  w-full
 `;

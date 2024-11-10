@@ -4,8 +4,8 @@ import ImageCard from '../common/ImageCard';
 import { activities } from '@/constants';
 import Image from 'next/image';
 
-import honey2 from '../../../public/honey-2.svg';
-import tree3 from '../../../public/tree-3.svg';
+import honey1 from '../../../public/honey-1.svg';
+import tree1 from '../../../public/tree-1.svg';
 
 const Activities = (): React.ReactElement => {
   return (
@@ -19,14 +19,14 @@ const Activities = (): React.ReactElement => {
         <ImageCard className="w-[calc(100%-3rem)] ml-12" {...activities[4]} />
       </CardContainer>
       <BackgroundImage
-        src={honey2}
-        alt="honey-2"
+        src={honey1}
+        alt="honey-1"
         className="w-[120px] md:w-[160px] lg:w-[250px] -top-10 xl:-right-lg lg:-right-md -right-sm"
       />
       <BackgroundImage
-        src={tree3}
-        alt="tree-3"
-        className="w-[160px] md:w-[200px] lg:w-[250px] bottom-0 xl:-left-lg lg:-left-md -left-sm"
+        src={tree1}
+        alt="tree-1"
+        className="w-[300px] md:w-[350px] lg:w-[400px] -bottom-[140px] -left-[300px]"
       />
     </ActivitiesContainer>
   );
@@ -35,11 +35,11 @@ const Activities = (): React.ReactElement => {
 export default Activities;
 
 const ActivitiesContainer = tw.div`
-  flex flex-col space-y-2 h-[820px] relative
+  flex flex-col space-y-2 h-[900px] relative
 `;
 
 const CardContainer = tw.ul`
-  grid grid-rows-3 grid-cols-3 gap-8 h-[700px] pt-12
+  grid grid-rows-3 grid-cols-3 gap-8 h-[800px]
 `;
 
 const BackgroundImage = tw(Image)`

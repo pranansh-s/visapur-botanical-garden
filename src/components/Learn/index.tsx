@@ -27,7 +27,7 @@ const Learn = (): React.ReactElement => {
 export default Learn;
 
 const LearnContainer = tw.div`
-  flex flex-col space-y-2 h-screen
+  flex flex-col space-y-2 h-max
 `;
 
 const BodyText = tw.p`

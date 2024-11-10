@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         background:
           'linear-gradient(to bottom, var(--primary) 0%, var(--primary) 90%, transparent 100%)',
       }}
-      initial={{ y: pathname === '/' ? 50 : 0 }}
+      initial={{ y: pathname === '/' ? -50 : 0 }}
       animate={{ y: 0 }}
       transition={{ ...animationPreset }}
     >
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
 export default memo(Navbar);
 
 const NavbarContainer = tw(motion.nav)`
-  px-lg pb-6 font-sans w-full fixed top-0 space-y-4 z-[100] bg-primary
+  2xl:px-[20vw] xl:px-lg lg:px-md px-0 pb-4 font-sans w-full fixed top-0 space-y-2 z-[100] bg-primary
 `;
 
 const TopSection = tw.div`
@@ -93,7 +93,7 @@ const StyledImage = tw(Image)`
 `;
 
 const DividerVertical = tw.div`
-  h-12 border-l-[1px] border-tertiary-200
+  border-l-[1px] border-tertiary-200
 `;
 
 const Title = tw.h2`
@@ -113,10 +113,10 @@ const HorizontalDivider = tw.hr`
 `;
 
 const NavLinkContainer = tw.ul`
-  flex justify-between items-center px-6 text-xl
+  flex justify-between items-center px-6 text-xl whitespace-nowrap
 `;
 
 const StyledNavLink = tw(Link)<{ selected: boolean }>`
   ${props => (props.selected ? 'text-black' : 'text-secondary')}
-  font-bold p-2 hover:opacity-80 transition-opacity duration-100
+  font-bold p-1 hover:opacity-80 transition-opacity duration-100
 `;

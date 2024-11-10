@@ -7,9 +7,9 @@ const Instagram = (): React.ReactElement => {
     <InstagramPostsContainer>
       <Heading>Follow Us</Heading>
       <Carousel
-        itemsToShow={5}
+        itemsVisible={5}
         variant="instagram"
-        className="w-full translate-x-0 overflow-hidden"
+        className="max-w-[1536px] !left-1/2 -translate-x-1/2 overflow-hidden"
         items={instagramPosts}
       />
     </InstagramPostsContainer>

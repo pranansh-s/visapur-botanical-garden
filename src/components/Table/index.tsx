@@ -21,7 +21,7 @@ import honey from '../../../public/honey.svg';
 const Table = (): React.ReactElement => {
   const [tablePage, setTablePage] = useState<number>(1);
   return (
-    <div className="relative">
+    <div className="flex items-center justify-center relative">
       <TableContainer>
         <ButtonContainer>
           {renderButtonIcon(timings, setTablePage, tablePage, 0, 80)}
@@ -76,7 +76,7 @@ const renderButtonIcon = (
 export default Table;
 
 const TableContainer = tw.div`
-  bg-tertiary-table rounded-xl pb-16 !mb-36 shadow-md overflow-clip
+  bg-tertiary-table rounded-xl pb-16 shadow-md overflow-clip scale-75 min-w-[700px] w-full
 `;
 
 const ButtonContainer = tw.div`

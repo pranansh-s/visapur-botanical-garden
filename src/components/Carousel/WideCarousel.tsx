@@ -40,7 +40,7 @@ const WideCarousel: React.FC<{ items: CarouselItem[] }> = memo(({ items }) => {
           {items.map((item, index) => (
             <motion.div
               key={index}
-              className="relative w-screen overflow-hidden"
+              className="relative w-screen !max-w-[1536px] overflow-hidden"
               style={{
                 backgroundImage: `url(${item.imageSrc})`,
                 backgroundSize: 'cover',
@@ -105,11 +105,11 @@ const PlanText = tw.p`
 `;
 
 const PlanVisit = tw.div`
-  flex justify-between !mb-72 !mt-16 relative
+  flex justify-between !mb-24 !mt-16 relative
 `;
 
 const CarouselContainer = tw.div`
-  relative flex w-screen xl:-ml-lg lg:-ml-md -ml-sm overflow-hidden h-[500px]
+  relative flex w-screen max-w-[1536px] xl:-ml-lg lg:-ml-md -ml-sm overflow-hidden h-[500px]
 `;
 
 const ArrowButton = tw.button`
@@ -117,7 +117,7 @@ const ArrowButton = tw.button`
 `;
 
 const Tag = tw.span`
-  bg-tertiary-200 text-white font-serif text-xl uppercase py-3 px-6 rounded-b-xl absolute top-0 z-[10] ml-12
+  bg-tertiary-200 text-white font-serif font-bold tracking-[0.2rem] text-xl uppercase py-3 px-7 rounded-b-xl absolute top-0 z-[10] ml-12
 `;
 
 const Text = tw.div`

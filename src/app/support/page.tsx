@@ -23,13 +23,13 @@ const Support: React.FC = () => {
           experiences. Our team is here to assist you and ensure your journey
           through nature is unforgettable. Reach out today, and let&apos;s
           explore the beauty of the natural world together. Your adventure
-          awaits!&quot;
+          awaits!
         </SupportBody>
-        <div className="pt-12 flex">
-          <ContactSubGroup className="flex-[2] !space-y-12">
+        <div className="pt-12 flex flex-col md:flex-row">
+          <ContactSubGroup className="flex-[2] space-y-6 md:space-y-12">
             <SupportSubHeading>Have queries?</SupportSubHeading>
             <ContactField>
-              <Image className="h-12 w-12" src={mail} alt="" />
+              <Image className="h-10 w-10 sm:h-12 sm:w-12" src={mail} alt="" />
               <p>
                 Mail Us:&nbsp;
                 <ContactValue>
@@ -38,7 +38,11 @@ const Support: React.FC = () => {
               </p>
             </ContactField>
             <ContactField>
-              <Image className="h-12 w-12" src={contact} alt="" />
+              <Image
+                className="h-10 w-10 sm:h-12 sm:w-12"
+                src={contact}
+                alt=""
+              />
               <p>
                 Contact no:&nbsp;
                 <ContactValue>+91 94050 66433</ContactValue>
@@ -48,19 +52,19 @@ const Support: React.FC = () => {
               </p>
             </ContactField>
           </ContactSubGroup>
-          <ContactSubGroup className="flex-1">
+          <ContactSubGroup className="flex-1 mt-10 md:mt-0">
             <SupportSubHeading>
               How to Reach &nbsp;{' '}
-              <Image className="w-9 h-9" src={place} alt="" />{' '}
+              <Image className="w-7 h-7 sm:w-9 sm:h-9" src={place} alt="" />{' '}
             </SupportSubHeading>
             <iframe
-              className="w-[333px] h-[134px] pt-4"
+              className="w-full sm:w-[333px] h-[134px] pt-4"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3752.0101573359116!2d79.338103!3d19.881793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd2d3005670f54d%3A0x5edb33057eed6c4f!2sBotanical%20Garden%20visapur!5e0!3m2!1sen!2sin!4v1729695839735!5m2!1sen!2sin"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <span className="font-sans font-bold text-sm">
+            <span className="font-sans font-bold text-sm sm:text-base mt-4 block">
               Shradheya Atal Bihari Vajpayee Botanical Garden,
               <br /> Ballarshah Rd, Visapur, Maharashtra 442701
             </span>
@@ -78,10 +82,10 @@ const Support: React.FC = () => {
         ))}
         <ContactCard>
           <span>Follow us for the latest updates</span>
-          <ul className="space-x-5 flex w-[200%] justify-center scale-[0.6]">
+          <ul className="gap-2 flex flex-wrap justify-center">
             {socialLinks.map(
               (socialLink: INamedLink, idx: number) =>
-                idx != 3 && <ContactLink key={idx} {...socialLink} />
+                idx !== 3 && <ContactLink key={idx} {...socialLink} />
             )}
           </ul>
         </ContactCard>
@@ -90,8 +94,8 @@ const Support: React.FC = () => {
   };
 
   return (
-    <div className="px-lg mt-64">
-      <Image src={hero} alt="" />
+    <div className="xl:px-lg lg:px-md px-sm mt-48 md:mt-64 max-w-[1536px] mx-auto">
+      <Image src={hero} alt="" className="w-full" />
       {renderGetInTouch()}
       {renderCards()}
     </div>
@@ -101,31 +105,31 @@ const Support: React.FC = () => {
 export default Support;
 
 const GetInTouchContainer = tw.div`
-  h-full my-24 flex flex-col space-y-5
-`;
-
-const SupportBody = tw.p`
-  text-black text-lg font-serif
-`;
-
-const SupportSubHeading = tw.h3`
-  text-sans font-bold text-3xl text-secondary flex
-`;
-
-const ContactSubGroup = tw.div`
-  flex flex-col space-y-3
-`;
-
-const ContactValue = tw.span`
-  font-serif
-`;
-
-const ContactField = tw.div`
-  flex space-x-3 font-sans text-lg text-black text-bold items-center
+  my-12 md:my-24 flex flex-col space-y-5 px-4 md:px-0
 `;
 
 const SupportHeading = tw.h2`
-  font-bold text-sans text-6xl text-tertiary-200
+  font-bold text-sans text-4xl sm:text-5xl md:text-6xl text-tertiary-200
+`;
+
+const SupportBody = tw.p`
+  text-black text-base sm:text-lg md:text-xl font-serif
+`;
+
+const SupportSubHeading = tw.h3`
+  text-sans font-bold text-2xl sm:text-3xl text-secondary flex
+`;
+
+const ContactSubGroup = tw.div`
+  flex flex-col space-y-4 md:space-y-6
+`;
+
+const ContactValue = tw.span`
+  font-serif text-sm sm:text-base md:text-lg
+`;
+
+const ContactField = tw.div`
+  flex space-x-3 font-sans text-base sm:text-lg md:text-xl text-black font-bold items-center
 `;
 
 const ContactCard = tw.div`
@@ -133,5 +137,5 @@ const ContactCard = tw.div`
 `;
 
 const Grid = tw.ul`
-  grid grid-rows-2 grid-cols-4 gap-x-6 gap-y-16
+  grid grid-rows-2 grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-3 lg:grid-cols-4
 `;

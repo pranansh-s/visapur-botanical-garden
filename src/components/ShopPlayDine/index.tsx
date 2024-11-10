@@ -15,5 +15,5 @@ const ShopPlayDine = (): React.ReactElement => {
 export default ShopPlayDine;
 
 const ShopContainer = tw.div`
-  flex flex-col space-y-2 h-[400px]
+  flex flex-col space-y-2 h-max
 `;
