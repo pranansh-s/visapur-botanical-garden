@@ -15,9 +15,14 @@ const Map = (): React.ReactElement => {
     <Container>
       <Heading name="Map" />
       <MapContainer>
-        <Draggable bounds={{ left: -100, right: 100, top: -600, bottom: 0 }}>
+        <Draggable>
           <DraggableMap>
-            <Image draggable={false} src={map} alt="Map" />
+            <Image
+              className="min-w-[768px]"
+              draggable={false}
+              src={map}
+              alt="Map"
+            />
             {locations.map((location: ILocation, idx: number) => (
               <Location key={idx} {...location} />
             ))}
@@ -35,7 +40,7 @@ const Container = tw.div`
 `;
 
 const MapContainer = tw.div`
-  h-screen overflow-hidden
+  h-[500px] overflow-hidden
 `;
 
 const DraggableMap = tw.div`

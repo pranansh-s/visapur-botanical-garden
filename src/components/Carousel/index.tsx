@@ -136,11 +136,10 @@ const renderCarouselItem = (
   variant: any,
   item: ICarouselItem
 ) => {
-  const distanceFromCenter = Math.abs(
-    index - (currentIndex + Math.floor(itemsToShow / 2))
-  );
-  const scaleFactor = Math.max(0.5, 1 - distanceFromCenter * 0.2);
-  const overlayOpacity = Math.min(0.8, distanceFromCenter * 0.2);
+  const distanceFromCenter =
+    index - (currentIndex + Math.floor(itemsToShow / 2));
+  const scaleFactor = Math.max(0.5, 1 - Math.abs(distanceFromCenter) * 0.2);
+  const overlayOpacity = Math.min(0.8, Math.abs(distanceFromCenter) * 0.2);
 
   return (
     <CarouselItem
@@ -152,7 +151,9 @@ const renderCarouselItem = (
             ? index === currentIndex + Math.floor(itemsToShow / 2)
               ? 'scale(1.1)'
               : 'rotate(-5deg)'
-            : 'scale(1)',
+            : variant === 'instagram'
+              ? `scale(${scaleFactor}) translate(${distanceFromCenter * -50}px, 0)`
+              : 'scale(1)',
         position: 'relative',
         zIndex: scaleFactor * 10,
       }}
@@ -185,7 +186,7 @@ Carousel.displayName = 'Carousel';
 export default Carousel;
 
 const CarouselContainer = tw.div`
-  w-screen left-[calc(-50vw+50%)] relative
+  w-screen left-[calc(-50vw+50%)] relative overflow-hidden
 `;
 
 const CarouselTrack = tw.div`
@@ -194,7 +195,7 @@ const CarouselTrack = tw.div`
 
 const CarouselItem = tw.div<{ variant: string }>`
   flex-none space-y-3 transition-all ease
-  ${props => props.variant === 'instagram' && `!px-0 lg:!translate-x-0 !sm:-translate-x-18 !-translate-x-24`}
+  ${props => props.variant === 'instagram' && `!px-0`}
   lg:px-6 md:px-3 px-1
 `;
 

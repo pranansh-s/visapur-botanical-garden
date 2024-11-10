@@ -97,7 +97,7 @@ const DividerVertical = tw.div`
 `;
 
 const Title = tw.h2`
-  text-secondary font-serif font-semibold w-48
+  text-secondary font-serif font-medium w-[200px]
 `;
 
 const HeaderOptions = tw.ul`
