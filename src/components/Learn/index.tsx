@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
-import Heading from '../common/Heading';
-import tw from 'tailwind-styled-components';
-import ImageCard from '../common/ImageCard';
 import { learnCards } from '@/constants';
 import { IImageCard } from '@/types';
+import React from 'react';
+import tw from 'tailwind-styled-components';
+
+import Heading from '../common/Heading';
+import ImageCard from '../common/ImageCard';
 
 const Learn = (): React.ReactElement => {
   return (
@@ -17,7 +18,7 @@ const Learn = (): React.ReactElement => {
       </BodyText>
       <CardContainer>
         {learnCards.map((learnCard: IImageCard, idx: number) => (
-          <ImageCard key={idx} {...learnCard} />
+          <ImageCard className="sm:w-full w-[200px]" key={idx} {...learnCard} />
         ))}
       </CardContainer>
     </LearnContainer>
@@ -35,5 +36,5 @@ const BodyText = tw.p`
 `;
 
 const CardContainer = tw.ul`
-  flex justify-between pt-12 space-x-5
+  flex pt-12 sm:gap-5 gap-2 items-center justify-center sm:flex-nowrap flex-wrap
 `;

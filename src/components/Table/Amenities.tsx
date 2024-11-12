@@ -1,12 +1,13 @@
 'use client';
 
-import Image from 'next/image';
-import { memo, useState } from 'react';
-import { motion } from 'framer-motion';
-import tw from 'tailwind-styled-components';
-
 import { amenities } from '@/constants';
 import { IAmenity } from '@/types';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { memo, useState } from 'react';
+import tw from 'tailwind-styled-components';
+
+import { animationPreset } from '../../utils/anim';
 
 const Amenities: React.FC = memo(() => {
   const [page, setPage] = useState<number>(0);
@@ -16,7 +17,7 @@ const Amenities: React.FC = memo(() => {
   return (
     <Wrapper
       animate={{ x: page === 0 ? 0 : '-100%' }}
-      transition={{ duration: 0.6 }}
+      transition={{ animationPreset, delay: 0, duration: 0.6 }}
     >
       <Container>
         {amenities.slice(0, 7).map((amenity: IAmenity, idx: number) => (
@@ -42,8 +43,26 @@ const Amenities: React.FC = memo(() => {
         ))}
       </OtherContainer>
 
-      <RightArrow onClick={togglePage}>&gt;</RightArrow>
-      <LeftArrow onClick={togglePage}>&lt;</LeftArrow>
+      <RightArrow onClick={togglePage}>
+        <svg
+          height="20px"
+          viewBox="0 0 512 512"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M298.3,256L298.3,256L298.3,256L131.1,81.9c-4.2-4.3-4.1-11.4,0.2-15.8l29.9-30.6c4.3-4.4,11.3-4.5,15.5-0.2l204.2,212.7  c2.2,2.2,3.2,5.2,3,8.1c0.1,3-0.9,5.9-3,8.1L176.7,476.8c-4.2,4.3-11.2,4.2-15.5-0.2L131.3,446c-4.3-4.4-4.4-11.5-0.2-15.8  L298.3,256z" />
+        </svg>
+      </RightArrow>
+      <LeftArrow onClick={togglePage}>
+        <svg
+          height="20px"
+          viewBox="0 0 512 512"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M213.7,256L213.7,256L213.7,256L380.9,81.9c4.2-4.3,4.1-11.4-0.2-15.8l-29.9-30.6c-4.3-4.4-11.3-4.5-15.5-0.2L131.1,247.9  c-2.2,2.2-3.2,5.2-3,8.1c-0.1,3,0.9,5.9,3,8.1l204.2,212.7c4.2,4.3,11.2,4.2,15.5-0.2l29.9-30.6c4.3-4.4,4.4-11.5,0.2-15.8  L213.7,256z" />
+        </svg>
+      </LeftArrow>
     </Wrapper>
   );
 });
@@ -52,7 +71,7 @@ Amenities.displayName = 'Amenities';
 export default Amenities;
 
 const Wrapper = tw(motion.div)`
-  flex px-36 pt-12 space-x-12 relative
+  flex sm:px-36 px-16 pt-12 space-x-12 relative
 `;
 
 const Container = tw.div`
@@ -60,7 +79,7 @@ const Container = tw.div`
 `;
 
 const OtherContainer = tw(Container)`
-  absolute -right-full px-36 space-y-16
+  absolute -right-full sm:px-36 px-16 space-y-16
 `;
 
 const AmenityContainer = tw.div`
@@ -80,13 +99,13 @@ const Head = tw.div`
 `;
 
 const ButtonArrow = tw.button`
-  absolute top-1/2 -translate-y-1/2 text-4xl text-tertiary-300 font-bold hover:text-tertiary-200 transition-all duration-200 scale-y-[3]
+  sm:block hidden p-2 absolute top-1/2 -translate-y-[150%] rounded-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/5 scale-[2] via-transparent to-transparent
 `;
 
 const RightArrow = tw(ButtonArrow)`
-  right-16
+  right-3
 `;
 
 const LeftArrow = tw(ButtonArrow)`
-  left-full
+  left-[calc(100%-2rem)]
 `;

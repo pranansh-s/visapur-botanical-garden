@@ -1,8 +1,9 @@
 import { IExpandGroup } from '@/types';
 import Image from 'next/image';
-import tw from 'tailwind-styled-components';
-import Button from '../common/Button';
 import { memo } from 'react';
+import tw from 'tailwind-styled-components';
+
+import Button from '../common/Button';
 
 interface IExpandGroupProps extends IExpandGroup {
   index: number;

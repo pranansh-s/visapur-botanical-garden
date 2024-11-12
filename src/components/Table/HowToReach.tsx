@@ -1,12 +1,12 @@
+import Image from 'next/image';
 import { memo } from 'react';
 import tw from 'tailwind-styled-components';
 
-import reach from '../../../public/reach/reach.svg';
 import reach1 from '../../../public/reach/reach-1.svg';
 import reach2 from '../../../public/reach/reach-2.svg';
 import reach3 from '../../../public/reach/reach-3.svg';
 import reach4 from '../../../public/reach/reach-4.svg';
-import Image from 'next/image';
+import reach from '../../../public/reach/reach.svg';
 
 const HowToReach: React.FC = memo(() => {
   return (
@@ -27,7 +27,7 @@ HowToReach.displayName = 'HowToReach';
 export default HowToReach;
 
 const HowToReachContainer = tw.div`
-  px-36 font-sans font-bold space-y-12
+  sm:px-36 px-16 font-sans font-bold space-y-12
 `;
 
 const Title = tw.h4`

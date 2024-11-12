@@ -1,22 +1,20 @@
 'use client';
 
+import { disabledDates } from '@/constants';
+import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 import tw from 'tailwind-styled-components';
-import Button from '../common/Button';
-
-import timings from '../../../public/icons/timings.svg';
-import events from '../../../public/icons/events.svg';
-import accessibility from '../../../public/icons/accesibility.svg';
-import amenities from '../../../public/icons/amenities.svg';
-import Image, { StaticImageData } from 'next/image';
-import { disabledDates } from '@/constants';
-
-import Timings from './Timings';
-import Calendar from './Calendar';
-import HowToReach from './HowToReach';
-import Amenities from './Amenities';
 
 import honey from '../../../public/honey.svg';
+import accessibility from '../../../public/icons/accesibility.svg';
+import amenities from '../../../public/icons/amenities.svg';
+import events from '../../../public/icons/events.svg';
+import timings from '../../../public/icons/timings.svg';
+import Button from '../common/Button';
+import Amenities from './Amenities';
+import Calendar from './Calendar';
+import HowToReach from './HowToReach';
+import Timings from './Timings';
 
 const Table = (): React.ReactElement => {
   const [tablePage, setTablePage] = useState<number>(1);
@@ -80,7 +78,7 @@ const TableContainer = tw.div`
 `;
 
 const ButtonContainer = tw.div`
-  flex justify-between items-center py-12 px-36
+  flex justify-between items-center py-12 sm:px-36 px-16
 `;
 
 const BackgroundImage = tw(Image)`

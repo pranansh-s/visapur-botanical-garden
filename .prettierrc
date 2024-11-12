@@ -4,5 +4,16 @@
   "trailingComma": "es5",
   "tabWidth": 2,
   "printWidth": 80,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^src/components/(.*)$",
+    "^src/constants/(.*)$",
+    "^src/types/(.*)$",
+    "^src/utils/(.*)$",
+    "^src/app/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

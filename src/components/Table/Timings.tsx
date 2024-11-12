@@ -1,6 +1,7 @@
 import { memo } from 'react';
-import TimeSwitch from './TimeSwitch';
 import tw from 'tailwind-styled-components';
+
+import TimeSwitch from './TimeSwitch';
 
 const Timings: React.FC = memo(() => {
   return (
@@ -24,9 +25,9 @@ const renderDay = (
 ) => {
   return (
     <DayContainer>
-      <TimeSwitch variant={isActive ? 'morning' : 'disabled'} time={morning} />
+      <TimeSwitch variant="morning" disabled={!isActive} time={morning} />
       <DayText $isActive={isActive}>{day}</DayText>
-      <TimeSwitch variant={isActive ? 'night' : 'disabled'} time={night} />
+      <TimeSwitch variant="night" disabled={!isActive} time={night} />
     </DayContainer>
   );
 };
@@ -35,14 +36,14 @@ Timings.displayName = 'Timings';
 export default Timings;
 
 const DayContainer = tw.div`
-    flex items-center justify-between px-36
+  flex items-center justify-between sm:px-36 px-16
 `;
 
 const DayText = tw.span<{ $isActive: boolean }>`
-    ${({ $isActive }) => ($isActive ? 'text-tertiary-300' : 'text-gray-600')}
-    font-serif font-bold text-2xl
+  ${({ $isActive }) => ($isActive ? 'text-tertiary-300' : 'text-gray-600')}
+  font-serif font-bold text-2xl
 `;
 
 const TimingsContainer = tw.div`
-    flex flex-col space-y-6 pt-12
+  flex flex-col space-y-6 pt-12
 `;

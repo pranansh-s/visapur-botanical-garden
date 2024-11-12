@@ -25,7 +25,7 @@ const config: Config = {
       spacing: {
         lg: '200px',
         md: '120px',
-        sm: '60px',
+        sm: '20px',
       },
       fontFamily: {
         sans: 'var(--font-merriweather)',

@@ -1,20 +1,19 @@
 'use client';
 
-import Image from 'next/image';
-
-import hero from '../../../public/plan-visit-hero.png';
-import map from '../../../public/plan-visit-map.svg';
-import offers from '../../../public/offers.png';
-import buggy from '../../../public/Buggy.svg';
-import book from '../../../public/icons/book.svg';
-
+import ExpandGroup from '@/components/ExpandGroup';
+import Button from '@/components/common/Button';
 import Heading from '@/components/common/Heading';
-import tw from 'tailwind-styled-components';
 import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
-import ExpandGroup from '@/components/ExpandGroup';
+import Image from 'next/image';
 import { useState } from 'react';
-import Button from '@/components/common/Button';
+import tw from 'tailwind-styled-components';
+
+import buggy from '../../../public/Buggy.svg';
+import book from '../../../public/icons/book.svg';
+import offers from '../../../public/offers.png';
+import hero from '../../../public/plan-visit-hero.png';
+import map from '../../../public/plan-visit-map.svg';
 
 const PlanYourVisit: React.FC = () => {
   const [activeGroup, setActiveGroup] = useState<number>(-1);

@@ -1,23 +1,22 @@
 'use client';
 
-import Image from 'next/image';
-import tw from 'tailwind-styled-components';
-import { motion, useScroll, useTransform } from 'framer-motion';
-
-import hero from '../../public/hero.png';
-
-import WhoWeAre from '@/components/WhoWeAre';
-import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
-import Map from '@/components/Map';
-import Learn from '@/components/Learn';
 import Activities from '@/components/Activities';
-import Instagram from '@/components/Instagram';
+import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
+import WideCarousel from '@/components/Carousel/WideCarousel';
 import Glimpses from '@/components/Glimpses';
+import Instagram from '@/components/Instagram';
+import Learn from '@/components/Learn';
+import Map from '@/components/Map';
 import ShopPlayDine from '@/components/ShopPlayDine';
 import Table from '@/components/Table';
-import WideCarousel from '@/components/Carousel/WideCarousel';
-
+import WhoWeAre from '@/components/WhoWeAre';
+import { wideCarouselItems } from '@/constants';
 import { animationPreset } from '@/utils/anim';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import tw from 'tailwind-styled-components';
+
+import hero from '../../public/hero.png';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -54,23 +53,7 @@ export default function Home() {
 
       <WhoWeAre />
       <ButterflyCarousel />
-      <WideCarousel
-        items={[
-          {
-            imageSrc: '/wide-carousel-1.png',
-            title: 'Rare and Exotic Plants',
-            description:
-              'Discover our extensive collection of rare and exotic plants from around the world.',
-          },
-          {
-            imageSrc: '/wide-carousel-1.png',
-            title: 'Botanical Wonders',
-            description:
-              'Explore the beauty and diversity of plants from different habitats and climates.',
-          },
-        ]}
-      />
-
+      <WideCarousel items={wideCarouselItems} />
       <Table />
       <Glimpses />
       <Activities />

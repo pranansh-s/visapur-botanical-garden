@@ -1,12 +1,11 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import tw from 'tailwind-styled-components';
 
-import Heading from '../common/Heading';
-
 import astronaut from '../../../public/astronaut.svg';
-import tree from '../../../public/tree.svg';
 import train from '../../../public/train.svg';
+import tree from '../../../public/tree.svg';
+import Heading from '../common/Heading';
 
 const WhoWeAre = (): React.ReactElement => {
   return (
@@ -29,17 +28,17 @@ const WhoWeAre = (): React.ReactElement => {
       <BackgroundImage
         src={tree}
         alt="Tree"
-        className="h-[400px] md:h-[600px] lg:h-[752px] -right-lg bottom-6"
+        className="h-[1200px] md:h-[600px] lg:h-[752px] sm:-right-lg -right-[18rem] sm:bottom-6 bottom-[80%]"
       />
       <BackgroundImage
         src={astronaut}
         alt="Astronaut"
-        className="w-[300px] md:w-[384px] lg:w-[512px] sm:-right-0 -right-sm bottom-0"
+        className="w-[384px] lg:w-[512px] -right-0 bottom-0 sm:block hidden"
       />
       <BackgroundImage
         src={train}
         alt="Train"
-        className="w-[200px] md:w-[350px] lg:w-[450px] xl:-left-lg 2xl lg:-left-md -left-sm bottom-6 md:bottom-12"
+        className="w-[300px] md:w-[350px] lg:w-[450px] xl:-left-lg 2xl -left-md bottom-[calc(100%+5rem)] sm:bottom-12"
       />
     </Container>
   );
@@ -48,7 +47,7 @@ const WhoWeAre = (): React.ReactElement => {
 export default WhoWeAre;
 
 const Container = tw.div`
-  h-max !mt-[400px] pb-96 flex flex-col justify-center relative
+  h-max !mt-[250px] sm:pb-96 flex flex-col justify-center relative
 `;
 
 const Description = tw.p`

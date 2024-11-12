@@ -1,11 +1,11 @@
+import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
+import { zoneItems } from '@/constants';
 import Image from 'next/image';
 import tw from 'tailwind-styled-components';
 
-import minister from '../../../public/minister.png';
 import tree from '../../../public/footer-tree.svg';
-import Carousel from '@/components/Carousel';
-import { zoneItems } from '@/constants';
+import minister from '../../../public/minister.png';
 
 const AboutUs: React.FC = () => {
   return (

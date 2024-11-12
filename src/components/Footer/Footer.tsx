@@ -1,17 +1,18 @@
-import Image from 'next/image';
-import tw from 'tailwind-styled-components';
-import { memo } from 'react';
-import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
-import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
-import call from '../../../public/icons/call.svg';
-import mail from '../../../public/icons/mail.svg';
-import place from '../../../public/icons/place.svg';
-import tree from '../../../public/footer-tree.svg';
-import ContactField from './ContactField';
-import ContactLink from './ContactLink';
 import { careerLinks, importants, quickLinks, socialLinks } from '@/constants';
 import { IImportant, INamedLink } from '@/types';
+import Image from 'next/image';
 import Link from 'next/link';
+import { memo } from 'react';
+import tw from 'tailwind-styled-components';
+
+import tree from '../../../public/footer-tree.svg';
+import call from '../../../public/icons/call.svg';
+import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
+import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
+import mail from '../../../public/icons/mail.svg';
+import place from '../../../public/icons/place.svg';
+import ContactField from './ContactField';
+import ContactLink from './ContactLink';
 import ImportantCard from './ImportantCard';
 
 const Footer: React.FC = memo(() => {

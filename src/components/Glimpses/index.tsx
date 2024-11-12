@@ -1,10 +1,10 @@
-import tw from 'tailwind-styled-components';
-import Carousel from '../Carousel';
-import Heading from '../common/Heading';
 import { glimpsesItems } from '@/constants';
+import Image from 'next/image';
+import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
-import Image from 'next/image';
+import Carousel from '../Carousel';
+import Heading from '../common/Heading';
 
 const Glimpses = (): React.ReactElement => {
   return (

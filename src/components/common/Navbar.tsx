@@ -1,20 +1,20 @@
 'use client';
 
-import { memo, useMemo } from 'react';
 import { languageOptions, navbarLinks } from '@/constants';
 import { ILanguageOption, INamedLink } from '@/types';
-import { usePathname } from 'next/navigation';
+import { animationPreset } from '@/utils/anim';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { memo, useMemo } from 'react';
 import tw from 'tailwind-styled-components';
-import Button from './Button';
 
 import book from '../../../public/icons/book.svg';
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { animationPreset } from '@/utils/anim';
+import Button from './Button';
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
 export default memo(Navbar);
 
 const NavbarContainer = tw(motion.nav)`
-  2xl:px-[20vw] xl:px-lg lg:px-md px-0 pb-4 font-sans w-full fixed top-0 space-y-2 z-[100] bg-primary
+  2xl:px-[20vw] xl:px-lg lg:px-md px-0 pb-4 font-sans w-full fixed top-0 space-y-5 z-[100] bg-primary
 `;
 
 const TopSection = tw.div`

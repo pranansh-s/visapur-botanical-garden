@@ -48,3 +48,14 @@ export interface IAmenity {
   name: string;
   icon: string;
 }
+
+export interface IVideoLink {
+  src: string;
+}
+
+export interface IWideCarouselItem {
+  imageSrc: string;
+  title: string;
+  direction: string;
+  description: string;
+}

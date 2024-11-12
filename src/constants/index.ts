@@ -7,6 +7,8 @@ import {
   ILanguageOption,
   ILocation,
   INamedLink,
+  IVideoLink,
+  IWideCarouselItem,
 } from '@/types';
 
 export const navbarLinks: INamedLink[] = [
@@ -64,10 +66,10 @@ export const amenities: IAmenity[] = [
 
 export const disabledDates = [5, 10, 15, 21];
 
-export const shopPlayDineItems: ICarouselItem[] = [
-  { src: '/shop/shop-1.png' },
-  { src: '/shop/shop-2.png' },
-  { src: '/shop/shop-3.png' },
+export const shopPlayDineItems: IVideoLink[] = [
+  { src: '/shop/shop-1.mp4' },
+  { src: '/shop/shop-2.mp4' },
+  { src: '/shop/shop-3.mp4' },
 ];
 
 export const instagramPosts: ICarouselItem[] = [
@@ -196,4 +198,21 @@ export const locations: ILocation[] = [
   { name: 'Lorem ipsum di', left: 55.5, top: 83 },
   { name: 'Lorem ipsum di', left: 54, top: 86 },
   { name: 'Lorem ipsum di', left: 59.5, top: 87 },
+];
+
+export const wideCarouselItems: IWideCarouselItem[] = [
+  {
+    imageSrc: '/wide-carousel-1.png',
+    title: 'Rare and Exotic Plants',
+    direction: '',
+    description:
+      'Discover our extensive collection of rare and exotic plants from around the world.',
+  },
+  {
+    imageSrc: '/wide-carousel-1.png',
+    title: 'Botanical Wonders',
+    direction: '',
+    description:
+      'Explore the beauty and diversity of plants from different habitats and climates.',
+  },
 ];

@@ -1,9 +1,9 @@
 import { ILocation } from '@/types';
 import Image from 'next/image';
+import { memo } from 'react';
+import tw from 'tailwind-styled-components';
 
 import place from '../../../public/icons/place.svg';
-import tw from 'tailwind-styled-components';
-import { memo } from 'react';
 
 const Location = memo(({ left, top, name }: ILocation) => (
   <LocationContainer style={{ left: `${left}%`, top: `${top}%` }}>

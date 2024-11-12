@@ -1,11 +1,11 @@
-import Heading from '../common/Heading';
-import tw from 'tailwind-styled-components';
-import ImageCard from '../common/ImageCard';
 import { activities } from '@/constants';
 import Image from 'next/image';
+import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
 import tree1 from '../../../public/tree-1.svg';
+import Heading from '../common/Heading';
+import ImageCard from '../common/ImageCard';
 
 const Activities = (): React.ReactElement => {
   return (
@@ -35,11 +35,11 @@ const Activities = (): React.ReactElement => {
 export default Activities;
 
 const ActivitiesContainer = tw.div`
-  flex flex-col space-y-2 h-[900px] relative
+  flex flex-col space-y-2 md:h-[800px] sm:h-[500px] relative sm:pb-24 pb-6
 `;
 
 const CardContainer = tw.ul`
-  grid grid-rows-3 grid-cols-3 gap-8 h-[800px]
+  grid grid-rows-3 grid-cols-3 sm:gap-8 gap-3 h-full origin-top-left
 `;
 
 const BackgroundImage = tw(Image)`

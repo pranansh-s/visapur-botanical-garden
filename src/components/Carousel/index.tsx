@@ -1,16 +1,11 @@
 'use client';
 
-import React, {
-  forwardRef,
-  useEffect,
-  useRef,
-  HTMLAttributes,
-  useCallback,
-  useState,
-} from 'react';
 import { ICarouselItem } from '@/types';
+import React, { HTMLAttributes, useState } from 'react';
+import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
-import { cva } from 'class-variance-authority';
+
+import { NextArrow, PrevArrow } from './Arrows';
 
 export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   items: ICarouselItem[];
@@ -21,182 +16,110 @@ export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   showArrows?: boolean;
 }
 
-const carouselVariants = cva('', {
-  variants: {
-    variant: {
-      basic: '',
-      rotateScale: 'drop-shadow-xl',
-      instagram: 'px-0',
+const Carousel = ({
+  items,
+  className,
+  itemsVisible = 3,
+  autoplay = true,
+  interval = 4000,
+  showArrows = true,
+  variant = 'basic',
+  ...props
+}: CarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(
+    Math.floor(itemsVisible / 2)
+  );
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: itemsVisible,
+    slidesToScroll: 1,
+    autoplay: autoplay,
+    autoplaySpeed: interval,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    beforeChange: (_: number, newIndex: number) => {
+      setCurrentIndex((newIndex + Math.floor(itemsVisible / 2)) % items.length);
     },
-  },
-  defaultVariants: {
-    variant: 'basic',
-  },
-});
-
-const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
-  (
-    {
-      items,
-      className,
-      itemsVisible = 3,
-      autoplay = true,
-      interval = 4000,
-      showArrows = true,
-      variant = 'basic',
-      ...props
-    },
-    ref
-  ) => {
-    const [currentIndex, setCurrentIndex] = React.useState(0);
-    const carouselRef = useRef<HTMLDivElement>(null);
-    const [itemsToShow, setItemsToShow] = useState<number>(itemsVisible);
-    const itemWidth = 100 / itemsToShow;
-
-    useEffect(() => {
-      const updateItemsToShow = () => {
-        if (window.innerWidth >= 1024) {
-          setItemsToShow(itemsVisible);
-        } else if (window.innerWidth >= 768) {
-          if (variant !== 'instagram') setItemsToShow(itemsVisible - 1);
-        } else {
-          setItemsToShow(itemsVisible - 2);
-        }
-      };
-      updateItemsToShow();
-
-      window.addEventListener('resize', updateItemsToShow);
-      return () => {
-        window.removeEventListener('resize', updateItemsToShow);
-      };
-    }, [itemsVisible, variant]);
-
-    const nextSlide = useCallback(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % items.length);
-    }, [items.length]);
-
-    const prevSlide = useCallback(() => {
-      setCurrentIndex(
-        prevIndex => (prevIndex - 1 + items.length) % items.length
-      );
-    }, [items.length]);
-
-    useEffect(() => {
-      if (autoplay) {
-        const intervalId = setInterval(nextSlide, interval);
-        return () => clearInterval(intervalId);
-      }
-    }, [autoplay, interval, nextSlide]);
-
-    return (
-      <CarouselContainer
-        className={className}
-        ref={ref || carouselRef}
-        {...props}
-      >
-        <CarouselTrack
-          style={{
-            transform: `translateX(-${currentIndex * itemWidth}%)`,
-          }}
-        >
-          {items
-            .concat(items)
-            .map((item, index) =>
-              renderCarouselItem(
-                index,
-                currentIndex,
-                itemWidth,
-                itemsToShow,
-                variant,
-                item
-              )
-            )}
-        </CarouselTrack>
-
-        {showArrows && (
-          <>
-            <ArrowButton className="left-[3vw]" onClick={prevSlide}>
-              &lt;
-            </ArrowButton>
-            <ArrowButton className="right-[3vw]" onClick={nextSlide}>
-              &gt;
-            </ArrowButton>
-          </>
-        )}
-      </CarouselContainer>
-    );
-  }
-);
-
-const renderCarouselItem = (
-  index: number,
-  currentIndex: number,
-  itemWidth: number,
-  itemsToShow: number,
-  variant: any,
-  item: ICarouselItem
-) => {
-  const distanceFromCenter =
-    index - (currentIndex + Math.floor(itemsToShow / 2));
-  const scaleFactor = Math.max(0.5, 1 - Math.abs(distanceFromCenter) * 0.2);
-  const overlayOpacity = Math.min(0.8, Math.abs(distanceFromCenter) * 0.2);
+    responsive: [
+      {
+        breakpoint: 1366,
+        settings: {
+          slidesToShow: itemsVisible,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: Math.max(itemsVisible - 1, 1),
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: Math.max(
+            itemsVisible - 1.5,
+            variant === 'instagram' ? 3 : 1
+          ),
+        },
+      },
+    ],
+  };
 
   return (
-    <CarouselItem
-      key={index}
-      style={{
-        width: `${itemWidth}%`,
-        transform:
-          variant === 'rotateScale'
-            ? index === currentIndex + Math.floor(itemsToShow / 2)
-              ? 'scale(1.1)'
-              : 'rotate(-5deg)'
-            : variant === 'instagram'
-              ? `scale(${scaleFactor}) translate(${distanceFromCenter * -50}px, 0)`
-              : 'scale(1)',
-        position: 'relative',
-        zIndex: scaleFactor * 10,
-      }}
-      className={carouselVariants({ variant })}
-      variant={variant}
-    >
-      {variant === 'instagram' ? (
-        <IframeContainer>
-          <iframe
-            width="100%"
-            height="100%"
-            src={`https://www.instagram.com/p/${item.src}/embed`}
-            allow="encrypted-media"
-            sandbox="allow-scripts allow-same-origin allow-popups"
-            scrolling="no"
-          />
-          <Overlay style={{ opacity: overlayOpacity }} />
-        </IframeContainer>
-      ) : (
-        <>
-          <Image className="h-[500px] w-full" src={item.src} alt={item.title} />
-          <Title>{item.title}</Title>
-        </>
-      )}
-    </CarouselItem>
+    <CarouselContainer className={className} {...props}>
+      <Slider {...settings}>
+        {items.map((item, index) => {
+          const isCenterItem = index === currentIndex;
+          const distanceFromCenter = Math.min(
+            Math.abs(currentIndex - index),
+            items.length - Math.abs(currentIndex - index)
+          );
+          const scaleValue = Math.max(0.75, 1 - distanceFromCenter * 0.1);
+          return (
+            <CarouselItem
+              key={index}
+              className={`${variant === 'rotateScale' && !isCenterItem ? 'rotate-6 scale-75' : 'rotate-0 scale-100'} transition-transform duration-300 ease-out`}
+            >
+              {variant === 'instagram' ? (
+                <IframeContainer style={{ transform: `scale(${scaleValue})` }}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.instagram.com/p/${item.src}/embed`}
+                    allow="encrypted-media"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
+                    scrolling="no"
+                  />
+                  <Overlay />
+                </IframeContainer>
+              ) : (
+                <>
+                  <Image
+                    className="w-full h-full aspect-auto max-h-[400px]"
+                    src={item.src}
+                    alt={item.title}
+                  />
+                  {item.title && <Title>{item.title}</Title>}
+                </>
+              )}
+            </CarouselItem>
+          );
+        })}
+      </Slider>
+    </CarouselContainer>
   );
 };
 
-Carousel.displayName = 'Carousel';
 export default Carousel;
 
 const CarouselContainer = tw.div`
-  w-screen left-[calc(-50vw+50%)] relative overflow-hidden
+  max-w-[2000px] w-screen left-1/2 -translate-x-1/2 relative right-0
 `;
 
-const CarouselTrack = tw.div`
-  flex transition-transform duration-500
-`;
-
-const CarouselItem = tw.div<{ variant: string }>`
-  flex-none space-y-3 transition-all ease
-  ${props => props.variant === 'instagram' && `!px-0`}
-  lg:px-6 md:px-3 px-1
+const CarouselItem = tw.div`
+  flex-none space-y-3 transition-all ease sm:px-2 outline-none w-full
 `;
 
 const Image = tw.img`
@@ -207,14 +130,10 @@ const Title = tw.p`
   text-black text-center text-2xl font-sans
 `;
 
-const ArrowButton = tw.button`
-  absolute z-50 text-tertiary-100 text-4xl font-bold scale-y-[3] px-5 top-1/2 -translate-y-1/2
-`;
-
 const IframeContainer = tw.div`
   relative w-[300px] h-[350px] aspect-w-4 aspect-h-5
 `;
 
 const Overlay = tw.div`
-  absolute inset-0 bg-black transition-opacity duration-500 ease pointer-events-none
+  absolute inset-0 bg-black opacity-20 pointer-events-none
 `;

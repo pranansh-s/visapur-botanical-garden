@@ -6,7 +6,7 @@ type IHeading = {
 
 const Heading = ({ name }: IHeading) => {
   return (
-    <h1 className="font-sans font-bold text-5xl lg:text-6xl text-tertiary-300">
+    <h1 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-tertiary-300">
       {name}
       <hr className="my-2 sm:my-3 md:my-4 border-tertiary-200 opacity-45" />
     </h1>

@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
 import {
   format,
-  getDaysInMonth,
-  startOfMonth,
   getDay,
+  getDaysInMonth,
   isToday,
+  startOfMonth,
 } from 'date-fns';
+import React, { memo } from 'react';
 import tw from 'tailwind-styled-components';
 
 interface CalendarProps {
@@ -56,7 +56,7 @@ Calendar.displayName = 'Calendar';
 export default Calendar;
 
 const CalendarContainer = tw.div`
-  px-36 font-sans font-bold
+  sm:px-36 px-16 font-sans font-bold
 `;
 
 const Title = tw.h4`
