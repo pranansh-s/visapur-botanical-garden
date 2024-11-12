@@ -1,6 +1,7 @@
-import { IExpandGroup } from '@/types';
-import Image from 'next/image';
 import { memo } from 'react';
+import Image from 'next/image';
+
+import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
 
 import Button from '../common/Button';

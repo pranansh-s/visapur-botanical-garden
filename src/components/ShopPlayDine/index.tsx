@@ -1,6 +1,7 @@
+import { useRef, useState } from 'react';
+
 import { shopPlayDineItems } from '@/constants';
 import { IVideoLink } from '@/types';
-import { useRef, useState } from 'react';
 import tw from 'tailwind-styled-components';
 
 import Heading from '../common/Heading';

@@ -1,8 +1,10 @@
 'use client';
 
-import { animationPreset } from '@/utils/anim';
-import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+
+import { motion } from 'framer-motion';
+
+import { animationPreset } from '@/utils/anim';
 
 const SplashScreen: React.FC = () => {
   const pathname = usePathname();

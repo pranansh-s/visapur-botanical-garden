@@ -1,8 +1,9 @@
 'use client';
 
-import { disabledDates } from '@/constants';
-import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
+import Image, { StaticImageData } from 'next/image';
+
+import { disabledDates } from '@/constants';
 import tw from 'tailwind-styled-components';
 
 import honey from '../../../public/honey.svg';
@@ -10,6 +11,7 @@ import accessibility from '../../../public/icons/accesibility.svg';
 import amenities from '../../../public/icons/amenities.svg';
 import events from '../../../public/icons/events.svg';
 import timings from '../../../public/icons/timings.svg';
+
 import Button from '../common/Button';
 import Amenities from './Amenities';
 import Calendar from './Calendar';

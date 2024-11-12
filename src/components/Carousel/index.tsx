@@ -1,7 +1,8 @@
 'use client';
 
-import { ICarouselItem } from '@/types';
 import React, { HTMLAttributes, useState } from 'react';
+
+import { ICarouselItem } from '@/types';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 

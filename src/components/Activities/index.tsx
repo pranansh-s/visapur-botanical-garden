@@ -1,9 +1,11 @@
-import { activities } from '@/constants';
 import Image from 'next/image';
+
+import { activities } from '@/constants';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
 import tree1 from '../../../public/tree-1.svg';
+
 import Heading from '../common/Heading';
 import ImageCard from '../common/ImageCard';
 

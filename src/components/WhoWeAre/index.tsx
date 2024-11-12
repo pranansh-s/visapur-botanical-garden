@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import tw from 'tailwind-styled-components';
 
 import astronaut from '../../../public/astronaut.svg';
 import train from '../../../public/train.svg';
 import tree from '../../../public/tree.svg';
+
 import Heading from '../common/Heading';
 
 const WhoWeAre = (): React.ReactElement => {

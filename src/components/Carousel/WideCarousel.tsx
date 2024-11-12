@@ -1,14 +1,16 @@
 'use client';
 
-import { IWideCarouselItem } from '@/types';
+import { memo, useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { memo, useCallback } from 'react';
+
+import { IWideCarouselItem } from '@/types';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 
 import place from '../../../public/icons/white-place.svg';
 import tree2 from '../../../public/tree-2.svg';
+
 import Button from '../common/Button';
 import { NextArrow, PrevArrow } from './Arrows';
 

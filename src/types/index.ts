@@ -29,6 +29,9 @@ export interface IButterflyInfo {
 
 export interface ILocation {
   name: string;
+  value: string | number;
+  direction: boolean;
+  color?: string;
   left: number;
   top: number;
 }

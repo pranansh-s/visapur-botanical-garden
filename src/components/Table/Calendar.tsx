@@ -1,3 +1,5 @@
+import React, { memo } from 'react';
+
 import {
   format,
   getDay,
@@ -5,7 +7,6 @@ import {
   isToday,
   startOfMonth,
 } from 'date-fns';
-import React, { memo } from 'react';
 import tw from 'tailwind-styled-components';
 
 interface CalendarProps {

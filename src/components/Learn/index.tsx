@@ -1,8 +1,9 @@
 'use client';
 
+import React from 'react';
+
 import { learnCards } from '@/constants';
 import { IImageCard } from '@/types';
-import React from 'react';
 import tw from 'tailwind-styled-components';
 
 import Heading from '../common/Heading';

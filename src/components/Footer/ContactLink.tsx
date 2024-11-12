@@ -1,7 +1,8 @@
 'use client';
 
-import { INamedLink } from '@/types';
 import { memo } from 'react';
+
+import { INamedLink } from '@/types';
 import { SocialIcon } from 'react-social-icons';
 import tw from 'tailwind-styled-components';
 

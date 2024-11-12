@@ -1,5 +1,6 @@
+import { forwardRef, HTMLAttributes } from 'react';
 import Image from 'next/image';
-import { HTMLAttributes, forwardRef } from 'react';
+
 import tw from 'tailwind-styled-components';
 
 export interface ImageCardProps extends HTMLAttributes<HTMLLIElement> {

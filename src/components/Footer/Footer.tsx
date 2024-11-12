@@ -1,8 +1,9 @@
-import { careerLinks, importants, quickLinks, socialLinks } from '@/constants';
-import { IImportant, INamedLink } from '@/types';
+import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { memo } from 'react';
+
+import { careerLinks, importants, quickLinks, socialLinks } from '@/constants';
+import { IImportant, INamedLink } from '@/types';
 import tw from 'tailwind-styled-components';
 
 import tree from '../../../public/footer-tree.svg';
@@ -11,6 +12,7 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import mail from '../../../public/icons/mail.svg';
 import place from '../../../public/icons/place.svg';
+
 import ContactField from './ContactField';
 import ContactLink from './ContactLink';
 import ImportantCard from './ImportantCard';
@@ -118,11 +120,6 @@ const renderContactInfo = () => {
         type="mailto"
         value="prananshsingh@gmail.com"
       />
-      <ContactField
-        name="Direction"
-        icon={place}
-        value="https://maps.app.goo.gl/PevcTKxPUWTrHL39A"
-      />
     </ContactInfo>
   );
 };
@@ -175,5 +172,5 @@ const HowToReach = tw.div`
 `;
 
 const Important = tw.div`
-  col-span-2 row-span-2 flex flex-wrap h-max space-y-5
+  col-span-2 row-span-2 flex flex-wrap h-max space-y-5 items-start
 `;

@@ -1,19 +1,21 @@
 'use client';
 
-import { languageOptions, navbarLinks } from '@/constants';
-import { ILanguageOption, INamedLink } from '@/types';
-import { animationPreset } from '@/utils/anim';
-import { motion } from 'framer-motion';
+import { memo, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { memo, useMemo } from 'react';
+
+import { languageOptions, navbarLinks } from '@/constants';
+import { ILanguageOption, INamedLink } from '@/types';
+import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
 import book from '../../../public/icons/book.svg';
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
+
+import { animationPreset } from '@/utils/anim';
 import Button from './Button';
 
 const Navbar: React.FC = () => {

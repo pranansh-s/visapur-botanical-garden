@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import Link from 'next/link';
-import { memo } from 'react';
+
 import tw from 'tailwind-styled-components';
 
 type IContactFieldProps = {

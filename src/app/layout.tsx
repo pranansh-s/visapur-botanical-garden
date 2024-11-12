@@ -1,8 +1,9 @@
-import Footer from '@/components/Footer/Footer';
-import Navbar from '@/components/common/Navbar';
-import SplashScreen from '@/components/common/SpashScreen';
 import type { Metadata } from 'next';
 import { Braah_One, Merriweather, Merriweather_Sans } from 'next/font/google';
+
+import Navbar from '@/components/common/Navbar';
+import SplashScreen from '@/components/common/SpashScreen';
+import Footer from '@/components/Footer/Footer';
 
 import './globals.css';
 

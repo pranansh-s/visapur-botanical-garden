@@ -1,10 +1,11 @@
 'use client';
 
+import { memo, useState } from 'react';
+import Image from 'next/image';
+
 import { amenities } from '@/constants';
 import { IAmenity } from '@/types';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { memo, useState } from 'react';
 import tw from 'tailwind-styled-components';
 
 import { animationPreset } from '../../utils/anim';

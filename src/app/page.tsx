@@ -1,5 +1,13 @@
 'use client';
 
+import Image from 'next/image';
+
+import { wideCarouselItems } from '@/constants';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import tw from 'tailwind-styled-components';
+
+import hero from '../../public/hero.png';
+
 import Activities from '@/components/Activities';
 import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
 import WideCarousel from '@/components/Carousel/WideCarousel';
@@ -10,13 +18,8 @@ import Map from '@/components/Map';
 import ShopPlayDine from '@/components/ShopPlayDine';
 import Table from '@/components/Table';
 import WhoWeAre from '@/components/WhoWeAre';
-import { wideCarouselItems } from '@/constants';
-import { animationPreset } from '@/utils/anim';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import tw from 'tailwind-styled-components';
 
-import hero from '../../public/hero.png';
+import { animationPreset } from '@/utils/anim';
 
 export default function Home() {
   const { scrollY } = useScroll();

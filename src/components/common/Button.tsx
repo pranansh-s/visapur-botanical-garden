@@ -1,11 +1,13 @@
 'use client';
 
-import { cn } from '@/utils/cn';
-import { VariantProps, cva } from 'class-variance-authority';
+import React, { ButtonHTMLAttributes, forwardRef, useCallback } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { ButtonHTMLAttributes, forwardRef, useCallback } from 'react';
+
+import { cva, VariantProps } from 'class-variance-authority';
+
+import { cn } from '@/utils/cn';
 
 const buttonVariants = cva(
   `font-sans flex items-center text-lg text-center transition-all duration-200 font-bold`,

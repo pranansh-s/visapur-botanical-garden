@@ -1,13 +1,15 @@
 'use client';
 
-import { locations } from '@/constants';
-import { ILocation } from '@/types';
 import Image from 'next/image';
+
+import { ILocation } from '@/types';
 import Draggable from 'react-draggable';
 import tw from 'tailwind-styled-components';
 
 import drag from '../../../public/icons/drag.svg';
 import map from '../../../public/map.png';
+
+import { locations } from '@/constants/locations';
 import Heading from '../common/Heading';
 import Location from './Location';
 

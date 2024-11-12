@@ -1,8 +1,10 @@
-import { glimpsesItems } from '@/constants';
 import Image from 'next/image';
+
+import { glimpsesItems } from '@/constants';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
+
 import Carousel from '../Carousel';
 import Heading from '../common/Heading';
 

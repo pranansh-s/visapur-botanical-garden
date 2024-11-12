@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { memo } from 'react';
+import Image from 'next/image';
+
 import tw from 'tailwind-styled-components';
 
 import reach1 from '../../../public/reach/reach-1.svg';

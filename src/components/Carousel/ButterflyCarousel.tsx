@@ -1,13 +1,15 @@
 'use client';
 
-import { butteryflies } from '@/constants/butterflies';
-import { IButterflyInfo } from '@/types';
-import Image from 'next/image';
 import { memo, useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
+
+import { IButterflyInfo } from '@/types';
 import tw from 'tailwind-styled-components';
 
 import train1 from '../../../public/train-1.svg';
 import tree1 from '../../../public/tree-1.svg';
+
+import { butteryflies } from '@/constants/butterflies';
 
 const ButterflyCarousel: React.FC = memo(() => {
   const totalButterflies = butteryflies.length;

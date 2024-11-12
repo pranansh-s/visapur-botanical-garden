@@ -5,15 +5,24 @@
   "tabWidth": 2,
   "printWidth": 80,
   "arrowParens": "avoid",
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
   "importOrder": [
-    "^src/components/(.*)$",
-    "^src/constants/(.*)$",
-    "^src/types/(.*)$",
-    "^src/utils/(.*)$",
-    "^src/app/(.*)$",
-    "^[./]"
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^.*[.]png$|^.*[.]jpg$|^.*[.]jpeg$|^.*[.]gif$|^.*[.]svg$|^.*[.]webp$|^.*[.]json$|^.*[.]txt$|^.*[.]md$|^.*[.]eot$|^.*[.]ttf$|^.*[.]woff$|^.*[.]woff2$",
+    "",
+    "^@/components/(.*)$",
+    "",
+    "^@/constants/(.*)$",
+    "^@/utils/(.*)$",
+    "^@/types/(.*)$",
+    "^(?!.*[.]css$)[./].*$",
+    ".css$"
   ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "importOrderCaseSensitive": false
 }

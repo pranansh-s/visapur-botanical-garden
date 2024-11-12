@@ -182,24 +182,6 @@ export const learnCards: IImageCard[] = [
   { name: 'Internship & Fellowship', src: '/learn/learn-3.png' },
 ];
 
-export const locations: ILocation[] = [
-  { name: 'Lorem ipsum di', left: 16, top: 74 },
-  { name: 'Lorem ipsum di', left: 26, top: 75 },
-  { name: 'Lorem ipsum di', left: 24, top: 80 },
-  { name: 'Lorem ipsum di', left: 27, top: 84 },
-  { name: 'Lorem ipsum di', left: 34, top: 84 },
-  { name: 'Lorem ipsum di', left: 35, top: 76 },
-  { name: 'Lorem ipsum di', left: 39.5, top: 76 },
-  { name: 'Lorem ipsum di', left: 43, top: 74 },
-  { name: 'Lorem ipsum di', left: 50, top: 71 },
-  { name: 'Lorem ipsum di', left: 63, top: 74 },
-  { name: 'Lorem ipsum di', left: 70, top: 72 },
-  { name: 'Lorem ipsum di', left: 60, top: 81 },
-  { name: 'Lorem ipsum di', left: 55.5, top: 83 },
-  { name: 'Lorem ipsum di', left: 54, top: 86 },
-  { name: 'Lorem ipsum di', left: 59.5, top: 87 },
-];
-
 export const wideCarouselItems: IWideCarouselItem[] = [
   {
     imageSrc: '/wide-carousel-1.png',

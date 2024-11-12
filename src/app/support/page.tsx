@@ -1,16 +1,18 @@
 'use client';
 
-import ContactLink from '@/components/Footer/ContactLink';
-import ImageCard from '@/components/common/ImageCard';
+import Image from 'next/image';
+
 import { socialLinks, support } from '@/constants';
 import { IImageCard, INamedLink } from '@/types';
-import Image from 'next/image';
 import tw from 'tailwind-styled-components';
 
 import contact from '../../../public/icons/call.svg';
 import mail from '../../../public/icons/mail.svg';
 import place from '../../../public/icons/place.svg';
 import hero from '../../../public/support/support-hero.png';
+
+import ImageCard from '@/components/common/ImageCard';
+import ContactLink from '@/components/Footer/ContactLink';
 
 const Support: React.FC = () => {
   const renderGetInTouch = () => {
