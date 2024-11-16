@@ -68,7 +68,7 @@ const renderButtonIcon = (
       postIconNode={icon}
       iconSize={iconSize}
       onClick={() => setTablePage(currentTablePage)}
-      className={`${tablePage === currentTablePage ? 'opacity-100' : 'opacity-60'}`}
+      className={`${tablePage === currentTablePage ? 'opacity-100' : 'opacity-60'} sm:scale-100 scale-125`}
     />
   );
 };
@@ -76,7 +76,7 @@ const renderButtonIcon = (
 export default Table;
 
 const TableContainer = tw.div`
-  bg-tertiary-table rounded-xl pb-16 shadow-md overflow-clip scale-75 min-w-[700px] w-full
+  bg-tertiary-table rounded-xl pb-16 sm:!-my-16 !-my-48 shadow-md overflow-clip sm:scale-75 scale-[0.6] w-full sm:min-w-[800px] min-w-[600px]
 `;
 
 const ButtonContainer = tw.div`

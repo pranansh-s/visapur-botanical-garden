@@ -69,27 +69,27 @@ export default function Home() {
 }
 
 const PageContainer = tw.div`
-  xl:px-lg lg:px-md px-sm h-full space-y-16 max-w-[1536px] mx-auto
+  xl:px-lg lg:px-md px-sm h-full space-y-16 overflow-hidden mx-auto
 `;
 
 const HeroSection = tw.div`
-  flex flex-col items-center justify-center h-screen text-center
+  flex flex-col items-center justify-center h-screen 2xl:max-h-[700px] sm:max-h-[500px] max-h-[450px] mt-32 text-center relative
 `;
 
 const HeroSubtitle = tw(motion.h2)`
-  text-lg sm:text-2xl md:text-3xl lg:text-4xl font-serif text-secondary
+  text-lg sm:text-2xl md:text-3xl lg:text-4xl font-serif text-secondary pb-4 w-[70vw] mx-auto sm:font-normal font-semibold
 `;
 
 const HeroTitle = tw(motion.h1)`
-  text-4xl sm:text-5xl md:text-7xl lg:text-8xl uppercase font-sans text-tertiary-300 font-bold tracking-widest drop-shadow-hero
+  text-[7vw] sm:text-6xl md:text-7xl lg:text-8xl uppercase font-sans text-tertiary-300 font-bold tracking-widest drop-shadow-hero
 `;
 
 const HeroMainTitle = tw.p`
-  text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[1.2rem] sm:tracking-[3rem] md:tracking-[4.5rem] md:ml-[3.5rem] lg:ml-[5rem] lg:tracking-[6rem]
+  text-[12vw] sm:text-[6rem] md:text-8xl lg:text-9xl tracking-[1.2rem] sm:tracking-[3rem] md:tracking-[4.5rem] ml-[1rem] md:ml-[3.5rem] lg:ml-[5rem] lg:tracking-[6rem]
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute w-screen !min-w-[1650px] min-w-screen max-w-none top-[47%] z-[10]
+  absolute object-cover max-w-[1800px] sm:w-[1800px] w-[1300px] top-1/2 z-[10]
 `;
 
 const HeroContent = tw.div`

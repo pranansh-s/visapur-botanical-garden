@@ -30,9 +30,9 @@ ImageCard.displayName = 'ImageCard';
 export default ImageCard;
 
 const ImageCardContainer = tw.li`
-    rounded-md relative
+  rounded-md relative overflow-clip
 `;
 
 const NameText = tw.span`
-    bg-hotpink text-white absolute bottom-0 md:px-5 md:px-3 px-2 font-serif uppercase md:text-lg text-xs text-end rounded-md md:py-4 sm:py-3 py-2 w-full whitespace-nowrap
+  bg-hotpink text-white absolute bottom-0 md:px-5 md:px-3 px-2 font-serif uppercase md:text-lg text-xs text-end rounded-md md:py-4 sm:py-3 py-2 w-full
 `;

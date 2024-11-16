@@ -84,11 +84,10 @@ const Support: React.FC = () => {
         ))}
         <ContactCard>
           <span>Follow us for the latest updates</span>
-          <ul className="gap-2 flex flex-wrap justify-center">
-            {socialLinks.map(
-              (socialLink: INamedLink, idx: number) =>
-                idx !== 3 && <ContactLink key={idx} {...socialLink} />
-            )}
+          <ul className="gap-3 flex flex-wrap justify-center">
+            {socialLinks.map((socialLink: INamedLink, idx: number) => (
+              <ContactLink key={idx} {...socialLink} />
+            ))}
           </ul>
         </ContactCard>
       </Grid>
@@ -96,7 +95,7 @@ const Support: React.FC = () => {
   };
 
   return (
-    <div className="xl:px-lg lg:px-md px-sm mt-48 md:mt-64 max-w-[1536px] mx-auto">
+    <div className="xl:px-lg lg:px-md px-sm sm:mt-48 mt-28 max-w-[1536px] mx-auto">
       <Image src={hero} alt="" className="w-full" />
       {renderGetInTouch()}
       {renderCards()}
@@ -107,7 +106,7 @@ const Support: React.FC = () => {
 export default Support;
 
 const GetInTouchContainer = tw.div`
-  my-12 md:my-24 flex flex-col space-y-5 px-4 md:px-0
+  my-16 md:my-24 flex flex-col space-y-5
 `;
 
 const SupportHeading = tw.h2`
@@ -135,9 +134,9 @@ const ContactField = tw.div`
 `;
 
 const ContactCard = tw.div`
-  flex flex-col items-center justify-center space-y-3 font-serif text-lg text-black
+  flex flex-col items-center justify-center text-center space-y-3 font-serif text-lg text-black
 `;
 
 const Grid = tw.ul`
-  grid grid-rows-2 grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-3 lg:grid-cols-4
+  grid grid-rows-2 grid-cols-1 grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4
 `;

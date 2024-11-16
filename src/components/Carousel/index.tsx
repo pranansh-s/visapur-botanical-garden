@@ -120,7 +120,7 @@ const CarouselContainer = tw.div`
 `;
 
 const CarouselItem = tw.div`
-  flex-none space-y-3 transition-all ease sm:px-2 outline-none w-full
+  flex-none space-y-3 transition-all ease sm:px-2 px-1 outline-none w-full
 `;
 
 const Image = tw.img`

@@ -7,19 +7,15 @@ import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
 
-import buggy from '../../../public/Buggy.svg';
-import book from '../../../public/icons/book.svg';
 import offers from '../../../public/offers.png';
 import hero from '../../../public/plan-visit-hero.png';
-import map from '../../../public/plan-visit-map.svg';
 
-import Button from '@/components/common/Button';
 import Heading from '@/components/common/Heading';
 import ExpandGroup from '@/components/ExpandGroup';
+import AnimatedBuggy from '@/components/PlanYourVisit/AnimatedBuggy';
 
 const PlanYourVisit: React.FC = () => {
   const [activeGroup, setActiveGroup] = useState<number>(-1);
-
   const renderWelcomeSection = () => {
     return (
       <div>
@@ -60,33 +56,19 @@ const PlanYourVisit: React.FC = () => {
 
   const renderWhatWeOfferSection = () => {
     return (
-      <div className="h-[535vw]">
+      <div>
         <Heading name="What we offer" />
         <HeadingSubText>Main Attractions</HeadingSubText>
         <Image className="mt-12" src={offers} alt="" />
         <MapContainer>
-          <Image src={map} alt="" />
-          <div className="flex px-lg space-x-5 ml-24 h-36 whitespace-nowrap">
-            <Image className="w-48 h-48 -translate-y-10" src={buggy} alt="" />
-            <ThankYouText>Thank You</ThankYouText>
-          </div>
-          <div className="px-lg flex flex-col space-y-5 items-end">
-            <ThankYouBody>
-              Atal Botanical Garden is not just a place to visit, but a space to
-              learn, wonder, and connect with the natural world. We look forward
-              to welcoming everyone to this haven of knowledge and exploration!
-            </ThankYouBody>
-            <Button variant="base" iconSize={16} preIconNode={book}>
-              Buy Ticket
-            </Button>
-          </div>
+          <AnimatedBuggy />
         </MapContainer>
       </div>
     );
   };
 
   return (
-    <div className="px-lg mt-64 space-y-24">
+    <div className="xl:px-lg lg:px-md px-sm sm:mt-64 mt-32 space-y-24 overflow-hidden">
       <Image src={hero} alt="" />
       {renderWelcomeSection()}
       {renderWhatWeOfferSection()}
@@ -97,19 +79,19 @@ const PlanYourVisit: React.FC = () => {
 export default PlanYourVisit;
 
 const WelcomeBody = tw.p`
-    font-serif text-lg text-black mt-12
+    font-serif sm:text-lg text-base text-black sm:pt-8 pt-4
 `;
 
 const HeadingSubText = tw.span`
-    font-sans font-bold text-base text-secondary
+    font-sans font-bold sm:text-base text-sm text-secondary
 `;
 
 const BookingGroupsContainer = tw.ul`
-    flex flex-col my-24 px-24 space-y-5
+    flex flex-col my-24 md:px-24 sm:px-12 px-0 items-center sm:space-y-5 space-y-2
 `;
 
 const MapContainer = tw.div`
-    absolute left-0 -mt-36
+    flex flex-col mx-0 mt-10 relative
 `;
 
 const ThankYouText = tw.span`

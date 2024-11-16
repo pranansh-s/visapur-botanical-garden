@@ -28,7 +28,7 @@ HowToReach.displayName = 'HowToReach';
 export default HowToReach;
 
 const HowToReachContainer = tw.div`
-  sm:px-36 px-16 font-sans font-bold space-y-12
+  sm:px-36 px-14 font-sans font-bold space-y-12
 `;
 
 const Title = tw.h4`
@@ -36,5 +36,5 @@ const Title = tw.h4`
 `;
 
 const ReachPath = tw(Image)`
-  w-full
+  w-full sm:scale-100 scale-110
 `;

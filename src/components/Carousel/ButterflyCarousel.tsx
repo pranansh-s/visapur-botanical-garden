@@ -36,7 +36,7 @@ const ButterflyCarousel: React.FC = memo(() => {
             totalButterflies) -
         Math.PI / 2;
 
-      const x = radius * Math.cos(angle);
+      let x = radius * Math.cos(angle);
       const y = radius * 0.7 * Math.sin(angle);
 
       const distance = Math.min(
@@ -89,7 +89,7 @@ const ButterflyCarousel: React.FC = memo(() => {
         style={{ height: radius, boxShadow: '0 -8px 12px rgba(0, 0, 0, 0.1)' }}
       />
       <Controls>
-        <Arrow>
+        <Arrow className="sm:left-10 left-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
           <ArrowBackground onClick={() => updateCarousel('left')} />
           <ArrowText>
             <svg
@@ -104,17 +104,17 @@ const ButterflyCarousel: React.FC = memo(() => {
           </ArrowText>
         </Arrow>
         <ButterflyDescription>
-          <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-2xl">
+          <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-3xl">
             {butteryflies[currentButterflyIndex].text}
           </h3>
-          <span className="lg:text-lg sm:text-base text-sm">
+          <span className="lg:text-lg sm:text-sm">
             <i>({butteryflies[currentButterflyIndex].latinName})</i>
           </span>
-          <p className="lg:text-base sm:text-sm text-xs">
+          <p className="lg:text-base text-sm">
             {butteryflies[currentButterflyIndex].descrp}
           </p>
         </ButterflyDescription>
-        <Arrow>
+        <Arrow className="sm:right-10 right-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
           <ArrowBackground onClick={() => updateCarousel('right')} />
           <ArrowText>
             <svg
@@ -147,7 +147,7 @@ ButterflyCarousel.displayName = 'ButterflyCarousel';
 export default ButterflyCarousel;
 
 const CarouselContainer = tw.div`
-  flex items-center justify-center relative w-screen md:!mb-0 !mb-36 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm !mt-0
+  flex items-center justify-center relative w-screen md:!mb-0 sm:!mb-28 !mb-56 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm !mt-0
 `;
 
 const ShadowContainer = tw.div`
@@ -159,27 +159,27 @@ const ArrowBackground = tw.button`
 `;
 
 const Arrow = tw.div`
-  text-white z-[20] cursor-pointer relative
+  text-white z-[20] cursor-pointer sm:relative absolute
 `;
 
 const ArrowText = tw.span`
-  absolute md:text-3xl text-2xl inset-0 flex items-center justify-center pointer-events-none -translate-y-1
+  absolute inset-0 flex items-center justify-center pointer-events-none -translate-y-1
 `;
 
 const ButterflyDescription = tw.div`
-  flex flex-col items-center text-center font-serif space-y-3 text-tertiary-300 lg:w-[400px] w-[300px]
+  flex flex-col items-center text-center font-serif space-y-3 text-tertiary-300 md:w-[400px] sm:w-[450px] w-[80vw]
 `;
 
 const Controls = tw.div`
-  flex items-center sm:space-x-20 space-x-4 absolute xl:bottom-[16vh] lg:bottom-[8vh] md:bottom-[5vh] bottom-[-5vh] sm:h-[200px] h-[80px]
+  flex items-center sm:space-x-20 space-x-4 absolute xl:bottom-[16%] lg:bottom-[18%] md:bottom-[5%] sm:bottom-[-5%] top-[50%] h-[200px]
 `;
 
 const CardContainer = tw.div`
-  absolute flex justify-center items-center w-full bottom-0 z-10
+  absolute flex justify-center items-center w-full md:bottom-0 sm:bottom-6 bottom-3 z-10
 `;
 
 const Butterfly = tw(Image)`
-  text-black rounded-lg absolute transition-all ease-in-out duration-500 lg:w-64 sm:w-42 w-32
+  text-black rounded-lg absolute transition-all ease-in-out duration-500 w-[20vw] min-w-[60px] max-w-[175px]
 `;
 
 const BackgroundImage = tw(Image)`

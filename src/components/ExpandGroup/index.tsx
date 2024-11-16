@@ -25,22 +25,78 @@ const ExpandGroup = memo(
     return (
       <ExpandContainer
         selected={activeIndex === index}
-        onClick={() => setActive(index)}
+        onClick={() => setActive(pv => (pv === index ? -1 : index))}
         style={{ backgroundColor: color }}
       >
         <ExpandTitle>
           <span>{name}</span>
-          <span className="rotate-90">&#10095;</span>
+          <svg
+            fill="black"
+            height="16px"
+            viewBox="0 0 512 512"
+            className="-rotate-90"
+            width="16px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M213.7,256L213.7,256L213.7,256L380.9,81.9c4.2-4.3,4.1-11.4-0.2-15.8l-29.9-30.6c-4.3-4.4-11.3-4.5-15.5-0.2L131.1,247.9  c-2.2,2.2-3.2,5.2-3,8.1c-0.1,3,0.9,5.9,3,8.1l204.2,212.7c4.2,4.3,11.2,4.2,15.5-0.2l29.9-30.6c4.3-4.4,4.4-11.5,0.2-15.8  L213.7,256z" />
+          </svg>
         </ExpandTitle>
         <p className="font-serif text-base">{text}</p>
-        <ul className="flex flex-wrap">
-          {images.map((image: string, idx: number) => (
-            <li key={idx}>
-              <Image src={image} alt={`Image for ${name}`} />
-            </li>
-          ))}
+        <ul className="flex flex-wrap sm:gap-3 gap-1 -mx-20">
+          <StyledImage
+            src={images[0]}
+            height={300}
+            width={285}
+            className="lg:w-[39%] w-[38%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[1]}
+            height={300}
+            width={300}
+            className="w-[38.5%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[2]}
+            height={300}
+            width={200}
+            className="w-[20%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[3]}
+            height={300}
+            width={150}
+            className="w-[20%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[4]}
+            height={300}
+            width={215}
+            className="w-[30%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[5]}
+            height={300}
+            width={300}
+            className="w-[32%]"
+            alt={`Image for ${name}`}
+          />
+          <StyledImage
+            src={images[6]}
+            height={300}
+            width={110}
+            className="xl:w-[14.5%] w-[13%]"
+            alt={`Image for ${name}`}
+          />
         </ul>
-        <Button className="w-max px-8 ml-auto" variant="base">
+        <Button
+          className="w-max sm:px-8 sm:py-4 sm:text-lg text-base py-3 px-4 ml-auto"
+          variant="base"
+        >
           Book
         </Button>
       </ExpandContainer>
@@ -52,10 +108,14 @@ ExpandGroup.displayName = 'ExpandGroup';
 export default ExpandGroup;
 
 const ExpandContainer = tw.div<{ selected: boolean }>`
-    ${props => (props.selected ? 'h-92' : 'h-16')}
-    w-full flex flex-col space-y-12 text-lg py-5 px-16 rounded-md cursor-pointer overflow-hidden hover:opacity-75 transition-all duration-200
+  ${props => (props.selected ? 'h-92' : 'h-16')}
+  w-full flex flex-col space-y-12 max-w-[900px] text-lg py-5 md:px-16 sm:px-12 px-8 rounded-md cursor-pointer overflow-hidden hover:opacity-75 transition-all duration-300
 `;
 
 const ExpandTitle = tw.div`
-    flex justify-between font-sans font-bold
+  flex justify-between items-center font-sans font-bold
+`;
+
+const StyledImage = tw(Image)`
+  rounded-md aspect-auto flex-none h-auto object-cover w-full
 `;

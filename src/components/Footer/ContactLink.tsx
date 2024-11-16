@@ -9,7 +9,7 @@ import tw from 'tailwind-styled-components';
 const ContactLink = memo(({ href, name }: INamedLink) => {
   return (
     <ContactContainer onClick={() => window.open(href, '_blank')}>
-      <SocialIcon network={name} />
+      <SocialIcon className="scale-[0.8]" network={name} />
     </ContactContainer>
   );
 });

@@ -23,8 +23,8 @@ const config: Config = {
         },
       },
       spacing: {
-        lg: '200px',
-        md: '120px',
+        lg: '180px',
+        md: '100px',
         sm: '20px',
       },
       fontFamily: {

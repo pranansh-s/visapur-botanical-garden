@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { amenities } from '@/constants';
@@ -12,6 +12,13 @@ import { animationPreset } from '../../utils/anim';
 
 const Amenities: React.FC = memo(() => {
   const [page, setPage] = useState<number>(0);
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      const autoplay = setInterval(() => togglePage(), 6000);
+      return () => clearInterval(autoplay);
+    }
+  }, []);
 
   const togglePage = () => setPage(prevPage => (prevPage === 0 ? 1 : 0));
 

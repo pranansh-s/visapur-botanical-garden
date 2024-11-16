@@ -24,18 +24,18 @@ const WhoWeAre = (): React.ReactElement => {
         we offer a welcoming space for everyone to experience the wonders of
         nature.
         <Link href="/" passHref>
-          <ReadMore>Read more &gt;</ReadMore>
+          <ReadMore>Read more -&gt;</ReadMore>
         </Link>
       </Description>
       <BackgroundImage
         src={tree}
         alt="Tree"
-        className="h-[1200px] md:h-[600px] lg:h-[752px] sm:-right-lg -right-[18rem] sm:bottom-6 bottom-[80%]"
+        className="h-[1200px] md:h-[600px] lg:h-[752px] md:-right-lg -right-[42%] md:bottom-6 bottom-[100%]"
       />
       <BackgroundImage
         src={astronaut}
         alt="Astronaut"
-        className="w-[384px] lg:w-[512px] -right-0 bottom-0 sm:block hidden"
+        className="w-[324px] lg:w-[512px] -right-0 bottom-0 sm:block hidden"
       />
       <BackgroundImage
         src={train}
@@ -49,7 +49,7 @@ const WhoWeAre = (): React.ReactElement => {
 export default WhoWeAre;
 
 const Container = tw.div`
-  h-max !mt-[250px] sm:pb-96 flex flex-col justify-center relative
+  h-max sm:!mt-[450px] !mt-[400px] sm:pb-96 pb-36 flex flex-col justify-center relative
 `;
 
 const Description = tw.p`
@@ -57,7 +57,7 @@ const Description = tw.p`
 `;
 
 const ReadMore = tw.span`
-  block w-max mt-8 md:mt-12 lg:mt-16 text-tertiary-100 font-bold text-sm md:text-base
+  block w-max mt-8 md:mt-12 lg:mt-16 text-tertiary-100 font-bold text-sm md:text-base underline
 `;
 
 const BackgroundImage = tw(Image)`

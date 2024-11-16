@@ -449,12 +449,12 @@ const numberedLocations: ILocation[] = [
 ];
 
 export const locations: ILocation[] = [
+  ...numberedLocations,
   ...restLocations,
   ...washroomLocations,
   ...drinkingWater,
   ...parking,
   ...buggyStand,
-  ...numberedLocations,
   {
     name: 'Gift Shop',
     value: '/amenities/gift.svg',

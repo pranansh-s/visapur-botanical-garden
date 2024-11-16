@@ -3,7 +3,7 @@ import { Braah_One, Merriweather, Merriweather_Sans } from 'next/font/google';
 
 import Navbar from '@/components/common/Navbar';
 import SplashScreen from '@/components/common/SpashScreen';
-import Footer from '@/components/Footer/Footer';
+import Footer from '@/components/Footer';
 
 import './globals.css';
 
@@ -37,8 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      />
       <body
-        className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} bg-primary min-w-screen overflow-x-clip antialiased`}
+        className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} body-no-scroll bg-primary max-w-[1536px] mx-auto overflow-x-clip antialiased`}
       >
         <SplashScreen />
         <Navbar />

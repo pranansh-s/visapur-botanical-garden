@@ -19,7 +19,7 @@ const Learn = (): React.ReactElement => {
       </BodyText>
       <CardContainer>
         {learnCards.map((learnCard: IImageCard, idx: number) => (
-          <ImageCard className="sm:w-full w-[200px]" key={idx} {...learnCard} />
+          <ImageCard className="sm:w-full w-[140px]" key={idx} {...learnCard} />
         ))}
       </CardContainer>
     </LearnContainer>
@@ -37,5 +37,5 @@ const BodyText = tw.p`
 `;
 
 const CardContainer = tw.ul`
-  flex pt-12 sm:gap-5 gap-2 items-center justify-center sm:flex-nowrap flex-wrap
+  flex pt-12 md:gap-4 gap-2 items-center justify-center sm:flex-nowrap flex-wrap
 `;

@@ -33,11 +33,16 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
       (item: IWideCarouselItem, index: number) => {
         return (
           <CarouselItem key={index}>
-            <Image src={item.imageSrc} className="object-cover" fill alt="" />
+            <Image
+              src={item.imageSrc}
+              className="object-cover min-w-[300px]"
+              fill
+              alt=""
+            />
             <div className="absolute inset-0 md:bg-gradient-to-l bg-gradient-to-r from-black/40 to-transparent z-0" />
             <Tag onClick={() => router.replace(item.direction)}>
               <Image
-                className="mr-2 mb-1"
+                className="mr-2 mb-1 sm:w-6 w-5"
                 width={20}
                 height={20}
                 src={place.src}
@@ -91,11 +96,11 @@ WideCarousel.displayName = 'WideCarousel';
 export default WideCarousel;
 
 const PlanText = tw.p`
-  font-serif md:text-lg text-base flex-1 max-w-[700px] text-tertiary-200
+  font-serif md:text-lg sm:text-base text-sm flex-1 max-w-[700px] text-tertiary-200
 `;
 
 const PlanVisit = tw.div`
-  flex flex-row items-center justify-between !mb-24 !mt-16 relative md:space-x-8 space-x-4
+  flex sm:flex-row flex-col items-center justify-between sm:!mt-16 !mt-8 relative sm:gap-8 gap-5
 `;
 
 const CarouselContainer = tw.div`
@@ -103,11 +108,11 @@ const CarouselContainer = tw.div`
 `;
 
 const Tag = tw.span`
-  bg-tertiary-200 cursor-pointer text-white flex items-center font-serif font-bold tracking-[0.2rem] md:text-xl sm:text-lg text-base uppercase sm:py-3 py-2 sm:px-7 px-5 rounded-b-xl absolute top-0 z-[10] ml-12
+  bg-tertiary-200 cursor-pointer text-white flex items-center font-serif font-bold tracking-[0.2rem] md:text-xl md:text-lg sm:text-base text-sm uppercase md:py-3 sm:py-2 py-1 md:px-7 sm:px-5 px-3 rounded-b-xl absolute top-0 z-[10] sm:ml-[3%] ml-[1.5%]
 `;
 
 const Text = tw.div`
-  absolute sm:bottom-16 bottom-12 md:right-36 md:left-auto left-12 text-white font-serif w-[300px]
+  absolute sm:bottom-16 bottom-8 md:right-36 md:left-auto sm:left-12 left-8 text-white font-serif sm:w-[300px] w-[270px]
 `;
 
 const TextTitle = tw.span`
@@ -115,7 +120,7 @@ const TextTitle = tw.span`
 `;
 
 const CarouselItem = tw.div`
-  w-full relative sm:h-[500px] h-[400px]
+  w-full relative md:h-[500px] sm:h-[400px] h-[300px]
 `;
 
 const BackgroundImage = tw(Image)`

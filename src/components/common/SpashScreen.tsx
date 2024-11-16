@@ -8,13 +8,12 @@ import { animationPreset } from '@/utils/anim';
 
 const SplashScreen: React.FC = () => {
   const pathname = usePathname();
-
   if (pathname !== '/') return null;
 
   return (
     <motion.div
-      initial={{ y: '-10vh' }}
-      animate={{ y: '100%' }}
+      initial={{ y: '-10vh', opacity: 1 }}
+      animate={{ y: '100%', opacity: 0 }}
       transition={{ duration: 1.25, delay: 1.5, ease: animationPreset.ease }}
       style={{
         background:

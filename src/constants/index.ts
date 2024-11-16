@@ -87,37 +87,85 @@ export const bookingGroups: IExpandGroup[] = [
     name: 'Group',
     color: '#008080AA',
     text: "Gather your friends, family, or colleagues and immerse yourselves in a shared experience of nature! Whether it's a corporate retreat, a family reunion, or a gathering with friends, our botanical garden offers group tours and customized activities to make your visit unforgettable. Enjoy guided tours, workshops, and team-building activities designed to bring people together while learning about the wonders of the plant world.",
-    images: [],
+    images: [
+      '/expand/group/group.png',
+      '/expand/group/group-1.png',
+      '/expand/group/group-2.png',
+      '/expand/group/group-3.png',
+      '/expand/group/group-4.png',
+      '/expand/group/group-5.png',
+      '/expand/group/group-6.png',
+    ],
   },
   {
     name: 'Students',
     color: '#FF5E00AA',
     text: 'Our botanical garden is the perfect outdoor classroom for curious minds! Students can explore a living laboratory filled with vibrant ecosystems, rare species, and sustainable gardening practices. Our educational programs, guided by experts, align with school curriculum and provide a hands-on, interactive learning experience. From botany to environmental science, students will leave inspired and informed.',
-    images: [],
+    images: [
+      '/expand/students/students.png',
+      '/expand/students/students-1.png',
+      '/expand/students/students-2.png',
+      '/expand/students/students-3.png',
+      '/expand/students/students-4.png',
+      '/expand/students/students-5.png',
+      '/expand/students/students-6.png',
+    ],
   },
   {
     name: 'Senior Citizens',
     color: '#C6C1FFAA',
     text: "Embrace nature's tranquility at your own pace. Our garden offers peaceful walking paths, shaded benches, and serene settings perfect for reflection and relaxation. Seniors can take a walk into our medicinal and sit, relax inside our open butterfly gardens tours or simply enjoy the beauty of the gardens. It's a place to unwind, reconnect with nature, and find solace in the rhythms of the natural world.",
-    images: [],
+    images: [
+      '/expand/senior/senior.png',
+      '/expand/senior/senior-1.png',
+      '/expand/senior/senior-2.png',
+      '/expand/senior/senior-3.png',
+      '/expand/senior/senior-4.png',
+      '/expand/senior/senior-5.png',
+      '/expand/senior/senior-6.png',
+    ],
   },
   {
     name: 'Kids',
     color: '#FFC000AA',
     text: "Watch your little ones' imaginations come to life! The garden is a world of discovery, with plenty of fun and interactive experiences tailored just for kids. From scavenger hunts to hands-on workshops, our children's zone is designed to spark curiosity and a love for nature. Adventure awaits at every turn—perfect for young explorers eager to learn about plants and ecosystems.",
-    images: [],
+    images: [
+      '/expand/kids/kids.png',
+      '/expand/kids/kids-1.png',
+      '/expand/kids/kids-2.png',
+      '/expand/kids/kids-3.png',
+      '/expand/kids/kids-4.png',
+      '/expand/kids/kids-5.png',
+      '/expand/kids/kids-6.png',
+    ],
   },
   {
     name: 'Influencers',
     color: '#DEA193AA',
     text: "Looking for the perfect backdrop for your content? Our botanical garden offers breathtaking scenery, vibrant flowers, and picturesque landscapes that will take your social media feed to the next level. Whether you're shooting lifestyle content, promoting sustainability, or simply capturing beautiful moments, there's no shortage of inspiration here. Tag us in your photos for a chance to be featured!",
-    images: [],
+    images: [
+      '/expand/influencers/influencers.png',
+      '/expand/influencers/influencers-1.png',
+      '/expand/influencers/influencers-2.png',
+      '/expand/influencers/influencers-3.png',
+      '/expand/influencers/influencers-4.png',
+      '/expand/influencers/influencers-5.png',
+      '/expand/influencers/influencers-6.png',
+    ],
   },
   {
     name: 'Nature Enthusiasts',
     color: '#005E03AA',
     text: "Dive deeper into your love for nature. Our botanical garden is a haven for plant lovers, offering a rich variety of rare species, themed gardens, and seasonal blooms. Join specialized tours, attend horticulture workshops, or simply wander through our diverse landscapes. Whether you're an avid gardener or just enjoy being in the presence of greenery, there's something here to feed your passion for the natural world.",
-    images: [],
+    images: [
+      '/expand/nature/nature.png',
+      '/expand/nature/nature-1.png',
+      '/expand/nature/nature-2.png',
+      '/expand/nature/nature-3.png',
+      '/expand/nature/nature-4.png',
+      '/expand/nature/nature-5.png',
+      '/expand/nature/nature-6.png',
+    ],
   },
 ];
 
@@ -196,5 +244,51 @@ export const wideCarouselItems: IWideCarouselItem[] = [
     direction: '',
     description:
       'Explore the beauty and diversity of plants from different habitats and climates.',
+  },
+];
+
+export const burgerLinks: INamedLink[] = [
+  {
+    name: 'FAQ',
+    href: '/faq',
+  },
+  {
+    name: 'Edutainment Tour',
+    href: '/faq',
+  },
+  {
+    name: 'Blog',
+    href: '/faq',
+  },
+  {
+    name: 'Awards',
+    href: '/faq',
+  },
+];
+
+export const otherBurgerLinks: INamedLink[] = [
+  {
+    href: '/terms-and-conditions',
+    name: 'Terms & Conditions',
+  },
+  {
+    href: '/privacy-policy',
+    name: 'Privacy Policy',
+  },
+  {
+    href: '/sitemap',
+    name: 'Sitemap',
+  },
+  {
+    href: '/work-with-us',
+    name: 'Work with us',
+  },
+  {
+    href: '/collaborations',
+    name: 'Collaborations',
+  },
+  {
+    href: '/tenders',
+    name: 'Tenders',
   },
 ];

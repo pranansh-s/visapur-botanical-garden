@@ -37,11 +37,11 @@ const Activities = (): React.ReactElement => {
 export default Activities;
 
 const ActivitiesContainer = tw.div`
-  flex flex-col space-y-2 md:h-[800px] sm:h-[500px] relative sm:pb-24 pb-6
+  flex flex-col space-y-2 md:h-[850px] sm:h-[450px] relative sm:pb-24 pb-0 sm:!mb-0 !-mb-16
 `;
 
 const CardContainer = tw.ul`
-  grid grid-rows-3 grid-cols-3 sm:gap-8 gap-3 h-full origin-top-left
+  grid grid-rows-3 grid-cols-3 sm:gap-8 gap-3 h-full sm:scale-100 sm:w-full w-[112.5%] scale-[0.9] origin-top-left
 `;
 
 const BackgroundImage = tw(Image)`
