@@ -1,76 +1,120 @@
-'use client';
+import React, { memo, useEffect, useRef } from 'react';
 
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-
-import { motion, useInView, useScroll } from 'framer-motion';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import buggy from '../../../public/Buggy.svg';
 import map from '../../../public/visit-path.svg';
 
-const AnimatedBuggy = () => {
+import '@gsap/react';
+
+import Image from 'next/image';
+
+import { IVisitLocation } from '@/types';
+import { useScroll, useTransform } from 'framer-motion';
+
+import { VisitLocations } from '@/constants/visit';
+import Location from './Location';
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
+const stopPoints = [0.23, 0.28, 0.37, 0.42, 0.48, 0.55, 0.64, 0.74, 0.82, 0.9];
+const buggyPoints = [
+  0.102, 0.228, 0.3, 0.36, 0.438, 0.515, 0.618, 0.742, 0.87, 1.0,
+];
+
+const AnimatedBuggy: React.FC = memo(() => {
+  const imageRef = useRef<HTMLImageElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
+
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [pathLength, setPathLength] = useState(0);
-  const [position, setPosition] = useState({ x: 0 });
-
-  const isInView = useInView(containerRef, { margin: '0px 0px -500px 0px' });
   const { scrollYProgress } = useScroll({ target: containerRef });
+  const buggyPathProgress = useTransform(
+    scrollYProgress,
+    stopPoints,
+    buggyPoints
+  );
 
   useEffect(() => {
-    if (pathRef.current) {
-      setPathLength(pathRef.current.getTotalLength());
+    const path = pathRef.current;
+    const image = imageRef.current;
+    const container = containerRef.current;
+
+    ScrollTrigger.create({
+      scroller: container,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      snap: {
+        snapTo: stopPoints,
+        duration: 0.7,
+      },
+    });
+
+    if (path && image) {
+      const updateAnimation = (yProgress: number) => {
+        gsap.set(image, {
+          motionPath: {
+            path: path,
+            align: path,
+            alignOrigin: [0.5, 0.5],
+            start: 0,
+            end: yProgress,
+          },
+        });
+      };
+
+      const unsubscribe = buggyPathProgress.on('change', updateAnimation);
+      return () => unsubscribe();
     }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!isInView || !pathRef.current) return;
-
-      const lengthAtProgress = scrollYProgress.get() * pathLength;
-      const { x } = pathRef.current.getPointAtLength(lengthAtProgress);
-
-      setPosition({ x });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [pathLength, isInView, scrollYProgress]);
+  }, [buggyPathProgress]);
 
   return (
-    <div
-      ref={containerRef}
-      className="h-full overflow-hidden xl:-mx-lg lg:-mx-md -mx-sm"
-    >
-      <Image src={map} alt="Map background" className="w-full h-auto" />
-      <svg className="absolute left-1/2 top-0 -translate-x-1/2">
+    <div className="relative">
+      <Image
+        src={map}
+        alt=""
+        className="sm:scale-y-100 scale-y-[0.986] origin-top"
+      />
+      <svg
+        preserveAspectRatio="xMidYMid meet"
+        className="w-full h-full absolute top-0"
+        viewBox="0 0 1315 8253"
+      >
         <path
           ref={pathRef}
-          d="M1160.5 2.5C1055.16 25.3333 1109.5 74 1109.5 246.5C1109.5 419 922.499 467 860.996 486C799.493 505 283.999 534 237.499 929C203.999 1043.5 478.499 1252 352.999 1455C313.86 1518.31 226.997 1612 195.497 1945C163.997 2278 264.999 2383 352.999 2478C514.255 2652.08 850.976 2627.04 933.496 2858C1028 3122.5 1275 3049.5 1275 3231C1275 3458 1217.5 3555 1217.5 3662C1217.5 3815.31 1400.66 4081.62 1275 4167.5C876.999 4439.5 933.496 4581 933.496 4809.5C947.164 4958.67 868.499 5290 444.499 5422C20.499 5554 -20.501 5775 11.999 5869C21.9997 5980.83 168.903 6173.08 658.5 6238.5C1130 6301.5 1081.43 6835.21 987 6918.5C728.5 7146.5 480.744 7051.74 318 7259.5C200.5 7409.5 206.5 7677.5 226 7716.5"
-          fill="none"
+          d="M222.195 7714C243.695 7839 268.231 8016.77 505.195 8069.5C1037.7 8188 1270.7 8144.5 1255.2 8253M1157.2 0C1051.86 22.833 1106.2 71.5 1106.2 244C1106.2 416.5 919.194 464.5 857.691 483.5C796.188 502.5 280.694 531.5 234.194 926.5C200.694 1041 475.194 1249.5 349.694 1452.5C310.555 1515.81 223.692 1609.5 192.192 1942.5C160.692 2275.5 261.694 2380.5 349.694 2475.5C510.95 2649.58 847.671 2624.54 930.191 2855.5C1024.7 3120 1271.7 3047 1271.7 3228.5C1271.7 3455.5 1214.2 3552.5 1214.2 3659.5C1214.2 3812.81 1397.36 4079.12 1271.7 4165C873.694 4437 930.191 4578.5 930.191 4807C943.859 4956.17 865.194 5287.5 441.194 5419.5C17.1943 5551.5 -23.8057 5772.5 8.69427 5866.5C18.6953 5978.33 165.598 6170.58 655.195 6236C1126.7 6299 1078.13 6832.71 983.695 6916C725.195 7144 477.439 7049.24 314.695 7257C197.195 7407 203.195 7675 222.695 7714"
+          fill="transparent"
           stroke="transparent"
         />
       </svg>
-
-      {isInView && (
-        <motion.div
-          className="fixed left-16 -mx-20 top-32"
-          style={{
-            translateX: position.x,
-          }}
-        >
-          <Image
-            src={buggy}
-            className="lg:scale-100 md:scale-[0.8] scale-[0.6]"
-            alt="Moving buggy"
+      <Image
+        width={100}
+        height={100}
+        ref={imageRef}
+        src={buggy}
+        alt="Moving along path"
+        className="absolute xl:scale-[1.25] lg:scale-[1] scale-[0.85] z-10"
+      />
+      <ul className="absolute top-0 h-full w-full">
+        {VisitLocations.map((location: IVisitLocation, idx: number) => (
+          <Location
+            className="absolute -translate-y-1/2 origin-center"
+            style={{
+              top: `${imagePoints[idx] * 100}%`,
+              left: `${location.left}%`,
+            }}
+            key={idx}
+            {...location}
           />
-        </motion.div>
-      )}
+        ))}
+      </ul>
     </div>
   );
-};
+});
 
+AnimatedBuggy.displayName = 'AnimatedBuggy';
 export default AnimatedBuggy;

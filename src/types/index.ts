@@ -62,3 +62,11 @@ export interface IWideCarouselItem {
   direction: string;
   description: string;
 }
+
+export interface IVisitLocation {
+  imageSrc: string;
+  name: string;
+  bgColor: string;
+  text: string;
+  left: number;
+}

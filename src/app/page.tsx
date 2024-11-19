@@ -69,7 +69,7 @@ export default function Home() {
 }
 
 const PageContainer = tw.div`
-  xl:px-lg lg:px-md px-sm h-full space-y-16 overflow-hidden mx-auto
+  xl:px-lg lg:px-md px-sm h-full space-y-16 xl:overflow-x-visible overflow-x-hidden mx-auto
 `;
 
 const HeroSection = tw.div`

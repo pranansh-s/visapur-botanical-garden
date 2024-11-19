@@ -20,7 +20,7 @@ import ImportantCard from './ImportantCard';
 
 const Footer: React.FC = memo(() => {
   return (
-    <div className="xl:px-lg lg:px-md px-sm h-max relative overflow-hidden">
+    <div className="xl:px-lg lg:px-md px-sm h-max relative">
       <FooterContainer>
         <ConnectContainer>
           <span className="font-sans text-3xl font-bold uppercase">
