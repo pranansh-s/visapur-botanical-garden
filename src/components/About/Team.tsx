@@ -53,5 +53,5 @@ Team.displayName = 'Team';
 export default Team;
 
 const TeamContainer = tw.div`
-    flex flex-col mb-12 mt-3
+    flex flex-col
 `;

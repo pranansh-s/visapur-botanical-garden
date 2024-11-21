@@ -17,7 +17,7 @@ import Heading from '@/components/common/Heading';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="xl:px-lg lg:px-md px-sm md:mt-[28rem] sm:mt-[12rem] mt-[7rem]">
+    <div className="xl:px-lg lg:px-md px-sm md:mt-[28rem] sm:mt-[12rem] mt-[7rem] space-y-24">
       <div className="flex md:flex-row flex-col-reverse md:space-x-24 md:-mb-24">
         <OurStoryText>
           <Heading name="Our Story" />
@@ -61,7 +61,6 @@ const AboutUs: React.FC = () => {
         width="100%"
         height="550px"
         src="https://www.youtube.com/embed/8iGS0FKH_vk"
-        className="my-36"
       />
       <Team />
       <NewsUpdates />

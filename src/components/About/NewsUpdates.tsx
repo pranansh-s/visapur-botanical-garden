@@ -8,7 +8,7 @@ const NewsUpdates = (): React.ReactElement => {
   return (
     <NewsUpdatesContainer>
       <Heading name="News & Updates" />
-      <p className="text-tertiary-200 font-serif mb-24">
+      <p className="text-tertiary-200 font-serif !mb-24">
         Stay up-to-date with the latest happenings at our botanical garden! From
         seasonal blooms and new plant collections to upcoming events, workshops,
         and conservation initiatives, this is your go-to source for all garden
@@ -25,5 +25,5 @@ const NewsUpdates = (): React.ReactElement => {
 export default NewsUpdates;
 
 const NewsUpdatesContainer = tw.div`
-    
+    flex flex-col space-y-5
 `;

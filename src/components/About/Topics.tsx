@@ -78,7 +78,7 @@ const Topics = (): React.ReactElement => {
 export default Topics;
 
 const TopicsContainer = tw.div`
-    flex flex-col space-y-10 my-24
+    flex flex-col space-y-10
 `;
 
 const Title = tw.span`
