@@ -25,5 +25,5 @@ const NewsUpdates = (): React.ReactElement => {
 export default NewsUpdates;
 
 const NewsUpdatesContainer = tw.div`
-    flex flex-col space-y-5
+    flex flex-col space-y-3
 `;

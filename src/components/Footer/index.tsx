@@ -119,13 +119,13 @@ const renderContactInfo = () => {
         name="Contact No"
         icon={call}
         type="tel"
-        value="+919264901704"
+        value="+91 94050 66433"
       />
       <ContactField
         name="Mail Us"
         icon={mail}
         type="mailto"
-        value="prananshsingh@gmail.com"
+        value="atalbotanicalgarden@mahaforest.gov.in"
       />
     </ContactInfo>
   );

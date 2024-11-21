@@ -1,8 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { gsap } from 'gsap';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import buggy from '../../../public/Buggy.svg';
 import map from '../../../public/visit-path.svg';
@@ -39,7 +37,6 @@ const AnimatedBuggy: React.FC = memo(() => {
   useEffect(() => {
     const path = pathRef.current;
     const image = imageRef.current;
-    const container = containerRef.current;
 
     if (path && image) {
       const updateAnimation = (yProgress: number) => {

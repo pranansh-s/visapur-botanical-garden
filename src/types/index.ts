@@ -77,3 +77,7 @@ export interface IHiddenAnswer {
   textNode: React.ReactElement;
   text: string;
 }
+
+export interface IVideoImage extends IImageCard {
+  video: string;
+}

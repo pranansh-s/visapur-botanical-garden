@@ -1,10 +1,9 @@
 import { memo } from 'react';
 
-import { TeamMembers } from '@/constants';
+import { teamMembers } from '@/constants';
 import tw from 'tailwind-styled-components';
 
 import Carousel from '../Carousel';
-import { NextArrow } from '../Carousel/Arrows';
 import Heading from '../common/Heading';
 
 const Team: React.FC = memo(() => {
@@ -19,10 +18,10 @@ const Team: React.FC = memo(() => {
         creating a tranquil space for visitors to connect with nature
       </p>
       <Carousel
-        className="my-12"
+        className="!my-12"
         variant="team"
         itemsVisible={4}
-        items={TeamMembers}
+        items={teamMembers}
       />
       <div className="bg-tertiary-300 text-white font-sans p-24 h-[250px] flex items-center space-x-48 leading-[2rem] my-12 relative">
         <p className="text-2xl">
@@ -53,5 +52,5 @@ Team.displayName = 'Team';
 export default Team;
 
 const TeamContainer = tw.div`
-    flex flex-col
+    flex flex-col space-y-3
 `;

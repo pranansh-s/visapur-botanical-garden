@@ -86,7 +86,7 @@ const Carousel = ({
                 <IframeContainer>
                   <iframe
                     style={{
-                      filter: `blur(${Math.min(Math.abs(index - currentIndex), items.length - Math.abs(index - currentIndex)) * 5}px)`,
+                      filter: `blur(${Math.min(Math.abs(index - currentIndex), items.length - Math.abs(index - currentIndex)) * 2}px)`,
                     }}
                     width="100%"
                     height="100%"
@@ -98,13 +98,9 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-9' : 'h-full mx-12'} flex flex-col justify-center`}
+                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-9' : 'h-full mx-12'} flex flex-col justify-center rounded-2xl`}
                 >
-                  <Image
-                    className="w-full h-full aspect-auto max-h-[275px]"
-                    src={item.src}
-                    alt={item.title}
-                  />
+                  <Image src={item.src} alt={item.title} />
                   <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">
                     {item.title}
                   </p>
@@ -132,7 +128,7 @@ const CarouselItem = tw.div`
 `;
 
 const Image = tw.img`
-  object-cover rounded-xl
+  object-fill w-full h-full max-h-[290px]
 `;
 
 const IframeContainer = tw.div`

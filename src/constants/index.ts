@@ -6,6 +6,7 @@ import {
   IImportant,
   ILanguageOption,
   INamedLink,
+  IVideoImage,
   IVideoLink,
   IWideCarouselItem,
 } from '@/types';
@@ -26,12 +27,18 @@ export const languageOptions: ILanguageOption[] = [
 ];
 
 export const socialLinks: INamedLink[] = [
-  { name: 'instagram', href: 'https://google.com' },
-  { name: 'facebook', href: 'https://google.com' },
+  { name: 'instagram', href: 'https://www.instagram.com/mahaatalgarden/	' },
+  {
+    name: 'facebook',
+    href: 'https://www.facebook.com/profile.php?id=61562737185919',
+  },
   { name: 'linkedin', href: 'https://google.com' },
   { name: 'whatsapp', href: 'https://google.com' },
-  { name: 'youtube', href: 'https://google.com' },
-  { name: 'twitter', href: 'https://google.com' },
+  {
+    name: 'youtube',
+    href: 'https://www.youtube.com/@SABVbotanicalgarden-xb8hw',
+  },
+  { name: 'twitter', href: 'https://x.com/mahaatalgarden' },
 ];
 
 export const zoneItems: ICarouselItem[] = [
@@ -218,15 +225,32 @@ export const importants: IImportant[] = [
   { icon: '/icons/place.svg', text: "Let's meet", body: 'Direction' },
 ];
 
-export const activities: IImageCard[] = [
-  { name: 'Environmental Awareness', src: '/activities/activity-1.png' },
-  { name: 'Life time experiences', src: '/activities/activity-2.png' },
+export const activities: IVideoImage[] = [
+  {
+    name: 'Environmental Awareness',
+    src: '/activities/activity-1.png',
+    video: 'https://www.youtube.com/shorts/A0S_TgvHuXM',
+  },
+  {
+    name: 'Life time experiences',
+    src: '/activities/activity-2.png',
+    video: 'https://www.youtube.com/shorts/HS5ktxvKEKM',
+  },
   {
     name: 'Relaxing & meditative Activities',
     src: '/activities/activity-3.png',
+    video: 'https://www.youtube.com/shorts/X2-3ElZ5jgQ',
   },
-  { name: 'Community forum', src: '/activities/activity-4.png' },
-  { name: 'Nature Outing', src: '/activities/activity-5.png' },
+  {
+    name: 'Community forum',
+    src: '/activities/activity-4.png',
+    video: 'https://www.youtube.com/shorts/-zAoqZGn-dU',
+  },
+  {
+    name: 'Nature Outing',
+    src: '/activities/activity-5.png',
+    video: 'https://www.youtube.com/shorts/cDLDitMuxTU',
+  },
 ];
 
 export const learnCards: IImageCard[] = [
@@ -332,7 +356,7 @@ export const otherBurgerLinks: INamedLink[] = [
   },
 ];
 
-export const TeamMembers: ICarouselItem[] = [
+export const teamMembers: ICarouselItem[] = [
   {
     src: '/team/team-1.png',
     title: 'MAYANK FALWARIA',
@@ -344,14 +368,39 @@ export const TeamMembers: ICarouselItem[] = [
     subText: '(EDUCATION OFFICER)',
   },
   {
-    src: '/team/team-2.png',
-    title: 'DEEKSHA KALRA',
-    subText: '(PRODUCT DESIGNER)',
-  },
-  {
     src: '/team/team-3.png',
     title: 'PAVANKUMAR JONG',
     subText: '(Assistant Conservator of Forest)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'SWETHA BODDU',
+    subText: '(Deputy Conservator of Forests)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'PRAKASH SUDHAKAR ZADE',
+    subText: '(RANGE FOREST OFFICER)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'RAMSOCHA SURYABHAN YADAV',
+    subText: '(FORESTER)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'RAKESH RAJARAM SHIVANKAR',
+    subText: '(FOREST GUARD)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'MANIKA PANDURANG ANKADE',
+    subText: '(FOREST GUARD)',
+  },
+  {
+    src: '/team/team-2.png',
+    title: 'DEEKSHA KALRA',
+    subText: '(PRODUCT DESIGNER)',
   },
   {
     src: '/team/team-4.png',
@@ -362,5 +411,15 @@ export const TeamMembers: ICarouselItem[] = [
     src: '/team/team-5.png',
     title: 'ASMITA VERMA',
     subText: '(UI/ UX DESIGNER)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'SUKANYA DAS',
+    subText: '(PRODUCT DESIGNER)',
+  },
+  {
+    src: '/team/anon.png',
+    title: 'ADITYA LAKHMAPURE',
+    subText: '(GAME DESIGNER)',
   },
 ];

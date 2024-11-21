@@ -31,7 +31,7 @@ const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
           />
         </div>
         <p
-          className={`text-tertiary-300 ${state ? 'h-72 !mt-6' : 'h-0'} transition-all duration-300`}
+          className={`text-black/80 font-serif leading-8 ${state ? 'h-36' : 'h-0'} transition-all duration-300`}
         >
           {text}
         </p>

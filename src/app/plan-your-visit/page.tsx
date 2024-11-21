@@ -17,7 +17,7 @@ const PlanYourVisit: React.FC = () => {
   const [activeGroup, setActiveGroup] = useState<number>(-1);
   const renderWelcomeSection = () => {
     return (
-      <div>
+      <section id="welcome">
         <Heading name="Welcome to Atal Botanical Garden" />
         <HeadingSubText>A Wonderland for everyone!</HeadingSubText>
         <WelcomeBody>
@@ -49,7 +49,7 @@ const PlanYourVisit: React.FC = () => {
             />
           ))}
         </BookingGroupsContainer>
-      </div>
+      </section>
     );
   };
 

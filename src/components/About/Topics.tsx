@@ -30,7 +30,7 @@ const Topics = (): React.ReactElement => {
             </Highlight>
           </Title>
         }
-        text=""
+        text="Through our commitment to ethical sourcing, fair trade practices, and collaborative partnerships with artisans, we aim to create sustainable opportunities that enable communities to thrive economically while preserving their traditional crafts and cultural heritage. By supporting local artisans, we not only promote economic empowerment but also contribute to the preservation of centuries-old traditions, fostering pride and sustainability within communities."
       />
       <HiddenAnswer
         name="Vision"
@@ -46,7 +46,7 @@ const Topics = (): React.ReactElement => {
             </Highlight>
           </Title>
         }
-        text=""
+        text="We aspire to create a platform where individuals from all walks of life can come together to learn, inspire, and celebrate the rich story  of global heritage. Through immersive experiences, educational initiatives, and interactive events, we envision fostering a deeper connection to the natural world and diverse cultural traditions. By building bridges between people and cultures, we aim to create a world where the beauty of artisanal craftsmanship and cultural diversity is cherished, respected, and celebrated by all"
       />
       <HiddenAnswer
         name="Initiatives"
