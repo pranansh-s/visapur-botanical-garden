@@ -101,7 +101,7 @@ const Carousel = ({
                   className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-9' : 'h-full mx-12'} flex flex-col justify-center`}
                 >
                   <Image
-                    className="w-full h-full aspect-auto max-h-[300px]"
+                    className="w-full h-full aspect-auto max-h-[275px]"
                     src={item.src}
                     alt={item.title}
                   />
@@ -136,5 +136,5 @@ const Image = tw.img`
 `;
 
 const IframeContainer = tw.div`
-  relative xl:w-[300px] md:w-[235px] w-[170px] h-[230px] md:h-[300px] xl:h-[350px]
+  relative xl:w-[250px] md:w-[235px] w-[170px] h-[230px] md:h-[300px] xl:h-[350px]
 `;

@@ -24,7 +24,7 @@ const WhoWeAre = (): React.ReactElement => {
         we offer a welcoming space for everyone to experience the wonders of
         nature.
         <Link href="/about" passHref>
-          <ReadMore>Read more -&gt;</ReadMore>
+          <ReadMore>Read more &gt;</ReadMore>
         </Link>
       </Description>
       <BackgroundImage

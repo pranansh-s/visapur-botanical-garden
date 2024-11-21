@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 
 import { shopPlayDineItems } from '@/constants';
 import { IVideoLink } from '@/types';
@@ -12,7 +13,14 @@ const ShopPlayDine = (): React.ReactElement => {
       <Heading name="Shop, Play & Dine" />
       <CardContainer>
         {shopPlayDineItems.map((item: IVideoLink, idx: number) => (
-          <VideoPlayer key={idx} src={item.src} />
+          <Image
+            width={450}
+            height={300}
+            className="rounded-xl"
+            src={item.src}
+            key={idx}
+            alt=""
+          />
         ))}
       </CardContainer>
     </ShopContainer>
@@ -74,7 +82,7 @@ const ShopContainer = tw.div`
 `;
 
 const VideoWrapper = tw.div`
-  relative sm:max-w-[400px] w-full
+  relative w-full
 `;
 
 const VideoItem = tw.video`

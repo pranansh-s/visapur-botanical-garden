@@ -12,10 +12,10 @@ import {
 
 export const navbarLinks: INamedLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'Shop', href: '/shop' },
+  { name: 'Shop', href: 'https://botanicool.in/' },
   { name: 'About', href: '/about' },
   { name: 'Plan Your Visit', href: '/plan-your-visit' },
-  { name: 'Things to Offer', href: '/things-to-offer' },
+  { name: 'Things to Offer', href: '/plan-your-visit#things-to-offer' },
   { name: 'Support', href: '/support' },
   { name: 'Experience', href: '/experience' },
 ];
@@ -35,16 +35,22 @@ export const socialLinks: INamedLink[] = [
 ];
 
 export const zoneItems: ICarouselItem[] = [
-  { src: '/about/about-1.png', title: 'The Recreation Zone' },
-  { src: '/about/about-1.png', title: 'The Zone 1' },
-  { src: '/about/about-1.png', title: 'The Recreation 2' },
-  { src: '/about/about-1.png', title: 'The Recreation 3' },
+  { src: '/about/about-1.jpg', title: 'Evolution Park' },
+  { src: '/about/about-2.jpg', title: 'Picture Spot' },
+  { src: '/about/about-3.jpg', title: 'Taxidermy Museum' },
+  { src: '/about/about-4.jpg', title: 'Recreation Zone' },
 ];
 
 export const glimpsesItems: ICarouselItem[] = [
-  { src: '/glimpses/glimpses-1.png' },
-  { src: '/glimpses/glimpses-2.png' },
-  { src: '/glimpses/glimpses-3.png' },
+  { src: '/glimpses/glimpses-1.JPG' },
+  { src: '/glimpses/glimpses-2.JPG' },
+  { src: '/glimpses/glimpses-3.JPG' },
+  { src: '/glimpses/glimpses-4.JPG' },
+  { src: '/glimpses/glimpses-5.JPG' },
+  { src: '/glimpses/glimpses-6.JPG' },
+  { src: '/glimpses/glimpses-7.JPG' },
+  { src: '/glimpses/glimpses-8.JPG' },
+  { src: '/glimpses/glimpses-9.JPG' },
 ];
 
 export const amenities: IAmenity[] = [
@@ -66,9 +72,9 @@ export const amenities: IAmenity[] = [
 export const disabledDates = [5, 10, 15, 21];
 
 export const shopPlayDineItems: IVideoLink[] = [
-  { src: '/shop/shop-1.mp4' },
-  { src: '/shop/shop-2.mp4' },
-  { src: '/shop/shop-3.mp4' },
+  { src: '/shop/shop-1.png' },
+  { src: '/shop/shop-2.png' },
+  { src: '/shop/shop-3.png' },
 ];
 
 export const instagramPosts: ICarouselItem[] = [
@@ -189,7 +195,7 @@ export const quickLinks: INamedLink[] = [
   { name: 'FAQs', href: '/' },
   { name: 'Edutainment Tour', href: '/' },
   { name: 'Privacy Policy', href: '/' },
-  { name: 'Shop', href: '/' },
+  { name: 'Shop', href: 'https://botanicool.in/' },
   { name: 'Sitemap', href: '/' },
   { name: 'Galleries', href: '/' },
   { name: 'Contact', href: '/' },
@@ -231,18 +237,52 @@ export const learnCards: IImageCard[] = [
 
 export const wideCarouselItems: IWideCarouselItem[] = [
   {
-    imageSrc: '/wide-carousel-1.png',
-    title: 'Rare and Exotic Plants',
+    imageSrc: '/wide-carousel/wide-carousel-1.jpeg',
+    title: 'Experience the Magic of Butterfly',
     direction: '',
-    description:
-      'Discover our extensive collection of rare and exotic plants from around the world.',
+    description: 'Spot a kaleidoscope of butterfly varieties in vibrant hues!',
   },
   {
-    imageSrc: '/wide-carousel-1.png',
-    title: 'Botanical Wonders',
+    imageSrc: '/wide-carousel/wide-carousel-2.jpg',
+    title: 'Diverse Flower Varieties',
     direction: '',
     description:
-      'Explore the beauty and diversity of plants from different habitats and climates.',
+      'Explore our stunning collection of rare and exotic flowers from around the globe.',
+  },
+  {
+    imageSrc: '/wide-carousel/wide-carousel-3.jpg',
+    title: 'Discover Fruits and Veggies',
+    direction: '',
+    description:
+      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
+  },
+  {
+    imageSrc: '/wide-carousel/wide-carousel-4.jpg',
+    title: 'Discover the Desert',
+    direction: '',
+    description:
+      'From towering giants to tiny wonders, explore the diverse world of cacti!',
+  },
+  {
+    imageSrc: '/wide-carousel/wide-carousel-5.jpg',
+    title: 'Explore Aquarium',
+    direction: '',
+    description:
+      'Embark on an underwater adventure and explore the vibrant world of the aquarium',
+  },
+  {
+    imageSrc: '/wide-carousel/wide-carousel-6.jpg',
+    title: 'Rich History of Chandrapur',
+    direction: '',
+    description:
+      'Unlock the rich history of Chandrapur and explore its cultural heritage and ancient landmarks',
+  },
+  {
+    imageSrc: '/wide-carousel/wide-carousel-7.jpg',
+    title: 'Discover Fruits and Veggies',
+    direction: '',
+    description:
+      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
   },
 ];
 
@@ -299,27 +339,27 @@ export const TeamMembers: ICarouselItem[] = [
     subText: '(DIGITAL MARKETER/ SOCIAL MEDIA MANAGER)',
   },
   {
-    src: '/team/team-2.png',
+    src: '/team/team-6.png',
     title: 'Bhairavi Bopardikar',
     subText: '(EDUCATION OFFICER)',
   },
   {
-    src: '/team/team-3.png',
+    src: '/team/team-2.png',
     title: 'DEEKSHA KALRA',
     subText: '(PRODUCT DESIGNER)',
   },
   {
-    src: '/team/team-4.png',
+    src: '/team/team-3.png',
     title: 'PAVANKUMAR JONG',
     subText: '(Assistant Conservator of Forest)',
   },
   {
-    src: '/team/team-5.png',
+    src: '/team/team-4.png',
     title: 'PRATEEK KUSHWAHA',
     subText: '(DESIGN MANAGER)',
   },
   {
-    src: '/team/team-6.png',
+    src: '/team/team-5.png',
     title: 'ASMITA VERMA',
     subText: '(UI/ UX DESIGNER)',
   },

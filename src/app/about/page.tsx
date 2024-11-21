@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { zoneItems } from '@/constants';
@@ -9,27 +8,14 @@ import tw from 'tailwind-styled-components';
 import tree from '../../../public/footer-tree.svg';
 import minister from '../../../public/minister.png';
 
+import FAQs from '@/components/About/FAQs';
+import NewsUpdates from '@/components/About/NewsUpdates';
+import Team from '@/components/About/Team';
+import Topics from '@/components/About/Topics';
 import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
-import FAQs from '@/components/PlanVisit/FAQs';
-import Team from '@/components/PlanVisit/Team';
-import Topics from '@/components/PlanVisit/Topics';
-import { VideoPlayer } from '@/components/ShopPlayDine';
 
 const AboutUs: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
   return (
     <div className="xl:px-lg lg:px-md px-sm md:mt-[28rem] sm:mt-[12rem] mt-[7rem]">
       <div className="flex md:flex-row flex-col-reverse md:space-x-24 md:-mb-24">
@@ -71,9 +57,14 @@ const AboutUs: React.FC = () => {
       </div>
       <Carousel variant="rotateScale" showArrows={false} items={zoneItems} />
       <Topics />
-      {/* <VideoPlayer src={}/> */}
+      <iframe
+        width="100%"
+        height="550px"
+        src="https://www.youtube.com/embed/8iGS0FKH_vk"
+        className="my-36"
+      />
       <Team />
-      <Heading name="News & Updates" />
+      <NewsUpdates />
       <FAQs />
     </div>
   );
@@ -83,9 +74,6 @@ export default AboutUs;
 
 const MinisterInfo = tw.div`
     text-center flex flex-col md:-translate-y-1/3 space-y-5 font-serif font-bold text-secondary
-`;
-
-const Video = tw.video`
 `;
 
 const OurStoryText = tw.p`

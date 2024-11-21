@@ -73,7 +73,7 @@ const DayHeader = tw.span`
 `;
 
 const DayContainer = tw.div<{ $disabled: boolean; $current: boolean }>`
-  h-16 w-16 text-3xl font-black flex items-center justify-center mr-auto rounded-full
+  h-16 w-16 text-xl font-black flex justify-center mr-auto rounded-full
   ${({ $disabled }) => ($disabled ? 'text-gray-500' : 'text-black')}
   ${({ $current }) => $current && 'text-tertiary-200 outline'}
 `;

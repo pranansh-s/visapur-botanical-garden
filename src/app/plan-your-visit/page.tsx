@@ -7,7 +7,6 @@ import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
 
-import offers from '../../../public/offers.png';
 import hero from '../../../public/plan-visit-hero.png';
 
 import Heading from '@/components/common/Heading';
@@ -56,20 +55,28 @@ const PlanYourVisit: React.FC = () => {
 
   const renderWhatWeOfferSection = () => {
     return (
-      <div>
+      <section id="things-to-offer">
         <Heading name="What we offer" />
         <HeadingSubText>Main Attractions</HeadingSubText>
-        <Image className="mt-12" src={offers} alt="" />
+        <iframe
+          width="100%"
+          height="550px"
+          src="https://youtube.com/embed/2jNh2S2LGiI?si=wJZclo6J7g67-ktO"
+        />
         <MapContainer>
           <AnimatedBuggy />
         </MapContainer>
-      </div>
+      </section>
     );
   };
 
   return (
     <div className="xl:px-lg lg:px-md px-sm sm:mt-64 mt-32 space-y-24 overflow-hidden">
-      <Image src={hero} alt="" />
+      <iframe
+        width="100%"
+        height="550px"
+        src="https://youtube.com/embed/n1dZ6Kv2Lho?si=sxIRXliMxkI4FlXb"
+      />
       {renderWelcomeSection()}
       {renderWhatWeOfferSection()}
     </div>

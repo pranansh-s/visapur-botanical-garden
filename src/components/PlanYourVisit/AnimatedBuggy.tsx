@@ -17,8 +17,6 @@ import { useScroll, useTransform } from 'framer-motion';
 import { VisitLocations } from '@/constants/visit';
 import Location from './Location';
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-
 const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
 const stopPoints = [0.23, 0.28, 0.37, 0.42, 0.48, 0.55, 0.64, 0.74, 0.82, 0.9];
 const buggyPoints = [
@@ -42,17 +40,6 @@ const AnimatedBuggy: React.FC = memo(() => {
     const path = pathRef.current;
     const image = imageRef.current;
     const container = containerRef.current;
-
-    ScrollTrigger.create({
-      scroller: container,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      snap: {
-        snapTo: stopPoints,
-        duration: 0.7,
-      },
-    });
 
     if (path && image) {
       const updateAnimation = (yProgress: number) => {
@@ -102,7 +89,7 @@ const AnimatedBuggy: React.FC = memo(() => {
       <ul className="absolute top-0 h-full w-full">
         {VisitLocations.map((location: IVisitLocation, idx: number) => (
           <Location
-            className="absolute -translate-y-1/2 origin-center"
+            className="absolute -translate-y-1/2 origin-center w-full"
             style={{
               top: `${imagePoints[idx] * 100}%`,
               left: `${location.left}%`,
