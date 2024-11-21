@@ -80,16 +80,13 @@ const Carousel = ({
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-[1.2]'} transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>
                   <iframe
-                    style={{
-                      filter: `blur(${Math.min(Math.abs(index - currentIndex), items.length - Math.abs(index - currentIndex)) * 2}px)`,
-                    }}
                     width="100%"
-                    height="100%"
+                    height="400px"
                     src={`https://www.instagram.com/p/${item.src}/embed`}
                     allow="encrypted-media"
                     sandbox="allow-scripts allow-same-origin allow-popups"
@@ -98,7 +95,7 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-9' : 'h-full mx-12'} flex flex-col justify-center rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-center rounded-2xl`}
                 >
                   <Image src={item.src} alt={item.title} />
                   <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">

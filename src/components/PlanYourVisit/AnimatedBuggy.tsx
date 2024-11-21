@@ -1,25 +1,28 @@
 import React, { memo, useEffect, useRef } from 'react';
 
-import { gsap } from 'gsap';
-
-import buggy from '../../../public/Buggy.svg';
-import map from '../../../public/visit-path.svg';
-
 import '@gsap/react';
 
 import Image from 'next/image';
 
 import { IVisitLocation } from '@/types';
 import { useScroll, useTransform } from 'framer-motion';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import buggy from '../../../public/Buggy.svg';
+import map from '../../../public/visit-path.svg';
 
 import { VisitLocations } from '@/constants/visit';
 import Location from './Location';
 
 const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
-const stopPoints = [0.23, 0.28, 0.37, 0.42, 0.48, 0.55, 0.64, 0.74, 0.82, 0.9];
+const stopPoints = [-0.1, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97];
 const buggyPoints = [
-  0.102, 0.228, 0.3, 0.36, 0.438, 0.515, 0.618, 0.742, 0.87, 1.0,
+  -0.06, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
 ];
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const AnimatedBuggy: React.FC = memo(() => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -37,6 +40,19 @@ const AnimatedBuggy: React.FC = memo(() => {
   useEffect(() => {
     const path = pathRef.current;
     const image = imageRef.current;
+    const container = containerRef.current;
+
+    ScrollTrigger.create({
+      trigger: container,
+      scroller: window,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      snap: {
+        snapTo: stopPoints,
+        duration: 0.3,
+      },
+    });
 
     if (path && image) {
       const updateAnimation = (yProgress: number) => {
@@ -57,12 +73,8 @@ const AnimatedBuggy: React.FC = memo(() => {
   }, [buggyPathProgress]);
 
   return (
-    <div className="relative">
-      <Image
-        src={map}
-        alt=""
-        className="sm:scale-y-100 scale-y-[0.986] origin-top"
-      />
+    <div ref={containerRef} className="relative h-full">
+      <Image src={map} alt="" />
       <svg
         preserveAspectRatio="xMidYMid meet"
         className="w-full h-full absolute top-0"

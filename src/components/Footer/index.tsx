@@ -139,7 +139,7 @@ const RightsReserved = tw.p`
 `;
 
 const FooterContainer = tw.div`
-  flex text-secondary lg:space-x-28 md:space-x-8 sm:space-x-5 h-max mt-48 max-h-[500px]
+  flex text-secondary lg:space-x-16 md:space-x-8 sm:space-x-5 h-max mt-48 max-h-[500px]
 `;
 
 const ConnectContainer = tw.div`
