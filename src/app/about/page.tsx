@@ -1,3 +1,6 @@
+'use client';
+
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { zoneItems } from '@/constants';
@@ -8,13 +11,30 @@ import minister from '../../../public/minister.png';
 
 import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
+import FAQs from '@/components/PlanVisit/FAQs';
+import Team from '@/components/PlanVisit/Team';
+import Topics from '@/components/PlanVisit/Topics';
+import { VideoPlayer } from '@/components/ShopPlayDine';
 
 const AboutUs: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
   return (
-    <div className="px-lg mt-96">
-      <Heading name="Our Story" />
-      <div className="flex space-x-24">
+    <div className="xl:px-lg lg:px-md px-sm md:mt-[28rem] sm:mt-[12rem] mt-[7rem]">
+      <div className="flex md:flex-row flex-col-reverse md:space-x-24 md:-mb-24">
         <OurStoryText>
+          <Heading name="Our Story" />
           Discover the transformative tale of the{' '}
           <b>Shraddhey Shree Atal Bihari Vajpayee Botanical Garden</b>, a
           visionary initiative by the{' '}
@@ -34,11 +54,15 @@ const AboutUs: React.FC = () => {
         </OurStoryText>
         <MinisterInfo>
           <Image
-            className="absolute -z-10 -top-12 -right-full"
+            className="absolute -z-10 top-0 md:block hidden -right-[10rem] aspect-square h-[40rem]"
             src={tree}
             alt=""
           />
-          <Image className="h-[60vh] w-full" src={minister} alt="" />
+          <Image
+            className="w-[20rem] md:w-[35rem] mx-auto aspect-[9/12]"
+            src={minister}
+            alt=""
+          />
           <span>
             Shri. Sudhir Mungantiwar <br />
             (Forest Minister)
@@ -46,6 +70,11 @@ const AboutUs: React.FC = () => {
         </MinisterInfo>
       </div>
       <Carousel variant="rotateScale" showArrows={false} items={zoneItems} />
+      <Topics />
+      {/* <VideoPlayer src={}/> */}
+      <Team />
+      <Heading name="News & Updates" />
+      <FAQs />
     </div>
   );
 };
@@ -53,9 +82,12 @@ const AboutUs: React.FC = () => {
 export default AboutUs;
 
 const MinisterInfo = tw.div`
-    text-center flex flex-col -translate-y-1/3 space-y-5 font-serif font-bold text-secondary
+    text-center flex flex-col md:-translate-y-1/3 space-y-5 font-serif font-bold text-secondary
+`;
+
+const Video = tw.video`
 `;
 
 const OurStoryText = tw.p`
-    font-serif text-tertiary-200 w-2/3 leading-[2rem]
+    font-serif text-tertiary-200 md:w-2/3 w-full leading-[2rem] md:-mt-20 mt-10
 `;

@@ -27,12 +27,7 @@ const Map = (): React.ReactElement => {
     <Container>
       <Heading name="Map" />
       <MapContainer>
-        <TransformWrapper
-          disabled={onMoving}
-          minScale={1}
-          maxScale={2}
-          panning={{ wheelPanning: true }}
-        >
+        <TransformWrapper disabled={onMoving} minScale={1} maxScale={2}>
           <TransformComponent>
             <Draggable
               bounds={{

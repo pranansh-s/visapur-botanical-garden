@@ -1,6 +1,6 @@
 'use client';
 
-import React, { HTMLAttributes, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useMemo, useState } from 'react';
 
 import { ICarouselItem } from '@/types';
 import Slider from 'react-slick';
@@ -13,7 +13,7 @@ export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   itemsVisible?: number;
   autoplay?: boolean;
   interval?: number;
-  variant?: 'basic' | 'rotateScale' | 'instagram';
+  variant?: 'basic' | 'rotateScale' | 'instagram' | 'team';
   showArrows?: boolean;
 }
 
@@ -27,10 +27,6 @@ const Carousel = ({
   variant = 'basic',
   ...props
 }: CarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(
-    Math.floor(itemsVisible / 2)
-  );
-
   const settings = {
     dots: false,
     infinite: true,
@@ -40,9 +36,6 @@ const Carousel = ({
     autoplaySpeed: interval,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (_: number, newIndex: number) => {
-      setCurrentIndex((newIndex + Math.floor(itemsVisible / 2)) % items.length);
-    },
     responsive: [
       {
         breakpoint: 1366,
@@ -53,39 +46,48 @@ const Carousel = ({
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: Math.max(itemsVisible - 1, 1),
+          slidesToShow: variant === 'rotateScale' ? 1 : itemsVisible - 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: Math.max(
-            itemsVisible - 1.5,
-            variant === 'instagram' ? 3 : 1
-          ),
+          slidesToShow: variant === 'rotateScale' ? 1 : itemsVisible - 2,
         },
       },
     ],
+    beforeChange: (_: number, newIndex: number) => {
+      setCurrentIndex(
+        (newIndex + Math.floor(settings.slidesToShow / 2)) % items.length
+      );
+    },
   };
+
+  const [currentIndex, setCurrentIndex] = useState<number>(
+    Math.floor(settings.slidesToShow / 2)
+  );
+
+  useEffect(() => {
+    console.log(settings.slidesToShow);
+    setCurrentIndex(Math.floor(settings.slidesToShow / 2));
+  }, [settings.slidesToShow]);
 
   return (
     <CarouselContainer className={className} {...props}>
       <Slider {...settings}>
         {items.map((item, index) => {
           const isCenterItem = index === currentIndex;
-          const distanceFromCenter = Math.min(
-            Math.abs(currentIndex - index),
-            items.length - Math.abs(currentIndex - index)
-          );
-          const scaleValue = Math.max(0.75, 1 - distanceFromCenter * 0.1);
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? 'rotate-6 scale-75' : 'rotate-0 scale-100'} transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-[1.2]'} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
-                <IframeContainer style={{ transform: `scale(${scaleValue})` }}>
+                <IframeContainer>
                   <iframe
+                    style={{
+                      filter: `blur(${Math.min(Math.abs(index - currentIndex), items.length - Math.abs(index - currentIndex)) * 5}px)`,
+                    }}
                     width="100%"
                     height="100%"
                     src={`https://www.instagram.com/p/${item.src}/embed`}
@@ -93,17 +95,23 @@ const Carousel = ({
                     sandbox="allow-scripts allow-same-origin allow-popups"
                     scrolling="no"
                   />
-                  <Overlay />
                 </IframeContainer>
               ) : (
-                <>
+                <div
+                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-9' : 'h-full mx-12'} flex flex-col justify-center`}
+                >
                   <Image
-                    className="w-full h-full aspect-auto max-h-[400px]"
+                    className="w-full h-full aspect-auto max-h-[300px]"
                     src={item.src}
                     alt={item.title}
                   />
-                  {item.title && <Title>{item.title}</Title>}
-                </>
+                  <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">
+                    {item.title}
+                  </p>
+                  <span className="font-bold md:text-sm text-xs text-tertiary-300 font-serif uppercase text-center">
+                    {item.subText}
+                  </span>
+                </div>
               )}
             </CarouselItem>
           );
@@ -127,14 +135,6 @@ const Image = tw.img`
   object-cover rounded-xl
 `;
 
-const Title = tw.p`
-  text-black text-center text-2xl font-sans
-`;
-
 const IframeContainer = tw.div`
-  relative w-[300px] h-[350px] aspect-w-4 aspect-h-5
-`;
-
-const Overlay = tw.div`
-  absolute inset-0 bg-black opacity-20 pointer-events-none
+  relative xl:w-[300px] md:w-[235px] w-[170px] h-[230px] md:h-[300px] xl:h-[350px]
 `;

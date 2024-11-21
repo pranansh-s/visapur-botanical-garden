@@ -21,7 +21,7 @@ const ShopPlayDine = (): React.ReactElement => {
 
 export default ShopPlayDine;
 
-const VideoPlayer = ({ src }: { src: string }) => {
+export const VideoPlayer = ({ src }: { src: string }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 

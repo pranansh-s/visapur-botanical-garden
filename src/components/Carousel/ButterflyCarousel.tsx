@@ -72,7 +72,7 @@ const ButterflyCarousel: React.FC = memo(() => {
   };
 
   return (
-    <CarouselContainer>
+    <CarouselContainer style={{ height: radius }}>
       <CardContainer>
         {butteryflies.map((butterfly: IButterflyInfo, index: number) => (
           <Butterfly
@@ -85,9 +85,6 @@ const ButterflyCarousel: React.FC = memo(() => {
           />
         ))}
       </CardContainer>
-      <ShadowContainer
-        style={{ height: radius, boxShadow: '0 -8px 12px rgba(0, 0, 0, 0.1)' }}
-      />
       <Controls>
         <Arrow className="sm:left-10 left-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
           <ArrowBackground onClick={() => updateCarousel('left')} />

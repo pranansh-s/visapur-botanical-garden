@@ -82,14 +82,6 @@ const Support: React.FC = () => {
         {support.map((supportCard: IImageCard, idx: number) => (
           <ImageCard key={idx} {...supportCard} />
         ))}
-        <ContactCard>
-          <span>Follow us for the latest updates</span>
-          <ul className="gap-3 flex flex-wrap justify-center">
-            {socialLinks.map((socialLink: INamedLink, idx: number) => (
-              <ContactLink key={idx} {...socialLink} />
-            ))}
-          </ul>
-        </ContactCard>
       </Grid>
     );
   };

@@ -48,7 +48,7 @@ const Footer: React.FC = memo(() => {
         {renderFooterLinks()}
       </FooterContainer>
       <Image
-        className="absolute -left-16 -z-10 bottom-0 h-[600px]"
+        className="absolute left-0 -translate-x-1/3 -z-10 bottom-0 h-[600px]"
         src={tree}
         alt=""
       />
@@ -135,7 +135,7 @@ Footer.displayName = 'Footer';
 export default Footer;
 
 const RightsReserved = tw.p`
-  w-screen absolute left-0 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-sm bg-hotpink text-center
+  w-screen max-w-[1536px] absolute left-0 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-sm bg-hotpink text-center
 `;
 
 const FooterContainer = tw.div`
@@ -179,7 +179,7 @@ const QuickLinks = tw.ul`
 `;
 
 const HowToReach = tw.div`
-  col-start-2 row-start-2 row-end-3 md:block hidden
+  col-start-2 row-start-2 row-end-3 md:block hidden overflow-hidden -mb-20
 `;
 
 const Important = tw.div`

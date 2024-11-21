@@ -23,7 +23,7 @@ const WhoWeAre = (): React.ReactElement => {
         Whether you&apos;re here to learn, relax, or simply enjoy the scenery,
         we offer a welcoming space for everyone to experience the wonders of
         nature.
-        <Link href="/" passHref>
+        <Link href="/about" passHref>
           <ReadMore>Read more -&gt;</ReadMore>
         </Link>
       </Description>
@@ -57,7 +57,7 @@ const Description = tw.p`
 `;
 
 const ReadMore = tw.span`
-  block w-max mt-8 md:mt-12 lg:mt-16 text-tertiary-100 font-bold text-sm md:text-base underline
+  block w-max mt-8 md:mt-12 lg:mt-16 text-tertiary-100 font-bold text-sm md:text-base
 `;
 
 const BackgroundImage = tw(Image)`

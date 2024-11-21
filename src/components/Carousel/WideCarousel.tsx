@@ -40,17 +40,6 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               alt=""
             />
             <div className="absolute inset-0 md:bg-gradient-to-l bg-gradient-to-r from-black/40 to-transparent z-0" />
-            <Tag onClick={() => router.replace(item.direction)}>
-              <Image
-                className="mr-2 mb-1 sm:w-6 w-5"
-                width={20}
-                height={20}
-                src={place.src}
-                alt=""
-              />
-              GET GARDEN&apos;S DIRECTION
-            </Tag>
-
             <Text>
               <TextTitle>{item.title}</TextTitle>
               <p>&quot;{item.description}&quot;</p>
@@ -58,7 +47,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
           </CarouselItem>
         );
       },
-      [router]
+      []
     );
 
     return (
@@ -67,6 +56,16 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
           <Slider {...settings}>
             {items.map((item, index) => renderCarouselItem(item, index))}
           </Slider>
+          <Tag>
+            <Image
+              className="mr-2 mb-1 sm:w-6 w-5"
+              width={20}
+              height={20}
+              src={place.src}
+              alt=""
+            />
+            GET GARDEN&apos;S DIRECTION
+          </Tag>
         </CarouselContainer>
         <PlanVisit>
           <PlanText>

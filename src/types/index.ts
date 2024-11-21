@@ -13,6 +13,7 @@ export interface IExpandGroup {
 export interface ICarouselItem {
   src: string;
   title?: string;
+  subText?: string;
 }
 
 export interface ILanguageOption {
@@ -69,4 +70,10 @@ export interface IVisitLocation {
   bgColor: string;
   text: string;
   left: number;
+}
+
+export interface IHiddenAnswer {
+  name?: string;
+  textNode: React.ReactElement;
+  text: string;
 }

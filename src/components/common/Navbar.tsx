@@ -180,11 +180,11 @@ const renderDesktopNavbar = (activeIndex: number) => {
 export default memo(Navbar);
 
 const NavbarContainer = tw(motion.nav)`
-  xl:px-lg lg:px-md sm:px-sm sm:pb-6 pb-3 font-sans fixed top-0 space-y-2 -mb-2 z-[100] bg-primary w-screen max-w-[1536px]
+  xl:px-lg lg:px-md sm:px-sm sm:pb-6 pb-3 font-sans fixed top-0 space-y-2 -mb-2 z-[100] bg-primary w-screen left-0 flex flex-col items-center
 `;
 
 const TopSection = tw.div`
-  flex items-center text-sm md:py-1 py-3 px-2 relative
+  flex items-center text-sm md:py-1 py-3 px-2 relative max-w-[1536px] w-full
 `;
 
 const LogoSection = tw.div`
@@ -212,11 +212,11 @@ const LanguageSelect = tw.select`
 `;
 
 const HorizontalDivider = tw.hr`
-  border-tertiary-200 opacity-40
+  border-tertiary-200 opacity-40 max-w-[1536px] w-full
 `;
 
 const NavLinkContainer = tw.ul`
-  flex justify-between items-center px-6 text-xl whitespace-nowrap
+  flex justify-between items-center px-6 text-xl whitespace-nowrap max-w-[1536px] w-full
 `;
 
 const BurgerNavLinkContainer = tw(NavLinkContainer)`

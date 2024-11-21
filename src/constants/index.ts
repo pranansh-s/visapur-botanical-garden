@@ -5,7 +5,6 @@ import {
   IImageCard,
   IImportant,
   ILanguageOption,
-  ILocation,
   INamedLink,
   IVideoLink,
   IWideCarouselItem,
@@ -73,13 +72,13 @@ export const shopPlayDineItems: IVideoLink[] = [
 ];
 
 export const instagramPosts: ICarouselItem[] = [
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
-  { src: 'DB81k_0S9AV' },
+  { src: 'C8e02O1tPcE' },
+  { src: 'DClIq_vTfKC' },
+  { src: 'DCidBCFiJ4U' },
+  { src: 'DCf41xaT002' },
+  { src: 'DCdQJJsid8B' },
+  { src: 'DCQrV5xtuL7' },
+  { src: 'DCN_L3Nul_w' },
 ];
 
 export const bookingGroups: IExpandGroup[] = [
@@ -290,5 +289,38 @@ export const otherBurgerLinks: INamedLink[] = [
   {
     href: '/tenders',
     name: 'Tenders',
+  },
+];
+
+export const TeamMembers: ICarouselItem[] = [
+  {
+    src: '/team/team-1.png',
+    title: 'MAYANK FALWARIA',
+    subText: '(DIGITAL MARKETER/ SOCIAL MEDIA MANAGER)',
+  },
+  {
+    src: '/team/team-2.png',
+    title: 'Bhairavi Bopardikar',
+    subText: '(EDUCATION OFFICER)',
+  },
+  {
+    src: '/team/team-3.png',
+    title: 'DEEKSHA KALRA',
+    subText: '(PRODUCT DESIGNER)',
+  },
+  {
+    src: '/team/team-4.png',
+    title: 'PAVANKUMAR JONG',
+    subText: '(Assistant Conservator of Forest)',
+  },
+  {
+    src: '/team/team-5.png',
+    title: 'PRATEEK KUSHWAHA',
+    subText: '(DESIGN MANAGER)',
+  },
+  {
+    src: '/team/team-6.png',
+    title: 'ASMITA VERMA',
+    subText: '(UI/ UX DESIGNER)',
   },
 ];

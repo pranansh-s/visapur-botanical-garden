@@ -24,7 +24,7 @@ ImportantCard.displayName = 'ImportantCard';
 export default ImportantCard;
 
 const CardContainer = tw.div`
-  flex flex-col items-center text-secondary text-center font-serif mx-auto space-y-3 lg:flex-1 2xl:-translate-x-1/3 -translate-x-0 mt-5
+  flex flex-col items-center text-secondary text-center font-serif mr-auto space-y-3 lg:flex-1 2xl:-translate-x-1/3 -translate-x-0 mt-5
 `;
 
 const BodyText = tw.span`
