@@ -112,11 +112,11 @@ export default ExpandGroup;
 
 const ExpandContainer = tw.div<{ selected: boolean }>`
   ${props => (props.selected ? 'h-92' : 'h-16')}
-  w-full flex flex-col space-y-12 max-w-[900px] text-lg rounded-md cursor-pointer overflow-hidden
+  w-full flex flex-col space-y-12 max-w-[900px] text-lg rounded-md overflow-hidden
 `;
 
 const ExpandTitle = tw.div`
-  flex justify-between items-center font-sans font-bold hover:opacity-50 opacity-100 transition-all duration-200 py-5 md:px-16 sm:px-12 px-8
+  flex justify-between items-center font-sans font-bold hover:opacity-50 opacity-100 transition-all cursor-pointer duration-200 py-5 md:px-16 sm:px-12 px-8
 `;
 
 const StyledImage = tw(Image)`

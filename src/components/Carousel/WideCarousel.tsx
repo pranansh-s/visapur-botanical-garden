@@ -2,7 +2,7 @@
 
 import { memo, useCallback } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { IWideCarouselItem } from '@/types';
 import Slider from 'react-slick';
@@ -16,6 +16,7 @@ import { NextArrow, PrevArrow } from './Arrows';
 
 const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
   ({ items }) => {
+    const pathname = usePathname();
     const router = useRouter();
 
     const settings = {
@@ -56,7 +57,11 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
           <Slider {...settings}>
             {items.map((item, index) => renderCarouselItem(item, index))}
           </Slider>
-          <Tag>
+          <Tag
+            onClick={() =>
+              router.push('https://maps.app.goo.gl/7QCo8wcPfDzdnRBT9')
+            }
+          >
             <Image
               className="mr-2 mb-1 sm:w-6 w-5"
               width={20}
@@ -67,25 +72,27 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
             GET GARDEN&apos;S DIRECTION
           </Tag>
         </CarouselContainer>
-        <PlanVisit>
-          <PlanText>
-            We offer a serene escape into the world of flora and fauna. Discover
-            rare plants, enjoy scenic walks, and immerse yourself in the beauty
-            of nature.
-          </PlanText>
-          <Button
-            className="sm:px-12 md:px-7 md:py-5 px-4 py-4 md:text-base text-sm h-max shadow-md"
-            onClick={() => router.push('/plan-your-visit')}
-            variant="base"
-          >
-            Plan Your Visit
-          </Button>
-          <BackgroundImage
-            src={tree2}
-            alt="tree-2"
-            className="w-[180px] md:w-[200px] lg:w-[270px] xl:-top-52 -top-32 !mx-0 xl:-left-lg lg:-left-md -left-sm sm:block hidden"
-          />
-        </PlanVisit>
+        {pathname === '/' && (
+          <PlanVisit>
+            <PlanText>
+              We offer a serene escape into the world of flora and fauna.
+              Discover rare plants, enjoy scenic walks, and immerse yourself in
+              the beauty of nature.
+            </PlanText>
+            <Button
+              className="sm:px-12 md:px-7 md:py-5 px-4 py-4 md:text-base text-sm h-max shadow-md"
+              onClick={() => router.push('/plan-your-visit')}
+              variant="base"
+            >
+              Plan Your Visit
+            </Button>
+            <BackgroundImage
+              src={tree2}
+              alt="tree-2"
+              className="w-[180px] md:w-[200px] lg:w-[270px] xl:-top-52 -top-32 !mx-0 xl:-left-lg lg:-left-md -left-sm sm:block hidden"
+            />
+          </PlanVisit>
+        )}
       </>
     );
   }

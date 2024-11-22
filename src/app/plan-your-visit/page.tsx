@@ -1,13 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
-
-import hero from '../../../public/plan-visit-hero.png';
 
 import Heading from '@/components/common/Heading';
 import ExpandGroup from '@/components/ExpandGroup';

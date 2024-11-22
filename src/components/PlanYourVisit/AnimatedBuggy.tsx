@@ -8,7 +8,6 @@ import { IVisitLocation } from '@/types';
 import { useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import buggy from '../../../public/Buggy.svg';
 import map from '../../../public/visit-path.svg';
@@ -18,13 +17,13 @@ import Location from './Location';
 
 const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
 const stopPoints = [
-  -0.1, -0.04, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97,
+  0.0005, 0.005, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97,
 ];
 const buggyPoints = [
-  -0.1, 0.06, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
+  0.11, 0.15, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
 ];
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin);
 
 const AnimatedBuggy: React.FC = memo(() => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -42,19 +41,6 @@ const AnimatedBuggy: React.FC = memo(() => {
   useEffect(() => {
     const path = pathRef.current;
     const image = imageRef.current;
-    const container = containerRef.current;
-
-    ScrollTrigger.create({
-      trigger: container,
-      scroller: window,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      snap: {
-        snapTo: stopPoints,
-        duration: 0.3,
-      },
-    });
 
     if (path && image) {
       const updateAnimation = (yProgress: number) => {
