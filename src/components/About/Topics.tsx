@@ -15,7 +15,7 @@ const Topics = (): React.ReactElement => {
         textNode={<Title>Discover the story behind Visapur Garden.</Title>}
         onClick={() => toggleIndex(0)}
         state={0 === activeIndex}
-        text="jfshfkjh kfhdsdfg kgdfjhgdfkjhjdhk   gfhjfdkghkduf ghdfhggdfgjfg ghdg dg  gk ghj ghjgdfghfdg g ghdfgdfgfgh  fk   d d   g gdfgdgdfgdfgfg "
+        text="Nestled near the bustling Chandrapur Ballarpur National Highway No. 930, the Shradheya Shri Atal Bihari Vajpayee Botanical Garden, Visapur, unfolds as a serene oasis of nature and biodiversity. Spanning an impressive 108 hectares, this botanical garden stands as a beacon of biodiversity conservation and environmental education, drawing visitors from near and far."
       />
       <HiddenAnswer
         name="Mission"

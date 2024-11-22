@@ -38,9 +38,15 @@ const Location = memo(
             style={flippedStyle}
           />
           {typeof value === 'string' ? (
-            <Icon src={value} width={21} height={0} alt="" />
+            <Image
+              src={value}
+              width={21}
+              height={0}
+              alt=""
+              className="invert brightness-0 max-h-8 pb-2"
+            />
           ) : (
-            <TextIcon className="w-">{value}</TextIcon>
+            <TextIcon>{value}</TextIcon>
           )}
           {isHovered && (
             <HoverCardContainer style={{ right: direction ? '-180px' : '10%' }}>
@@ -59,19 +65,17 @@ const Location = memo(
                       typeof value === 'string' ? color! : '#D9D9D9',
                   }}
                 >
-                  {typeof value === 'string' ? (
-                    <Icon
-                      src={value}
-                      width={36}
-                      height={36}
-                      className="max-h-none"
-                      alt=""
-                    />
-                  ) : (
-                    <TextIcon className="static text-5xl text-tertiary-200">
-                      {value}
-                    </TextIcon>
-                  )}
+                  <Image
+                    src={
+                      typeof value === 'string'
+                        ? value
+                        : `/map-icons/${value}.webp`
+                    }
+                    width={36}
+                    height={36}
+                    className={`max-h-none rounded-md text-3xl font-serif ${typeof value === 'string' ? 'invert brightness-0 py-2 max-h-8' : 'w-full h-full'}`}
+                    alt={value.toString()}
+                  />
                 </div>
                 <LocationName
                   style={{
@@ -108,10 +112,6 @@ const LocationName = tw.p`
 
 const HoverCardContainer = tw.div`
   w-[200px] absolute -translate-y-1/2 z-[9999]
-`;
-
-const Icon = tw(Image)`
-  invert brightness-0 pb-2 max-h-8
 `;
 
 const TextIcon = tw.span`

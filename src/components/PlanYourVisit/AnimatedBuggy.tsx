@@ -17,9 +17,11 @@ import { VisitLocations } from '@/constants/visit';
 import Location from './Location';
 
 const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
-const stopPoints = [-0.1, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97];
+const stopPoints = [
+  -0.1, -0.04, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97,
+];
 const buggyPoints = [
-  -0.06, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
+  -0.1, 0.06, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
 ];
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);

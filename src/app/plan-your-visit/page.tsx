@@ -55,7 +55,7 @@ const PlanYourVisit: React.FC = () => {
 
   const renderWhatWeOfferSection = () => {
     return (
-      <section id="things-to-offer">
+      <section className="space-y-5" id="things-to-offer">
         <Heading name="What we offer" />
         <HeadingSubText>Main Attractions</HeadingSubText>
         <iframe
@@ -90,7 +90,7 @@ const WelcomeBody = tw.p`
 `;
 
 const HeadingSubText = tw.span`
-    font-sans font-bold sm:text-base text-sm text-secondary
+    font-sans font-bold sm:text-base text-sm text-secondary !pb-5
 `;
 
 const BookingGroupsContainer = tw.ul`
@@ -99,12 +99,4 @@ const BookingGroupsContainer = tw.ul`
 
 const MapContainer = tw.div`
     flex flex-col mx-0 mt-10 relative
-`;
-
-const ThankYouText = tw.span`
-    uppercase text-tertiary-200 font-bold font-sans text-8xl tracking-[3.8rem]
-`;
-
-const ThankYouBody = tw.p`
-    text-lg px-12 py-6 w-4/5 text-white font-sans bg-tertiary-300 rounded-md
 `;

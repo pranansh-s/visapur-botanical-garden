@@ -1,6 +1,9 @@
+'use client';
+
 import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { careerLinks, importants, quickLinks, socialLinks } from '@/constants';
 import { IImportant, INamedLink } from '@/types';
@@ -13,12 +16,14 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import mail from '../../../public/icons/mail.svg';
 
+import { strings } from '@/constants/strings';
 import Button from '../common/Button';
 import ContactField from './ContactField';
 import ContactLink from './ContactLink';
 import ImportantCard from './ImportantCard';
 
 const Footer: React.FC = memo(() => {
+  const router = useRouter();
   return (
     <div className="xl:px-lg lg:px-md px-sm h-max relative">
       <FooterContainer>
@@ -41,6 +46,7 @@ const Footer: React.FC = memo(() => {
             variant="base"
             iconSize={16}
             preIconNode={book}
+            onClick={() => router.push(strings.bookTicket)}
           >
             Buy Ticket
           </Button>
@@ -121,6 +127,9 @@ const renderContactInfo = () => {
         type="tel"
         value="+91 94050 66433"
       />
+      <span className="font-sans font-semibold sm:text-base text-xl translate-x-full w-max underline">
+        &nbsp;+91 71724 58671
+      </span>
       <ContactField
         name="Mail Us"
         icon={mail}

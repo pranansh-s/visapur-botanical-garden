@@ -36,6 +36,7 @@ const Map = (): React.ReactElement => {
                 bottom: (mapRef.current?.clientHeight ?? 0) / 8,
                 top: -(mapRef.current?.clientHeight ?? 0) / 1.5,
               }}
+              defaultPosition={{ x: 0, y: -450 }}
               onDrag={() => setOnMoving(true)}
               onStop={() => setOnMoving(false)}
             >

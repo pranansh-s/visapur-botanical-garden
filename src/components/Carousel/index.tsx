@@ -97,7 +97,11 @@ const Carousel = ({
                 <div
                   className={`${variant === 'rotateScale' ? 'h-[450px] rounded-lg' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-center rounded-2xl`}
                 >
-                  <Image src={item.src} alt={item.title} />
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    className="object-cover object-top"
+                  />
                   <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">
                     {item.title}
                   </p>

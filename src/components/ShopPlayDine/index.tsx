@@ -12,14 +12,7 @@ const ShopPlayDine = (): React.ReactElement => {
       <Heading name="Shop, Play & Dine" />
       <CardContainer>
         {shopPlayDineItems.map((item: IVideoLink, idx: number) => (
-          <Image
-            width={450}
-            height={300}
-            className="rounded-xl"
-            src={item.src}
-            key={idx}
-            alt=""
-          />
+          <Image width={375} height={300} src={item.src} key={idx} alt="" />
         ))}
       </CardContainer>
     </ShopContainer>

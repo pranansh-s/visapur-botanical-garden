@@ -1,5 +1,6 @@
 import { HTMLAttributes, memo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { IImportant } from '@/types';
 import tw from 'tailwind-styled-components';
@@ -14,7 +15,16 @@ const ImportantCard = memo(
       <CardContainer {...className}>
         <Image width={44} height={44} src={icon} alt="" />
         <span className="uppercase">{text}</span>
-        <BodyText>{body}</BodyText>
+        {body === 'Direction' ? (
+          <Link
+            className="text-tertiary-200 font-bold"
+            href={'https://maps.app.goo.gl/7QCo8wcPfDzdnRBT9'}
+          >
+            Direction
+          </Link>
+        ) : (
+          <BodyText>{body}</BodyText>
+        )}
       </CardContainer>
     );
   }

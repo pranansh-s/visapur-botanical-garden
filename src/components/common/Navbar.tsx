@@ -3,7 +3,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import {
   burgerLinks,
@@ -22,6 +22,7 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
 
+import { strings } from '@/constants/strings';
 import { animationPreset } from '@/utils/anim';
 import ContactLink from '../Footer/ContactLink';
 import ImportantCard from '../Footer/ImportantCard';
@@ -30,6 +31,7 @@ import Button from './Button';
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const activeIndex = useMemo(() => {
     return navbarLinks.findIndex(
       (value: INamedLink) => value.href === pathname
@@ -70,7 +72,7 @@ const Navbar: React.FC = () => {
       transition={{ ...animationPreset }}
     >
       <TopSection>
-        <LogoSection>
+        <LogoSection onClick={() => router.push('/')}>
           <StyledImage src={govtLogo1} alt="" width={35} />
           <DividerVertical />
           <StyledImage src={govtLogo2} alt="" width={30} />
@@ -91,7 +93,7 @@ const Navbar: React.FC = () => {
         <BurgerMenu active={active} setActive={setActive} />
       </TopSection>
       <HorizontalDivider />
-      {renderDesktopNavbar(activeIndex)}
+      {renderDesktopNavbar(activeIndex, router)}
       {renderBurgerNavbar(active, activeIndex)}
     </NavbarContainer>
   );
@@ -150,7 +152,7 @@ const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
   );
 };
 
-const renderDesktopNavbar = (activeIndex: number) => {
+const renderDesktopNavbar = (activeIndex: number, router: any) => {
   return (
     <>
       <NavLinkContainer className="sm:flex hidden">
@@ -168,6 +170,7 @@ const renderDesktopNavbar = (activeIndex: number) => {
           variant="base"
           iconSize={16}
           preIconNode={book}
+          onClick={() => router.push(strings.bookTicket)}
         >
           Buy Ticket
         </Button>
@@ -188,7 +191,7 @@ const TopSection = tw.div`
 `;
 
 const LogoSection = tw.div`
-  flex space-x-2 items-center max-w-[80%]
+  flex space-x-2 items-center max-w-[80%] cursor-pointer
 `;
 
 const StyledImage = tw(Image)`
@@ -242,7 +245,7 @@ const StyledBurgerLink = tw(Link)<{ selected: boolean }>`
 
 const StyledNavLink = tw(Link)<{ selected: boolean }>`
   ${props => (props.selected ? 'text-black' : 'text-secondary')}
-  font-bold p-1 hover:opacity-80 transition-opacity duration-100
+  font-bold p-1 hover:brightness-75 transition-opacity duration-100
 `;
 
 const BurgerMenuContainer = tw.div`

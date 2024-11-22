@@ -18,7 +18,7 @@ export const navbarLinks: INamedLink[] = [
   { name: 'Plan Your Visit', href: '/plan-your-visit' },
   { name: 'Things to Offer', href: '/plan-your-visit#things-to-offer' },
   { name: 'Support', href: '/support' },
-  { name: 'Experience', href: '/experience' },
+  { name: 'Experience', href: 'https://booking.atalbotanicalgarden.com/tour/' },
 ];
 
 export const languageOptions: ILanguageOption[] = [

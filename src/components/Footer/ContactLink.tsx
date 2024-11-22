@@ -18,5 +18,5 @@ ContactLink.displayName = 'ContactLink';
 export default ContactLink;
 
 const ContactContainer = tw.button`
-  w-max hover:opacity-80 transition-all duration-200
+  w-max transition-all duration-200 hover:brightness-75
 `;

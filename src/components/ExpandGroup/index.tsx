@@ -25,10 +25,11 @@ const ExpandGroup = memo(
     return (
       <ExpandContainer
         selected={activeIndex === index}
-        onClick={() => setActive(pv => (pv === index ? -1 : index))}
         style={{ backgroundColor: color }}
       >
-        <ExpandTitle>
+        <ExpandTitle
+          onClick={() => setActive(pv => (pv === index ? -1 : index))}
+        >
           <span>{name}</span>
           <svg
             fill="black"
@@ -41,7 +42,9 @@ const ExpandGroup = memo(
             <path d="M213.7,256L213.7,256L213.7,256L380.9,81.9c4.2-4.3,4.1-11.4-0.2-15.8l-29.9-30.6c-4.3-4.4-11.3-4.5-15.5-0.2L131.1,247.9  c-2.2,2.2-3.2,5.2-3,8.1c-0.1,3,0.9,5.9,3,8.1l204.2,212.7c4.2,4.3,11.2,4.2,15.5-0.2l29.9-30.6c4.3-4.4,4.4-11.5,0.2-15.8  L213.7,256z" />
           </svg>
         </ExpandTitle>
-        <p className="font-serif text-base">{text}</p>
+        <p className="font-serif text-base py-5 md:px-16 sm:px-12 px-8">
+          {text}
+        </p>
         <ul className="flex flex-wrap sm:gap-3 gap-1 -mx-20">
           <StyledImage
             src={images[0]}
@@ -94,7 +97,7 @@ const ExpandGroup = memo(
           />
         </ul>
         <Button
-          className="w-max sm:px-8 sm:py-4 sm:text-lg text-base py-3 px-4 ml-auto"
+          className="w-max sm:px-8 sm:py-4 sm:text-lg text-base py-3 px-4 ml-auto mr-6 !mb-6"
           variant="base"
         >
           Book
@@ -109,11 +112,11 @@ export default ExpandGroup;
 
 const ExpandContainer = tw.div<{ selected: boolean }>`
   ${props => (props.selected ? 'h-92' : 'h-16')}
-  w-full flex flex-col space-y-12 max-w-[900px] text-lg py-5 md:px-16 sm:px-12 px-8 rounded-md cursor-pointer overflow-hidden hover:opacity-75 transition-all duration-300
+  w-full flex flex-col space-y-12 max-w-[900px] text-lg rounded-md cursor-pointer overflow-hidden
 `;
 
 const ExpandTitle = tw.div`
-  flex justify-between items-center font-sans font-bold
+  flex justify-between items-center font-sans font-bold hover:opacity-50 opacity-100 transition-all duration-200 py-5 md:px-16 sm:px-12 px-8
 `;
 
 const StyledImage = tw(Image)`
