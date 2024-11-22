@@ -8,10 +8,10 @@ import tw from 'tailwind-styled-components';
 import Heading from '../common/Heading';
 import HiddenAnswer from './HiddenAnswer';
 
-const FAQs = memo(() => {
+const FAQs: React.FC = memo(() => {
   const { activeIndex, toggleIndex } = useToggleIndex();
   return (
-    <FAQsContainer>
+    <FAQsContainer id="faqs">
       <Heading name="FAQs" />
       <HiddenAnswer
         onClick={() => toggleIndex(0)}
@@ -81,7 +81,7 @@ const FAQs = memo(() => {
 FAQs.displayName = 'FAQs';
 export default FAQs;
 
-const FAQsContainer = tw.div`
+const FAQsContainer = tw.section`
     flex flex-col my-12 space-y-5
 `;
 

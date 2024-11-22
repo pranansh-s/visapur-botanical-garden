@@ -42,22 +42,22 @@ export const socialLinks: INamedLink[] = [
 ];
 
 export const zoneItems: ICarouselItem[] = [
-  { src: '/about/about-1.jpg', title: 'Evolution Park' },
-  { src: '/about/about-2.jpg', title: 'Picture Spot' },
-  { src: '/about/about-3.jpg', title: 'Taxidermy Museum' },
-  { src: '/about/about-4.jpg', title: 'Recreation Zone' },
+  { src: '/about/about-1.webp', title: 'Evolution Park' },
+  { src: '/about/about-2.webp', title: 'Picture Spot' },
+  { src: '/about/about-3.webp', title: 'Taxidermy Museum' },
+  { src: '/about/about-4.webp', title: 'Recreation Zone' },
 ];
 
 export const glimpsesItems: ICarouselItem[] = [
-  { src: '/glimpses/glimpses-1.JPG' },
-  { src: '/glimpses/glimpses-2.JPG' },
-  { src: '/glimpses/glimpses-3.JPG' },
-  { src: '/glimpses/glimpses-4.JPG' },
-  { src: '/glimpses/glimpses-5.JPG' },
-  { src: '/glimpses/glimpses-6.JPG' },
-  { src: '/glimpses/glimpses-7.JPG' },
-  { src: '/glimpses/glimpses-8.JPG' },
-  { src: '/glimpses/glimpses-9.JPG' },
+  { src: '/glimpses/glimpses-1.webp' },
+  { src: '/glimpses/glimpses-2.webp' },
+  { src: '/glimpses/glimpses-3.webp' },
+  { src: '/glimpses/glimpses-4.webp' },
+  { src: '/glimpses/glimpses-5.webp' },
+  { src: '/glimpses/glimpses-6.webp' },
+  { src: '/glimpses/glimpses-7.webp' },
+  { src: '/glimpses/glimpses-8.webp' },
+  { src: '/glimpses/glimpses-9.webp' },
 ];
 
 export const amenities: IAmenity[] = [
@@ -79,9 +79,9 @@ export const amenities: IAmenity[] = [
 export const disabledDates = [5, 10, 15, 21];
 
 export const shopPlayDineItems: IVideoLink[] = [
-  { src: '/shop/shop-1.png' },
-  { src: '/shop/shop-2.png' },
-  { src: '/shop/shop-3.png' },
+  { src: '/shop/shop-1.webp' },
+  { src: '/shop/shop-2.webp' },
+  { src: '/shop/shop-3.webp' },
 ];
 
 export const instagramPosts: ICarouselItem[] = [
@@ -182,36 +182,39 @@ export const bookingGroups: IExpandGroup[] = [
 ];
 
 export const support: IImageCard[] = [
-  { name: 'Career', src: '/support/support-1.png' },
-  { name: 'Guidance', src: '/support/support-2.png' },
-  { name: 'Services', src: '/support/support-3.png' },
-  { name: 'Sponsorships & Donation', src: '/support/support-4.png' },
-  { name: 'Membership', src: '/support/support-5.png' },
-  { name: 'Updates', src: '/support/support-6.png' },
-  { name: 'Special events', src: '/support/support-7.png' },
+  { name: 'Career', src: '/support/support-1.webp' },
+  { name: 'Guidance', src: '/support/support-2.webp' },
+  { name: 'Services', src: '/support/support-3.webp' },
+  { name: 'Sponsorships & Donation', src: '/support/support-4.webp' },
+  { name: 'Membership', src: '/support/support-5.webp' },
+  { name: 'Updates', src: '/support/support-6.webp' },
+  { name: 'Special events', src: '/support/support-7.webp' },
 ];
 
 export const quickLinks: INamedLink[] = [
   { name: 'Home', href: '/' },
   { name: 'BLOG', href: '/' },
-  { name: 'About us', href: '/' },
+  { name: 'About us', href: '/about' },
   { name: 'Awards', href: '/' },
-  { name: 'Attraction points', href: '/' },
+  { name: 'Attraction points', href: '/plan-your-visit#things-to-offer' },
   { name: 'Terms & conditions', href: '/' },
-  { name: 'Events', href: '/' },
-  { name: 'FAQs', href: '/' },
-  { name: 'Edutainment Tour', href: '/' },
+  { name: 'Events', href: '/#table' },
+  { name: 'FAQs', href: '/about#faqs' },
+  {
+    name: 'Edutainment Tour',
+    href: 'https://booking.atalbotanicalgarden.com/tour/',
+  },
   { name: 'Privacy Policy', href: '/' },
   { name: 'Shop', href: 'https://botanicool.in/' },
-  { name: 'Sitemap', href: '/' },
+  { name: 'Sitemap', href: '/sitemap.xml' },
   { name: 'Galleries', href: '/' },
-  { name: 'Contact', href: '/' },
+  { name: 'Contact', href: '/support' },
 ];
 
 export const careerLinks: INamedLink[] = [
-  { name: 'Work with us', href: '/' },
-  { name: 'Collaborations', href: '/' },
-  { name: 'Tenders', href: '/' },
+  { name: 'Work with us', href: '/about#team' },
+  { name: 'Collaborations', href: '/about#team' },
+  { name: 'Tenders', href: '/about#team' },
 ];
 
 export const importants: IImportant[] = [
@@ -228,81 +231,81 @@ export const importants: IImportant[] = [
 export const activities: IVideoImage[] = [
   {
     name: 'Environmental Awareness',
-    src: '/activities/activity-1.png',
+    src: '/activities/activity-1.webp',
     video: 'https://www.youtube.com/embed/A0S_TgvHuXM',
   },
   {
     name: 'Life time experiences',
-    src: '/activities/activity-2.png',
+    src: '/activities/activity-2.webp',
     video: 'https://www.youtube.com/embed/HS5ktxvKEKM',
   },
   {
     name: 'Relaxing & meditative Activities',
-    src: '/activities/activity-3.png',
+    src: '/activities/activity-3.webp',
     video: 'https://www.youtube.com/embed/X2-3ElZ5jgQ',
   },
   {
     name: 'Community forum',
-    src: '/activities/activity-4.png',
+    src: '/activities/activity-4.webp',
     video: 'https://www.youtube.com/embed/-zAoqZGn-dU',
   },
   {
     name: 'Nature Outing',
-    src: '/activities/activity-5.png',
+    src: '/activities/activity-5.webp',
     video: 'https://www.youtube.com/embed/cDLDitMuxTU',
   },
 ];
 
 export const learnCards: IImageCard[] = [
-  { name: 'Resource hub/library', src: '/learn/learn-1.png' },
-  { name: 'Learning programmes', src: '/learn/learn-2.png' },
-  { name: 'Internship & Fellowship', src: '/learn/learn-3.png' },
+  { name: 'Resource hub/library', src: '/learn/learn-1.webp' },
+  { name: 'Learning programmes', src: '/learn/learn-2.webp' },
+  { name: 'Internship & Fellowship', src: '/learn/learn-3.webp' },
 ];
 
 export const wideCarouselItems: IWideCarouselItem[] = [
   {
-    imageSrc: '/wide-carousel/wide-carousel-1.jpeg',
+    imageSrc: '/wide-carousel/wide-carousel-1.webp',
     title: 'Experience the Magic of Butterfly',
     direction: '',
     description: 'Spot a kaleidoscope of butterfly varieties in vibrant hues!',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-2.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-2.webp',
     title: 'Diverse Flower Varieties',
     direction: '',
     description:
       'Explore our stunning collection of rare and exotic flowers from around the globe.',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-3.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-3.webp',
     title: 'Discover Fruits and Veggies',
     direction: '',
     description:
       'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-4.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-4.webp',
     title: 'Discover the Desert',
     direction: '',
     description:
       'From towering giants to tiny wonders, explore the diverse world of cacti!',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-5.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-5.webp',
     title: 'Explore Aquarium',
     direction: '',
     description:
       'Embark on an underwater adventure and explore the vibrant world of the aquarium',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-6.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-6.webp',
     title: 'Rich History of Chandrapur',
     direction: '',
     description:
       'Unlock the rich history of Chandrapur and explore its cultural heritage and ancient landmarks',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-7.jpg',
+    imageSrc: '/wide-carousel/wide-carousel-7.webp',
     title: 'Discover Fruits and Veggies',
     direction: '',
     description:

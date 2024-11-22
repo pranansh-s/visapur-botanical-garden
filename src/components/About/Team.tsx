@@ -8,7 +8,7 @@ import Heading from '../common/Heading';
 
 const Team: React.FC = memo(() => {
   return (
-    <TeamContainer>
+    <TeamContainer id="team">
       <Heading name="Our Team" />
       <p className="text-tertiary-300 font-serif md:text-base text-sm">
         Our dedicated team of higher authorities, horticulturists, botanists,
@@ -51,6 +51,6 @@ const Team: React.FC = memo(() => {
 Team.displayName = 'Team';
 export default Team;
 
-const TeamContainer = tw.div`
+const TeamContainer = tw.section`
     flex flex-col space-y-3
 `;

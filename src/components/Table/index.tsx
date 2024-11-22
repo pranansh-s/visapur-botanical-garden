@@ -21,7 +21,7 @@ import Timings from './Timings';
 const Table = (): React.ReactElement => {
   const [tablePage, setTablePage] = useState<number>(1);
   return (
-    <div className="flex items-center justify-center relative">
+    <section id="table" className="flex items-center justify-center relative">
       <TableContainer>
         <ButtonContainer>
           {renderButtonIcon(timings, setTablePage, tablePage, 0, 80)}
@@ -37,7 +37,7 @@ const Table = (): React.ReactElement => {
         alt="honey"
         className="w-[130px] md:w-[150px] lg:w-[200px] -right-48 top-1/3"
       />
-    </div>
+    </section>
   );
 };
 

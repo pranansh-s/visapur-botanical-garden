@@ -29,7 +29,7 @@ const Activities = (): React.ReactElement => {
     <ActivitiesContainer>
       <Heading name="Unforgettable Events | Activities" />
       <CardContainer>
-        <ImageCard
+        <PopupCard
           onClick={() => openPopup(activities[0].video)}
           {...activities[0]}
         />
@@ -95,7 +95,7 @@ const CardContainer = tw.ul`
 `;
 
 const PopupCard = tw(ImageCard)`
-  cursor-pointer
+  cursor-pointer hover:brightness-75 transition-all duration-200
 `;
 
 const BackgroundImage = tw(Image)`
