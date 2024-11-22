@@ -14,15 +14,18 @@ const WhoWeAre = (): React.ReactElement => {
     <Container>
       <Heading name="Who we are" />
       <Description>
-        At <b>Shradheya Shri Atal Bihari Vajpayee Botanical Garden</b>, we are
-        dedicated to inspiring a love for nature and promoting environmental
-        stewardship. Established on 15/03/2024, our garden has grown into a
-        vibrant sanctuary where visitors can explore a diverse collection of
-        plants from around the world. Our mission is to educate, conserve, and
-        connect people with the beauty and importance of the natural world.
-        Whether you&apos;re here to learn, relax, or simply enjoy the scenery,
-        we offer a welcoming space for everyone to experience the wonders of
-        nature.
+        At{' '}
+        <b className="text-base md:text-lg lg:text-xl">
+          Shradheya Shri Atal Bihari Vajpayee Botanical Garden
+        </b>
+        , we are dedicated to inspiring a love for nature and promoting
+        environmental stewardship. Established on 15/03/2024, our garden has
+        grown into a vibrant sanctuary where visitors can explore a diverse
+        collection of plants from around the world. Our mission is to educate,
+        conserve, and connect people with the beauty and importance of the
+        natural world. Whether you&apos;re here to learn, relax, or simply enjoy
+        the scenery, we offer a welcoming space for everyone to experience the
+        wonders of nature.
         <Link href="/about" passHref>
           <ReadMore>Read more &gt;</ReadMore>
         </Link>

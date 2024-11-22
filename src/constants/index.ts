@@ -229,27 +229,27 @@ export const activities: IVideoImage[] = [
   {
     name: 'Environmental Awareness',
     src: '/activities/activity-1.png',
-    video: 'https://www.youtube.com/shorts/A0S_TgvHuXM',
+    video: 'https://www.youtube.com/embed/A0S_TgvHuXM',
   },
   {
     name: 'Life time experiences',
     src: '/activities/activity-2.png',
-    video: 'https://www.youtube.com/shorts/HS5ktxvKEKM',
+    video: 'https://www.youtube.com/embed/HS5ktxvKEKM',
   },
   {
     name: 'Relaxing & meditative Activities',
     src: '/activities/activity-3.png',
-    video: 'https://www.youtube.com/shorts/X2-3ElZ5jgQ',
+    video: 'https://www.youtube.com/embed/X2-3ElZ5jgQ',
   },
   {
     name: 'Community forum',
     src: '/activities/activity-4.png',
-    video: 'https://www.youtube.com/shorts/-zAoqZGn-dU',
+    video: 'https://www.youtube.com/embed/-zAoqZGn-dU',
   },
   {
     name: 'Nature Outing',
     src: '/activities/activity-5.png',
-    video: 'https://www.youtube.com/shorts/cDLDitMuxTU',
+    video: 'https://www.youtube.com/embed/cDLDitMuxTU',
   },
 ];
 

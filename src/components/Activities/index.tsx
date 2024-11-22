@@ -1,7 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 
 import { activities } from '@/constants';
-import useToggleIndex from '@/hooks/useToggleIndex';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
@@ -11,37 +13,63 @@ import Heading from '../common/Heading';
 import ImageCard from '../common/ImageCard';
 
 const Activities = (): React.ReactElement => {
-  const { activeIndex, toggleIndex } = useToggleIndex();
+  const [popupVideo, setPopupVideo] = useState<string | null>(null);
+
+  const openPopup = (videoUrl: string) => {
+    document.body.classList.add('body-no-scroll');
+    setPopupVideo(videoUrl);
+  };
+
+  const closePopup = () => {
+    document.body.classList.remove('body-no-scroll');
+    setPopupVideo(null);
+  };
 
   return (
     <ActivitiesContainer>
       <Heading name="Unforgettable Events | Activities" />
       <CardContainer>
-        <ImageCard onClick={() => toggleIndex(0)} {...activities[0]} />
         <ImageCard
-          onClick={() => toggleIndex(1)}
+          onClick={() => openPopup(activities[0].video)}
+          {...activities[0]}
+        />
+        <PopupCard
+          onClick={() => openPopup(activities[1].video)}
           className="row-span-2 col-span-2"
           {...activities[1]}
         />
-        <ImageCard
-          onClick={() => toggleIndex(2)}
+        <PopupCard
+          onClick={() => openPopup(activities[2].video)}
           className="row-span-2"
           {...activities[2]}
         />
-        <ImageCard
-          onClick={() => toggleIndex(3)}
+        <PopupCard
+          onClick={() => openPopup(activities[3].video)}
           className="w-[calc(100%+3rem)]"
           {...activities[3]}
         />
-        <ImageCard
-          onClick={() => toggleIndex(4)}
+        <PopupCard
+          onClick={() => openPopup(activities[4].video)}
           className="w-[calc(100%-3rem)] ml-12"
           {...activities[4]}
         />
       </CardContainer>
-      {/* <div className='fixed bg-black inset-0 w-screen h-full left-0 z-[500]'>
-        <iframe src={activities[activeIndex].video} width="100%" height="800px"/>
-      </div> */}
+
+      {popupVideo && (
+        <div
+          onClick={closePopup}
+          className="fixed inset-0 backdrop-blur-sm bg-black/70 flex items-center justify-center z-[100]"
+        >
+          <iframe
+            onClick={e => e.stopPropagation()}
+            src={popupVideo}
+            width="100%"
+            height="500px"
+            allowFullScreen
+            className="rounded-lg w-max h-[75%] mt-24"
+          />
+        </div>
+      )}
       <BackgroundImage
         src={honey1}
         alt="honey-1"
@@ -64,6 +92,10 @@ const ActivitiesContainer = tw.div`
 
 const CardContainer = tw.ul`
   grid grid-rows-3 grid-cols-3 sm:gap-8 gap-3 h-full sm:scale-100 sm:w-full w-[112.5%] scale-[0.9] origin-top-left
+`;
+
+const PopupCard = tw(ImageCard)`
+  cursor-pointer
 `;
 
 const BackgroundImage = tw(Image)`

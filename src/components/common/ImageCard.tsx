@@ -10,9 +10,9 @@ export interface ImageCardProps extends HTMLAttributes<HTMLLIElement> {
 }
 
 const ImageCard = forwardRef<HTMLLIElement, ImageCardProps>(
-  ({ src, name, className }, ref) => {
+  ({ src, name, className, onClick }, ref) => {
     return (
-      <ImageCardContainer ref={ref} className={className}>
+      <ImageCardContainer ref={ref} onClick={onClick} className={className}>
         <Image
           src={src}
           height={500}

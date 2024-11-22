@@ -183,7 +183,7 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
 export default memo(Navbar);
 
 const NavbarContainer = tw(motion.nav)`
-  xl:px-lg lg:px-md sm:px-sm sm:pb-6 pb-3 font-sans fixed top-0 space-y-2 -mb-2 z-[100] bg-primary w-screen left-0 flex flex-col items-center
+  xl:px-lg lg:px-md sm:px-sm sm:pb-6 pb-3 font-sans fixed top-0 space-y-2 -mb-2 z-[70] bg-primary w-screen left-0 flex flex-col items-center
 `;
 
 const TopSection = tw.div`

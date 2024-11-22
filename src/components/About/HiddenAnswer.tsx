@@ -32,9 +32,16 @@ const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
           />
         </div>
         <p
-          className={`text-black/80 font-serif whitespace-pre-line leading-8 ${state ? (faq ? 'h-80' : 'h-36') : 'h-0'} transition-all duration-300`}
+          className={`text-black/80 font-serif leading-8 ${state ? (faq ? 'h-[28rem]' : 'h-36') : 'h-0'} transition-all duration-300`}
         >
-          {text}
+          {text
+            .replace(/\\n/g, '\n')
+            .split('\n')
+            .map((line, index) => (
+              <span className="inline-block" key={index}>
+                {line}
+              </span>
+            ))}
         </p>
       </HiddenAnswerContainer>
     );
