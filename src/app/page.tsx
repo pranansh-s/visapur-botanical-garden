@@ -46,11 +46,11 @@ export default function Home() {
         </HeroContent>
         <StyledImage
           src={hero}
-          alt=""
           style={{ y: heroY }}
           initial={{ y: -150 }}
           animate={{ y: 0 }}
           transition={animationPreset}
+          alt=""
         />
       </HeroSection>
 

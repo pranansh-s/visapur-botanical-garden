@@ -100,7 +100,7 @@ Location.displayName = 'Location';
 export default Location;
 
 const LocationContainer = tw.div`
-  cursor-pointer w-max rounded-md absolute sm:scale-[0.7] md:scale-100 scale-[0.5]
+  cursor-pointer w-max rounded-md absolute scale-[0.7] md:scale-100
 `;
 
 const HoverBackground = tw(Image)`

@@ -86,10 +86,11 @@ const Carousel = ({
                 <IframeContainer>
                   <iframe
                     width="100%"
-                    height="400px"
+                    height="700px"
                     src={`https://www.instagram.com/p/${item.src}/embed`}
                     allow="encrypted-media"
                     sandbox="allow-scripts allow-same-origin allow-popups"
+                    className="pb-[35vw] sm:pb-[22vw] md:pb-32 lg:pb-24 xl:pb-0"
                     scrolling="no"
                   />
                 </IframeContainer>
@@ -133,5 +134,5 @@ const Image = tw.img`
 `;
 
 const IframeContainer = tw.div`
-  relative w-full h-[21.5rem] sm:h-[25rem] md:h-[25rem] xl:h-[30rem] overflow-hidden
+  relative w-full -mt-72 scale-[0.5] w-[200%] overflow-hidden sm:-mb-[20rem] -mb-[50rem]
 `;

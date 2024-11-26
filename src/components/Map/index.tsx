@@ -5,11 +5,7 @@ import Image from 'next/image';
 
 import { ILocation } from '@/types';
 import Draggable from 'react-draggable';
-import {
-  KeepScale,
-  TransformComponent,
-  TransformWrapper,
-} from 'react-zoom-pan-pinch';
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import tw from 'tailwind-styled-components';
 
 import drag from '../../../public/icons/drag.svg';

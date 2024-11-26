@@ -8,7 +8,7 @@ import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
 
-import buggy from '../../../public/buggy.svg';
+import buggy from '../../../public/Buggy.svg';
 
 import BuyTicket from '@/components/common/BuyTicket';
 import Heading from '@/components/common/Heading';
