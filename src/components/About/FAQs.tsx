@@ -16,7 +16,6 @@ const FAQs: React.FC = memo(() => {
       <HiddenAnswer
         onClick={() => toggleIndex(0)}
         state={0 === activeIndex}
-        faq
         textNode={<Title>Garden&apos;s FAQ</Title>}
         text='This e-ticket is valid only for the number of persons in total and other permissions specified herein.\n
               This e-ticket has to be carried by the visitor to get the entry in the garden. Please take care of your ticket and QR.\n
@@ -36,7 +35,6 @@ const FAQs: React.FC = memo(() => {
       <HiddenAnswer
         onClick={() => toggleIndex(1)}
         state={1 === activeIndex}
-        faq
         textNode={<Title>Visapur Garden Service Rules & Regulations</Title>}
         text="The Botanical Garden is a place for teaching, research and plant species conservation. It is also a place of rest and recreation. To keep it this way, we kindly ask you to observe the following: \n
               - Do not touch or consume plants. Certain plants in the Botanical Garden are poisonous or prickly. \n
@@ -57,7 +55,6 @@ const FAQs: React.FC = memo(() => {
       <HiddenAnswer
         onClick={() => toggleIndex(2)}
         state={2 === activeIndex}
-        faq
         textNode={<Title>Garden&apos;s Photography Guidelines</Title>}
         text="Photographs are a wonderful way to remember your visit to the Gardens. We encourage you to take keepsake photos for personal use. To ensure a positive experience for all our visitors, please be aware of the following rules and guidelines established by the Shradheya Shri Atal Bihari Vajpayee Botanical Garden.\n
               The Gardens does not take reservations for wedding and portrait photo sessions.\n

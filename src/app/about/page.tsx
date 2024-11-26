@@ -1,5 +1,6 @@
 'use client';
 
+import { NextPage } from 'next';
 import Image from 'next/image';
 
 import { zoneItems } from '@/constants';
@@ -15,10 +16,10 @@ import Topics from '@/components/About/Topics';
 import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
 
-const AboutUs: React.FC = () => {
+const AboutUs: NextPage = () => {
   return (
     <div className="xl:px-lg lg:px-md px-sm md:mt-[28rem] sm:mt-[12rem] mt-[7rem] space-y-24">
-      <div className="flex md:flex-row flex-col-reverse md:space-x-24 md:-mb-24">
+      <div className="flex md:flex-row flex-col-reverse md:space-x-24 -mb-24 md:-mb-72">
         <OurStoryText>
           <Heading name="Our Story" />
           Discover the transformative tale of the{' '}
@@ -59,8 +60,9 @@ const AboutUs: React.FC = () => {
       <Topics />
       <iframe
         width="100%"
-        height="550px"
+        height="500px"
         src="https://www.youtube.com/embed/8iGS0FKH_vk"
+        className="h-[50vw]"
       />
       <Team />
       <NewsUpdates />

@@ -17,17 +17,16 @@ import { IImportant, ILanguageOption, INamedLink } from '@/types';
 import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
-import book from '../../../public/icons/book.svg';
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
 
-import { strings } from '@/constants/strings';
 import { animationPreset } from '@/utils/anim';
 import ContactLink from '../Footer/ContactLink';
 import ImportantCard from '../Footer/ImportantCard';
 import BurgerMenu from './BurgerMenu';
 import Button from './Button';
+import BuyTicket from './BuyTicket';
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -101,25 +100,27 @@ const Navbar: React.FC = () => {
 
 const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
   return (
-    <BurgerMenuContainer className={`${active ? 'h-screen pb-24' : 'h-0'}`}>
-      <BurgerNavLinkContainer>
-        {navbarLinks.map((value: INamedLink, idx: number) => (
-          <StyledBurgerLink
-            key={idx}
-            href={value.href}
-            selected={activeIndex == idx}
-          >
-            {value.name}
-          </StyledBurgerLink>
-        ))}
-      </BurgerNavLinkContainer>
-      <BurgerNavLinkContainer className="">
-        {burgerLinks.map((value: INamedLink, idx: number) => (
-          <BurgerLink key={idx} href={value.href}>
-            {value.name}
-          </BurgerLink>
-        ))}
-      </BurgerNavLinkContainer>
+    <BurgerMenuContainer className={`${active ? 'h-screen' : 'h-0'}`}>
+      <div className="grid grid-cols-2 w-full">
+        <BurgerNavLinkContainer>
+          {navbarLinks.map((value: INamedLink, idx: number) => (
+            <StyledBurgerLink
+              key={idx}
+              href={value.href}
+              selected={activeIndex == idx}
+            >
+              {value.name}
+            </StyledBurgerLink>
+          ))}
+        </BurgerNavLinkContainer>
+        <BurgerNavLinkContainer>
+          {burgerLinks.map((value: INamedLink, idx: number) => (
+            <BurgerLink key={idx} href={value.href}>
+              {value.name}
+            </BurgerLink>
+          ))}
+        </BurgerNavLinkContainer>
+      </div>
       <BurgerNavLinkContainer className="grid grid-cols-2">
         {otherBurgerLinks.map((value: INamedLink, idx: number) => (
           <BurgerLink
@@ -165,15 +166,7 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
             {value.name}
           </StyledNavLink>
         ))}
-        <Button
-          className="px-6 pr-4 py-4 rounded-full"
-          variant="base"
-          iconSize={16}
-          preIconNode={book}
-          onClick={() => router.push(strings.bookTicket)}
-        >
-          Buy Ticket
-        </Button>
+        <BuyTicket />
       </NavLinkContainer>
       <HorizontalDivider className="sm:block hidden" />
     </>

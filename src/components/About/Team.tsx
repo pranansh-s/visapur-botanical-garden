@@ -23,11 +23,11 @@ const Team: React.FC = memo(() => {
         itemsVisible={4}
         items={teamMembers}
       />
-      <div className="bg-tertiary-300 text-white font-sans p-24 h-[250px] flex items-center space-x-48 leading-[2rem] my-12 relative">
-        <p className="text-2xl">
+      <div className="bg-tertiary-300 text-white font-sans p-24 h-[300px] sm:h-[250px] flex md:flex-row flex-col items-center md:space-y-0 space-y-12 space-x-0 md:space-x-24 lg:space-x-48 leading-[2rem] my-12 relative">
+        <p className="text-2xl mr-auto">
           We&apos;re looking for talented people to join us!
         </p>
-        <p className="w-1/3">
+        <p className="md:w-1/3 w-full">
           Join the team of Visapur Garden and become a part of a dynamic
           community that values creativity, innovation and preservation of our
           rich heritage.

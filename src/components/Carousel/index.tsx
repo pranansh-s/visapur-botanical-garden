@@ -22,7 +22,7 @@ const Carousel = ({
   className,
   itemsVisible = 3,
   autoplay = true,
-  interval = 4000,
+  interval = 3000,
   showArrows = true,
   variant = 'basic',
   ...props
@@ -53,6 +53,7 @@ const Carousel = ({
         breakpoint: 768,
         settings: {
           slidesToShow: variant === 'rotateScale' ? 1 : itemsVisible - 2,
+          dots: true,
         },
       },
     ],
@@ -68,19 +69,18 @@ const Carousel = ({
   );
 
   useEffect(() => {
-    console.log(settings.slidesToShow);
     setCurrentIndex(Math.floor(settings.slidesToShow / 2));
   }, [settings.slidesToShow]);
 
   return (
     <CarouselContainer className={className} {...props}>
-      <Slider {...settings}>
+      <Slider draggable={false} {...settings}>
         {items.map((item, index) => {
           const isCenterItem = index === currentIndex;
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} rounded-xl transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[28rem] transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>
@@ -95,12 +95,12 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-2xl' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-center rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-2xl' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <Image
                     src={item.src}
                     alt={item.title}
-                    className="object-cover object-top"
+                    className={`object-cover object-top rounded-lg ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
                   <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">
                     {item.title}
@@ -129,9 +129,9 @@ const CarouselItem = tw.div`
 `;
 
 const Image = tw.img`
-  object-fill w-full h-full max-h-[290px]
+  object-fill w-full h-full max-h-[320px]
 `;
 
 const IframeContainer = tw.div`
-  relative xl:w-[250px] md:w-[235px] w-[170px] h-[230px] md:h-[300px] xl:h-[350px]
+  relative w-full h-[21.5rem] sm:h-[25rem] md:h-[25rem] xl:h-[30rem] overflow-hidden
 `;

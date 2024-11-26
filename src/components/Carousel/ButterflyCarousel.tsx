@@ -176,7 +176,7 @@ const CardContainer = tw.div`
 `;
 
 const Butterfly = tw(Image)`
-  text-black rounded-lg absolute transition-all ease-in-out duration-500 w-[20vw] min-w-[60px] max-w-[175px]
+  text-black rounded-lg absolute transition-all ease-in-out duration-500 w-[17vw] min-w-[60px] max-w-[175px]
 `;
 
 const BackgroundImage = tw(Image)`

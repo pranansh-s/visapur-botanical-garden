@@ -33,7 +33,7 @@ const WhoWeAre = (): React.ReactElement => {
       <BackgroundImage
         src={tree}
         alt="Tree"
-        className="h-[1200px] md:h-[600px] lg:h-[752px] md:-right-lg -right-[42%] md:bottom-6 bottom-[100%]"
+        className="h-[1200px] md:h-[600px] lg:h-[752px] md:-right-lg -right-[42%] md:bottom-6 bottom-[75%]"
       />
       <BackgroundImage
         src={astronaut}
@@ -52,7 +52,7 @@ const WhoWeAre = (): React.ReactElement => {
 export default WhoWeAre;
 
 const Container = tw.div`
-  h-max sm:!mt-[450px] !mt-[400px] sm:pb-96 pb-36 flex flex-col justify-center relative
+  h-max sm:!mt-[400px] !mt-[275px] sm:pb-96 pb-36 flex flex-col justify-center relative
 `;
 
 const Description = tw.p`

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 
 import '@gsap/react';
 
@@ -17,10 +17,11 @@ import Location from './Location';
 
 const imagePoints = [0.032, 0.11, 0.22, 0.3, 0.37, 0.45, 0.57, 0.7, 0.8, 0.92];
 const stopPoints = [
-  0.0005, 0.005, 0.05, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97,
+  0, 0.05, 0.1, 0.18, 0.27, 0.34, 0.44, 0.58, 0.72, 0.83, 0.97, 1.0,
 ];
 const buggyPoints = [
   0.11, 0.15, 0.238, 0.315, 0.375, 0.448, 0.522, 0.623, 0.745, 0.87, 0.995,
+  1.12,
 ];
 
 gsap.registerPlugin(MotionPathPlugin);
@@ -29,9 +30,13 @@ const AnimatedBuggy: React.FC = memo(() => {
   const imageRef = useRef<HTMLImageElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
 
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({ target: containerRef });
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['0 0.3', '1 0.9'],
+  });
   const buggyPathProgress = useTransform(
     scrollYProgress,
     stopPoints,
@@ -53,6 +58,18 @@ const AnimatedBuggy: React.FC = memo(() => {
             end: yProgress,
           },
         });
+
+        const closestIndex = buggyPoints.reduce(
+          (prevIndex, currentValue, index) => {
+            return Math.abs(currentValue - yProgress) <
+              Math.abs(buggyPoints[prevIndex] - yProgress)
+              ? index
+              : prevIndex;
+          },
+          0
+        );
+
+        setCurrentIndex(closestIndex);
       };
 
       const unsubscribe = buggyPathProgress.on('change', updateAnimation);
@@ -80,13 +97,13 @@ const AnimatedBuggy: React.FC = memo(() => {
         height={100}
         ref={imageRef}
         src={buggy}
-        alt="Moving along path"
+        alt="Buggy Cart"
         className="absolute xl:scale-[1.25] lg:scale-[1] scale-[0.85] z-10"
       />
       <ul className="absolute top-0 h-full w-full">
         {VisitLocations.map((location: IVisitLocation, idx: number) => (
           <Location
-            className="absolute -translate-y-1/2 origin-center w-full"
+            active={currentIndex === idx + 1}
             style={{
               top: `${imagePoints[idx] * 100}%`,
               left: `${location.left}%`,

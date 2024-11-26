@@ -7,6 +7,7 @@ export interface IExpandGroup {
   name: string;
   color: string;
   text: string;
+  pdfLink: string;
   images: string[];
 }
 
@@ -60,7 +61,6 @@ export interface IVideoLink {
 export interface IWideCarouselItem {
   imageSrc: string;
   title: string;
-  direction: string;
   description: string;
 }
 

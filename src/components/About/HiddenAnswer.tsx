@@ -10,11 +10,10 @@ import Button from '../common/Button';
 interface HiddenAnswerProps extends IHiddenAnswer {
   state: boolean;
   onClick: any;
-  faq?: boolean;
 }
 
 const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
-  ({ name, textNode, text, onClick, state, faq = false }) => {
+  ({ name, textNode, text, onClick, state }) => {
     return (
       <HiddenAnswerContainer>
         {name && (
@@ -32,7 +31,7 @@ const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
           />
         </div>
         <p
-          className={`text-black/80 font-serif leading-8 ${state ? (faq ? 'h-[28rem]' : 'h-36') : 'h-0'} transition-all duration-300`}
+          className={`text-black/80 font-serif leading-8 ${state ? 'h-max' : 'h-0'} transition-all duration-300`}
         >
           {text
             .replace(/\\n/g, '\n')

@@ -1,5 +1,6 @@
 'use client';
 
+import { NextPage } from 'next';
 import Image from 'next/image';
 
 import { support } from '@/constants';
@@ -13,7 +14,7 @@ import hero from '../../../public/support/support-hero.webp';
 
 import ImageCard from '@/components/common/ImageCard';
 
-const Support: React.FC = () => {
+const Support: NextPage = () => {
   const renderGetInTouch = () => {
     return (
       <GetInTouchContainer>

@@ -22,7 +22,7 @@ const ContactField = memo(({ name, icon, value, type }: IContactFieldProps) => {
         src={icon}
         alt=""
       />
-      <span className="sm:text-base text-xl">{name}</span>:
+      <span className="sm:text-base text-lg">{name}</span>:
       <ContactLink href={type ? type + ':' + value : value}>
         {value.split(':')}
       </ContactLink>
@@ -34,9 +34,9 @@ ContactField.displayName = 'ContactField';
 export default ContactField;
 
 const ContactLink = tw(Link)`
-    underline overflow-hidden overflow-ellipsis sm:text-base text-xl
+    underline overflow-hidden overflow-ellipsis sm:text-base text-lg
 `;
 
 const ContactContainer = tw.div`
-    flex items-center text-secondary font-sans font-bold space-x-3 whitespace-nowrap 
+    flex items-center text-secondary font-sans font-bold space-x-1 whitespace-nowrap
 `;

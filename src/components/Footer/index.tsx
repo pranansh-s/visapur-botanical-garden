@@ -10,20 +10,17 @@ import { IImportant, INamedLink } from '@/types';
 import tw from 'tailwind-styled-components';
 
 import tree from '../../../public/footer-tree.svg';
-import book from '../../../public/icons/book.svg';
 import call from '../../../public/icons/call.svg';
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import mail from '../../../public/icons/mail.svg';
 
-import { strings } from '@/constants/strings';
-import Button from '../common/Button';
+import BuyTicket from '../common/BuyTicket';
 import ContactField from './ContactField';
 import ContactLink from './ContactLink';
 import ImportantCard from './ImportantCard';
 
 const Footer: React.FC = memo(() => {
-  const router = useRouter();
   return (
     <div className="xl:px-lg lg:px-md px-sm h-max relative">
       <FooterContainer>
@@ -41,15 +38,7 @@ const Footer: React.FC = memo(() => {
           </p>
           {renderContactInfo()}
           {renderConnectOptions()}
-          <Button
-            className="px-6 pr-4 py-4 rounded-full fixed bottom-[5%] left-1/2 -translate-x-1/2 shadow-xl z-[50] sm:hidden flex !mt-24"
-            variant="base"
-            iconSize={16}
-            preIconNode={book}
-            onClick={() => router.push(strings.bookTicket)}
-          >
-            Buy Ticket
-          </Button>
+          <BuyTicket className="fixed bottom-[5%] left-1/2 -translate-x-1/2 shadow-xl z-[50] sm:hidden flex !mt-24" />
         </ConnectContainer>
         {renderFooterLinks()}
       </FooterContainer>
@@ -127,7 +116,7 @@ const renderContactInfo = () => {
         type="tel"
         value="+91 94050 66433"
       />
-      <span className="font-sans font-semibold sm:text-base text-xl translate-x-full w-max underline">
+      <span className="font-sans font-semibold sm:text-base text-lg translate-x-full w-max underline">
         &nbsp;+91 71724 58671
       </span>
       <ContactField
@@ -144,7 +133,7 @@ Footer.displayName = 'Footer';
 export default Footer;
 
 const RightsReserved = tw.p`
-  w-screen max-w-[1536px] absolute left-0 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-sm bg-hotpink text-center
+  w-screen max-w-[1536px] absolute left-0 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-xs sm:text-sm bg-hotpink text-center
 `;
 
 const FooterContainer = tw.div`
@@ -152,7 +141,7 @@ const FooterContainer = tw.div`
 `;
 
 const ConnectContainer = tw.div`
-  flex-1 space-y-5 flex flex-col sm:items-start items-center sm:text-start text-center sm:mb-0 mb-72 sm:px-16 px-0
+  w-full flex-1 space-y-5 flex flex-col sm:items-start items-center sm:text-start text-center sm:mb-0 mb-72 sm:px-16 px-0
 `;
 
 const ConntectOptionsContainer = tw.div`
@@ -168,7 +157,7 @@ const ContactInfo = tw.ul`
 `;
 
 const LinksContainer = tw.div`
-  grid-cols-2 grid-rows-4 gap-8  sm:grid hidden
+  grid-cols-2 grid-rows-4 gap-8 sm:grid hidden
 `;
 
 const LinkHeading = tw.h4`
