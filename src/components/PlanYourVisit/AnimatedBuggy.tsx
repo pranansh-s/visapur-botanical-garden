@@ -103,7 +103,7 @@ const AnimatedBuggy: React.FC = memo(() => {
       <ul className="absolute top-0 h-full w-full">
         {VisitLocations.map((location: IVisitLocation, idx: number) => (
           <Location
-            active={currentIndex === idx + 1}
+            active={currentIndex > idx}
             style={{
               top: `${imagePoints[idx] * 100}%`,
               left: `${location.left}%`,

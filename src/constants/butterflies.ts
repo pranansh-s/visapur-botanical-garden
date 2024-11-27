@@ -44,7 +44,7 @@ export const butteryflies: IButterflyInfo[] = [
     src: '/butterfly/Bluebottle.png',
   },
   {
-    text: 'Hi! I am Spotted Rustic',
+    text: 'Hi! I am Common Leopard',
     latinName: 'Phalanta Phalantha',
     descrp:
       'The common leopard or spotted rustic, is a sun-loving butterfly of the nymphalid or brush-footed butterfly family',
@@ -65,7 +65,7 @@ export const butteryflies: IButterflyInfo[] = [
     src: '/butterfly/CrimsonRose.png',
   },
   {
-    text: 'Hi! I am Lemon Butterfly',
+    text: 'Hi! I am Lime Butterfly',
     latinName: 'Papilio demoleus',
     descrp:
       'Is a an economically important pest whose larval forms cause serious damage to citrus family by devouring the foliage heavily during the later stages of their development. The lime Swallowtail, PDL is sometimes called the chequered or citrus Swallowtail',
@@ -79,10 +79,10 @@ export const butteryflies: IButterflyInfo[] = [
     src: '/butterfly/PeacockPansy.png',
   },
   {
-    text: 'Hi! I am Monarch',
-    latinName: 'Danaus plexippus',
+    text: 'Hi! I am Striper Tiger',
+    latinName: 'Danaus genutia',
     descrp:
-      'Exhibits the most highly evolved migration pattern of any known species of butterfly or moth and perhaps any known insect. Is a milkweed butterfly in the family Nymphalidae. Other common names, depending on region, include milkweed, common tiger, wanderer, and black-veined brown',
+      'White it is a strong flier, it never flies rapidly or high. It has stronger and faster strokes than the plain tiger. These butterflies migrate seasonally between the Western Ghats and the Eastern plains of Southern India.',
     src: '/butterfly/Monarch.png',
   },
 ];

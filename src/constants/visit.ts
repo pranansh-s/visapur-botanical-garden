@@ -26,7 +26,7 @@ export const VisitLocations: IVisitLocation[] = [
     imageSrc: '/locations/Nava.svg',
     name: 'Nava',
     text: 'where the charm of a vintage ship meets exquisite dining. Sail through flavors, as you dine in a timeless maritime ambiance',
-    left: 35,
+    left: 40,
     bgColor: '#423035',
   },
   {

@@ -1,6 +1,6 @@
-import { wideCarouselItems } from '@/constants';
 import tw from 'tailwind-styled-components';
 
+import { eventCarouselItems } from '@/constants/carousels';
 import WideCarousel from '../Carousel/WideCarousel';
 import Heading from '../common/Heading';
 
@@ -8,7 +8,7 @@ const NewsUpdates = (): React.ReactElement => {
   return (
     <NewsUpdatesContainer>
       <Heading name="News & Updates" />
-      <p className="text-tertiary-200 font-serif !mb-24">
+      <p className="text-tertiary-200 font-serif !mb-12">
         Stay up-to-date with the latest happenings at our botanical garden! From
         seasonal blooms and new plant collections to upcoming events, workshops,
         and conservation initiatives, this is your go-to source for all garden
@@ -17,7 +17,7 @@ const NewsUpdates = (): React.ReactElement => {
         miss out on exclusive garden tours, community programs, and special
         promotions.
       </p>
-      <WideCarousel items={wideCarouselItems} />
+      <WideCarousel items={eventCarouselItems} />
     </NewsUpdatesContainer>
   );
 };

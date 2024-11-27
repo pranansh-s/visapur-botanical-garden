@@ -1,6 +1,6 @@
-import { instagramPosts } from '@/constants';
 import tw from 'tailwind-styled-components';
 
+import { instagramPosts } from '@/constants/carousels';
 import Carousel from '../Carousel';
 
 const Instagram = (): React.ReactElement => {

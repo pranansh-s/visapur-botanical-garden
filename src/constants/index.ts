@@ -1,63 +1,16 @@
 import {
   IAmenity,
-  ICarouselItem,
   IExpandGroup,
   IImageCard,
   IImportant,
   ILanguageOption,
-  INamedLink,
   IVideoImage,
   IVideoLink,
-  IWideCarouselItem,
 } from '@/types';
-
-export const navbarLinks: INamedLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'Shop', href: 'https://botanicool.in/' },
-  { name: 'About', href: '/about' },
-  { name: 'Plan Your Visit', href: '/plan-your-visit' },
-  { name: 'Things to Offer', href: '/plan-your-visit#things-to-offer' },
-  { name: 'Support', href: '/support' },
-  { name: 'Experience', href: 'https://booking.atalbotanicalgarden.com/tour/' },
-];
 
 export const languageOptions: ILanguageOption[] = [
   { name: 'English', code: 'en' },
   { name: 'Hindi', code: 'hi' },
-];
-
-export const socialLinks: INamedLink[] = [
-  { name: 'instagram', href: 'https://www.instagram.com/mahaatalgarden/	' },
-  {
-    name: 'facebook',
-    href: 'https://www.facebook.com/profile.php?id=61562737185919',
-  },
-  { name: 'linkedin', href: 'https://google.com' },
-  { name: 'whatsapp', href: 'https://google.com' },
-  {
-    name: 'youtube',
-    href: 'https://www.youtube.com/@SABVbotanicalgarden-xb8hw',
-  },
-  { name: 'twitter', href: 'https://x.com/mahaatalgarden' },
-];
-
-export const zoneItems: ICarouselItem[] = [
-  { src: '/about/about-1.webp', title: 'Evolution Park' },
-  { src: '/about/about-2.webp', title: 'Picture Spot' },
-  { src: '/about/about-3.webp', title: 'Taxidermy Museum' },
-  { src: '/about/about-4.webp', title: 'Recreation Zone' },
-];
-
-export const glimpsesItems: ICarouselItem[] = [
-  { src: '/glimpses/glimpses-1.webp' },
-  { src: '/glimpses/glimpses-2.webp' },
-  { src: '/glimpses/glimpses-3.webp' },
-  { src: '/glimpses/glimpses-4.webp' },
-  { src: '/glimpses/glimpses-5.webp' },
-  { src: '/glimpses/glimpses-6.webp' },
-  { src: '/glimpses/glimpses-7.webp' },
-  { src: '/glimpses/glimpses-8.webp' },
-  { src: '/glimpses/glimpses-9.webp' },
 ];
 
 export const amenities: IAmenity[] = [
@@ -82,16 +35,6 @@ export const shopPlayDineItems: IVideoLink[] = [
   { src: '/shop/shop-1.webp' },
   { src: '/shop/shop-2.webp' },
   { src: '/shop/shop-3.webp' },
-];
-
-export const instagramPosts: ICarouselItem[] = [
-  { src: 'C8e02O1tPcE' },
-  { src: 'DClIq_vTfKC' },
-  { src: 'DCidBCFiJ4U' },
-  { src: 'DCf41xaT002' },
-  { src: 'DCdQJJsid8B' },
-  { src: 'DCQrV5xtuL7' },
-  { src: 'DCN_L3Nul_w' },
 ];
 
 export const bookingGroups: IExpandGroup[] = [
@@ -197,35 +140,6 @@ export const support: IImageCard[] = [
   { name: 'Special events', src: '/support/support-7.webp' },
 ];
 
-export const quickLinks: INamedLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'BLOG', href: '/' },
-  { name: 'About us', href: '/about' },
-  { name: 'Awards', href: '/' },
-  { name: 'Attraction points', href: '/plan-your-visit#things-to-offer' },
-  { name: 'Terms & conditions', href: '/terms-conditions' },
-  { name: 'Events', href: '/#table' },
-  { name: 'FAQs', href: '/about#faqs' },
-  {
-    name: 'Edutainment Tour',
-    href: 'https://booking.atalbotanicalgarden.com/tour/',
-  },
-  {
-    name: 'Privacy Policy',
-    href: '/privacy-policy',
-  },
-  { name: 'Shop', href: 'https://botanicool.in/' },
-  { name: 'Sitemap', href: '/sitemap.xml' },
-  { name: 'Galleries', href: '/gallery' },
-  { name: 'Contact', href: '/support' },
-];
-
-export const careerLinks: INamedLink[] = [
-  { name: 'Work with us', href: '/about#team' },
-  { name: 'Collaborations', href: '/about#team' },
-  { name: 'Tenders', href: '/about#team' },
-];
-
 export const importants: IImportant[] = [
   { icon: '/icons/closed.svg', text: 'Closed on', body: 'Tuesday' },
   { icon: '/icons/alarm.svg', text: 'Timings', body: '10:00 AM - 6:00 PM' },
@@ -271,160 +185,63 @@ export const learnCards: IImageCard[] = [
   { name: 'Internship & Fellowship', src: '/learn/learn-3.webp' },
 ];
 
-export const wideCarouselItems: IWideCarouselItem[] = [
-  {
-    imageSrc: '/wide-carousel/wide-carousel-1.webp',
-    title: 'Experience the Magic of Butterfly',
-    description: 'Spot a kaleidoscope of butterfly varieties in vibrant hues!',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-2.webp',
-    title: 'Diverse Flower Varieties',
-    description:
-      'Explore our stunning collection of rare and exotic flowers from around the globe.',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-3.webp',
-    title: 'Discover Fruits and Veggies',
-    description:
-      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-4.webp',
-    title: 'Discover the Desert',
-    description:
-      'From towering giants to tiny wonders, explore the diverse world of cacti!',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-5.webp',
-    title: 'Explore Aquarium',
-    description:
-      'Embark on an underwater adventure and explore the vibrant world of the aquarium',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-6.webp',
-    title: 'Rich History of Chandrapur',
-    description:
-      'Unlock the rich history of Chandrapur and explore its cultural heritage and ancient landmarks',
-  },
-  {
-    imageSrc: '/wide-carousel/wide-carousel-7.webp',
-    title: 'Discover Fruits and Veggies',
-    description:
-      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
-  },
-];
-
-export const burgerLinks: INamedLink[] = [
-  {
-    name: 'FAQ',
-    href: '/faq',
-  },
-  {
-    name: 'Edutainment Tour',
-    href: '/faq',
-  },
-  {
-    name: 'Blog',
-    href: '/faq',
-  },
-  {
-    name: 'Awards',
-    href: '/faq',
-  },
-];
-
-export const otherBurgerLinks: INamedLink[] = [
-  {
-    href: '/terms-conditions',
-    name: 'Terms & Conditions',
-  },
-  {
-    href: '/privacy-policy',
-    name: 'Privacy Policy',
-  },
-  {
-    href: '/sitemap',
-    name: 'Sitemap',
-  },
-  {
-    href: '/work-with-us',
-    name: 'Work with us',
-  },
-  {
-    href: '/collaborations',
-    name: 'Collaborations',
-  },
-  {
-    href: '/tenders',
-    name: 'Tenders',
-  },
-];
-
-export const teamMembers: ICarouselItem[] = [
-  {
-    src: '/team/team-1.png',
-    title: 'MAYANK FALWARIA',
-    subText: '(DIGITAL MARKETER/ SOCIAL MEDIA MANAGER)',
-  },
-  {
-    src: '/team/team-6.png',
-    title: 'Bhairavi Bopardikar',
-    subText: '(EDUCATION OFFICER)',
-  },
-  {
-    src: '/team/team-3.png',
-    title: 'PAVANKUMAR JONG',
-    subText: '(Assistant Conservator of Forest)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'SWETHA BODDU',
-    subText: '(Deputy Conservator of Forests)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'PRAKASH SUDHAKAR ZADE',
-    subText: '(RANGE FOREST OFFICER)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'RAMSOCHA SURYABHAN YADAV',
-    subText: '(FORESTER)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'RAKESH RAJARAM SHIVANKAR',
-    subText: '(FOREST GUARD)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'MANIKA PANDURANG ANKADE',
-    subText: '(FOREST GUARD)',
-  },
-  {
-    src: '/team/team-2.png',
-    title: 'DEEKSHA KALRA',
-    subText: '(PRODUCT DESIGNER)',
-  },
-  {
-    src: '/team/team-4.png',
-    title: 'PRATEEK KUSHWAHA',
-    subText: '(DESIGN MANAGER)',
-  },
-  {
-    src: '/team/team-5.png',
-    title: 'ASMITA VERMA',
-    subText: '(UI/ UX DESIGNER)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'SUKANYA DAS',
-    subText: '(PRODUCT DESIGNER)',
-  },
-  {
-    src: '/team/anon.png',
-    title: 'ADITYA LAKHMAPURE',
-    subText: '(GAME DESIGNER)',
-  },
+export const galleryImages: string[] = [
+  '/learn/learn-1.webp',
+  '/learn/learn-2.webp',
+  '/learn/learn-3.webp',
+  '/shop/shop-1.webp',
+  '/shop/shop-2.webp',
+  '/shop/shop-3.webp',
+  '/expand/group/group.png',
+  '/expand/group/group-1.png',
+  '/expand/group/group-2.png',
+  '/expand/group/group-3.png',
+  '/expand/group/group-4.png',
+  '/expand/group/group-5.png',
+  '/expand/group/group-6.png',
+  '/expand/students/students.png',
+  '/expand/students/students-1.png',
+  '/expand/students/students-4.png',
+  '/expand/students/students-5.png',
+  '/expand/senior/senior.png',
+  '/expand/senior/senior-1.png',
+  '/expand/senior/senior-2.png',
+  '/expand/senior/senior-4.png',
+  '/expand/senior/senior-5.png',
+  '/expand/kids/kids.png',
+  '/expand/kids/kids-1.png',
+  '/expand/kids/kids-2.png',
+  '/expand/kids/kids-3.png',
+  '/expand/kids/kids-4.png',
+  '/expand/kids/kids-5.png',
+  '/expand/kids/kids-6.png',
+  '/expand/influencers/influencers-1.png',
+  '/expand/influencers/influencers-2.png',
+  '/expand/influencers/influencers-4.png',
+  '/expand/influencers/influencers-5.png',
+  '/expand/nature/nature.png',
+  '/expand/nature/nature-1.png',
+  '/expand/nature/nature-2.png',
+  '/expand/nature/nature-3.png',
+  '/expand/nature/nature-5.png',
+  '/expand/nature/nature-6.png',
+  '/glimpses/glimpses-1.webp',
+  '/glimpses/glimpses-2.webp',
+  '/glimpses/glimpses-3.webp',
+  '/glimpses/glimpses-4.webp',
+  '/glimpses/glimpses-5.webp',
+  '/glimpses/glimpses-6.webp',
+  '/glimpses/glimpses-7.webp',
+  '/glimpses/glimpses-8.webp',
+  '/glimpses/glimpses-9.webp',
+  '/about/about-1.webp',
+  '/about/about-2.webp',
+  '/about/about-4.webp',
+  '/wide-carousel/wide-carousel-1.webp',
+  '/wide-carousel/wide-carousel-2.webp',
+  '/wide-carousel/wide-carousel-3.webp',
+  '/wide-carousel/wide-carousel-4.webp',
+  '/wide-carousel/wide-carousel-5.webp',
+  '/wide-carousel/wide-carousel-6.webp',
+  '/wide-carousel/wide-carousel-7.webp',
 ];

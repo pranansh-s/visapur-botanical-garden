@@ -4,101 +4,94 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 
 import { support } from '@/constants';
-import { IImageCard, INamedLink } from '@/types';
+import { IImageCard } from '@/types';
 import tw from 'tailwind-styled-components';
 
-import contact from '../../../public/icons/call.svg';
-import mail from '../../../public/icons/mail.svg';
-import place from '../../../public/icons/place.svg';
-import hero from '../../../public/support/support-hero.webp';
+import contactIcon from '../../../public/icons/call.svg';
+import mailIcon from '../../../public/icons/mail.svg';
+import placeIcon from '../../../public/icons/place.svg';
+import heroImage from '../../../public/support/support-hero.webp';
 
 import ImageCard from '@/components/common/ImageCard';
 
-const Support: NextPage = () => {
-  const renderGetInTouch = () => {
-    return (
-      <GetInTouchContainer>
-        <SupportHeading>Get in touch</SupportHeading>
-        <SupportBody>
-          We welcome your inquiries, feedback, and suggestions. Connect with us
-          to learn more about our offerings, plan your visit, or share your
-          experiences. Our team is here to assist you and ensure your journey
-          through nature is unforgettable. Reach out today, and let&apos;s
-          explore the beauty of the natural world together. Your adventure
-          awaits!
-        </SupportBody>
-        <div className="pt-12 flex flex-col md:flex-row">
-          <ContactSubGroup className="flex-[2] space-y-6 md:space-y-12">
-            <SupportSubHeading>Have queries?</SupportSubHeading>
-            <ContactField>
-              <Image className="h-10 w-10 sm:h-12 sm:w-12" src={mail} alt="" />
-              <p>
-                Mail Us:&nbsp;
-                <ContactValue>
-                  atalbotanicalgarden@mahaforest.gov.in
-                </ContactValue>
-              </p>
-            </ContactField>
-            <ContactField>
-              <Image
-                className="h-10 w-10 sm:h-12 sm:w-12"
-                src={contact}
-                alt=""
-              />
-              <p>
-                Contact no:&nbsp;
-                <ContactValue>+91 94050 66433</ContactValue>
-                <ContactValue className="block text-end">
-                  +91 71724 58671
-                </ContactValue>
-              </p>
-            </ContactField>
-          </ContactSubGroup>
-          <ContactSubGroup className="flex-1 mt-10 md:mt-0">
-            <SupportSubHeading>
-              How to Reach &nbsp;{' '}
-              <Image className="w-7 h-7 sm:w-9 sm:h-9" src={place} alt="" />{' '}
-            </SupportSubHeading>
-            <iframe
-              className="w-full sm:w-[333px] h-[134px] pt-4"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3752.0101573359116!2d79.338103!3d19.881793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd2d3005670f54d%3A0x5edb33057eed6c4f!2sBotanical%20Garden%20visapur!5e0!3m2!1sen!2sin!4v1729695839735!5m2!1sen!2sin"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <span className="font-sans font-bold text-sm sm:text-base mt-4 block">
-              Shradheya Atal Bihari Vajpayee Botanical Garden,
-              <br /> Ballarshah Rd, Visapur, Maharashtra 442701
-            </span>
-          </ContactSubGroup>
-        </div>
-      </GetInTouchContainer>
-    );
-  };
+import { strings } from '@/constants/strings';
 
-  const renderCards = () => {
-    return (
-      <Grid>
-        {support.map((supportCard: IImageCard, idx: number) => (
-          <ImageCard key={idx} {...supportCard} />
-        ))}
-      </Grid>
-    );
-  };
+const Support: NextPage = () => {
+  const renderGetInTouch = () => (
+    <Section>
+      <SupportHeading>{strings.support.getInTouch}</SupportHeading>
+      <SupportBody>{strings.support.supportText}</SupportBody>
+      <ContactContainer>
+        <ContactGroup className="flex-1">
+          <SupportSubHeading>{strings.support.queries}</SupportSubHeading>
+          <ContactField>
+            <Image src={mailIcon} alt="Mail Icon" />
+            <p className="text-lg">
+              {strings.support.contact.mailUs}
+              <ContactValue>{strings.mailUsText}</ContactValue>
+            </p>
+          </ContactField>
+          <ContactField>
+            <Image src={contactIcon} alt="Contact Icon" className="mb-auto" />
+            <p className="text-lg">
+              {strings.support.contact.contactNo}
+              <ContactValue>{strings.contactNoText.phone1}</ContactValue>
+              <ContactValue className="block text-end">
+                {strings.contactNoText.phone2}
+              </ContactValue>
+            </p>
+          </ContactField>
+        </ContactGroup>
+        <ContactGroup>
+          <SupportSubHeading>
+            {strings.support.howToReach}
+            <Image src={placeIcon} alt="Location Icon" className="w-12 h-12" />
+          </SupportSubHeading>
+          <Iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3752.0101573359116!2d79.338103!3d19.881793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd2d3005670f54d%3A0x5edb33057eed6c4f!2sBotanical%20Garden%20visapur!5e0!3m2!1sen!2sin!4v1729695839735!5m2!1sen!2sin"
+            title="Google Maps Location"
+          />
+          <Address>
+            {strings.support.address.part1}
+            <br />
+            {strings.support.address.part2}
+          </Address>
+        </ContactGroup>
+      </ContactContainer>
+    </Section>
+  );
+
+  const renderCards = () => (
+    <CardGrid>
+      {support.map((supportCard: IImageCard, idx: number) => (
+        <ImageCard
+          className="hover:brightness-75 cursor-pointer transition-all duration-300"
+          key={idx}
+          {...supportCard}
+        />
+      ))}
+    </CardGrid>
+  );
 
   return (
-    <div className="xl:px-lg lg:px-md px-sm sm:mt-48 mt-28 max-w-[1536px] mx-auto">
-      <Image src={hero} alt="" className="w-full" />
+    <Container>
+      <HeroImage src={heroImage} alt="Support Hero Image" />
       {renderGetInTouch()}
       {renderCards()}
-    </div>
+    </Container>
   );
 };
 
 export default Support;
 
-const GetInTouchContainer = tw.div`
-  my-16 md:my-24 flex flex-col space-y-5
+const Container = tw.div`
+  xl:px-lg lg:px-md px-sm
+  sm:mt-48 mt-28
+  space-y-12
+`;
+
+const Section = tw.section`
+  flex flex-col space-y-6
 `;
 
 const SupportHeading = tw.h2`
@@ -109,26 +102,38 @@ const SupportBody = tw.p`
   text-black text-base sm:text-lg md:text-xl font-serif
 `;
 
-const SupportSubHeading = tw.h3`
-  text-sans font-bold text-2xl sm:text-3xl text-secondary flex
+const ContactContainer = tw.div`
+  flex flex-col md:flex-row pt-12 space-y-10 md:space-y-0 md:space-x-12
 `;
 
-const ContactSubGroup = tw.div`
-  flex flex-col space-y-4 md:space-y-6
+const ContactGroup = tw.div`
+  flex flex-col space-y-6
+`;
+
+const SupportSubHeading = tw.h3`
+  text-sans font-bold text-2xl sm:text-3xl text-secondary flex items-center space-x-2
+`;
+
+const ContactField = tw.div`
+  flex items-center space-x-4 text-black font-bold font-sans text-base sm:text-lg md:text-xl
 `;
 
 const ContactValue = tw.span`
   font-serif text-sm sm:text-base md:text-lg
 `;
 
-const ContactField = tw.div`
-  flex space-x-3 font-sans text-base sm:text-lg md:text-xl text-black font-bold items-center
+const Iframe = tw.iframe`
+  w-full sm:w-[333px] h-[134px] pt-4 border-0
 `;
 
-const ContactCard = tw.div`
-  flex flex-col items-center justify-center text-center space-y-3 font-serif text-lg text-black
+const Address = tw.span`
+  font-sans font-bold text-sm sm:text-base mt-4 block
 `;
 
-const Grid = tw.ul`
-  grid grid-rows-2 grid-cols-1 grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4
+const HeroImage = tw(Image)`
+  w-full
+`;
+
+const CardGrid = tw.ul`
+  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
 `;

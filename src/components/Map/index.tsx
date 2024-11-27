@@ -17,24 +17,28 @@ import Location from './Location';
 
 const Map = (): React.ReactElement => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [onMoving, setOnMoving] = useState<boolean>(false);
 
   return (
     <Container>
       <Heading name="Map" />
       <MapContainer>
-        <TransformWrapper disabled={onMoving} minScale={1} maxScale={2}>
+        <TransformWrapper
+          smooth
+          centerZoomedOut
+          alignmentAnimation={{ sizeX: 0, sizeY: 0 }}
+          panning={{ disabled: true }}
+          minScale={1}
+          maxScale={2}
+        >
           <TransformComponent>
             <Draggable
               bounds={{
-                left: -(mapRef.current?.clientWidth ?? 0) / 3,
-                right: (mapRef.current?.clientWidth ?? 0) / 5,
-                bottom: (mapRef.current?.clientHeight ?? 0) / 8,
-                top: -(mapRef.current?.clientHeight ?? 0) / 1.5,
+                left: -300,
+                right: 200,
+                bottom: 100,
+                top: -1000,
               }}
-              defaultPosition={{ x: 0, y: -450 }}
-              onDrag={() => setOnMoving(true)}
-              onStop={() => setOnMoving(false)}
+              defaultPosition={{ x: -100, y: -400 }}
             >
               <DraggableMap ref={mapRef}>
                 <Image draggable={false} src={map} alt="Map" />
@@ -61,11 +65,11 @@ const Container = tw.div`
 `;
 
 const MapContainer = tw.div`
-  aspect-[16/9] overflow-hidden border sm:border-8 border-2 border-gray-500 rounded-xl
+  sm:aspect-[16/9] aspect-square overflow-hidden border sm:border-4 border-2 border-tertiary-300 rounded-xl
 `;
 
 const DraggableMap = tw.div`
-  cursor-grab relative min-w-[500px] z-0
+  cursor-grab relative min-w-[600px] z-0
 `;
 
 const DragToMove = tw.p`

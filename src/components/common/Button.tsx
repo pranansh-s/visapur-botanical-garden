@@ -10,11 +10,13 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/cn';
 
 const buttonVariants = cva(
-  `font-sans flex items-center text-lg text-center transition-all duration-200 font-bold`,
+  `font-sans flex items-center text-lg text-center transition-all duration-200 font-bold rounded-full`,
   {
     variants: {
       variant: {
-        base: 'bg-tertiary-100 text-white px-6 py-4 rounded-full hover:bg-tertiary-200',
+        base: 'bg-tertiary-100 text-white px-6 py-4 hover:bg-tertiary-200',
+        light:
+          'bg-white rounded-full outline -outline-offset-4 text-tertiary-200 hover:brightness-90 outline-tertiary-300',
       },
       state: {
         disabled: '!opacity-[0.4] cursor-not-allowed',

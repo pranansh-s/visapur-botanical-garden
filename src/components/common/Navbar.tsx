@@ -5,14 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import {
-  burgerLinks,
-  importants,
-  languageOptions,
-  navbarLinks,
-  otherBurgerLinks,
-  socialLinks,
-} from '@/constants';
+import { importants, languageOptions } from '@/constants';
 import { IImportant, ILanguageOption, INamedLink } from '@/types';
 import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
@@ -21,6 +14,12 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import user from '../../../public/icons/user.svg';
 
+import {
+  burgerLinks,
+  navbarLinks,
+  otherBurgerLinks,
+  socialLinks,
+} from '@/constants/links';
 import { animationPreset } from '@/utils/anim';
 import ContactLink from '../Footer/ContactLink';
 import ImportantCard from '../Footer/ImportantCard';
@@ -93,12 +92,16 @@ const Navbar: React.FC = () => {
       </TopSection>
       <HorizontalDivider />
       {renderDesktopNavbar(activeIndex, router)}
-      {renderBurgerNavbar(active, activeIndex)}
+      {renderBurgerNavbar(active, activeIndex, setActive)}
     </NavbarContainer>
   );
 };
 
-const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
+const renderBurgerNavbar = (
+  active: boolean,
+  activeIndex: number,
+  setActive: any
+) => {
   return (
     <BurgerMenuContainer className={`${active ? 'h-screen' : 'h-0'}`}>
       <div className="grid grid-cols-2 w-full">
@@ -107,6 +110,7 @@ const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
             <StyledBurgerLink
               key={idx}
               href={value.href}
+              onClick={() => setActive(false)}
               selected={activeIndex == idx}
             >
               {value.name}
@@ -115,7 +119,11 @@ const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
         </BurgerNavLinkContainer>
         <BurgerNavLinkContainer>
           {burgerLinks.map((value: INamedLink, idx: number) => (
-            <BurgerLink key={idx} href={value.href}>
+            <BurgerLink
+              onClick={() => setActive(false)}
+              key={idx}
+              href={value.href}
+            >
               {value.name}
             </BurgerLink>
           ))}
@@ -126,6 +134,7 @@ const renderBurgerNavbar = (active: boolean, activeIndex: number) => {
           <BurgerLink
             className="text-sm font-semibold"
             key={idx}
+            onClick={() => setActive(false)}
             href={value.href}
           >
             {value.name}

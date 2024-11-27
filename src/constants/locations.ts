@@ -272,7 +272,7 @@ const numberedLocations: ILocation[] = [
     direction: false,
   },
   {
-    name: 'Exhbition Center',
+    name: 'Exhibition Center',
     value: 18,
     left: 72.5,
     top: 72,

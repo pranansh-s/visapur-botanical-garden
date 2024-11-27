@@ -2,7 +2,7 @@
 
 import { memo, useCallback } from 'react';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import { IWideCarouselItem } from '@/types';
 import Slider from 'react-slick';
@@ -12,11 +12,11 @@ import place from '../../../public/icons/white-place.svg';
 import tree2 from '../../../public/tree-2.svg';
 
 import Button from '../common/Button';
+import BuyTicket from '../common/BuyTicket';
 import { NextArrow, PrevArrow } from './Arrows';
 
 const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
   ({ items }) => {
-    const pathname = usePathname();
     const router = useRouter();
 
     const settings = {
@@ -41,10 +41,30 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               alt=""
             />
             <div className="absolute inset-0 md:bg-gradient-to-l bg-gradient-to-r from-black/40 to-transparent z-0" />
-            <Text>
-              <TextTitle>{item.title}</TextTitle>
-              <p>&quot;{item.description}&quot;</p>
-            </Text>
+            {item.date ? (
+              <TextContainer>
+                <Body>
+                  <span className="font-sans text-4xl md:text-6xl font-bold">
+                    {item.title}
+                  </span>
+                  <span className="font-bold text-lg md:text-2xl">
+                    {item.date}
+                  </span>
+                  <p className="text-sm md:text-base">
+                    <span className="font-bold block text-base md:text-lg">
+                      Join us in celebrating {item.title}
+                    </span>
+                    {item.description}
+                  </p>
+                </Body>
+                <BuyTicket className="md:scale-100 scale-75 h-max mt-auto mb-12 mx-auto md:flex hidden" />
+              </TextContainer>
+            ) : (
+              <Text>
+                <TextTitle>{item.title}</TextTitle>
+                <p>&quot;{item.description}&quot;</p>
+              </Text>
+            )}
           </CarouselItem>
         );
       },
@@ -69,10 +89,10 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               src={place.src}
               alt=""
             />
-            GET GARDEN&apos;S DIRECTION
+            GET {!items[0].date ? "GARDEN'S" : "VENUE'S"} DIRECTION
           </Tag>
         </CarouselContainer>
-        {pathname === '/' && (
+        {!items[0].date && (
           <PlanVisit>
             <PlanText>
               We offer a serene escape into the world of flora and fauna.
@@ -80,9 +100,9 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               the beauty of nature.
             </PlanText>
             <Button
-              className="sm:px-12 md:px-7 md:py-5 px-4 py-4 md:text-base text-sm h-max shadow-md"
+              className="sm:px-12 md:px-7 md:py-5 px-5 py-4 md:text-base text-sm h-max shadow-md"
               onClick={() => router.push('/plan-your-visit')}
-              variant="base"
+              variant="light"
             >
               Plan Your Visit
             </Button>
@@ -114,11 +134,19 @@ const CarouselContainer = tw.div`
 `;
 
 const Tag = tw.span`
-  bg-tertiary-200 cursor-pointer text-white flex items-center font-serif font-bold tracking-[0.2rem] md:text-xl md:text-lg sm:text-base text-sm uppercase md:py-3 sm:py-2 py-1 md:px-7 sm:px-5 px-3 rounded-b-xl absolute top-0 z-[10] sm:ml-[3%] ml-[1.5%]
+  bg-tertiary-200 cursor-pointer text-white flex items-center font-serif font-bold tracking-[0.1rem] md:text-xl md:text-lg sm:text-base text-sm uppercase md:py-3 sm:py-2 py-1 md:px-7 sm:px-5 px-3 rounded-b-xl absolute top-0 z-[10] sm:ml-[3%] ml-[1.5%]
 `;
 
 const Text = tw.div`
   absolute sm:bottom-16 bottom-8 md:right-36 md:left-auto sm:left-12 left-8 text-white font-serif sm:w-[300px] w-[270px]
+`;
+
+const TextContainer = tw.div`
+  absolute sm:bottom-24 bottom-8 px-6 md:px-12 w-full flex
+`;
+
+const Body = tw.div`
+  flex flex-col md:w-[75%] w-full font-serif text-white space-y-3 lg:ml-24 sm:ml-8 ml-0
 `;
 
 const TextTitle = tw.span`

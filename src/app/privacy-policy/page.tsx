@@ -13,7 +13,7 @@ const PrivacyPolicy: React.FC = () => {
         At Atal Botanical Garden, accessible from{' '}
         <Link
           href="https://atalbotanicalgarden.com"
-          className="text-blue-500 underline"
+          className="text-tertiary-100 underline"
         >
           https://atalbotanicalgarden.com
         </Link>
@@ -32,7 +32,7 @@ const PrivacyPolicy: React.FC = () => {
         and/or collect on&nbsp;
         <Link
           href="https://atalbotanicalgarden.com"
-          className="text-blue-500 underline"
+          className="text-tertiary-100 underline"
         >
           https://atalbotanicalgarden.com
         </Link>
@@ -170,10 +170,10 @@ const PrivacyPolicy: React.FC = () => {
 
       <footer className="text-center">
         <BodyText>
-          For any questions or concerns, email us at
+          For any questions or concerns, email us at&nbsp;
           <Link
             href="mailto:atalbotanicalgarden@mahaforest.gov.in"
-            className="text-blue-500 underline"
+            className="text-tertiary-100 underline"
           >
             atalbotanicalgarden@mahaforest.gov.in
           </Link>

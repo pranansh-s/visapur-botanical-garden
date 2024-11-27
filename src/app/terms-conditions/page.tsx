@@ -85,7 +85,7 @@ const PrivacyPolicy: React.FC = () => {
           queries related to Ticket booking can be raised at&nbsp;
           <Link
             href="mailto:atalbotanicalgarden@mahaforest.gov.in"
-            className="text-blue-500 underline"
+            className="text-tertiary-100 underline"
           >
             atalbotanicalgarden@mahaforest.gov.in
           </Link>
@@ -96,7 +96,7 @@ const PrivacyPolicy: React.FC = () => {
           ATALBIHARI VAJPAYEE VANSAPATI UDHYAN VISAPUR or email us at&nbsp;
           <Link
             href="mailto:atalbotanicalgarden@mahaforest.gov.in"
-            className="text-blue-500 underline"
+            className="text-tertiary-100 underline"
           >
             atalbotanicalgarden@mahaforest.gov.in
           </Link>

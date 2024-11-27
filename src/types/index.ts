@@ -61,6 +61,7 @@ export interface IVideoLink {
 export interface IWideCarouselItem {
   imageSrc: string;
   title: string;
+  date?: string;
   description: string;
 }
 

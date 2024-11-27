@@ -49,7 +49,9 @@ const Location = memo(
             <TextIcon>{value}</TextIcon>
           )}
           {isHovered && (
-            <HoverCardContainer style={{ right: direction ? '-180px' : '10%' }}>
+            <HoverCardContainer
+              style={{ right: direction ? '-200px' : '20px' }}
+            >
               <HoverBackground style={flippedStyle} src={markerHover} alt="" />
               <div
                 className="flex h-[90px] py-3 space-x-3 mb-1 group"
@@ -112,7 +114,7 @@ const LocationName = tw.p`
 `;
 
 const HoverCardContainer = tw.div`
-  w-[200px] absolute -translate-y-1/2 z-[9999]
+  w-[200px] absolute -translate-y-1/2 z-[9999] sm:scale-100 scale-125 origin-center
 `;
 
 const TextIcon = tw.span`

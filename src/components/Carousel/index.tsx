@@ -74,13 +74,13 @@ const Carousel = ({
 
   return (
     <CarouselContainer className={className} {...props}>
-      <Slider draggable={false} {...settings}>
+      <Slider {...settings}>
         {items.map((item, index) => {
           const isCenterItem = index === currentIndex;
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[28rem] transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[20rem] sm:h-[29rem] transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>
@@ -96,7 +96,7 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[450px] rounded-2xl' : variant === 'team' ? 'h-max mb-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[650px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <Image
                     src={item.src}

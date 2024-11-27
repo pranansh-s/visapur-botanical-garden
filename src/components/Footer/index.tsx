@@ -3,9 +3,8 @@
 import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
-import { careerLinks, importants, quickLinks, socialLinks } from '@/constants';
+import { importants } from '@/constants';
 import { IImportant, INamedLink } from '@/types';
 import tw from 'tailwind-styled-components';
 
@@ -15,6 +14,7 @@ import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 import mail from '../../../public/icons/mail.svg';
 
+import { careerLinks, quickLinks, socialLinks } from '@/constants/links';
 import BuyTicket from '../common/BuyTicket';
 import ContactField from './ContactField';
 import ContactLink from './ContactLink';
@@ -110,15 +110,21 @@ const renderConnectOptions = () => {
 const renderContactInfo = () => {
   return (
     <ContactInfo>
-      <ContactField
-        name="Contact No"
-        icon={call}
-        type="tel"
-        value="+91 94050 66433"
-      />
-      <span className="font-sans font-semibold sm:text-base text-lg translate-x-full w-max underline">
-        &nbsp;+91 71724 58671
-      </span>
+      <div className="flex flex-row sm:flex-col sm:items-start items-center">
+        <ContactField
+          name="Contact No"
+          icon={call}
+          type="tel"
+          value="+91 94050 66433"
+        />
+        <strong className="text-3xl sm:hidden block">&nbsp;/</strong>
+        <Link
+          href={'tel:+917172458671'}
+          className="font-sans font-semibold sm:text-base text-lg w-max underline ml-auto sm:-translate-x-[117.5%] whitespace-nowrap"
+        >
+          +91 71724 58671
+        </Link>
+      </div>
       <ContactField
         name="Mail Us"
         icon={mail}

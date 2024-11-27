@@ -17,7 +17,7 @@ const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
     return (
       <HiddenAnswerContainer>
         {name && (
-          <h5 className="text-tertiary-300 font-bold font-serif text-4xl">
+          <h5 className="text-tertiary-300 font-bold font-serif text-3xl md:text-4xl">
             {name}
           </h5>
         )}
