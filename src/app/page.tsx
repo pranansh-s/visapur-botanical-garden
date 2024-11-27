@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
-import hero from '../../public/hero.png';
+import hero from '../../public/hero.svg';
 
 import Activities from '@/components/Activities';
 import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
@@ -100,9 +100,9 @@ const HeroMainTitle = tw.p`
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute object-cover max-w-[1800px] sm:w-[1800px] w-[1300px] top-1/2 z-[10]
+  absolute object-cover max-w-[1800px] sm:w-[1800px] w-[1300px] top-[55%] z-[10]
 `;
 
 const HeroContent = tw.div`
-  space-y-3 sm:space-y-4 md:space-y-5 -translate-y-[10vh]
+  space-y-3 sm:space-y-4 md:space-y-5 -translate-y-[5.5vh]
 `;

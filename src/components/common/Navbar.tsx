@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
   }, [pathname]);
 
   const [active, setActive] = useState<boolean>(false);
+  const [hideNews, setHideNews] = useState<boolean>(false);
   const hasMounted = useRef(pathname === '/' ? false : true);
 
   useEffect(() => {
@@ -69,6 +70,17 @@ const Navbar: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ ...animationPreset }}
     >
+      {!hideNews && (
+        <div className="bg-hotpink relative w-screen font-serif text-[#EBFF00] tracking-widest text-xs sm:text-sm uppercase font-bold p-3 text-center">
+          OFFERS AND NEWS ABOUT THE GARDEN
+          <span
+            className="absolute right-10 text-3xl text-white cursor-pointer top-0"
+            onClick={() => setHideNews(true)}
+          >
+            &times;
+          </span>
+        </div>
+      )}
       <TopSection>
         <LogoSection onClick={() => router.push('/')}>
           <StyledImage src={govtLogo1} alt="" width={35} />
@@ -251,5 +263,5 @@ const StyledNavLink = tw(Link)<{ selected: boolean }>`
 `;
 
 const BurgerMenuContainer = tw.div`
-  bg-primary transition-all sm:hidden block duration-500 ease w-screen fixed top-[4.8rem] overflow-x-hidden overflow-y-scroll flex items-center flex-col space-y-2 px-4
+  bg-primary transition-all sm:hidden block duration-500 ease w-screen fixed top-[7rem] overflow-x-hidden overflow-y-scroll flex items-center flex-col space-y-2 px-4
 `;
