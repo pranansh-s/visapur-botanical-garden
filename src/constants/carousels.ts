@@ -47,34 +47,33 @@ export const wideCarouselItems: IWideCarouselItem[] = [
       'Explore our stunning collection of rare and exotic flowers from around the globe.',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-3.webp',
+    imageSrc: '/wide-carousel/wide-carousel-6.webp',
     title: 'Discover Fruits and Veggies',
     description:
       'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-4.webp',
+    imageSrc: '/wide-carousel/wide-carousel-3.webp',
     title: 'Discover the Desert',
     description:
       'From towering giants to tiny wonders, explore the diverse world of cacti!',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-5.webp',
+    imageSrc: '/wide-carousel/wide-carousel-4.webp',
     title: 'Explore Aquarium',
     description:
       'Embark on an underwater adventure and explore the vibrant world of the aquarium',
   },
   {
-    imageSrc: '/wide-carousel/wide-carousel-6.webp',
+    imageSrc: '/wide-carousel/wide-carousel-5.webp',
     title: 'Rich History of Chandrapur',
     description:
       'Unlock the rich history of Chandrapur and explore its cultural heritage and ancient landmarks',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-7.webp',
-    title: 'Discover Fruits and Veggies',
-    description:
-      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
+    title: 'Unique Varieties of birds',
+    description: 'Spot a dazzling variety of birds in their natural splendor!',
   },
 ];
 

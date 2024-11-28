@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import { motion, MotionConfig } from 'framer-motion';
 
 const BurgerMenu: React.FC<{ active: boolean; setActive: any }> = ({

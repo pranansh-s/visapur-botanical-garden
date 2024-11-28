@@ -19,7 +19,7 @@ export const quickLinks: INamedLink[] = [
   },
   { name: 'Shop', href: 'https://botanicool.in/' },
   { name: 'Sitemap', href: '/sitemap.xml' },
-  { name: 'Galleries', href: '/gallery' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Contact', href: '/support' },
 ];
 

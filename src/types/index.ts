@@ -47,6 +47,7 @@ export interface IImportant {
 export interface IImageCard {
   name: string;
   src: string;
+  link?: string;
 }
 
 export interface IAmenity {

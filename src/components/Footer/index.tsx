@@ -87,7 +87,11 @@ const renderFooterLinks = () => {
       <Important>
         <LinkHeading className="text-4xl">Important</LinkHeading>
         {importants.map((important: IImportant, idx: number) => (
-          <ImportantCard className="max-w-[120px]" key={idx} {...important} />
+          <ImportantCard
+            className="max-w-[110px] w-full"
+            key={idx}
+            {...important}
+          />
         ))}
       </Important>
     </LinksContainer>
@@ -171,15 +175,15 @@ const LinkHeading = tw.h4`
 `;
 
 const FLink = tw(Link)`
-  font-serif text-sm font-bold text-tertiary-200 hover:text-tertiary-100 h-max
+  font-serif text-sm font-bold text-tertiary-200 hover:text-tertiary-100 h-max w-max p-3 -ml-3
 `;
 
 const CareerLinks = tw.ul`
-  flex-col space-y-5 col-start-2 row-start-1 row-end-2 md:flex hidden
+  flex-col col-start-2 row-start-1 row-end-2 md:flex hidden
 `;
 
 const QuickLinks = tw.ul`
-  grid grid-cols-2 gap-3 row-span-2 md:col-span-1 col-span-2
+  grid md:grid-cols-2 row-span-2 gap-x-12
 `;
 
 const HowToReach = tw.div`
@@ -187,5 +191,5 @@ const HowToReach = tw.div`
 `;
 
 const Important = tw.div`
-  col-span-2 flex flex-wrap items-start md:scale-100 scale-[0.75] origin-top-left md:w-full w-[140%]
+  col-span-2 flex flex-wrap items-start md:scale-100 scale-[0.75] origin-top-left mt-3 md:w-full w-[20rem]
 `;

@@ -80,7 +80,7 @@ const Carousel = ({
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[20rem] sm:h-[29rem] transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[30rem] sm:h-[29rem] transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>
@@ -101,6 +101,8 @@ const Carousel = ({
                   <Image
                     src={item.src}
                     alt={item.title}
+                    width={300}
+                    height={300}
                     className={`object-cover object-top rounded-lg ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
                   <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">

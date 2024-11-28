@@ -2,6 +2,7 @@
 
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import { support } from '@/constants';
 import { IImageCard } from '@/types';
@@ -17,6 +18,8 @@ import ImageCard from '@/components/common/ImageCard';
 import { strings } from '@/constants/strings';
 
 const Support: NextPage = () => {
+  const router = useRouter();
+
   const renderGetInTouch = () => (
     <Section>
       <SupportHeading>{strings.support.getInTouch}</SupportHeading>
@@ -65,6 +68,7 @@ const Support: NextPage = () => {
     <CardGrid>
       {support.map((supportCard: IImageCard, idx: number) => (
         <ImageCard
+          onClick={() => router.push(supportCard.link!)}
           className="hover:brightness-75 cursor-pointer transition-all duration-300"
           key={idx}
           {...supportCard}

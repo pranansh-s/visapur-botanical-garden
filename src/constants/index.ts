@@ -131,13 +131,13 @@ export const bookingGroups: IExpandGroup[] = [
 ];
 
 export const support: IImageCard[] = [
-  { name: 'Career', src: '/support/support-1.webp' },
-  { name: 'Guidance', src: '/support/support-2.webp' },
+  { name: 'Career', src: '/support/support-1.webp', link: '/about#team' },
+  { name: 'Guidance', src: '/support/support-2.webp', link: '/about#team' },
   { name: 'Services', src: '/support/support-3.webp' },
   { name: 'Sponsorships & Donation', src: '/support/support-4.webp' },
   { name: 'Membership', src: '/support/support-5.webp' },
-  { name: 'Updates', src: '/support/support-6.webp' },
-  { name: 'Special events', src: '/support/support-7.webp' },
+  { name: 'Updates', src: '/support/support-6.webp', link: '/#table' },
+  { name: 'Special events', src: '/support/support-7.webp', link: '/#table' },
 ];
 
 export const importants: IImportant[] = [

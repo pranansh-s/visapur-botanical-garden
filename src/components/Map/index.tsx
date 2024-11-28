@@ -17,18 +17,23 @@ import Location from './Location';
 
 const Map = (): React.ReactElement => {
   const mapRef = useRef<HTMLDivElement>(null);
+  const [isDraggable, setIsDraggable] = useState<boolean>(true);
 
   return (
     <Container>
       <Heading name="Map" />
       <MapContainer>
         <TransformWrapper
-          smooth
           centerZoomedOut
-          alignmentAnimation={{ sizeX: 0, sizeY: 0 }}
-          panning={{ disabled: true }}
           minScale={1}
           maxScale={2}
+          smooth
+          onPinchingStart={() => setIsDraggable(false)}
+          onPinchingStop={() => setIsDraggable(true)}
+          wheel={{ disabled: false, wheelDisabled: true }}
+          pinch={{ disabled: false }}
+          panning={{ disabled: true }}
+          doubleClick={{ disabled: true }}
         >
           <TransformComponent>
             <Draggable
@@ -38,6 +43,7 @@ const Map = (): React.ReactElement => {
                 bottom: 100,
                 top: -1000,
               }}
+              disabled={!isDraggable}
               defaultPosition={{ x: -100, y: -400 }}
             >
               <DraggableMap ref={mapRef}>

@@ -71,10 +71,10 @@ const Navbar: React.FC = () => {
       transition={{ ...animationPreset }}
     >
       {!hideNews && (
-        <div className="bg-hotpink relative w-screen font-serif text-[#EBFF00] tracking-widest text-xs sm:text-sm uppercase font-bold p-3 text-center">
+        <div className="bg-hotpink relative w-screen font-serif text-[#EBFF00] tracking-widest text-xs sm:text-sm uppercase font-bold py-1 px-3 text-center">
           OFFERS AND NEWS ABOUT THE GARDEN
           <span
-            className="absolute right-10 text-3xl text-white cursor-pointer top-0"
+            className="absolute sm:right-6 right-3 text-2xl sm:text-3xl text-white cursor-pointer -translate-y-2 -translate-x-1/2"
             onClick={() => setHideNews(true)}
           >
             &times;
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
       </TopSection>
       <HorizontalDivider />
       {renderDesktopNavbar(activeIndex, router)}
-      {renderBurgerNavbar(active, activeIndex, setActive)}
+      {renderBurgerNavbar(active, activeIndex, setActive, hideNews)}
     </NavbarContainer>
   );
 };
@@ -112,10 +112,13 @@ const Navbar: React.FC = () => {
 const renderBurgerNavbar = (
   active: boolean,
   activeIndex: number,
-  setActive: any
+  setActive: any,
+  hideNews: boolean
 ) => {
   return (
-    <BurgerMenuContainer className={`${active ? 'h-screen' : 'h-0'}`}>
+    <BurgerMenuContainer
+      className={`${hideNews ? 'top-[5rem]' : 'top-[8rem]'} overflow-hidden ${active ? 'h-screen' : 'h-0'}`}
+    >
       <div className="grid grid-cols-2 w-full">
         <BurgerNavLinkContainer>
           {navbarLinks.map((value: INamedLink, idx: number) => (
@@ -187,7 +190,7 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
             {value.name}
           </StyledNavLink>
         ))}
-        <BuyTicket />
+        <BuyTicket className="scale-[0.9]" />
       </NavLinkContainer>
       <HorizontalDivider className="sm:block hidden" />
     </>
@@ -201,7 +204,7 @@ const NavbarContainer = tw(motion.nav)`
 `;
 
 const TopSection = tw.div`
-  flex items-center text-sm md:py-1 py-3 px-2 relative max-w-[1536px] w-full
+  flex items-center text-sm md:py-0 py-2 px-2 relative max-w-[1536px] w-full
 `;
 
 const LogoSection = tw.div`
@@ -241,7 +244,7 @@ const BurgerNavLinkContainer = tw(NavLinkContainer)`
 `;
 
 const BurgerLink = tw(Link)`
-  text-gray-600 font-serif text-base font-bold py-2
+  text-gray-600 font-serif text-base font-bold py-2 pr-5 w-max
 `;
 
 const Importants = tw.ul`
@@ -263,5 +266,5 @@ const StyledNavLink = tw(Link)<{ selected: boolean }>`
 `;
 
 const BurgerMenuContainer = tw.div`
-  bg-primary transition-all sm:hidden block duration-500 ease w-screen fixed top-[7rem] overflow-x-hidden overflow-y-scroll flex items-center flex-col space-y-2 px-4
+  bg-primary transition-all sm:hidden block duration-500 ease w-screen fixed overflow-x-hidden overflow-y-scroll flex items-center flex-col space-y-2 px-4
 `;

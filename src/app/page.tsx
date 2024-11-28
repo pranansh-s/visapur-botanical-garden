@@ -81,7 +81,7 @@ const PageContainer = tw.div`
 const HeroSection = tw.section`
   flex flex-col items-center justify-center h-screen
   2xl:max-h-[700px] sm:max-h-[500px] max-h-[450px]
-  mt-32 text-center relative
+  mt-24 text-center relative
 `;
 
 const HeroSubtitle = tw(motion.h2)`
@@ -100,7 +100,7 @@ const HeroMainTitle = tw.p`
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute object-cover max-w-[1800px] sm:w-[1800px] w-[1300px] top-[55%] z-[10]
+  absolute object-cover max-w-[1800px] lg:w-[1800px] sm:w-[1500px] w-[1000px] top-[55%] z-[10]
 `;
 
 const HeroContent = tw.div`

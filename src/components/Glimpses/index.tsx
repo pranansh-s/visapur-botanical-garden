@@ -16,7 +16,7 @@ const Glimpses = (): React.ReactElement => {
       <BackgroundImage
         src={honey1}
         alt="honey-1"
-        className="w-[150px] md:w-[200px] lg:w-[250px] -top-1/4 xl:-left-lg -left-md"
+        className="w-[150px] md:w-[200px] lg:w-[250px] -top-1/4 xl:-left-lg -left-md object-cover"
       />
     </GlimpsesContainer>
   );
