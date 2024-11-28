@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
         <div className="bg-hotpink relative w-screen font-serif text-[#EBFF00] tracking-widest text-xs sm:text-sm uppercase font-bold py-1 px-3 text-center">
           OFFERS AND NEWS ABOUT THE GARDEN
           <span
-            className="absolute sm:right-6 right-3 text-2xl sm:text-3xl text-white cursor-pointer -translate-y-2 -translate-x-1/2"
+            className="absolute sm:right-6 right-4 text-xl sm:text-2xl text-white cursor-pointer -translate-y-2 -translate-x-1/2"
             onClick={() => setHideNews(true)}
           >
             &times;

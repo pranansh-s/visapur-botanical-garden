@@ -69,6 +69,7 @@ const renderHeroSection = (heroY: any) => (
       animate={{ y: 0 }}
       transition={animationPreset}
       alt="Hero Image"
+      priority
     />
   </HeroSection>
 );

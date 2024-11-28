@@ -143,7 +143,7 @@ Footer.displayName = 'Footer';
 export default Footer;
 
 const RightsReserved = tw.p`
-  w-screen max-w-[1536px] absolute left-0 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-xs sm:text-sm bg-hotpink text-center
+  w-screen absolute left-1/2 -translate-x-1/2 text-[#EBFF00] font-serif font-extrabold py-6 tracking-[0.2rem] text-xs sm:text-sm bg-hotpink text-center
 `;
 
 const FooterContainer = tw.div`
@@ -191,5 +191,5 @@ const HowToReach = tw.div`
 `;
 
 const Important = tw.div`
-  col-span-2 flex flex-wrap items-start md:scale-100 scale-[0.75] origin-top-left mt-3 md:w-full w-[20rem]
+  col-span-2 flex flex-wrap items-start lg:scale-100 scale-[0.75] origin-top-left mt-3 md:w-full w-[20rem]
 `;

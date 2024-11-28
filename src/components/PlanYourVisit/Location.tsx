@@ -25,6 +25,7 @@ const Location: React.FC<VisitLocation> = ({
     >
       <Image
         src={imageSrc}
+        priority
         width={300}
         height={300}
         className={`max-h-[200px] min-w-[15rem] w-[65%] origin-left ${active ? 'scale-100' : 'scale-[2.0]'} transition-all duration-500`}

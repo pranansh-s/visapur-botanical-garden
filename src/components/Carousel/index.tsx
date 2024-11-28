@@ -1,6 +1,7 @@
 'use client';
 
-import React, { HTMLAttributes, useEffect, useMemo, useState } from 'react';
+import React, { HTMLAttributes, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 import { ICarouselItem } from '@/types';
 import Slider from 'react-slick';
@@ -96,11 +97,12 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[650px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-10 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[650px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
-                  <Image
+                  <StyledImage
                     src={item.src}
-                    alt={item.title}
+                    alt={item.title ?? ''}
+                    loading="eager"
                     width={300}
                     height={300}
                     className={`object-cover object-top rounded-lg ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
@@ -131,7 +133,7 @@ const CarouselItem = tw.div`
   flex-none space-y-3 transition-all ease sm:px-2 px-1 outline-none w-full
 `;
 
-const Image = tw.img`
+const StyledImage = tw(Image)`
   object-fill w-full h-full max-h-[320px]
 `;
 

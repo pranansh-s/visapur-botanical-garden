@@ -98,6 +98,7 @@ const AnimatedBuggy: React.FC = memo(() => {
         ref={imageRef}
         src={buggy}
         alt="Buggy Cart"
+        priority
         className="absolute xl:scale-[1.25] lg:scale-[1] scale-[0.85] z-10"
       />
       <ul className="absolute top-0 h-full w-full">

@@ -38,5 +38,5 @@ const CardContainer = tw.div`
 `;
 
 const BodyText = tw.span`
-  text-tertiary-200 font-extrabold text-sm
+  text-tertiary-200 font-bold text-sm
 `;
