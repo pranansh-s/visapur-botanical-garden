@@ -81,7 +81,7 @@ const Carousel = ({
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} h-[30rem] sm:h-[29rem] transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[40rem] h-[30rem] sm:h-[29rem]' : ''} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>
@@ -97,7 +97,7 @@ const Carousel = ({
                 </IframeContainer>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[650px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[350px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <StyledImage
                     src={item.src}
@@ -134,7 +134,7 @@ const CarouselItem = tw.div`
 `;
 
 const StyledImage = tw(Image)`
-  object-fill w-full h-full max-h-[320px]
+  object-fill w-full h-full
 `;
 
 const IframeContainer = tw.div`

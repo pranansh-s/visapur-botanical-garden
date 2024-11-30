@@ -127,7 +127,7 @@ const ExpandContainer = tw.div<{ selected: boolean }>`
 `;
 
 const ExpandTitle = tw.div`
-  flex justify-between items-center font-sans font-bold hover:opacity-50 opacity-100 transition-all cursor-pointer duration-200 py-5 md:px-16 sm:px-12 px-8
+  flex justify-between items-center font-sans font-bold transition-all cursor-pointer duration-200 py-5 md:px-16 sm:px-12 px-8 text-black hover:text-tertiary-200
 `;
 
 const StyledImage = tw(Image)`

@@ -4,8 +4,8 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { ILocation } from '@/types';
-import Draggable from 'react-draggable';
-import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
+//@ts-ignore
+import { MapInteractionCSS } from 'react-map-interaction';
 import tw from 'tailwind-styled-components';
 
 import drag from '../../../public/icons/drag.svg';
@@ -17,44 +17,26 @@ import Location from './Location';
 
 const Map = (): React.ReactElement => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [isDraggable, setIsDraggable] = useState<boolean>(true);
+  const [mapScale, setScale] = useState<number>(1);
 
   return (
     <Container>
       <Heading name="Map" />
       <MapContainer>
-        <TransformWrapper
-          centerZoomedOut
-          minScale={1}
+        <MapInteractionCSS
+          onChange={(scale: number) => setScale(scale)}
+          showControls
+          minScale={0.5}
           maxScale={2}
-          smooth
-          onPinchingStart={() => setIsDraggable(false)}
-          onPinchingStop={() => setIsDraggable(true)}
-          wheel={{ disabled: false, wheelDisabled: true }}
-          pinch={{ disabled: false }}
-          panning={{ disabled: true }}
-          doubleClick={{ disabled: true }}
+          btnClass="bg-white shadow-sm text-2xl w-10 h-10 my-1"
         >
-          <TransformComponent>
-            <Draggable
-              bounds={{
-                left: -300,
-                right: 200,
-                bottom: 100,
-                top: -1000,
-              }}
-              disabled={!isDraggable}
-              defaultPosition={{ x: -100, y: -400 }}
-            >
-              <DraggableMap ref={mapRef}>
-                <Image draggable={false} src={map} alt="Map" />
-                {locations.map((location: ILocation, idx: number) => (
-                  <Location key={idx} {...location} />
-                ))}
-              </DraggableMap>
-            </Draggable>
-          </TransformComponent>
-        </TransformWrapper>
+          <DraggableMap ref={mapRef}>
+            <Image draggable={false} src={map} alt="Map" />
+            {locations.map((location: ILocation, idx: number) => (
+              <Location key={idx} {...location} />
+            ))}
+          </DraggableMap>
+        </MapInteractionCSS>
       </MapContainer>
       <DragToMove>
         <Image className="sm:w-6 sm:h-6 w-4 h-4 mr-3" src={drag} alt="" />
@@ -75,7 +57,7 @@ const MapContainer = tw.div`
 `;
 
 const DraggableMap = tw.div`
-  cursor-grab relative min-w-[600px] z-0
+  cursor-grab relative min-w-[600px] z-0 -translate-y-1/2 -translate-x-7 origin-center
 `;
 
 const DragToMove = tw.p`

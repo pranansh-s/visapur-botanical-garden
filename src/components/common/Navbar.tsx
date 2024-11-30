@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
         <div className="bg-hotpink relative w-screen font-serif text-[#EBFF00] tracking-widest text-xs sm:text-sm uppercase font-bold py-1 px-3 text-center">
           OFFERS AND NEWS ABOUT THE GARDEN
           <span
-            className="absolute sm:right-6 right-4 text-xl sm:text-2xl text-white cursor-pointer -translate-y-2 -translate-x-1/2"
+            className="absolute sm:right-6 right-4 text-xl sm:text-2xl text-white cursor-pointer top-1/2 -translate-y-1/2 -translate-x-1/2"
             onClick={() => setHideNews(true)}
           >
             &times;
@@ -117,7 +117,7 @@ const renderBurgerNavbar = (
 ) => {
   return (
     <BurgerMenuContainer
-      className={`${hideNews ? 'top-[5rem]' : 'top-[8rem]'} overflow-hidden ${active ? 'h-screen' : 'h-0'}`}
+      className={`${hideNews ? 'top-[5rem]' : 'top-[5.5rem]'} overflow-hidden ${active ? 'h-screen' : 'h-0'}`}
     >
       <div className="grid grid-cols-2 w-full">
         <BurgerNavLinkContainer>

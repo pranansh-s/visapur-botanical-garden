@@ -39,6 +39,10 @@ export const burgerLinks: INamedLink[] = [
     href: 'https://booking.atalbotanicalgarden.com/tour/',
   },
   {
+    href: '/gallery',
+    name: 'Gallery',
+  },
+  {
     name: 'Blog',
     href: '/',
   },

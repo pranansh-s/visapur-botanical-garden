@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
@@ -23,7 +23,7 @@ const shuffleArray = (array: string[]) => {
 const Gallery: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const shuffledImages = shuffleArray(galleryImages);
+  const shuffledImages = useMemo(() => shuffleArray(galleryImages), []);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);

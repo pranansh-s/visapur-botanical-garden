@@ -82,7 +82,7 @@ const PageContainer = tw.div`
 const HeroSection = tw.section`
   flex flex-col items-center justify-center h-screen
   2xl:max-h-[700px] sm:max-h-[500px] max-h-[450px]
-  mt-24 text-center relative
+  mt-[25%] sm:mt-[8%] text-center relative
 `;
 
 const HeroSubtitle = tw(motion.h2)`

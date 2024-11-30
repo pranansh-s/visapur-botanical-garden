@@ -36,7 +36,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
           <CarouselItem key={index}>
             <Image
               src={item.imageSrc}
-              className="object-cover min-w-[300px]"
+              className="object-cover min-w-[300px] object-top"
               fill
               alt=""
             />
@@ -154,7 +154,7 @@ const TextTitle = tw.span`
 `;
 
 const CarouselItem = tw.div`
-  w-full relative md:h-[500px] sm:h-[400px] h-[300px]
+  w-full relative md:h-[600px] sm:h-[500px] h-[400px]
 `;
 
 const BackgroundImage = tw(Image)`

@@ -4,7 +4,6 @@ import { memo, useState } from 'react';
 import Image from 'next/image';
 
 import { ILocation } from '@/types';
-import { KeepScale } from 'react-zoom-pan-pinch';
 import tw from 'tailwind-styled-components';
 
 import markerHover from '../../../public/marker-hover.svg';
@@ -32,7 +31,7 @@ const Location = memo(
           zIndex: isHovered ? 50 : 'auto',
         }}
       >
-        <KeepScale className="flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <MarkerIcon
             fill={typeof value === 'string' ? color! : '#C90B02'}
             style={flippedStyle}
@@ -92,7 +91,7 @@ const Location = memo(
               </div>
             </HoverCardContainer>
           )}
-        </KeepScale>
+        </div>
       </LocationContainer>
     );
   }
