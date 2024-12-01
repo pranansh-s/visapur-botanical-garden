@@ -69,7 +69,7 @@ const Grid = tw.div`
 `;
 
 const DayHeader = tw.span`
-  text-[#711F00] text-3xl py-6 pl-2 border-b-[1px] border-tertiary-200
+  text-[#711F00] text-3xl py-6 pl-2
 `;
 
 const DayContainer = tw.div<{ $disabled: boolean; $current: boolean }>`

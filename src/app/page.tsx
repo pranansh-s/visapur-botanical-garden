@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
@@ -70,6 +71,12 @@ const renderHeroSection = (heroY: any) => (
       transition={animationPreset}
       alt="Hero Image"
       priority
+    />
+    <DotLottieReact
+      src="/lottie/cloud.lottie"
+      loop
+      autoplay
+      className="w-screen max-w-[1536px] -translate-y-60 -z-10 absolute"
     />
   </HeroSection>
 );

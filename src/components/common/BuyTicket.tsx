@@ -10,16 +10,19 @@ const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
   props => {
     const router = useRouter();
     return (
-      <Button
-        className="px-6 pr-4 py-4 rounded-full"
-        variant="base"
-        iconSize={16}
-        preIconNode={book}
-        onClick={() => router.push(strings.bookTicket)}
-        {...props}
-      >
-        Buy Ticket
-      </Button>
+      <div className="relative">
+        <Button
+          className="px-6 pr-4 py-4 rounded-full"
+          variant="base"
+          iconSize={16}
+          preIconNode={book}
+          onClick={() => router.push(strings.bookTicket)}
+          {...props}
+        >
+          Buy Ticket
+        </Button>
+        {props.children}
+      </div>
     );
   }
 );

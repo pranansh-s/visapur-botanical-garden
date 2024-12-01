@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import { IWideCarouselItem } from '@/types';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 
@@ -90,6 +91,14 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               alt=""
             />
             GET {!items[0].date ? "GARDEN'S" : "VENUE'S"} DIRECTION
+            {!items[0].date ? (
+              <DotLottieReact
+                src="/lottie/parrot.lottie"
+                loop
+                autoplay
+                className="absolute h-48 translate-x-[80%] bottom-0 translate-y-[10%] md:block hidden"
+              />
+            ) : null}
           </Tag>
         </CarouselContainer>
         {!items[0].date && (
@@ -104,6 +113,12 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               onClick={() => router.push('/plan-your-visit')}
               variant="light"
             >
+              <DotLottieReact
+                src="/lottie/butterfly.lottie"
+                loop
+                autoplay
+                className="absolute h-12 lg:h-20 translate-x-[85%] lg:translate-x-[45%] -translate-y-5"
+              />
               Plan Your Visit
             </Button>
             <BackgroundImage
@@ -130,7 +145,7 @@ const PlanVisit = tw.div`
 `;
 
 const CarouselContainer = tw.div`
-  relative w-screen max-w-[1536px] sm:!mt-0 xl:-ml-lg lg:-ml-md -ml-sm overflow-hidden
+  relative w-screen max-w-[1536px] sm:!mt-0 xl:-ml-lg lg:-ml-md -ml-sm
 `;
 
 const Tag = tw.span`

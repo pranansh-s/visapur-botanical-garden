@@ -7,6 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { importants, languageOptions } from '@/constants';
 import { IImportant, ILanguageOption, INamedLink } from '@/types';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
@@ -190,7 +191,14 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
             {value.name}
           </StyledNavLink>
         ))}
-        <BuyTicket className="scale-[0.9]" />
+        <BuyTicket className="scale-[0.9]">
+          <DotLottieReact
+            src="/lottie/monkey.lottie"
+            loop
+            autoplay
+            className="h-[15rem] absolute top-[0.5rem] -z-10"
+          />
+        </BuyTicket>
       </NavLinkContainer>
       <HorizontalDivider className="sm:block hidden" />
     </>

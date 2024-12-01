@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 
 import { ILocation } from '@/types';
@@ -17,14 +17,11 @@ import Location from './Location';
 
 const Map = (): React.ReactElement => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [mapScale, setScale] = useState<number>(1);
-
   return (
     <Container>
       <Heading name="Map" />
       <MapContainer>
         <MapInteractionCSS
-          onChange={(scale: number) => setScale(scale)}
           showControls
           minScale={0.5}
           maxScale={2}

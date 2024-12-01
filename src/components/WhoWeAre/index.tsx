@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import tw from 'tailwind-styled-components';
 
-import astronaut from '../../../public/astronaut.svg';
 import train from '../../../public/train.svg';
 import tree from '../../../public/tree.svg';
 
@@ -35,10 +35,11 @@ const WhoWeAre = (): React.ReactElement => {
         alt="Tree"
         className="h-[1200px] md:h-[600px] lg:h-[752px] md:-right-lg -right-[42%] md:bottom-6 bottom-[75%]"
       />
-      <BackgroundImage
-        src={astronaut}
-        alt="Astronaut"
-        className="w-[324px] lg:w-[512px] -right-0 bottom-0 sm:block hidden"
+      <DotLottieReact
+        src="/lottie/astronaut.lottie"
+        loop
+        autoplay
+        className="md:block hidden w-[40rem] lg:w-[50rem] absolute right-0 translate-x-1/4 bottom-0 -mb-4"
       />
       <BackgroundImage
         src={train}

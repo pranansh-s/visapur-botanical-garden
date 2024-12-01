@@ -81,7 +81,7 @@ const Carousel = ({
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[40rem] h-[30rem] sm:h-[29rem]' : ''} transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[35rem] h-[30rem] sm:h-[29rem]' : ''} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <IframeContainer>

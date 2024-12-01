@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import { activities } from '@/constants';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
@@ -28,6 +29,12 @@ const Activities = (): React.ReactElement => {
   return (
     <ActivitiesContainer>
       <Heading name="Unforgettable Events | Activities" />
+      <DotLottieReact
+        src="/lottie/butterfly.lottie"
+        loop
+        autoplay
+        className="absolute h-16 lg:h-24 top-0 -translate-y-[40%] xs:left-[26.5rem] left-[15.5rem] sm:left-[32.5rem] md:left-[44rem] lg:left-[54rem]"
+      />
       <CardContainer>
         <PopupCard
           onClick={() => openPopup(activities[0].video)}
