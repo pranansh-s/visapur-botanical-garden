@@ -10,7 +10,7 @@ const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
   props => {
     const router = useRouter();
     return (
-      <div className="relative">
+      <div className="relative group">
         <Button
           className="px-6 pr-4 py-4 rounded-full"
           variant="base"

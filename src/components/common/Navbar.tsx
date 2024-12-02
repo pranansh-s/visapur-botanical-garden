@@ -196,7 +196,7 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
             src="/lottie/monkey.lottie"
             loop
             autoplay
-            className="h-[15rem] absolute top-[0.5rem] -z-10"
+            className="h-[15rem] absolute -top-1 group-hover:top-[0.5rem] -z-10 group-hover:opacity-100 opacity-0 transition-all duration-500 pointer-events-none"
           />
         </BuyTicket>
       </NavLinkContainer>
