@@ -12,6 +12,7 @@ export interface IExpandGroup {
 }
 
 export interface ICarouselItem {
+  imgSrc?: string;
   src: string;
   title?: string;
   subText?: string;

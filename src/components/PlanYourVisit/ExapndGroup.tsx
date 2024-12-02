@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { IExpandGroup } from '@/types';
 import tw from 'tailwind-styled-components';
 
+import book from '../../../public/icons/book.svg';
+import download from '../../../public/icons/download.svg';
+
 import Button from '../common/Button';
 
 interface IExpandGroupProps extends IExpandGroup {
@@ -103,11 +106,18 @@ const ExpandGroup = memo(
             href={pdfLink}
             className="sm:text-lg text-base sm:px-5 px-4 py-2 bg-white rounded-full font-sans hover:brightness-90 transition-all duration-200 text-tertiary-200 font-semibold"
           >
+            <Image
+              src={download}
+              alt="download"
+              className="w-8 h-8 inline p-1 mr-2"
+            />
             Download PDF
           </Link>
           <Button
-            className="sm:text-lg text-base sm:px-3 px-2 py-2"
+            className="sm:text-lg text-base sm:px-4 px-3 py-2"
             link="https://booking.atalbotanicalgarden.com/"
+            preIconNode={book}
+            iconSize={12}
             variant="base"
           >
             Book

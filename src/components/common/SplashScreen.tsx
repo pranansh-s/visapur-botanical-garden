@@ -41,7 +41,7 @@ const SplashScreen: React.FC = () => {
     <motion.div
       initial={{ y: '-10vh', opacity: 1 }}
       animate={{ y: '100%', opacity: 0 }}
-      transition={{ duration: 1.25, delay: 1.5, ease: animationPreset.ease }}
+      transition={{ duration: 1.25, delay: 3, ease: animationPreset.ease }}
       style={{
         background:
           'linear-gradient(to top, white 0%, white 90%, transparent 100%)',

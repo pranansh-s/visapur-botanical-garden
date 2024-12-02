@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Braah_One, Merriweather, Merriweather_Sans } from 'next/font/google';
 
 import Navbar from '@/components/common/Navbar';
-import SplashScreen from '@/components/common/SpashScreen';
+import SplashScreen from '@/components/common/SplashScreen';
 import Footer from '@/components/Footer';
 
 import './globals.css';

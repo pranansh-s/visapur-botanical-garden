@@ -1,13 +1,34 @@
 import { ICarouselItem, IWideCarouselItem } from '@/types';
 
 export const instagramPosts: ICarouselItem[] = [
-  { src: 'C8e02O1tPcE' },
-  { src: 'DClIq_vTfKC' },
-  { src: 'DCidBCFiJ4U' },
-  { src: 'DCf41xaT002' },
-  { src: 'DCdQJJsid8B' },
-  { src: 'DCQrV5xtuL7' },
-  { src: 'DCN_L3Nul_w' },
+  {
+    imgSrc: '/instagram/1.png',
+    src: 'https://www.instagram.com/p/C8e02O1tPcE/',
+  },
+  {
+    imgSrc: '/instagram/2.png',
+    src: 'https://www.instagram.com/p/DDCVkd8p4HZ',
+  },
+  {
+    imgSrc: '/instagram/1.png',
+    src: 'https://www.instagram.com/p/DDCLv1LzmJX',
+  },
+  {
+    imgSrc: '/instagram/2.png',
+    src: 'https://www.instagram.com/p/DC_WqprpbOL',
+  },
+  {
+    imgSrc: '/instagram/1.png',
+    src: 'https://www.instagram.com/p/DC_S3xHJRdu/',
+  },
+  {
+    imgSrc: '/instagram/2.png',
+    src: 'https://www.instagram.com/p/DC4T1bfzWtX/',
+  },
+  {
+    imgSrc: '/instagram/1.png',
+    src: 'https://www.instagram.com/p/DCqSTs-CJ1r/',
+  },
 ];
 
 export const eventCarouselItems: IWideCarouselItem[] = [
