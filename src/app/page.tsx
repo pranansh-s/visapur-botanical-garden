@@ -7,6 +7,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
 import hero from '../../public/hero.png';
+import ministerImage from '../../public/minister-1.svg';
+import ministerImage2 from '../../public/minister-2.svg';
 
 import Activities from '@/components/Activities';
 import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
@@ -61,6 +63,16 @@ const renderHeroSection = (heroY: any) => (
       >
         {strings.title.part1}
         <HeroMainTitle>{strings.title.part2}</HeroMainTitle>
+        <Image
+          className="absolute right-0 translate-x-0 sm:-translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 h-28 w-28"
+          src={ministerImage}
+          alt="Shri. Sudhir Mungantiwar"
+        />
+        <Image
+          className="absolute left-0 translate-x-0 sm:translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 w-28 h-28"
+          src={ministerImage2}
+          alt=""
+        />
       </HeroTitle>
     </HeroContent>
     <StyledImage
@@ -72,6 +84,7 @@ const renderHeroSection = (heroY: any) => (
       alt="Hero Image"
       priority
     />
+
     <DotLottieReact
       src="/lottie/cloud.lottie"
       loop
@@ -108,9 +121,9 @@ const HeroMainTitle = tw.p`
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute object-cover max-w-[1800px] lg:w-[1800px] sm:w-[1500px] w-[1000px] h-max top-0 z-[10]
+  absolute object-cover max-w-[1800px] lg:w-[1800px] sm:w-[1500px] w-[1000px] h-max top-36 sm:top-16 lg:top-0 2xl:top-36 z-[10]
 `;
 
 const HeroContent = tw.div`
-  space-y-3 sm:space-y-4 md:space-y-5 -translate-y-[5.5vh]
+  space-y-3 sm:space-y-4 md:space-y-5 md-translate-y-[5.5vh]
 `;

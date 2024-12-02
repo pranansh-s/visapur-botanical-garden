@@ -17,14 +17,12 @@ const Location = memo(
     const handleMouseEnter = () => setIsHovered(true);
     const handleMouseLeave = () => setIsHovered(false);
     const handleTouchStart = () => setIsHovered(true);
-    const handleTouchEnd = () => setIsHovered(false);
 
     return (
       <LocationContainer
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
         style={{
           left: `${left}%`,
           top: `${top}%`,
@@ -53,14 +51,14 @@ const Location = memo(
             >
               <HoverBackground style={flippedStyle} src={markerHover} alt="" />
               <div
-                className="flex h-[90px] py-3 space-x-3 mb-1 group"
+                className="flex flex-col h-[90px] py-3 space-x-3 mb-1 group"
                 style={{
-                  paddingLeft: direction ? 17 : 12,
-                  paddingRight: direction ? 12 : 17,
+                  paddingLeft: 12,
+                  paddingRight: 12,
                 }}
               >
                 <div
-                  className="flex items-center rounded-lg relative justify-center h-[57.5px] aspect-square z-10"
+                  className="flex items-center rounded-lg relative justify-center h-[130px] w-[122px] aspect-square z-10"
                   style={{
                     backgroundColor:
                       typeof value === 'string' ? color! : '#D9D9D9',
@@ -73,21 +71,13 @@ const Location = memo(
                         : `/map-icons/${value}.webp`
                     }
                     priority={true}
-                    width={36}
-                    height={36}
+                    width={72}
+                    height={72}
                     className={`max-h-none rounded-md text-3xl font-serif ${typeof value === 'string' ? 'invert brightness-0 py-2 max-h-8' : 'w-full h-full'}`}
                     alt={value.toString()}
                   />
                 </div>
-                <LocationName
-                  style={{
-                    fontSize: `${typeof value !== 'string' ? '1' : Math.max(1.3, 2.7 - 0.1 * name.length)}rem`,
-                    lineHeight: typeof value === 'string' ? '2rem' : '1.45rem',
-                    wordSpacing: '999px',
-                  }}
-                >
-                  {name}
-                </LocationName>
+                <LocationName>{name}</LocationName>
               </div>
             </HoverCardContainer>
           )}
@@ -105,15 +95,15 @@ const LocationContainer = tw.div`
 `;
 
 const HoverBackground = tw(Image)`
-  rounded-lg absolute w-[200px]
+  rounded-lg absolute w-[145px] h-[190px] object-cover
 `;
 
 const LocationName = tw.p`
-  font-serif font-bold text-white mt-1 mb-auto z-0 w-[110px] uppercase break-words
+  font-serif font-bold text-white mb-auto z-0 text-lg uppercase -translate-x-3 max-w-[130px]
 `;
 
 const HoverCardContainer = tw.div`
-  w-[200px] absolute -translate-y-1/2 z-[9999] sm:scale-100 scale-125 origin-center
+  absolute translate-y-1/2 z-[9999] sm:scale-125 scale-100 origin-center w-[170px]
 `;
 
 const TextIcon = tw.span`

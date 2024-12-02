@@ -10,7 +10,7 @@ const Instagram = (): React.ReactElement => {
       <Carousel
         itemsVisible={3}
         variant="instagram"
-        className="max-w-[1536px] !left-1/2 -translate-x-1/2 overflow-hidden"
+        className="max-w-[1200px] !left-1/2 -translate-x-1/2 overflow-hidden"
         items={instagramPosts}
       />
     </InstagramPostsContainer>

@@ -68,6 +68,15 @@ const PlanYourVisit: NextPage = () => {
           <ThankBody>{strings.visit.whatWeOffer.thankYouText}</ThankBody>
           <BuyTicket className="sm:flex hidden" />
         </ThankYouSection>
+        <SideText className="top-[15%] sm:top-[10%] left-full -translate-x-1/2 pb-3">
+          Science Zone
+        </SideText>
+        <SideText className="top-[45%] sm:top-[35%] left-0 -translate-x-1/2 pt-3">
+          Life Zone
+        </SideText>
+        <SideText className="top-[75%] sm:top-[65%] left-full -translate-x-1/2 pb-3">
+          Water Zone
+        </SideText>
       </MapContainer>
     </Section>
   );
@@ -75,7 +84,7 @@ const PlanYourVisit: NextPage = () => {
   return (
     <Container>
       <Iframe
-        src="https://youtube.com/embed/n1dZ6Kv2Lho?si=sxIRXliMxkI4FlXb"
+        src="https://www.youtube.com/embed/4yMqC9KDTak?si=HVri87xy9qcgDNt3"
         className="sm:h-[600px] h-[50vw]"
         title="Introduction Video"
       />
@@ -132,4 +141,8 @@ const ThankYouText = tw.span`
 
 const Iframe = tw.iframe`
   w-full h-[500px] border-0
+`;
+
+const SideText = tw.span`
+  absolute tracking-[5rem] uppercase font-medium -rotate-90 whitespace-nowrap font-sans text-6xl md:text-8xl xl:text-9xl text-tertiary-300 opacity-20
 `;

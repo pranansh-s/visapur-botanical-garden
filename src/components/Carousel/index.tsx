@@ -114,7 +114,7 @@ const Carousel = ({
                 </InstagramCard>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[400px] rounded-2xl' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[500px] sm:h-[700px] lg:h-[400px] rounded-2xl py-24' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <StyledImage
                     src={item.src}
@@ -124,7 +124,7 @@ const Carousel = ({
                     height={300}
                     className={`object-cover object-top rounded-lg ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
-                  <p className="text-tertiary-200 mt-2 font-semibold md:text-lg text-base font-serif uppercase text-center">
+                  <p className="text-tertiary-200 mt-2 font-semibold text-2xl lg:text-base font-serif uppercase text-center">
                     {item.title}
                   </p>
                   <span className="font-bold md:text-sm text-xs text-tertiary-300 font-serif uppercase text-center">

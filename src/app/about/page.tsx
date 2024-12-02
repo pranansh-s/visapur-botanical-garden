@@ -6,7 +6,7 @@ import Image from 'next/image';
 import tw from 'tailwind-styled-components';
 
 import treeImage from '../../../public/footer-tree.svg';
-import ministerImage from '../../../public/minister.png';
+import ministerImage from '../../../public/minister-1.svg';
 
 import FAQs from '@/components/About/FAQs';
 import NewsUpdates from '@/components/About/NewsUpdates';

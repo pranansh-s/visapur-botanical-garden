@@ -17,6 +17,8 @@ const ImportantCard = memo(
         <span className="uppercase">{text}</span>
         {body === 'Direction' ? (
           <Link
+            passHref
+            target="_blank"
             className="text-tertiary-200 font-bold"
             href={'https://maps.app.goo.gl/7QCo8wcPfDzdnRBT9'}
           >

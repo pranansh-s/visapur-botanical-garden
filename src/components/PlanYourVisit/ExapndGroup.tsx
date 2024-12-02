@@ -102,17 +102,34 @@ const ExpandGroup = memo(
           />
         </ul>
         <div className="flex justify-between py-5 md:px-16 sm:px-12 px-8">
-          <Link
-            href={pdfLink}
-            className="sm:text-lg text-base sm:px-5 px-4 py-2 bg-white rounded-full font-sans hover:brightness-90 transition-all duration-200 text-tertiary-200 font-semibold"
-          >
-            <Image
-              src={download}
-              alt="download"
-              className="w-8 h-8 inline p-1 mr-2"
-            />
-            Download PDF
-          </Link>
+          <div className="flex space-x-3">
+            <Link
+              passHref
+              target="_blank"
+              href={pdfLink}
+              className="sm:text-lg text-base sm:px-5 px-4 py-2 bg-white rounded-full font-sans hover:brightness-90 transition-all duration-200 text-tertiary-200 font-semibold"
+            >
+              <Image
+                src={download}
+                alt="download"
+                className="w-8 h-8 inline p-1 mr-2"
+              />
+              Download PDF
+            </Link>
+            <Link
+              passHref
+              target="_blank"
+              href={pdfLink}
+              className="sm:text-lg text-base sm:px-5 px-4 py-2 bg-white rounded-full font-sans hover:brightness-90 transition-all duration-200 text-tertiary-200 font-semibold"
+            >
+              <Image
+                src={download}
+                alt="download"
+                className="w-8 h-8 inline p-1 mr-2"
+              />
+              Must Visit
+            </Link>
+          </div>
           <Button
             className="sm:text-lg text-base sm:px-4 px-3 py-2"
             link="https://booking.atalbotanicalgarden.com/"

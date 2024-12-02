@@ -33,7 +33,9 @@ const Location: React.FC<VisitLocation> = ({
       />
       <LocationText $active={active}>
         Welcome to the
-        <span className="text-4xl my-3 text-tertiary-300">{name}</span>
+        <span className="text-4xl my-3 text-tertiary-200 font-semibold">
+          {name},
+        </span>
         {text}
       </LocationText>
     </LocationContainer>
@@ -43,10 +45,10 @@ const Location: React.FC<VisitLocation> = ({
 export default Location;
 
 const LocationContainer = tw.div`
-  xl:scale-100 md:scale-[0.8] scale-[0.5] sm:translate-x-0 -translate-x-[5%] origin-left min-w-[45rem] w-[65%] flex absolute -translate-y-1/2 p-7 sm:p-12 transition-all duration-500 rounded-xl
+  xl:scale-100 md:scale-[0.8] scale-[0.5] sm:translate-x-0 -translate-x-[5%] origin-left min-w-[45rem] w-[65%] flex absolute -translate-y-1/2 p-7 sm:p-12 transition-all duration-500 rounded-xl z-50
 `;
 
 const LocationText = tw.p<{ $active: boolean }>`
   ${({ $active }) => ($active ? 'opacity-100' : 'opacity-0')}
-  flex flex-col text-xl font-sans my-auto transition-opacity duration-500 ml-10
+  flex flex-col text-xl font-sans my-auto transition-opacity  duration-500 ml-10
 `;

@@ -12,6 +12,8 @@ const PrivacyPolicy: React.FC = () => {
       <BodyText>
         At Atal Botanical Garden, accessible from{' '}
         <Link
+          passHref
+          target="_blank"
           href="https://atalbotanicalgarden.com"
           className="text-tertiary-100 underline"
         >
@@ -31,6 +33,8 @@ const PrivacyPolicy: React.FC = () => {
         for visitors to our website regarding the information that they shared
         and/or collect on&nbsp;
         <Link
+          passHref
+          target="_blank"
           href="https://atalbotanicalgarden.com"
           className="text-tertiary-100 underline"
         >
