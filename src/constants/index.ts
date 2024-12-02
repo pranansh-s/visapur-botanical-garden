@@ -29,7 +29,7 @@ export const amenities: IAmenity[] = [
   { name: 'Water Fountains', icon: '/amenities/fountain.svg' },
 ];
 
-export const disabledDates = [5, 10, 15, 21];
+export const disabledDates = [3, 10, 17, 24, 31];
 
 export const shopPlayDineItems: IVideoLink[] = [
   { src: '/shop/shop-1.webp' },
