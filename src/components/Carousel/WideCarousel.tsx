@@ -58,7 +58,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
                     {item.description}
                   </p>
                 </Body>
-                <BuyTicket className="md:scale-100 scale-75 h-max mt-auto mb-12 mx-auto md:flex hidden" />
+                <BuyTicket className="md:scale-100 scale-75 h-max mx-auto md:flex hidden" />
               </TextContainer>
             ) : (
               <Text>
@@ -157,7 +157,7 @@ const Text = tw.div`
 `;
 
 const TextContainer = tw.div`
-  absolute sm:bottom-24 bottom-8 px-6 md:px-12 w-full flex
+  absolute sm:bottom-24 bottom-8 px-6 md:px-12 w-full flex items-center
 `;
 
 const Body = tw.div`
