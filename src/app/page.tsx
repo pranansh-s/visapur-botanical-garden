@@ -6,7 +6,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import tw from 'tailwind-styled-components';
 
-import hero from '../../public/hero.svg';
+import hero from '../../public/hero.png';
 
 import Activities from '@/components/Activities';
 import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
@@ -108,7 +108,7 @@ const HeroMainTitle = tw.p`
 `;
 
 const StyledImage = tw(motion.create(Image))`
-  absolute object-cover max-w-[1800px] lg:w-[1800px] sm:w-[1500px] w-[1000px] top-[55%] z-[10]
+  absolute object-cover max-w-[1800px] lg:w-[1800px] sm:w-[1500px] w-[1000px] h-max top-0 z-[10]
 `;
 
 const HeroContent = tw.div`
