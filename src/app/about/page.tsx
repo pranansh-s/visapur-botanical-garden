@@ -10,7 +10,7 @@ import ministerImage from '../../../public/minister-1.svg';
 
 import FAQs from '@/components/About/FAQs';
 import NewsUpdates from '@/components/About/NewsUpdates';
-import Team from '@/components/About/Team';
+import TeamsGuides from '@/components/About/TeamsGuides';
 import Topics from '@/components/About/Topics';
 import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
@@ -60,7 +60,7 @@ const AboutUs: NextPage = () => {
           allowFullScreen
         />
       </VideoWrapper>
-      <Team />
+      <TeamsGuides />
       <NewsUpdates />
       <FAQs />
     </Container>

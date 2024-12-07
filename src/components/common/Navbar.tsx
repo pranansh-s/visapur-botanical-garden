@@ -187,6 +187,7 @@ const renderDesktopNavbar = (activeIndex: number, router: any) => {
             key={idx}
             href={value.href}
             selected={activeIndex === idx}
+            target={value.href.startsWith('https') ? '_blank' : '_self'}
           >
             {value.name}
           </StyledNavLink>

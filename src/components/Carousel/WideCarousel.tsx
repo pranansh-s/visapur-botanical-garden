@@ -80,7 +80,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
           </Slider>
           <Tag
             onClick={() =>
-              router.push('https://maps.app.goo.gl/7QCo8wcPfDzdnRBT9')
+              window.open('https://maps.app.goo.gl/7QCo8wcPfDzdnRBT9', '_blank')
             }
           >
             <Image

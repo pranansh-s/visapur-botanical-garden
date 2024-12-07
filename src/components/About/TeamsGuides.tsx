@@ -5,8 +5,9 @@ import tw from 'tailwind-styled-components';
 import { teamMembers } from '@/constants/carousels';
 import Carousel from '../Carousel';
 import Heading from '../common/Heading';
+import Guides from './Guides';
 
-const Team: React.FC = memo(() => {
+const TeamsGuides: React.FC = memo(() => {
   return (
     <TeamContainer id="team">
       <Heading name="Our Team" />
@@ -23,6 +24,7 @@ const Team: React.FC = memo(() => {
         itemsVisible={4}
         items={teamMembers}
       />
+      <Guides />
       <div className="bg-tertiary-300 text-white font-sans p-12 sm:p-24 h-[300px] sm:h-[250px] flex md:flex-row flex-col items-center md:space-y-0 space-y-12 space-x-0 md:space-x-24 lg:space-x-48 leading-[2rem] my-12 relative">
         <p className="text-2xl mr-auto">
           We&apos;re looking for talented people to join us!
@@ -48,8 +50,8 @@ const Team: React.FC = memo(() => {
   );
 });
 
-Team.displayName = 'Team';
-export default Team;
+TeamsGuides.displayName = 'Team';
+export default TeamsGuides;
 
 const TeamContainer = tw.section`
     flex flex-col space-y-3

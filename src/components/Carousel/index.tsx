@@ -8,7 +8,9 @@ import { ICarouselItem } from '@/types';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 
+import emptyStar from '../../../public/icons/empty-star.svg';
 import govtLogo from '../../../public/icons/govt-logo-2.svg';
+import star from '../../../public/icons/star.svg';
 
 import Button from '../common/Button';
 import { NextArrow, PrevArrow } from './Arrows';
@@ -18,7 +20,7 @@ export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   itemsVisible?: number;
   autoplay?: boolean;
   interval?: number;
-  variant?: 'basic' | 'rotateScale' | 'instagram' | 'team';
+  variant?: 'basic' | 'rotateScale' | 'instagram' | 'team' | 'guides';
   showArrows?: boolean;
 }
 
@@ -80,7 +82,7 @@ const Carousel = ({
 
   return (
     <CarouselContainer className={className} {...props}>
-      <Slider {...settings}>
+      <Slider className="pb-8" {...settings}>
         {items.map((item, index) => {
           const isCenterItem = index === currentIndex;
           return (
@@ -89,7 +91,7 @@ const Carousel = ({
               className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[35rem] h-[30rem] sm:h-[29rem]' : ''} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
-                <InstagramCard onClick={() => router.push(item.src)}>
+                <InstagramCard onClick={() => window.open(item.src, '_blank')}>
                   <span className="flex items-center text-lg font-serif px-5 py-4 w-full">
                     <Image
                       src={govtLogo}
@@ -114,7 +116,7 @@ const Carousel = ({
                 </InstagramCard>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[500px] sm:h-[700px] lg:h-[400px] rounded-2xl py-24' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[500px] sm:h-[700px] lg:h-[400px] rounded-2xl py-24' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : variant === 'guides' ? 'h-[18rem] sm:h-[19rem] lg:h-[26rem] bg-white' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <StyledImage
                     src={item.src}
@@ -122,11 +124,40 @@ const Carousel = ({
                     loading="eager"
                     width={300}
                     height={300}
-                    className={`object-cover object-top rounded-lg ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
+                    className={`object-cover object-top rounded-lg ${variant === 'guides' ? 'h-[13rem] lg:h-[20rem]' : ''} ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
-                  <p className="text-tertiary-200 mt-2 font-semibold text-2xl lg:text-base font-serif uppercase text-center">
-                    {item.title}
-                  </p>
+                  {variant === 'guides' ? (
+                    <div className="p-3 space-y-2">
+                      <p className="font-serif text-tertiary-200 text-sm sm:text-base lg:text-lg whitespace-nowrap overflow-hidden truncate">
+                        {item.title}
+                      </p>
+                      <div className="flex space-x-3 my-auto">
+                        {item.stars ? (
+                          Array.from(
+                            { length: item.stars ?? 0 },
+                            (_, index) => (
+                              <Image
+                                key={index}
+                                className="w-5 sm:w-6 xl:w-8"
+                                src={star}
+                                alt=""
+                              />
+                            )
+                          )
+                        ) : (
+                          <Image
+                            className="w-5 sm:w-6 xl:w-8"
+                            src={emptyStar}
+                            alt=""
+                          />
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-tertiary-200 mt-2 font-semibold text-xl lg:text-base font-serif uppercase text-center">
+                      {item.title}
+                    </p>
+                  )}
                   <span className="font-bold md:text-sm text-xs text-tertiary-300 font-serif uppercase text-center">
                     {item.subText}
                   </span>

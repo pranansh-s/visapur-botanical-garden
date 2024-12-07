@@ -16,7 +16,7 @@ const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
           variant="base"
           iconSize={16}
           preIconNode={book}
-          onClick={() => router.push(strings.bookTicket)}
+          onClick={() => window.open(strings.bookTicket, '_blank')}
           {...props}
         >
           Buy Ticket

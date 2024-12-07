@@ -17,12 +17,14 @@ const Location = memo(
     const handleMouseEnter = () => setIsHovered(true);
     const handleMouseLeave = () => setIsHovered(false);
     const handleTouchStart = () => setIsHovered(true);
+    const handleTouchEnd = () => setIsHovered(false);
 
     return (
       <LocationContainer
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         style={{
           left: `${left}%`,
           top: `${top}%`,

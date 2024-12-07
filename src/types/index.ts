@@ -15,6 +15,7 @@ export interface ICarouselItem {
   imgSrc?: string;
   src: string;
   title?: string;
+  stars?: number;
   subText?: string;
 }
 

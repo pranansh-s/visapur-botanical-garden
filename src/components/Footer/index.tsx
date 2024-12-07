@@ -61,7 +61,11 @@ const renderFooterLinks = () => {
       <QuickLinks>
         <LinkHeading>Quick Links</LinkHeading>
         {quickLinks.map((link: INamedLink, idx: number) => (
-          <FLink href={link.href} key={idx}>
+          <FLink
+            href={link.href}
+            target={link.href.startsWith('https') ? '_blank' : '_self'}
+            key={idx}
+          >
             {link.name}
           </FLink>
         ))}
