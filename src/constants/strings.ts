@@ -12,7 +12,7 @@ export const strings = {
       part2: ', a visionary initiative by the ',
       bold2: 'Forest Department of Central Chanda, Maharashtra',
       part3: ', spearheaded by ',
-      bold3: 'Forest Minister Shri. Sudhir Mungantiwar.',
+      bold3: 'Forest Minister Ganesh Naik',
       part4:
         ' In a bid to safeguard the delicate balance between human livelihoods and wildlife conservation, this expansive ',
       bold4: '104-hectare Botanical Garden',
@@ -21,7 +21,7 @@ export const strings = {
       bold5: 'unity, progress, and the nurturing of a sustainable future',
       part6: " amidst nature's embrace.",
     },
-    ministerName: 'Shri. Sudhir Mungantiwar',
+    ministerName: 'Ganesh Naik',
     ministerTitle: '(Forest Minister)',
   },
   visit: {

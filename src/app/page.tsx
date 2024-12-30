@@ -66,7 +66,7 @@ const renderHeroSection = (heroY: any) => (
         <Image
           className="absolute right-0 translate-x-0 sm:-translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 h-28 w-28"
           src={ministerImage}
-          alt="Shri. Sudhir Mungantiwar"
+          alt="Ganesh Naik"
         />
         <Image
           className="absolute left-0 translate-x-0 sm:translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 w-28 h-28"
