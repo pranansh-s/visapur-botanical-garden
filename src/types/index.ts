@@ -24,7 +24,7 @@ export interface ILanguageOption {
   code: string;
 }
 
-export interface IButterflyInfo {
+export interface ICurvedCarouselInfo {
   text: string;
   latinName: string;
   descrp: string;

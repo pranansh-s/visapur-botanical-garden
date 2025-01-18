@@ -13,7 +13,6 @@ import tw from 'tailwind-styled-components';
 
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
-import user from '../../../public/icons/user.svg';
 
 import {
   burgerLinks,
@@ -97,8 +96,8 @@ const Navbar: React.FC = () => {
               </option>
             ))}
           </LanguageSelect>
-          <Button className="text-sm" iconSize={10} postIconNode={user}>
-            Membership&apos;s Login
+          <Button className="text-sm" iconSize={10}>
+            Education Program
           </Button>
         </HeaderOptions>
         <BurgerMenu active={active} setActive={setActive} />
@@ -245,7 +244,7 @@ const HorizontalDivider = tw.hr`
 `;
 
 const NavLinkContainer = tw.ul`
-  flex justify-between items-center px-6 text-xl whitespace-nowrap max-w-[1536px] w-full
+  flex justify-between items-center px-6 whitespace-nowrap max-w-[1536px] w-full
 `;
 
 const BurgerNavLinkContainer = tw(NavLinkContainer)`
@@ -271,7 +270,7 @@ const StyledBurgerLink = tw(Link)<{ selected: boolean }>`
 
 const StyledNavLink = tw(Link)<{ selected: boolean }>`
   ${props => (props.selected ? 'text-black' : 'text-secondary')}
-  font-bold p-1 hover:brightness-75 transition-opacity duration-100
+  font-bold p-1 hover:brightness-75 transition-opacity duration-100 text-lg
 `;
 
 const BurgerMenuContainer = tw.div`

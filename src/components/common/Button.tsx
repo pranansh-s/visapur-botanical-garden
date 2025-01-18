@@ -16,7 +16,7 @@ const buttonVariants = cva(
       variant: {
         base: 'bg-tertiary-100 text-white px-6 py-4 hover:bg-tertiary-200',
         light:
-          'bg-white rounded-full outline -outline-offset-4 text-tertiary-200 hover:brightness-90 outline-tertiary-300',
+          'bg-white rounded-full px-6 py-4 outline -outline-offset-4 text-tertiary-200 hover:brightness-90 outline-tertiary-300',
       },
       state: {
         disabled: '!opacity-[0.4] cursor-not-allowed',

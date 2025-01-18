@@ -46,6 +46,16 @@ const WhoWeAre = (): React.ReactElement => {
         alt="Train"
         className="w-[300px] md:w-[350px] lg:w-[450px] xl:-left-lg 2xl -left-md bottom-[calc(100%+5rem)] sm:bottom-12"
       />
+      <VideoWrapper>
+        <iframe
+          width="100%"
+          height="500"
+          src="https://www.youtube.com/embed/8iGS0FKH_vk"
+          title="Shraddhey Shree Atal Bihari Vajpayee Botanical Garden"
+          className="h-[300px] md:block hidden"
+          allowFullScreen
+        />
+      </VideoWrapper>
     </Container>
   );
 };
@@ -53,7 +63,11 @@ const WhoWeAre = (): React.ReactElement => {
 export default WhoWeAre;
 
 const Container = tw.div`
-  h-max sm:!mt-[400px] !mt-[275px] sm:pb-96 pb-36 flex flex-col justify-center relative
+  h-max sm:!mt-[350px] !mt-[250px] sm:pb-96 pb-36 flex flex-col justify-center relative
+`;
+
+const VideoWrapper = tw.div`
+  absolute w-1/2 min-w-[500px] top-1/2 translate-y-3
 `;
 
 const Description = tw.p`

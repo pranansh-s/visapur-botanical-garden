@@ -1,20 +1,28 @@
 'use client';
 
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 
-import { IButterflyInfo } from '@/types';
+import { ICurvedCarouselInfo } from '@/types';
 import tw from 'tailwind-styled-components';
 
 import train1 from '../../../public/train-1.svg';
 import tree1 from '../../../public/tree-1.svg';
 
 import { butteryflies } from '@/constants/butterflies';
+import { fishes } from '@/constants/fishes';
+import Button from '../common/Button';
 
-const ButterflyCarousel: React.FC = memo(() => {
-  const totalButterflies = butteryflies.length;
-  const [currentButterflyIndex, setCurrentButterflyIndex] = useState<number>(
-    Math.floor(totalButterflies / 2)
+const options = [butteryflies, fishes];
+
+const CurvedCarousel: React.FC = memo(() => {
+  const [currentState, setCurrentState] = useState<number>(0);
+  const totalItems = useMemo(
+    () => options[currentState].length,
+    [currentState]
+  );
+  const [currentItemIndex, setCurrentItemIndex] = useState<number>(
+    Math.floor(totalItems / 2)
   );
   const [radius, setRadius] = useState<number>(0);
   const [throttling, setThrottling] = useState<boolean>(false);
@@ -29,33 +37,31 @@ const ButterflyCarousel: React.FC = memo(() => {
 
   const getTransformStyles = useCallback(
     (index: number) => {
-      const angleStep = (2 * Math.PI) / totalButterflies;
+      const angleStep = (2 * Math.PI) / totalItems;
       const angle =
-        angleStep *
-          ((index - currentButterflyIndex + totalButterflies) %
-            totalButterflies) -
+        angleStep * ((index - currentItemIndex + totalItems) % totalItems) -
         Math.PI / 2;
+
+      const distance = Math.min(
+        Math.abs(index - currentItemIndex),
+        totalItems - Math.abs(index - currentItemIndex)
+      );
+
+      let scale = 1 - 0.1 * distance;
 
       let x = radius * Math.cos(angle);
       const y = radius * 0.7 * Math.sin(angle);
 
-      const distance = Math.min(
-        Math.abs(index - currentButterflyIndex),
-        totalButterflies - Math.abs(index - currentButterflyIndex)
-      );
-
-      let scale = 1 - 0.1 * distance;
-      if (index === currentButterflyIndex) {
-        scale = 2;
-      }
-
+      if (index === currentItemIndex) scale = 2;
       if (y >= 0) scale = 0;
+
+      if (currentState == 1) x *= scale * 1.8;
 
       return {
         transform: `translate(${x}px, ${y}px) scale(${scale})`,
       };
     },
-    [currentButterflyIndex, radius, totalButterflies]
+    [currentItemIndex, radius, totalItems, currentState]
   );
 
   const updateCarousel = (direction: string) => {
@@ -63,27 +69,37 @@ const ButterflyCarousel: React.FC = memo(() => {
       setThrottling(true);
       setTimeout(() => setThrottling(false), 300);
 
-      setCurrentButterflyIndex(prevIndex =>
+      setCurrentItemIndex(prevIndex =>
         direction === 'right'
-          ? (prevIndex + 1) % totalButterflies
-          : (prevIndex - 1 + totalButterflies) % totalButterflies
+          ? (prevIndex + 1) % totalItems
+          : (prevIndex - 1 + totalItems) % totalItems
       );
     }
   };
 
   return (
     <CarouselContainer style={{ height: radius }}>
+      <Options>
+        <Button onClick={() => setCurrentState(0)} variant="light">
+          Butterflies
+        </Button>
+        <Button onClick={() => setCurrentState(1)} variant="light">
+          Fishes
+        </Button>
+      </Options>
       <CardContainer>
-        {butteryflies.map((butterfly: IButterflyInfo, index: number) => (
-          <Butterfly
-            key={index}
-            style={getTransformStyles(index)}
-            width={200}
-            height={200}
-            src={butterfly.src}
-            alt=""
-          />
-        ))}
+        {options[currentState].map(
+          (item: ICurvedCarouselInfo, index: number) => (
+            <Butterfly
+              key={index}
+              style={getTransformStyles(index)}
+              width={200}
+              height={200}
+              src={item.src}
+              alt=""
+            />
+          )
+        )}
       </CardContainer>
       <Controls>
         <Arrow className="sm:left-10 left-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
@@ -102,13 +118,13 @@ const ButterflyCarousel: React.FC = memo(() => {
         </Arrow>
         <ButterflyDescription>
           <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-3xl">
-            {butteryflies[currentButterflyIndex].text}
+            {options[currentState][currentItemIndex].text}
           </h3>
           <span className="lg:text-lg sm:text-sm">
-            <i>({butteryflies[currentButterflyIndex].latinName})</i>
+            <i>({options[currentState][currentItemIndex].latinName})</i>
           </span>
           <p className="lg:text-base text-sm">
-            {butteryflies[currentButterflyIndex].descrp}
+            {options[currentState][currentItemIndex].descrp}
           </p>
         </ButterflyDescription>
         <Arrow className="sm:right-10 right-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
@@ -140,15 +156,11 @@ const ButterflyCarousel: React.FC = memo(() => {
   );
 });
 
-ButterflyCarousel.displayName = 'ButterflyCarousel';
-export default ButterflyCarousel;
+CurvedCarousel.displayName = 'CurvedCarousel';
+export default CurvedCarousel;
 
 const CarouselContainer = tw.div`
-  flex items-center justify-center relative w-screen md:!mb-0 sm:!mb-28 !mb-56 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm !mt-0
-`;
-
-const ShadowContainer = tw.div`
-  w-full bg-primary rounded-t-full scale-y-[0.7] origin-bottom z-0 relative mt-auto
+  flex items-center justify-center relative w-screen md:!mb-0 sm:!mb-28 !mb-56 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm
 `;
 
 const ArrowBackground = tw.button`
@@ -177,6 +189,10 @@ const CardContainer = tw.div`
 
 const Butterfly = tw(Image)`
   text-black rounded-lg absolute transition-all ease-in-out duration-500 w-[17vw] min-w-[60px] max-w-[175px]
+`;
+
+const Options = tw.div`
+  flex space-x-3 items-center absolute top-0 -translate-y-20 md:translate-y-10 z-50
 `;
 
 const BackgroundImage = tw(Image)`

@@ -11,7 +11,7 @@ import ministerImage from '../../public/minister-1.svg';
 import ministerImage2 from '../../public/minister-2.svg';
 
 import Activities from '@/components/Activities';
-import ButterflyCarousel from '@/components/Carousel/ButterflyCarousel';
+import CurvedCarousel from '@/components/Carousel/CurvedCarousel';
 import WideCarousel from '@/components/Carousel/WideCarousel';
 import Glimpses from '@/components/Glimpses';
 import Instagram from '@/components/Instagram';
@@ -33,14 +33,14 @@ export default function Home() {
     <PageContainer>
       {renderHeroSection(heroY)}
       <WhoWeAre />
-      <ButterflyCarousel />
+      <CurvedCarousel />
       <WideCarousel items={wideCarouselItems} />
       <Table />
       <Glimpses />
+      <Map />
       <Activities />
       <ShopPlayDine />
       <Learn />
-      <Map />
       <Instagram />
     </PageContainer>
   );
@@ -64,12 +64,12 @@ const renderHeroSection = (heroY: any) => (
         {strings.title.part1}
         <HeroMainTitle>{strings.title.part2}</HeroMainTitle>
         <Image
-          className="absolute right-0 translate-x-0 sm:-translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 h-28 w-28"
+          className="absolute right-1/2 translate-x-[45vw] sm:translate-x-[28rem] lg:translate-x-[45rem] 2xl:-top-48 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 h-28 w-28"
           src={ministerImage}
           alt="Ganesh Naik"
         />
         <Image
-          className="absolute left-0 translate-x-0 sm:translate-x-16 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 w-28 h-28"
+          className="absolute left-1/2 -translate-x-[45vw] sm:-translate-x-[28rem] lg:-translate-x-[45rem] 2xl:-top-48 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 w-28 h-28"
           src={ministerImage2}
           alt=""
         />

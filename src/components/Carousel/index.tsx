@@ -21,6 +21,7 @@ export interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   autoplay?: boolean;
   interval?: number;
   variant?: 'basic' | 'rotateScale' | 'instagram' | 'team' | 'guides';
+  dots?: boolean;
   showArrows?: boolean;
 }
 
@@ -32,10 +33,11 @@ const Carousel = ({
   interval = 3000,
   showArrows = true,
   variant = 'basic',
+  dots,
   ...props
 }: CarouselProps) => {
   const settings = {
-    dots: false,
+    dots,
     infinite: true,
     slidesToShow: itemsVisible,
     slidesToScroll: 1,
@@ -60,7 +62,7 @@ const Carousel = ({
         breakpoint: 768,
         settings: {
           slidesToShow: variant === 'rotateScale' ? 1 : itemsVisible - 2,
-          dots: true,
+          dots: dots ?? true,
         },
       },
     ],

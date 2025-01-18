@@ -1,6 +1,6 @@
-import { IButterflyInfo } from '@/types';
+import { ICurvedCarouselInfo } from '@/types';
 
-export const butteryflies: IButterflyInfo[] = [
+export const butteryflies: ICurvedCarouselInfo[] = [
   {
     text: 'Hi! I am Baronet',
     latinName: 'Symphaedra nais',

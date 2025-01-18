@@ -91,14 +91,6 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               alt=""
             />
             GET {!items[0].date ? "GARDEN'S" : "VENUE'S"} DIRECTION
-            {!items[0].date ? (
-              <DotLottieReact
-                src="/lottie/parrot.lottie"
-                loop
-                autoplay
-                className="absolute h-48 translate-x-[80%] bottom-0 translate-y-[10%] md:block hidden"
-              />
-            ) : null}
           </Tag>
         </CarouselContainer>
         {!items[0].date && (

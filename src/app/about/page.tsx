@@ -15,7 +15,7 @@ import Topics from '@/components/About/Topics';
 import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
 
-import { zoneItems } from '@/constants/carousels';
+import { inaugurationItems, zoneItems } from '@/constants/carousels';
 import { strings } from '@/constants/strings';
 
 const AboutUs: NextPage = () => {
@@ -61,6 +61,10 @@ const AboutUs: NextPage = () => {
         />
       </VideoWrapper>
       <TeamsGuides />
+      <div className="space-y-10">
+        <Heading name={'Inauguration'} />
+        <Carousel dots={false} items={inaugurationItems} />
+      </div>
       <NewsUpdates />
       <FAQs />
     </Container>

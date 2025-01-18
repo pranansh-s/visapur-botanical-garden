@@ -96,10 +96,10 @@ export const socialLinks: INamedLink[] = [
 
 export const navbarLinks: INamedLink[] = [
   { name: 'Home', href: '/' },
-  { name: 'Shop', href: 'https://botanicool.in/' },
   { name: 'About', href: '/about' },
   { name: 'Plan Your Visit', href: '/plan-your-visit' },
   { name: 'Things to Offer', href: '/plan-your-visit#things-to-offer' },
   { name: 'Support', href: '/support' },
+  { name: 'Shop', href: 'https://botanicool.in/' },
   { name: 'Experience', href: 'https://booking.atalbotanicalgarden.com/tour/' },
 ];
