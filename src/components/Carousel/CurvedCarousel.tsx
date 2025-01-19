@@ -13,7 +13,7 @@ import { butteryflies } from '@/constants/butterflies';
 import { fishes } from '@/constants/fishes';
 import Button from '../common/Button';
 
-const options = [butteryflies, fishes];
+const options = [butteryflies, fishes, fishes];
 
 const CurvedCarousel: React.FC = memo(() => {
   const [currentState, setCurrentState] = useState<number>(0);
@@ -37,9 +37,11 @@ const CurvedCarousel: React.FC = memo(() => {
 
   const getTransformStyles = useCallback(
     (index: number) => {
-      const angleStep = (2 * Math.PI) / totalItems;
+      const angleStep = (2 * Math.PI) / Math.min(totalItems, 14);
       const angle =
-        angleStep * ((index - currentItemIndex + totalItems) % totalItems) -
+        angleStep *
+          ((index - currentItemIndex + Math.min(totalItems, 14)) %
+            Math.min(totalItems, 14)) -
         Math.PI / 2;
 
       const distance = Math.min(
@@ -52,16 +54,15 @@ const CurvedCarousel: React.FC = memo(() => {
       let x = radius * Math.cos(angle);
       const y = radius * 0.7 * Math.sin(angle);
 
-      if (index === currentItemIndex) scale = 2;
+      if (index === currentItemIndex) scale = 2.15;
       if (y >= 0) scale = 0;
-
-      if (currentState == 1) x *= scale * 1.8;
+      if (distance > 3) scale = 0;
 
       return {
         transform: `translate(${x}px, ${y}px) scale(${scale})`,
       };
     },
-    [currentItemIndex, radius, totalItems, currentState]
+    [currentItemIndex, radius, totalItems]
   );
 
   const updateCarousel = (direction: string) => {
@@ -80,15 +81,27 @@ const CurvedCarousel: React.FC = memo(() => {
   return (
     <CarouselContainer style={{ height: radius }}>
       <Options>
-        <Button onClick={() => setCurrentState(0)} variant="light">
+        <Button
+          onClick={() => setCurrentState(0)}
+          variant={currentState == 0 ? 'base' : 'light'}
+        >
           Butterflies
         </Button>
-        <Button onClick={() => setCurrentState(1)} variant="light">
+        <Button
+          onClick={() => setCurrentState(1)}
+          variant={currentState == 1 ? 'base' : 'light'}
+        >
           Fishes
+        </Button>
+        <Button
+          onClick={() => setCurrentState(2)}
+          variant={currentState == 2 ? 'base' : 'light'}
+        >
+          Attraction Points
         </Button>
       </Options>
       <CardContainer>
-        {options[currentState].map(
+        {options[currentState]!.map(
           (item: ICurvedCarouselInfo, index: number) => (
             <Butterfly
               key={index}
@@ -118,13 +131,13 @@ const CurvedCarousel: React.FC = memo(() => {
         </Arrow>
         <ButterflyDescription>
           <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-3xl">
-            {options[currentState][currentItemIndex].text}
+            {options[currentState][currentItemIndex]!.text}
           </h3>
           <span className="lg:text-lg sm:text-sm">
-            <i>({options[currentState][currentItemIndex].latinName})</i>
+            <i>({options[currentState][currentItemIndex]!.latinName})</i>
           </span>
           <p className="lg:text-base text-sm">
-            {options[currentState][currentItemIndex].descrp}
+            {options[currentState][currentItemIndex]!.descrp}
           </p>
         </ButterflyDescription>
         <Arrow className="sm:right-10 right-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
