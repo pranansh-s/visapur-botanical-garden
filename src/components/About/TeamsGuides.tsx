@@ -34,7 +34,7 @@ const TeamsGuides: React.FC = memo(() => {
           community that values creativity, innovation and preservation of our
           rich heritage.
         </p>
-        <button className="absolute bottom-10 right-10">
+        <button aria-label="join-us" className="absolute bottom-10 right-10">
           <svg
             fill="white"
             height="25px"

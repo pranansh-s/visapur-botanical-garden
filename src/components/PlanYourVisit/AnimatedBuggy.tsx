@@ -1,7 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
-
-import '@gsap/react';
-
+import React, { memo, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { IVisitLocation } from '@/types';
@@ -43,43 +40,45 @@ const AnimatedBuggy: React.FC = memo(() => {
     buggyPoints
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const path = pathRef.current;
     const image = imageRef.current;
 
-    if (path && image) {
-      const updateAnimation = (yProgress: number) => {
-        gsap.set(image, {
-          motionPath: {
-            path: path,
-            align: path,
-            alignOrigin: [0.5, 0.5],
-            start: 0,
-            end: yProgress,
-          },
-        });
+    if (!path || !image) return;
+    const updateAnimation = (yProgress: number) => {
+      gsap.set(image, {
+        motionPath: {
+          path: path,
+          align: path,
+          alignOrigin: [0.5, 0.5],
+          start: 0,
+          end: yProgress,
+        },
+      });
 
-        const closestIndex = buggyPoints.reduce(
-          (prevIndex, currentValue, index) => {
-            return Math.abs(currentValue - yProgress) <
-              Math.abs(buggyPoints[prevIndex] - yProgress)
-              ? index
-              : prevIndex;
-          },
-          0
-        );
+      const closestIndex = buggyPoints.reduce(
+        (prevIndex, currentValue, index) => {
+          return Math.abs(currentValue - yProgress) <
+            Math.abs(buggyPoints[prevIndex] - yProgress)
+            ? index
+            : prevIndex;
+        },
+        0
+      );
 
-        setCurrentIndex(closestIndex);
-      };
+      setCurrentIndex(closestIndex);
+    };
 
-      const unsubscribe = buggyPathProgress.on('change', updateAnimation);
-      return () => unsubscribe();
-    }
+    gsap.ticker.add(() => updateAnimation(buggyPathProgress.get()));
+
+    return () => {
+      gsap.ticker.remove(updateAnimation);
+    };
   }, [buggyPathProgress]);
 
   return (
     <div ref={containerRef} className="relative h-full">
-      <Image src={map} alt="" />
+      <Image src={map} priority loading="eager" alt="Buggy" />
       <svg
         preserveAspectRatio="xMidYMid meet"
         className="w-full h-full absolute top-0"
@@ -99,6 +98,7 @@ const AnimatedBuggy: React.FC = memo(() => {
         src={buggy}
         alt="Buggy Cart"
         priority
+        loading="eager"
         className="absolute xl:scale-[1.25] lg:scale-[1] scale-[0.85] z-10"
       />
       <ul className="absolute top-0 h-full w-full">

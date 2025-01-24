@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 export const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
-    <ArrowButton className="right-0" onClick={onClick}>
+    <ArrowButton aria-label="next-arrow" className="right-0" onClick={onClick}>
       <svg
         fill="#c90b02"
         height="40px"
@@ -20,7 +20,11 @@ export const NextArrow = (props: any) => {
 export const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
-    <ArrowButton className="left-0" onClick={onClick}>
+    <ArrowButton
+      aria-label="previous-arrow"
+      className="left-0"
+      onClick={onClick}
+    >
       <svg
         fill="#c90b02"
         height="40px"

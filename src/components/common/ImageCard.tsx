@@ -18,7 +18,7 @@ const ImageCard = forwardRef<HTMLLIElement, ImageCardProps>(
           height={500}
           width={500}
           className="object-cover w-full h-full"
-          alt=""
+          alt={name}
         />
         <NameText>{name}</NameText>
       </ImageCardContainer>

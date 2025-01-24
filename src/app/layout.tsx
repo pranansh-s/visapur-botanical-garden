@@ -6,6 +6,7 @@ import SplashScreen from '@/components/common/SplashScreen';
 import Footer from '@/components/Footer';
 
 import './globals.css';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -39,7 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
       />
       <body
         className={`${merriweather.variable} ${merriweatherSans.variable} ${braahOne.variable} body-no-scroll bg-primary max-w-[1536px] mx-auto overflow-x-clip antialiased`}

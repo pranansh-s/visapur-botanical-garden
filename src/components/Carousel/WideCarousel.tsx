@@ -39,7 +39,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               src={item.imageSrc}
               className="object-cover min-w-[300px] object-top"
               fill
-              alt=""
+              alt={item.title}
             />
             <div className="absolute inset-0 md:bg-gradient-to-l bg-gradient-to-r from-black/40 to-transparent z-0" />
             {item.date ? (
@@ -101,6 +101,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               the beauty of nature.
             </PlanText>
             <Button
+              aria-label="plan-your-visit"
               className="sm:px-12 md:px-7 md:py-5 px-5 py-4 md:text-base text-sm h-max shadow-md"
               onClick={() => router.push('/plan-your-visit')}
               variant="light"

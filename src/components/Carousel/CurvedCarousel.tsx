@@ -82,19 +82,25 @@ const CurvedCarousel: React.FC = memo(() => {
     <CarouselContainer style={{ height: radius }}>
       <Options>
         <Button
+          aria-label="butterflies"
           onClick={() => setCurrentState(0)}
+          className="text-base"
           variant={currentState == 0 ? 'base' : 'light'}
         >
           Butterflies
         </Button>
         <Button
+          aria-label="fishes"
           onClick={() => setCurrentState(1)}
+          className="text-base"
           variant={currentState == 1 ? 'base' : 'light'}
         >
           Fishes
         </Button>
         <Button
+          aria-label="attractions"
           onClick={() => setCurrentState(2)}
+          className="text-base"
           variant={currentState == 2 ? 'base' : 'light'}
         >
           Attraction Points
@@ -103,20 +109,23 @@ const CurvedCarousel: React.FC = memo(() => {
       <CardContainer>
         {options[currentState]!.map(
           (item: ICurvedCarouselInfo, index: number) => (
-            <Butterfly
+            <Card
               key={index}
               style={getTransformStyles(index)}
               width={200}
               height={200}
               src={item.src}
-              alt=""
+              alt={item.latinName}
             />
           )
         )}
       </CardContainer>
       <Controls>
         <Arrow className="sm:left-10 left-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
-          <ArrowBackground onClick={() => updateCarousel('left')} />
+          <ArrowBackground
+            aria-label="previous-arrow"
+            onClick={() => updateCarousel('left')}
+          />
           <ArrowText>
             <svg
               fill="white"
@@ -141,7 +150,10 @@ const CurvedCarousel: React.FC = memo(() => {
           </p>
         </ButterflyDescription>
         <Arrow className="sm:right-10 right-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">
-          <ArrowBackground onClick={() => updateCarousel('right')} />
+          <ArrowBackground
+            aria-label="next-arrow"
+            onClick={() => updateCarousel('right')}
+          />
           <ArrowText>
             <svg
               fill="white"
@@ -173,7 +185,7 @@ CurvedCarousel.displayName = 'CurvedCarousel';
 export default CurvedCarousel;
 
 const CarouselContainer = tw.div`
-  flex items-center justify-center relative w-screen md:!mb-0 sm:!mb-28 !mb-56 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm
+  flex items-center justify-center relative w-screen md:!mb-0 sm:!mb-28 !mb-56 max-w-[1536px] xl:-left-lg lg:-left-md -left-sm !mt-36
 `;
 
 const ArrowBackground = tw.button`
@@ -200,12 +212,12 @@ const CardContainer = tw.div`
   absolute flex justify-center items-center w-full md:bottom-0 sm:bottom-6 bottom-3 z-10
 `;
 
-const Butterfly = tw(Image)`
+const Card = tw(Image)`
   text-black rounded-lg absolute transition-all ease-in-out duration-500 w-[17vw] min-w-[60px] max-w-[175px]
 `;
 
 const Options = tw.div`
-  flex space-x-3 items-center absolute top-0 -translate-y-20 md:translate-y-10 z-50
+  flex space-x-3 items-center absolute top-0 z-50 md:-translate-y-10 -translate-y-32
 `;
 
 const BackgroundImage = tw(Image)`

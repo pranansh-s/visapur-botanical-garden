@@ -29,8 +29,12 @@ const Footer: React.FC = memo(() => {
             Welcome To
           </span>
           <div className="flex space-x-3">
-            <Image src={govtLogo2} alt="" height={75} />
-            <Image src={govtLogo1} alt="" height={75} />
+            <Image src={govtLogo2} alt="Garden Logo" height={75} />
+            <Image
+              src={govtLogo1}
+              alt="Government of Maharashtra"
+              height={75}
+            />
           </div>
           <p className="sm:text-sm text-lg font-bold font-sans">
             Shradheya Atal Bihari Vajpayee Botanical Garden, Ballarshah Rd,
@@ -86,6 +90,7 @@ const renderFooterLinks = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Shraddhey Shree Atal Bihari Vajpayee Botanical Garden"
         />
       </HowToReach>
       <Important>
@@ -128,7 +133,7 @@ const renderContactInfo = () => {
         <strong className="text-3xl sm:hidden block">&nbsp;/</strong>
         <Link
           href={'tel:+917172458671'}
-          className="font-sans font-semibold sm:text-base text-lg w-max underline ml-auto sm:-translate-x-[117.5%] whitespace-nowrap"
+          className="font-sans font-semibold p-1 sm:text-base text-lg w-max underline ml-auto sm:-translate-x-[117.5%] whitespace-nowrap"
         >
           +91 71724 58671
         </Link>
@@ -166,7 +171,7 @@ const ConnectOptions = tw.div`
   grid-cols-3 grid-rows-2 gap-2 w-max grid
 `;
 
-const ContactInfo = tw.ul`
+const ContactInfo = tw.div`
   flex flex-col space-y-2 justify-center
 `;
 
@@ -182,11 +187,11 @@ const FLink = tw(Link)`
   font-serif text-sm font-bold text-tertiary-200 hover:text-tertiary-100 h-max w-max p-3 -ml-3
 `;
 
-const CareerLinks = tw.ul`
+const CareerLinks = tw.div`
   flex-col col-start-2 row-start-1 row-end-2 md:flex hidden
 `;
 
-const QuickLinks = tw.ul`
+const QuickLinks = tw.div`
   grid md:grid-cols-2 row-span-2 gap-x-12
 `;
 

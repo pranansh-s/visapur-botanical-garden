@@ -65,6 +65,7 @@ const renderButtonIcon = (
 ) => {
   return (
     <Button
+      aria-label={`set-table-page-${tablePage}`}
       postIconNode={icon}
       iconSize={iconSize}
       onClick={() => setTablePage(currentTablePage)}

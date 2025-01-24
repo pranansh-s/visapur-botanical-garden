@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { IVisitLocation } from '@/types';
 import tw from 'tailwind-styled-components';
 
-interface VisitLocation extends HTMLAttributes<HTMLDivElement>, IVisitLocation {
+interface VisitLocation extends HTMLAttributes<HTMLLIElement>, IVisitLocation {
   active: boolean;
 }
 
@@ -26,10 +26,11 @@ const Location: React.FC<VisitLocation> = ({
       <Image
         src={imageSrc}
         priority
+        loading="eager"
         width={300}
         height={300}
         className={`max-h-[200px] min-w-[15rem] w-[65%] origin-left ${active ? 'scale-100' : 'scale-[2.0]'} transition-all duration-500`}
-        alt=""
+        alt={name}
       />
       <LocationText $active={active}>
         Welcome to the

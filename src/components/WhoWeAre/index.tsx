@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
 import train from '../../../public/train.svg';
@@ -47,13 +48,9 @@ const WhoWeAre = (): React.ReactElement => {
         className="w-[300px] md:w-[350px] lg:w-[450px] xl:-left-lg 2xl -left-md bottom-[calc(100%+5rem)] sm:bottom-12"
       />
       <VideoWrapper>
-        <iframe
-          width="100%"
-          height="500"
-          src="https://www.youtube.com/embed/8iGS0FKH_vk"
+        <LiteYouTubeEmbed
+          id="8iGS0FKH_vk"
           title="Shraddhey Shree Atal Bihari Vajpayee Botanical Garden"
-          className="h-[300px] md:block hidden"
-          allowFullScreen
         />
       </VideoWrapper>
     </Container>
@@ -67,7 +64,7 @@ const Container = tw.div`
 `;
 
 const VideoWrapper = tw.div`
-  absolute w-1/2 min-w-[500px] top-1/2 translate-y-3
+  absolute w-1/2 min-w-[500px] top-1/2 translate-y-3 md:block hidden
 `;
 
 const Description = tw.p`

@@ -72,7 +72,6 @@ const Location = memo(
                         ? value
                         : `/map-icons/${value}.webp`
                     }
-                    priority={true}
                     width={72}
                     height={72}
                     className={`max-h-none rounded-md text-3xl font-serif ${typeof value === 'string' ? 'invert brightness-0 py-2 max-h-8' : 'w-full h-full'}`}

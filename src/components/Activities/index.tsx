@@ -73,6 +73,7 @@ const Activities = (): React.ReactElement => {
             width="100%"
             height="500px"
             allowFullScreen
+            title={popupVideo}
             className="rounded-lg w-max h-[75%] mt-24"
           />
         </div>

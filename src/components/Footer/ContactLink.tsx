@@ -8,7 +8,7 @@ import tw from 'tailwind-styled-components';
 
 const ContactLink = memo(({ href, name }: INamedLink) => {
   return (
-    <ContactContainer onClick={() => window.open(href, '_blank')}>
+    <ContactContainer target="_blank" href={href}>
       <SocialIcon className="scale-[0.8]" network={name} />
     </ContactContainer>
   );
@@ -17,6 +17,6 @@ const ContactLink = memo(({ href, name }: INamedLink) => {
 ContactLink.displayName = 'ContactLink';
 export default ContactLink;
 
-const ContactContainer = tw.button`
+const ContactContainer = tw.a`
   w-max transition-all duration-200 hover:brightness-75
 `;

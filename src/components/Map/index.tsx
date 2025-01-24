@@ -36,7 +36,7 @@ const Map = (): React.ReactElement => {
         </MapInteractionCSS>
       </MapContainer>
       <DragToMove>
-        <Image className="sm:w-6 sm:h-6 w-4 h-4 mr-3" src={drag} alt="" />
+        <Image className="sm:w-6 sm:h-6 w-4 h-4 mr-3" src={drag} alt="Drag" />
         Drag To Move
       </DragToMove>
     </Container>

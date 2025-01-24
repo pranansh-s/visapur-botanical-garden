@@ -3,6 +3,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
 import treeImage from '../../../public/footer-tree.svg';
@@ -51,13 +52,9 @@ const AboutUs: NextPage = () => {
       <Carousel variant="rotateScale" showArrows={false} items={zoneItems} />
       <Topics />
       <VideoWrapper>
-        <iframe
-          width="100%"
-          height="500"
-          src="https://www.youtube.com/embed/8iGS0FKH_vk"
+        <LiteYouTubeEmbed
+          id="8iGS0FKH_vk"
           title="Shraddhey Shree Atal Bihari Vajpayee Botanical Garden"
-          className="sm:h-[600px] h-[50vw]"
-          allowFullScreen
         />
       </VideoWrapper>
       <TeamsGuides />

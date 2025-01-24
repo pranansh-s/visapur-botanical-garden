@@ -83,20 +83,28 @@ const Navbar: React.FC = () => {
       )}
       <TopSection>
         <LogoSection onClick={() => router.push('/')}>
-          <StyledImage src={govtLogo1} alt="" width={35} />
+          <StyledImage
+            src={govtLogo1}
+            alt="Government of Maharashta"
+            width={35}
+          />
           <DividerVertical />
-          <StyledImage src={govtLogo2} alt="" width={30} />
+          <StyledImage src={govtLogo2} alt="Garden Logo" width={30} />
           <Title>Shradheya Shri Atal Bihari Vajpayee Botanical Garden</Title>
         </LogoSection>
         <HeaderOptions className="sm:flex hidden">
-          <LanguageSelect>
+          <LanguageSelect id="language">
             {languageOptions.map((value: ILanguageOption, idx: number) => (
               <option key={idx} value={value.code}>
                 {value.name}
               </option>
             ))}
           </LanguageSelect>
-          <Button className="text-sm" iconSize={10}>
+          <Button
+            aria-label="education-program"
+            className="text-sm"
+            iconSize={10}
+          >
             Education Program
           </Button>
         </HeaderOptions>
@@ -227,11 +235,11 @@ const DividerVertical = tw.div`
   border-l-[1px] border-tertiary-200
 `;
 
-const Title = tw.h2`
+const Title = tw.h3`
   text-secondary font-serif font-medium w-[200px] sm:text-base text-sm !leading-5
 `;
 
-const HeaderOptions = tw.ul`
+const HeaderOptions = tw.div`
   ml-auto text-sm flex text-tertiary-200 font-sans font-bold space-x-3
 `;
 
@@ -243,7 +251,7 @@ const HorizontalDivider = tw.hr`
   border-tertiary-200 opacity-40 max-w-[1536px] w-full
 `;
 
-const NavLinkContainer = tw.ul`
+const NavLinkContainer = tw.div`
   flex justify-between items-center px-6 whitespace-nowrap max-w-[1536px] w-full
 `;
 
@@ -255,11 +263,11 @@ const BurgerLink = tw(Link)`
   text-gray-600 font-serif text-base font-bold py-2 pr-5 w-max
 `;
 
-const Importants = tw.ul`
+const Importants = tw.div`
   grid grid-cols-1 gap-x-[18rem] scale-[0.8] origin-top-left
 `;
 
-const ContactLinks = tw.ul`
+const ContactLinks = tw.div`
   flex flex-wrap gap-1 items-start py-0 !-mt-10 w-full
 `;
 

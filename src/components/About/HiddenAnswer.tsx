@@ -24,6 +24,7 @@ const HiddenAnswer: React.FC<HiddenAnswerProps> = memo(
         <div className="flex justify-between items-end">
           {textNode}{' '}
           <Button
+            aria-label="expand"
             iconSize={20}
             className={`-translate-y-0 ${state ? '-rotate-90' : 'rotate-0'} transition-all duration-200`}
             onClick={onClick}

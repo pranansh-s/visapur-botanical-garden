@@ -50,7 +50,7 @@ const ExpandGroup = memo(
         <p className="font-serif text-base py-5 md:px-16 sm:px-12 px-8">
           {text}
         </p>
-        <ul className="flex flex-wrap sm:gap-3 gap-1 -mx-20">
+        <div className="flex flex-wrap sm:gap-3 gap-1 -mx-20">
           <StyledImage
             src={images[0]}
             height={300}
@@ -100,7 +100,7 @@ const ExpandGroup = memo(
             className="xl:w-[14.5%] w-[13%]"
             alt={`Image for ${name}`}
           />
-        </ul>
+        </div>
         <div className="flex justify-between py-5 md:px-16 sm:px-12 px-8">
           <div className="flex space-x-3">
             <Link
@@ -131,6 +131,7 @@ const ExpandGroup = memo(
             </Link>
           </div>
           <Button
+            aria-label="book"
             className="sm:text-lg text-base sm:px-4 px-3 py-2"
             link="https://booking.atalbotanicalgarden.com/"
             preIconNode={book}
@@ -148,7 +149,7 @@ const ExpandGroup = memo(
 ExpandGroup.displayName = 'ExpandGroup';
 export default ExpandGroup;
 
-const ExpandContainer = tw.div<{ selected: boolean }>`
+const ExpandContainer = tw.li<{ selected: boolean }>`
   ${props => (props.selected ? 'h-[50rem] sm:h-[60rem] lg:h-[60rem]' : 'h-16')} transition-all duration-300
   w-full flex flex-col space-y-12 max-w-[900px] text-lg rounded-md overflow-hidden
 `;

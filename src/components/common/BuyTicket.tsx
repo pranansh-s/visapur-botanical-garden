@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, memo } from 'react';
-import { useRouter } from 'next/navigation';
 
 import book from '../../../public/icons/book.svg';
 
@@ -8,7 +7,6 @@ import Button from './Button';
 
 const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
   props => {
-    const router = useRouter();
     return (
       <div className="relative group">
         <Button
@@ -16,6 +14,7 @@ const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
           variant="base"
           iconSize={16}
           preIconNode={book}
+          aria-label="book"
           onClick={() => window.open(strings.bookTicket, '_blank')}
           {...props}
         >

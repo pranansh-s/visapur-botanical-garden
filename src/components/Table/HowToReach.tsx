@@ -16,10 +16,10 @@ const HowToReach: React.FC = memo(() => {
         How To Reach &nbsp;
         <Image width={40} src={reach} alt="" />
       </Title>
-      <ReachPath src={reach1} alt="" />
-      <ReachPath src={reach2} alt="" />
-      <ReachPath src={reach3} alt="" />
-      <ReachPath src={reach4} alt="" />
+      <ReachPath src={reach1} alt="Chandrapur Railyway-Auto Path" />
+      <ReachPath src={reach2} alt="Ballarshah Railway-Auto Path" />
+      <ReachPath src={reach3} alt="Chandrapur Car Path" />
+      <ReachPath src={reach4} alt="Badshaheb Airport-Bus Path" />
     </HowToReachContainer>
   );
 });

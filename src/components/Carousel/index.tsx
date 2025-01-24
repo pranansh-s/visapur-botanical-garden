@@ -97,11 +97,14 @@ const Carousel = ({
                   <span className="flex items-center text-lg font-serif px-5 py-4 w-full">
                     <Image
                       src={govtLogo}
-                      alt=""
                       className="rounded-full w-14 h-14 border mr-2"
+                      alt="Garden Icon"
                     />
                     @mahaatalgarden
-                    <Button className="bg-[#0096F1] text-white rounded-md font-serif text-base p-2 ml-auto">
+                    <Button
+                      aria-label="follow"
+                      className="bg-[#0096F1] text-white rounded-md font-serif text-base p-2 ml-auto"
+                    >
                       Follow
                     </Button>
                   </span>
@@ -110,7 +113,7 @@ const Carousel = ({
                     width={300}
                     height={350}
                     className="px-5 w-full"
-                    alt=""
+                    alt={item.title ?? 'Instagram Post'}
                   />
                   <span className="text-gray-500 font-serif py-6">
                     View <strong>@mahaatalgarden</strong> on Instagram
@@ -142,7 +145,7 @@ const Carousel = ({
                                 key={index}
                                 className="w-5 sm:w-6 xl:w-8"
                                 src={star}
-                                alt=""
+                                alt="Star"
                               />
                             )
                           )
@@ -150,7 +153,7 @@ const Carousel = ({
                           <Image
                             className="w-5 sm:w-6 xl:w-8"
                             src={emptyStar}
-                            alt=""
+                            alt="Empty Star"
                           />
                         )}
                       </div>

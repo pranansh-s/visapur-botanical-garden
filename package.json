@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
@@ -13,17 +13,20 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@lottiefiles/dotlottie-react": "^0.10.1",
+    "@next/bundle-analyzer": "^15.1.6",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.11.9",
     "next": "14.2.15",
     "react": "^18",
     "react-18-image-lightbox": "^5.1.4",
     "react-dom": "^18",
+    "react-lite-youtube-embed": "^2.4.0",
     "react-map-interaction": "^2.1.0",
     "react-medium-image-zoom": "^5.2.11",
     "react-slick": "^0.30.2",
     "react-social-icons": "^6.18.0",
     "sharp": "^0.33.5",
+    "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
@@ -36,6 +39,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "critters": "^0.0.23",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
     "eslint-config-prettier": "^9.1.0",

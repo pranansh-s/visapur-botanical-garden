@@ -13,6 +13,7 @@ const BurgerMenu: React.FC<{ active: boolean; setActive: any }> = ({
         }}
       >
         <motion.button
+          aria-label="nav-menu"
           initial={false}
           animate={active ? 'open' : 'closed'}
           onClick={() => setActive((pv: boolean) => !pv)}

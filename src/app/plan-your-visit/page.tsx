@@ -2,20 +2,26 @@
 
 import { useState } from 'react';
 import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
 import buggyImage from '../../../public/Buggy.svg';
 
 import BuyTicket from '@/components/common/BuyTicket';
 import Heading from '@/components/common/Heading';
-import AnimatedBuggy from '@/components/PlanYourVisit/AnimatedBuggy';
 import ExpandGroup from '@/components/PlanYourVisit/ExapndGroup';
 
 import { strings } from '@/constants/strings';
+
+const AnimatedBuggy = dynamic(
+  () => import('@/components/PlanYourVisit/AnimatedBuggy'),
+  { ssr: false }
+);
 
 const PlanYourVisit: NextPage = () => {
   const [activeGroup, setActiveGroup] = useState<number>(-1);
@@ -47,11 +53,7 @@ const PlanYourVisit: NextPage = () => {
     <Section id="things-to-offer">
       <Heading name={strings.visit.whatWeOffer.title} />
       <HeadingSubText>{strings.visit.whatWeOffer.subText}</HeadingSubText>
-      <Iframe
-        src="https://youtube.com/embed/2jNh2S2LGiI?si=wJZclo6J7g67-ktO"
-        className="sm:h-[600px] h-[50vw]"
-        title="Main Attractions"
-      />
+      <LiteYouTubeEmbed id="2jNh2S2LGiI" title="Main Attractions" />
       <MapContainer>
         <AnimatedBuggy />
         <ThankYouSection>
@@ -83,11 +85,7 @@ const PlanYourVisit: NextPage = () => {
 
   return (
     <Container>
-      <Iframe
-        src="https://www.youtube.com/embed/4yMqC9KDTak?si=HVri87xy9qcgDNt3"
-        className="sm:h-[600px] h-[50vw]"
-        title="Introduction Video"
-      />
+      <LiteYouTubeEmbed id="4yMqC9KDTak" title="Introduction Video" />
       {renderWelcomeSection()}
       {renderWhatWeOfferSection()}
     </Container>
@@ -137,10 +135,6 @@ const ThankYouText = tw.span`
   tracking-[0.8rem] md:tracking-[1.75rem] lg:tracking-[2rem]
   uppercase text-tertiary-200 text-6xl whitespace-nowrap md:text-8xl font-bold 
   relative
-`;
-
-const Iframe = tw.iframe`
-  w-full h-[500px] border-0
 `;
 
 const SideText = tw.span`

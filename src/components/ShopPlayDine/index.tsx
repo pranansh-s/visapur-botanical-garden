@@ -32,6 +32,6 @@ const ShopContainer = tw.div`
   flex flex-col space-y-2 h-max
 `;
 
-const CardContainer = tw.ul`
+const CardContainer = tw.div`
   flex sm:gap-3 gap-2 items-center justify-center lg:flex-nowrap flex-wrap
 `;

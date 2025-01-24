@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -14,9 +15,7 @@ import Activities from '@/components/Activities';
 import CurvedCarousel from '@/components/Carousel/CurvedCarousel';
 import WideCarousel from '@/components/Carousel/WideCarousel';
 import Glimpses from '@/components/Glimpses';
-import Instagram from '@/components/Instagram';
 import Learn from '@/components/Learn';
-import Map from '@/components/Map';
 import ShopPlayDine from '@/components/ShopPlayDine';
 import Table from '@/components/Table';
 import WhoWeAre from '@/components/WhoWeAre';
@@ -24,6 +23,11 @@ import WhoWeAre from '@/components/WhoWeAre';
 import { wideCarouselItems } from '@/constants/carousels';
 import { strings } from '@/constants/strings';
 import { animationPreset } from '@/utils/anim';
+
+const Map = dynamic(() => import('@/components/Map'), { ssr: false });
+const Instagram = dynamic(() => import('@/components/Instagram'), {
+  ssr: false,
+});
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -66,12 +70,16 @@ const renderHeroSection = (heroY: any) => (
         <Image
           className="absolute right-1/2 translate-x-[45vw] sm:translate-x-[28rem] lg:translate-x-[45rem] 2xl:-top-48 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 h-28 w-28"
           src={ministerImage}
+          priority
+          loading="eager"
           alt="Ganesh Naik"
         />
         <Image
           className="absolute left-1/2 -translate-x-[45vw] sm:-translate-x-[28rem] lg:-translate-x-[45rem] 2xl:-top-48 xl:-top-24 sm:-top-20 -top-12 2xl:w-72 2xl:h-72 xl:w-48 xl:h-48 sm:h-36 sm:w-36 w-28 h-28"
           src={ministerImage2}
-          alt=""
+          priority
+          loading="eager"
+          alt="Devendra Fadnavis"
         />
       </HeroTitle>
     </HeroContent>
@@ -82,6 +90,7 @@ const renderHeroSection = (heroY: any) => (
       animate={{ y: 0 }}
       transition={animationPreset}
       alt="Hero Image"
+      loading="eager"
       priority
     />
 
