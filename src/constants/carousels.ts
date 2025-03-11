@@ -110,9 +110,14 @@ export const teamMembers: ICarouselItem[] = [
     subText: '(PRODUCT DESIGNER)',
   },
   {
+    src: '/team/team-14.png',
+    title: 'JITENDRA RAMGAOKAR',
+    subText: '(CHIEF CONSERVATOR OF FOREST)',
+  },
+  {
     src: '/team/team-3.png',
     title: 'PAVANKUMAR JONG',
-    subText: '(Assistant Conservator of Forest)',
+    subText: '(ASSISTANT CONSERVATOR OF FOREST)',
   },
   {
     src: '/team/team-4.png',

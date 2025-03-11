@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { activities } from '@/constants';
@@ -16,15 +16,25 @@ import ImageCard from '../common/ImageCard';
 const Activities = (): React.ReactElement => {
   const [popupVideo, setPopupVideo] = useState<string | null>(null);
 
-  const openPopup = (videoUrl: string) => {
+  const openPopup = useCallback((videoUrl: string) => {
     document.body.classList.add('body-no-scroll');
     setPopupVideo(videoUrl);
-  };
+  }, []);
 
-  const closePopup = () => {
+  const closePopup = useCallback(() => {
     document.body.classList.remove('body-no-scroll');
     setPopupVideo(null);
-  };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup();
+      }
+    });
+
+    return () => window.removeEventListener('keydown', closePopup);
+  }, [closePopup]);
 
   return (
     <ActivitiesContainer>
@@ -74,7 +84,7 @@ const Activities = (): React.ReactElement => {
             height="500px"
             allowFullScreen
             title={popupVideo}
-            className="rounded-lg w-max h-[75%] mt-24"
+            className="rounded-lg w-max sm:translate-y-[10%] translate-y-0"
           />
         </div>
       )}

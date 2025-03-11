@@ -41,7 +41,7 @@ const AboutUs: NextPage = () => {
         </StoryText>
         <MinisterSection>
           <TreeImage src={treeImage} alt="" />
-          <MinisterImage src={ministerImage} alt="Shri. Sudhir Mungantiwar" />
+          <MinisterImage src={ministerImage} alt="Ganesh Naik" />
           <MinisterName>
             {strings.aboutUs.ministerName}
             <br />
@@ -59,7 +59,7 @@ const AboutUs: NextPage = () => {
       </VideoWrapper>
       <TeamsGuides />
       <div className="space-y-10">
-        <Heading name={'Inauguration'} />
+        <Heading name={strings.aboutUs.inauguration} />
         <Carousel dots={false} items={inaugurationItems} />
       </div>
       <NewsUpdates />
@@ -98,7 +98,7 @@ const MinisterName = tw.span`
 
 const MinisterImage = tw(Image)`
   w-[20rem] md:w-[35rem]
-  mx-auto aspect-[9/12]
+  mx-auto
 `;
 
 const TreeImage = tw(Image)`

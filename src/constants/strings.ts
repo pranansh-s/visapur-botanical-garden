@@ -23,6 +23,7 @@ export const strings = {
     },
     ministerName: 'Ganesh Naik',
     ministerTitle: '(Forest Minister)',
+    inauguration: 'Inauguration',
   },
   visit: {
     welcome: {
@@ -44,7 +45,7 @@ export const strings = {
     },
   },
   support: {
-    getInTouch: 'Get in touch',
+    getInTouch: 'Get In Touch',
     supportText:
       "We welcome your inquiries, feedback, and suggestions. Connect with us to learn more about our offerings, plan your visit, or share your experiences. Our team is here to assist you and ensure your journey through nature is unforgettable. Reach out today, and let's explore the beauty of the natural world together. Your adventure awaits!",
     queries: 'Have queries?',
@@ -52,7 +53,7 @@ export const strings = {
       mailUs: 'Mail Us: ',
       contactNo: 'Contact No: ',
     },
-    howToReach: 'How to Reach',
+    howToReach: 'How To Reach',
     address: {
       part1: 'Shradheya Atal Bihari Vajpayee Botanical Garden,',
       part2: 'Ballarshah Rd, Visapur, Maharashtra 442701',

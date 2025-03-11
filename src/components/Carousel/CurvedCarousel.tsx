@@ -9,11 +9,12 @@ import tw from 'tailwind-styled-components';
 import train1 from '../../../public/train-1.svg';
 import tree1 from '../../../public/tree-1.svg';
 
+import { attractions } from '@/constants/attractions';
 import { butteryflies } from '@/constants/butterflies';
 import { fishes } from '@/constants/fishes';
 import Button from '../common/Button';
 
-const options = [butteryflies, fishes, fishes];
+const options = [butteryflies, fishes, attractions];
 
 const CurvedCarousel: React.FC = memo(() => {
   const [currentState, setCurrentState] = useState<number>(0);
@@ -107,18 +108,19 @@ const CurvedCarousel: React.FC = memo(() => {
         </Button>
       </Options>
       <CardContainer>
-        {options[currentState]!.map(
-          (item: ICurvedCarouselInfo, index: number) => (
-            <Card
-              key={index}
-              style={getTransformStyles(index)}
-              width={200}
-              height={200}
-              src={item.src}
-              alt={item.latinName}
-            />
-          )
-        )}
+        {options[currentState] &&
+          options[currentState].map(
+            (item: ICurvedCarouselInfo, index: number) => (
+              <Card
+                key={index}
+                style={getTransformStyles(index)}
+                width={200}
+                height={200}
+                src={item.src}
+                alt={item.latinName}
+              />
+            )
+          )}
       </CardContainer>
       <Controls>
         <Arrow className="sm:left-10 left-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">

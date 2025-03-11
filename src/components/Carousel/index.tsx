@@ -2,7 +2,6 @@
 
 import React, { HTMLAttributes, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import { ICarouselItem } from '@/types';
 import Slider from 'react-slick';
@@ -73,7 +72,6 @@ const Carousel = ({
     },
   };
 
-  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState<number>(
     Math.floor(settings.slidesToShow / 2)
   );
@@ -121,7 +119,7 @@ const Carousel = ({
                 </InstagramCard>
               ) : (
                 <div
-                  className={`${variant === 'rotateScale' ? 'h-[500px] sm:h-[700px] lg:h-[400px] rounded-2xl py-24' : variant === 'team' ? 'h-max -translate-y-12 mt-12 !mx-4' : variant === 'guides' ? 'h-[18rem] sm:h-[19rem] lg:h-[26rem] bg-white' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
+                  className={`${variant === 'rotateScale' ? 'h-[500px] sm:h-[700px] lg:h-[400px] rounded-2xl py-24' : variant === 'team' ? '-translate-y-12 mt-12 !mx-4' : variant === 'guides' ? 'h-[18rem] sm:h-[19rem] lg:h-[26rem] bg-white' : 'h-full mx-1'} flex flex-col justify-start rounded-2xl`}
                 >
                   <StyledImage
                     src={item.src}
@@ -129,7 +127,7 @@ const Carousel = ({
                     loading="eager"
                     width={300}
                     height={300}
-                    className={`object-cover object-top rounded-lg ${variant === 'guides' ? 'h-[13rem] lg:h-[20rem]' : ''} ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
+                    className={`object-cover object-top rounded-lg ${variant === 'guides' ? 'h-[13rem] lg:h-[20rem]' : 'aspect-square'} ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
                   {variant === 'guides' ? (
                     <div className="p-3 space-y-2">

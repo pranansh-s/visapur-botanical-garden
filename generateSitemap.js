@@ -3,7 +3,9 @@ const { createWriteStream } = require('fs');
 const { join } = require('path');
 
 async function generateSitemap() {
-  const sitemap = new SitemapStream({ hostname: 'https://URL.com' });
+  const sitemap = new SitemapStream({
+    hostname: 'https://atalgarden.mahaforest.gov.in',
+  });
 
   sitemap.write({ url: '/' });
   sitemap.write({ url: '/about' });
