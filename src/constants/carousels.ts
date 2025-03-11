@@ -115,7 +115,7 @@ export const teamMembers: ICarouselItem[] = [
     subText: '(CHIEF CONSERVATOR OF FOREST)',
   },
   {
-    src: '/team/team-3.png',
+    src: '/team/team-3n.png',
     title: 'PAVANKUMAR JONG',
     subText: '(ASSISTANT CONSERVATOR OF FOREST)',
   },
@@ -150,7 +150,7 @@ export const teamMembers: ICarouselItem[] = [
     subText: '(Deputy Conservator of Forests)',
   },
   {
-    src: '/team/team-10.png',
+    src: '/team/team-10n.png',
     title: 'PRAKASH SUDHAKAR ZADE',
     subText: '(RANGE FOREST OFFICER)',
   },
@@ -165,7 +165,7 @@ export const teamMembers: ICarouselItem[] = [
     subText: '(FOREST GUARD)',
   },
   {
-    src: '/team/team-13.png',
+    src: '/team/team-13n.png',
     title: 'RAMSOCHA SURYABHAN YADAV',
     subText: '(FORESTER)',
   },
