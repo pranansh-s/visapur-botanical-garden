@@ -4,19 +4,18 @@ import React from 'react';
 
 import { learnCards } from '@/constants';
 import { IImageCard } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import Heading from '../common/Heading';
 import ImageCard from '../common/ImageCard';
 
 const Learn = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <LearnContainer>
-      <Heading name="Learn" />
-      <BodyText>
-        Engage with Visapur&apos;s vibrant community of horticulturists,
-        botanists, and environmental educators.
-      </BodyText>
+      <Heading name={t('learn.name')} />
+      <BodyText>{t('learn.body')}</BodyText>
       <CardContainer>
         {learnCards.map((learnCard: IImageCard, idx: number) => (
           <ImageCard className="sm:w-full w-[140px]" key={idx} {...learnCard} />

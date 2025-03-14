@@ -34,67 +34,59 @@ export const instagramPosts: ICarouselItem[] = [
 export const eventCarouselItems: IWideCarouselItem[] = [
   {
     imageSrc: '/wide-carousel/wide-carousel-1.webp',
-    title: 'Big Butterfly Month',
-    date: '1st - 30th September 2024',
-    description:
-      "This special time is dedicated to raising awareness and appreciation for the beautiful and vital role butterflies play in our ecosystem. We invite you to be part of the excitement with guided butterfly walks, interactive workshops, and fun activities for all ages. Explore our garden's butterfly habitats, learn about conservation efforts, and discover how you can contribute to preserving these incredible pollinators. If you are a butterfly lover like us then don't forget to book your tickets (Limited tickets**)",
+    title: 'eventCarousel.bigButterflyMonth.title',
+    date: 'eventCarousel.bigButterflyMonth.date',
+    description: 'eventCarousel.bigButterflyMonth.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-1.webp',
-    title: 'Big Butterfly Month',
-    date: '1st - 30th September 2024',
-    description:
-      "This special time is dedicated to raising awareness and appreciation for the beautiful and vital role butterflies play in our ecosystem. We invite you to be part of the excitement with guided butterfly walks, interactive workshops, and fun activities for all ages. Explore our garden's butterfly habitats, learn about conservation efforts, and discover how you can contribute to preserving these incredible pollinators. If you are a butterfly lover like us then don't forget to book your tickets (Limited tickets**)",
+    title: 'eventCarousel.bigButterflyMonth.title',
+    date: 'eventCarousel.bigButterflyMonth.date',
+    description: 'eventCarousel.bigButterflyMonth.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-1.webp',
-    title: 'Big Butterfly Month',
-    date: '1st - 30th September 2024',
-    description:
-      "This special time is dedicated to raising awareness and appreciation for the beautiful and vital role butterflies play in our ecosystem. We invite you to be part of the excitement with guided butterfly walks, interactive workshops, and fun activities for all ages. Explore our garden's butterfly habitats, learn about conservation efforts, and discover how you can contribute to preserving these incredible pollinators. If you are a butterfly lover like us then don't forget to book your tickets (Limited tickets**)",
+    title: 'eventCarousel.bigButterflyMonth.title',
+    date: 'eventCarousel.bigButterflyMonth.date',
+    description: 'eventCarousel.bigButterflyMonth.description',
   },
 ];
 
 export const wideCarouselItems: IWideCarouselItem[] = [
   {
     imageSrc: '/wide-carousel/wide-carousel-1.webp',
-    title: 'Experience the Magic of Butterfly',
-    description: 'Spot a kaleidoscope of butterfly varieties in vibrant hues!',
+    title: 'wideCarousel.butterflyMagic.title',
+    description: 'wideCarousel.butterflyMagic.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-2.webp',
-    title: 'Diverse Flower Varieties',
-    description:
-      'Explore our stunning collection of rare and exotic flowers from around the globe.',
+    title: 'wideCarousel.diverseFlowers.title',
+    description: 'wideCarousel.diverseFlowers.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-6.webp',
-    title: 'Discover Fruits and Veggies',
-    description:
-      'Unlock the power of nature by learning about the healing benefits of different fruits, veggies, and seeds!',
+    title: 'wideCarousel.fruitsAndVeggies.title',
+    description: 'wideCarousel.fruitsAndVeggies.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-3.webp',
-    title: 'Discover the Desert',
-    description:
-      'From towering giants to tiny wonders, explore the diverse world of cacti!',
+    title: 'wideCarousel.desertDiscovery.title',
+    description: 'wideCarousel.desertDiscovery.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-4.webp',
-    title: 'Explore Aquarium',
-    description:
-      'Embark on an underwater adventure and explore the vibrant world of the aquarium',
+    title: 'wideCarousel.aquariumExploration.title',
+    description: 'wideCarousel.aquariumExploration.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-5.webp',
-    title: 'Rich History of Chandrapur',
-    description:
-      'Unlock the rich history of Chandrapur and explore its cultural heritage and ancient landmarks',
+    title: 'wideCarousel.chandrapurHistory.title',
+    description: 'wideCarousel.chandrapurHistory.description',
   },
   {
     imageSrc: '/wide-carousel/wide-carousel-7.webp',
-    title: 'Unique Varieties of birds',
-    description: 'Spot a dazzling variety of birds in their natural splendor!',
+    title: 'wideCarousel.uniqueBirds.title',
+    description: 'wideCarousel.uniqueBirds.description',
   },
 ];
 
@@ -102,72 +94,72 @@ export const teamMembers: ICarouselItem[] = [
   {
     src: '/team/team-1.png',
     title: 'MAYANK FALWARIA',
-    subText: '(DIGITAL MARKETER/ SOCIAL MEDIA MANAGER)',
+    subText: 'team.mayankFalwaria',
   },
   {
     src: '/team/team-2.png',
     title: 'DEEKSHA KALRA',
-    subText: '(PRODUCT DESIGNER)',
+    subText: 'team.deekshaKalra',
   },
   {
     src: '/team/team-14.png',
     title: 'JITENDRA RAMGAOKAR',
-    subText: '(CHIEF CONSERVATOR OF FOREST)',
+    subText: 'team.jitendraRamgaokar',
   },
   {
     src: '/team/team-3n.png',
     title: 'PAVANKUMAR JONG',
-    subText: '(ASSISTANT CONSERVATOR OF FOREST)',
+    subText: 'team.pavankumarJong',
   },
   {
     src: '/team/team-4.png',
     title: 'PRATEEK KUSHWAHA',
-    subText: '(DESIGN MANAGER)',
+    subText: 'team.prateekKushwaha',
   },
   {
     src: '/team/team-5.png',
     title: 'ASMITA VERMA',
-    subText: '(UI/ UX DESIGNER)',
+    subText: 'team.asmitaVerma',
   },
   {
     src: '/team/team-6.png',
     title: 'BHAIRAVI BOPARDIKAR',
-    subText: '(EDUCATION OFFICER)',
+    subText: 'team.bhairaviBopardikar',
   },
   {
     src: '/team/team-7.png',
     title: 'SUKANYA DAS',
-    subText: '(PRODUCT DESIGNER)',
+    subText: 'team.sukanyaDas',
   },
   {
     src: '/team/team-8.png',
     title: 'ADITYA LAKHMAPURE',
-    subText: '(GAME DESIGNER)',
+    subText: 'team.adityaLakhmapure',
   },
   {
     src: '/team/team-9.png',
     title: 'SWETHA BODDU',
-    subText: '(Deputy Conservator of Forests)',
+    subText: 'team.swethaBoddu',
   },
   {
     src: '/team/team-10n.png',
     title: 'PRAKASH SUDHAKAR ZADE',
-    subText: '(RANGE FOREST OFFICER)',
+    subText: 'team.prakashSudhakarZade',
   },
   {
     src: '/team/team-11.png',
     title: 'RAKESH RAJARAM SHIVANKAR',
-    subText: '(FOREST GUARD)',
+    subText: 'team.rakeshRajaramShivankar',
   },
   {
     src: '/team/team-12.png',
     title: 'MANIKA PANDURANG ANKADE',
-    subText: '(FOREST GUARD)',
+    subText: 'team.manikaPandurangAnkade',
   },
   {
     src: '/team/team-13n.png',
     title: 'RAMSOCHA SURYABHAN YADAV',
-    subText: '(FORESTER)',
+    subText: 'team.ramsochaSuryabhanYadav',
   },
 ];
 
@@ -280,10 +272,10 @@ export const guides: ICarouselItem[] = [
 ];
 
 export const zoneItems: ICarouselItem[] = [
-  { src: '/about/about-1.webp', title: 'Evolution Park' },
-  { src: '/about/about-2.webp', title: 'Picture Spot' },
-  { src: '/about/about-3.webp', title: 'Taxidermy Museum' },
-  { src: '/about/about-4.webp', title: 'Recreation Zone' },
+  { src: '/about/about-1.webp', title: 'zones.evolutionPark' },
+  { src: '/about/about-2.webp', title: 'zones.pictureSpot' },
+  { src: '/about/about-3.webp', title: 'zones.taxidermyMuseum' },
+  { src: '/about/about-4.webp', title: 'zones.recreationZone' },
 ];
 
 export const glimpsesItems: ICarouselItem[] = [

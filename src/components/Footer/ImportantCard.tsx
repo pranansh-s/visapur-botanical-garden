@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { IImportant } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 interface ImportantCardProps
@@ -11,10 +12,11 @@ interface ImportantCardProps
 
 const ImportantCard = memo(
   ({ icon, text, body, ...className }: ImportantCardProps) => {
+    const { t } = useTranslation();
     return (
       <CardContainer {...className}>
         <Image width={44} height={44} src={icon} alt="" />
-        <span className="uppercase">{text}</span>
+        <span className="uppercase">{t(text)}</span>
         {body === 'Direction' ? (
           <Link
             passHref

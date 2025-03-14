@@ -3,6 +3,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 
+import { useTranslation } from 'react-i18next';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
@@ -17,35 +18,35 @@ import Carousel from '@/components/Carousel';
 import Heading from '@/components/common/Heading';
 
 import { inaugurationItems, zoneItems } from '@/constants/carousels';
-import { strings } from '@/constants/strings';
 
 const AboutUs: NextPage = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <HeroSection id="about">
         <StoryText>
-          <Heading name={strings.aboutUs.ourStory} />
+          <Heading name={t('aboutUs.ourStory')} />
           <p>
-            {strings.aboutUs.ourStoryText.part1}
-            <strong>{strings.aboutUs.ourStoryText.bold1}</strong>
-            {strings.aboutUs.ourStoryText.part2}
-            <strong>{strings.aboutUs.ourStoryText.bold2}</strong>
-            {strings.aboutUs.ourStoryText.part3}
-            <strong>{strings.aboutUs.ourStoryText.bold3}</strong>
-            {strings.aboutUs.ourStoryText.part4}
-            <strong>{strings.aboutUs.ourStoryText.bold4}</strong>
-            {strings.aboutUs.ourStoryText.part5}
-            <strong>{strings.aboutUs.ourStoryText.bold5}</strong>
-            {strings.aboutUs.ourStoryText.part6}
+            {t('aboutUs.ourStoryText.part1')}
+            <strong>{t('aboutUs.ourStoryText.bold1')}</strong>
+            {t('aboutUs.ourStoryText.part2')}
+            <strong>{t('aboutUs.ourStoryText.bold2')}</strong>
+            {t('aboutUs.ourStoryText.part3')}
+            <strong>{t('aboutUs.ourStoryText.bold3')}</strong>
+            {t('aboutUs.ourStoryText.part4')}
+            <strong>{t('aboutUs.ourStoryText.bold4')}</strong>
+            {t('aboutUs.ourStoryText.part5')}
+            <strong>{t('aboutUs.ourStoryText.bold5')}</strong>
+            {t('aboutUs.ourStoryText.part6')}
           </p>
         </StoryText>
         <MinisterSection>
           <TreeImage src={treeImage} alt="" />
-          <MinisterImage src={ministerImage} alt="Ganesh Naik" />
+          <MinisterImage src={ministerImage} quality={50} alt="Ganesh Naik" />
           <MinisterName>
-            {strings.aboutUs.ministerName}
+            {t('aboutUs.ministerName')}
             <br />
-            {strings.aboutUs.ministerTitle}
+            {t('aboutUs.ministerTitle')}
           </MinisterName>
         </MinisterSection>
       </HeroSection>
@@ -59,7 +60,7 @@ const AboutUs: NextPage = () => {
       </VideoWrapper>
       <TeamsGuides />
       <div className="space-y-10">
-        <Heading name={strings.aboutUs.inauguration} />
+        <Heading name={t('aboutUs.inauguration')} />
         <Carousel dots={false} items={inaugurationItems} />
       </div>
       <NewsUpdates />

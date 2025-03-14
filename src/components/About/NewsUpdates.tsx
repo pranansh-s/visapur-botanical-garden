@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import { eventCarouselItems } from '@/constants/carousels';
@@ -5,17 +6,12 @@ import WideCarousel from '../Carousel/WideCarousel';
 import Heading from '../common/Heading';
 
 const NewsUpdates = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <NewsUpdatesContainer>
-      <Heading name="News & Updates" />
+      <Heading name={t('aboutUs.newsUpdates.title')} />
       <p className="text-tertiary-200 font-serif !mb-12">
-        Stay up-to-date with the latest happenings at our botanical garden! From
-        seasonal blooms and new plant collections to upcoming events, workshops,
-        and conservation initiatives, this is your go-to source for all garden
-        news. Explore our latest research projects, volunteer opportunities, and
-        eco-friendly practices that help us grow greener every day. Don&apos;t
-        miss out on exclusive garden tours, community programs, and special
-        promotions.
+        {t('aboutUs.newsUpdates.body')}
       </p>
       <WideCarousel items={eventCarouselItems} />
     </NewsUpdatesContainer>
@@ -25,5 +21,5 @@ const NewsUpdates = (): React.ReactElement => {
 export default NewsUpdates;
 
 const NewsUpdatesContainer = tw.div`
-    flex flex-col space-y-3
+  flex flex-col space-y-3
 `;

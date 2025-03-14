@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useTranslation } from 'react-i18next';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
@@ -11,24 +12,18 @@ import tree from '../../../public/tree.svg';
 import Heading from '../common/Heading';
 
 const WhoWeAre = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <Container>
-      <Heading name="Who we are" />
+      <Heading name={t('whoWeAre.name')} />
       <Description>
-        At{' '}
+        {t('whoWeAre.body.part1')}
         <b className="text-base md:text-lg lg:text-xl">
-          Shradheya Shri Atal Bihari Vajpayee Botanical Garden
+          {t('whoWeAre.body.bold1')}
         </b>
-        , we are dedicated to inspiring a love for nature and promoting
-        environmental stewardship. Established on 15/03/2024, our garden has
-        grown into a vibrant sanctuary where visitors can explore a diverse
-        collection of plants from around the world. Our mission is to educate,
-        conserve, and connect people with the beauty and importance of the
-        natural world. Whether you&apos;re here to learn, relax, or simply enjoy
-        the scenery, we offer a welcoming space for everyone to experience the
-        wonders of nature.
+        {t('whoWeAre.body.part2')}
         <Link href="/about" passHref>
-          <ReadMore>Read more &gt;</ReadMore>
+          <ReadMore>{t('readMore')} &gt;</ReadMore>
         </Link>
       </Description>
       <BackgroundImage

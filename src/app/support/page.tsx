@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { support } from '@/constants';
 import { IImageCard } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import contactIcon from '../../../public/icons/call.svg';
@@ -15,39 +16,38 @@ import heroImage from '../../../public/support/support-hero.webp';
 
 import ImageCard from '@/components/common/ImageCard';
 
-import { strings } from '@/constants/strings';
-
 const Support: NextPage = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const renderGetInTouch = () => (
     <Section>
-      <SupportHeading>{strings.support.getInTouch}</SupportHeading>
-      <SupportBody>{strings.support.supportText}</SupportBody>
+      <SupportHeading>{t('support.getInTouch')}</SupportHeading>
+      <SupportBody>{t('support.supportText')}</SupportBody>
       <ContactContainer>
         <ContactGroup className="flex-1">
-          <SupportSubHeading>{strings.support.queries}</SupportSubHeading>
+          <SupportSubHeading>{t('support.queries')}</SupportSubHeading>
           <ContactField>
             <Image src={mailIcon} alt="Mail Icon" />
             <p className="text-lg">
-              {strings.support.contact.mailUs}
-              <ContactValue>{strings.mailUsText}</ContactValue>
+              {t('support.contact.mailUs')}
+              <ContactValue>{t('mailUsText')}</ContactValue>
             </p>
           </ContactField>
           <ContactField>
             <Image src={contactIcon} alt="Contact Icon" className="mb-auto" />
             <p className="text-lg">
-              {strings.support.contact.contactNo}
-              <ContactValue>{strings.contactNoText.phone1}</ContactValue>
+              {t('support.contact.contactNo')}
+              <ContactValue>{t('contactNoText.phone1')}</ContactValue>
               <ContactValue className="block text-end">
-                {strings.contactNoText.phone2}
+                {t('contactNoText.phone2')}
               </ContactValue>
             </p>
           </ContactField>
         </ContactGroup>
         <ContactGroup>
           <SupportSubHeading>
-            {strings.support.howToReach}
+            {t('support.howToReach')}
             <Image src={placeIcon} alt="Location Icon" className="w-12 h-12" />
           </SupportSubHeading>
           <Iframe
@@ -55,9 +55,9 @@ const Support: NextPage = () => {
             title="Google Maps Location"
           />
           <Address>
-            {strings.support.address.part1}
+            {t('support.address.part1')}
             <br />
-            {strings.support.address.part2}
+            {t('support.address.part2')}
           </Address>
         </ContactGroup>
       </ContactContainer>

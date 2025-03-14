@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 
 import { ILocation } from '@/types';
+import { useTranslation } from 'react-i18next';
 //@ts-ignore
 import { MapInteractionCSS } from 'react-map-interaction';
 import tw from 'tailwind-styled-components';
@@ -17,9 +18,10 @@ import Location from './Location';
 
 const Map = (): React.ReactElement => {
   const mapRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
   return (
     <Container>
-      <Heading name="Map" />
+      <Heading name={t('map.name')} />
       <MapContainer>
         <MapInteractionCSS
           showControls
@@ -37,7 +39,7 @@ const Map = (): React.ReactElement => {
       </MapContainer>
       <DragToMove>
         <Image className="sm:w-6 sm:h-6 w-4 h-4 mr-3" src={drag} alt="Drag" />
-        Drag To Move
+        {t('map.dragToMove')}
       </DragToMove>
     </Container>
   );

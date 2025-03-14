@@ -1,88 +1,76 @@
 import { ICurvedCarouselInfo } from '@/types';
 
-export const butteryflies: ICurvedCarouselInfo[] = [
+export const butterflies: ICurvedCarouselInfo[] = [
   {
-    text: 'Hi! I am Baronet',
+    text: 'butterflies.baronet.text',
     latinName: 'Symphaedra nais',
-    descrp:
-      'One of the stunning butterflies. As winter sets in me I slowly disappears and interestingly will reappear in the summer months',
+    descrp: 'butterflies.baronet.descrp',
     src: '/butterfly/Baronet.png',
   },
   {
-    text: 'Hi! I am Tailed Jay',
+    text: 'butterflies.tailedJay.text',
     latinName: 'Graphium agamemnon',
-    descrp:
-      'Is a vibrant green and black butterfly found in South and Southeast Asia, known for its rapid flight and tropical habitat',
+    descrp: 'butterflies.tailedJay.descrp',
     src: '/butterfly/TailedJay.png',
   },
   {
-    text: 'Hi! I am Blue Mormon',
+    text: 'butterflies.blueMormon.text',
     latinName: 'Papilio polymnestor',
-    descrp:
-      'It is the "state butterfly" of the Indian state of Maharashtra. With a wingspan of 120-150 mm, it is the fourth largest butterfly of India',
+    descrp: 'butterflies.blueMormon.descrp',
     src: '/butterfly/BlueMormon.png',
   },
   {
-    text: 'Hi! I am Blue Pansy',
+    text: 'butterflies.bluePansy.text',
     latinName: 'Junonia Orithya',
-    descrp:
-      'The Blue Pansy has been declared as the state butterfly of the union territory of Jammu and Kashmir in India',
+    descrp: 'butterflies.bluePansy.descrp',
     src: '/butterfly/BluePansy.png',
   },
   {
-    text: 'Hi! I am Commander',
+    text: 'butterflies.commander.text',
     latinName: 'Moduza procris',
-    descrp:
-      'Moduza procris, the commander, sometimes included in the genus Limenitis, is a medium-sized, strikingly coloured brush-footed butterfly found in South Asia and Southeast Asia',
+    descrp: 'butterflies.commander.descrp',
     src: '/butterfly/Commander.png',
   },
   {
-    text: 'Hi! I am Bluebottle',
+    text: 'butterflies.bluebottle.text',
     latinName: 'Graphium sarpedon',
-    descrp:
-      'The common bluebottle or blue triangle in Australia, is a species of swallowtail butterfly that is found in East, South and Southeast Asia, as well as eastern Australia',
+    descrp: 'butterflies.bluebottle.descrp',
     src: '/butterfly/Bluebottle.png',
   },
   {
-    text: 'Hi! I am Common Leopard',
+    text: 'butterflies.commonLeopard.text',
     latinName: 'Phalanta Phalantha',
-    descrp:
-      'The common leopard or spotted rustic, is a sun-loving butterfly of the nymphalid or brush-footed butterfly family',
+    descrp: 'butterflies.commonLeopard.descrp',
     src: '/butterfly/SpottedRustic.png',
   },
   {
-    text: 'Hi! I am Common Pierrot',
+    text: 'butterflies.commonPierrot.text',
     latinName: 'Castalius rosimon',
-    descrp:
-      'The Common Pierrot, is a small butterfly found in South Asia that belongs to the lycaenids, or blues family',
+    descrp: 'butterflies.commonPierrot.descrp',
     src: '/butterfly/CommonPierrot.png',
   },
   {
-    text: 'Hi! I am Crimson Rose',
+    text: 'butterflies.crimsonRose.text',
     latinName: 'Pachliopta hector',
-    descrp:
-      'Is a large swallowtail butterfly belonging to the genus Pachliopta (roses) of the red-bodied swallowtails.It is recorded as a species of "Least Concern (LC)" by IUCN',
+    descrp: 'butterflies.crimsonRose.descrp',
     src: '/butterfly/CrimsonRose.png',
   },
   {
-    text: 'Hi! I am Lime Butterfly',
+    text: 'butterflies.limeButterfly.text',
     latinName: 'Papilio demoleus',
-    descrp:
-      'Is a an economically important pest whose larval forms cause serious damage to citrus family by devouring the foliage heavily during the later stages of their development. The lime Swallowtail, PDL is sometimes called the chequered or citrus Swallowtail',
+    descrp: 'butterflies.limeButterfly.descrp',
     src: '/butterfly/LemonButterfly.png',
   },
   {
-    text: 'Hi! I am Peacock Pansy',
+    text: 'butterflies.peacockPansy.text',
     latinName: 'Junonia almana',
-    descrp:
-      'Is a butterfly known for its striking eye spots on its wings, resembling a peacock feather! These eye spots serve a fascinating purpose—they help scare away potential predators by mimicking the eyes of larger animals',
+    descrp: 'butterflies.peacockPansy.descrp',
     src: '/butterfly/PeacockPansy.png',
   },
   {
-    text: 'Hi! I am Striper Tiger',
+    text: 'butterflies.striperTiger.text',
     latinName: 'Danaus genutia',
-    descrp:
-      'White it is a strong flier, it never flies rapidly or high. It has stronger and faster strokes than the plain tiger. These butterflies migrate seasonally between the Western Ghats and the Eastern plains of Southern India.',
+    descrp: 'butterflies.striperTiger.descrp',
     src: '/butterfly/Monarch.png',
   },
 ];

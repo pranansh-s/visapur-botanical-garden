@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 import Image from 'next/image';
 
 import { IVisitLocation } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 interface VisitLocation extends HTMLAttributes<HTMLLIElement>, IVisitLocation {
@@ -16,6 +17,7 @@ const Location: React.FC<VisitLocation> = ({
   active,
   ...props
 }) => {
+  const { t } = useTranslation();
   return (
     <LocationContainer
       style={{
@@ -33,11 +35,11 @@ const Location: React.FC<VisitLocation> = ({
         alt={name}
       />
       <LocationText $active={active}>
-        Welcome to the
+        {t('visit.welcomeTo')}
         <span className="text-4xl my-3 text-tertiary-200 font-semibold">
-          {name},
+          {t(name)},
         </span>
-        {text}
+        {t(text)}
       </LocationText>
     </LocationContainer>
   );

@@ -1,12 +1,14 @@
 import { ButtonHTMLAttributes, memo } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 import book from '../../../public/icons/book.svg';
 
-import { strings } from '@/constants/strings';
 import Button from './Button';
 
 const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
   props => {
+    const { t } = useTranslation();
     return (
       <div className="relative group">
         <Button
@@ -15,10 +17,10 @@ const BuyTicket: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = memo(
           iconSize={16}
           preIconNode={book}
           aria-label="book"
-          onClick={() => window.open(strings.bookTicket, '_blank')}
+          onClick={() => window.open(t('bookTicket'), '_blank')}
           {...props}
         >
-          Buy Ticket
+          {t('buyTicket')}
         </Button>
         {props.children}
       </div>

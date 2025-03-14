@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { IExpandGroup } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import book from '../../../public/icons/book.svg';
@@ -27,6 +28,7 @@ const ExpandGroup = memo(
     text,
     name,
   }: IExpandGroupProps) => {
+    const { t } = useTranslation();
     return (
       <ExpandContainer
         selected={activeIndex === index}
@@ -35,7 +37,7 @@ const ExpandGroup = memo(
         <ExpandTitle
           onClick={() => setActive(pv => (pv === index ? -1 : index))}
         >
-          <span>{name}</span>
+          <span>{t(name)}</span>
           <svg
             fill="black"
             height="16px"
@@ -48,7 +50,7 @@ const ExpandGroup = memo(
           </svg>
         </ExpandTitle>
         <p className="font-serif text-base py-5 md:px-16 sm:px-12 px-8">
-          {text}
+          {t(text)}
         </p>
         <div className="flex flex-wrap sm:gap-3 gap-1 -mx-20">
           <StyledImage
@@ -114,7 +116,7 @@ const ExpandGroup = memo(
                 alt="download"
                 className="w-8 h-8 inline p-1 mr-2"
               />
-              Download PDF
+              {t('visit.expandGroup.download')}
             </Link>
             <Link
               passHref
@@ -127,7 +129,7 @@ const ExpandGroup = memo(
                 alt="download"
                 className="w-8 h-8 inline p-1 mr-2"
               />
-              Must Visit
+              {t('visit.expandGroup.visit')}
             </Link>
           </div>
           <Button
@@ -138,7 +140,7 @@ const ExpandGroup = memo(
             iconSize={12}
             variant="base"
           >
-            Book
+            {t('visit.expandGroup.book')}
           </Button>
         </div>
       </ExpandContainer>

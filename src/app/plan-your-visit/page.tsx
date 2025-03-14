@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import { bookingGroups } from '@/constants';
 import { IExpandGroup } from '@/types';
+import { useTranslation } from 'react-i18next';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import tw from 'tailwind-styled-components';
 
@@ -16,8 +17,6 @@ import BuyTicket from '@/components/common/BuyTicket';
 import Heading from '@/components/common/Heading';
 import ExpandGroup from '@/components/PlanYourVisit/ExapndGroup';
 
-import { strings } from '@/constants/strings';
-
 const AnimatedBuggy = dynamic(
   () => import('@/components/PlanYourVisit/AnimatedBuggy'),
   { ssr: false }
@@ -25,15 +24,16 @@ const AnimatedBuggy = dynamic(
 
 const PlanYourVisit: NextPage = () => {
   const [activeGroup, setActiveGroup] = useState<number>(-1);
+  const { t } = useTranslation();
 
   const renderWelcomeSection = () => (
     <Section id="welcome">
-      <Heading name={strings.visit.welcome.title} />
-      <HeadingSubText>{strings.visit.welcome.subText}</HeadingSubText>
+      <Heading name={t('visit.welcome.title')} />
+      <HeadingSubText>{t('visit.welcome.subText')}</HeadingSubText>
       <WelcomeBody>
-        {strings.visit.welcome.body.part1}
+        {t('visit.welcome.body.part1')}
         <br />
-        {strings.visit.welcome.body.part2}
+        {t('visit.welcome.body.part2')}
       </WelcomeBody>
       <BookingGroupsContainer>
         {bookingGroups.map((group: IExpandGroup, idx: number) => (
@@ -51,8 +51,8 @@ const PlanYourVisit: NextPage = () => {
 
   const renderWhatWeOfferSection = () => (
     <Section id="things-to-offer">
-      <Heading name={strings.visit.whatWeOffer.title} />
-      <HeadingSubText>{strings.visit.whatWeOffer.subText}</HeadingSubText>
+      <Heading name={t('visit.whatWeOffer.title')} />
+      <HeadingSubText>{t('visit.whatWeOffer.subText')}</HeadingSubText>
       <LiteYouTubeEmbed id="2jNh2S2LGiI" title="Main Attractions" />
       <MapContainer>
         <AnimatedBuggy />
@@ -65,9 +65,9 @@ const PlanYourVisit: NextPage = () => {
               alt="Buggy"
               className="md:w-36 w-28 h-28 md:h-36 absolute -left-5 -translate-x-full translate-y-[25%] bottom-0 sm:block hidden"
             />
-            {strings.visit.whatWeOffer.thankYou}
+            {t('visit.whatWeOffer.thankYou')}
           </ThankYouText>
-          <ThankBody>{strings.visit.whatWeOffer.thankYouText}</ThankBody>
+          <ThankBody>{t('visit.whatWeOffer.thankYouText')}</ThankBody>
           <BuyTicket className="sm:flex hidden" />
         </ThankYouSection>
         <SideText className="top-[15%] sm:top-[10%] left-full -translate-x-1/2 pb-3">

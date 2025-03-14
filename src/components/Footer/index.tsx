@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import { importants } from '@/constants';
 import { IImportant, INamedLink } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import tree from '../../../public/footer-tree.svg';
@@ -21,80 +22,81 @@ import ContactLink from './ContactLink';
 import ImportantCard from './ImportantCard';
 
 const Footer: React.FC = memo(() => {
+  const { t } = useTranslation();
   return (
     <div className="xl:px-lg lg:px-md px-sm h-max relative">
       <FooterContainer>
         <ConnectContainer>
           <span className="font-sans text-3xl font-bold uppercase">
-            Welcome To
+            {t('footer.welcome')}
           </span>
           <div className="flex space-x-3">
-            <Image src={govtLogo2} alt="Garden Logo" height={75} />
+            <Image
+              src={govtLogo2}
+              alt="Atal Botanical Garden Logo"
+              height={75}
+            />
             <Image
               src={govtLogo1}
-              alt="Government of Maharashtra"
+              alt="Maharashtra Government Logo"
               height={75}
             />
           </div>
           <p className="sm:text-sm text-lg font-bold font-sans">
-            Shradheya Atal Bihari Vajpayee Botanical Garden, Ballarshah Rd,
-            Visapur, Maharashtra 442701
+            {t('support.address.part1')} {t('support.address.part2')}
           </p>
-          {renderContactInfo()}
-          {renderConnectOptions()}
+          {renderContactInfo(t)}
+          {renderConnectOptions(t)}
           <BuyTicket className="fixed bottom-[5%] left-1/2 -translate-x-1/2 shadow-xl z-[50] sm:hidden flex !mt-24" />
         </ConnectContainer>
-        {renderFooterLinks()}
+        {renderFooterLinks(t)}
       </FooterContainer>
       <Image
         className="absolute left-0 -translate-x-1/3 -z-10 bottom-0 h-[600px]"
         src={tree}
         alt=""
       />
-      <RightsReserved>
-        Copyright 2024. Shradheya Atal Bihari Vajpayee Botanical Garden, All
-        Rights Reserved.
-      </RightsReserved>
+      <RightsReserved>{t('footer.copyright')}</RightsReserved>
     </div>
   );
 });
 
-const renderFooterLinks = () => {
+const renderFooterLinks = (t: any) => {
   return (
     <LinksContainer>
       <QuickLinks>
-        <LinkHeading>Quick Links</LinkHeading>
+        <LinkHeading>{t('footer.quickLinks')}</LinkHeading>
         {quickLinks.map((link: INamedLink, idx: number) => (
           <FLink
             href={link.href}
             target={link.href.startsWith('https') ? '_blank' : '_self'}
             key={idx}
           >
-            {link.name}
+            {t(link.name)}
           </FLink>
         ))}
       </QuickLinks>
       <CareerLinks>
-        <LinkHeading>Career</LinkHeading>
+        <LinkHeading>{t('footer.career')}</LinkHeading>
         {careerLinks.map((link: INamedLink, idx: number) => (
           <FLink href={link.href} key={idx}>
-            {link.name}
+            {t(link.name)}
           </FLink>
         ))}
       </CareerLinks>
       <HowToReach>
-        <LinkHeading>How To Reach</LinkHeading>
+        <LinkHeading>{t('footer.howToReach')}</LinkHeading>
         <iframe
           className="lg:w-[333px] w-[220px] lg:h-[134px] h-[100px]"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3752.0101573359116!2d79.338103!3d19.881793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd2d3005670f54d%3A0x5edb33057eed6c4f!2sBotanical%20Garden%20visapur!5e0!3m2!1sen!2sin!4v1729695839735!5m2!1sen!2sin"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Shraddhey Shree Atal Bihari Vajpayee Botanical Garden"
+          title="Google Maps Location for Atal Bihari Vajpayee Botanical Garden"
         />
       </HowToReach>
       <Important>
-        <LinkHeading className="text-4xl">Important</LinkHeading>
+        <LinkHeading className="text-4xl">{t('footer.important')}</LinkHeading>
         {importants.map((important: IImportant, idx: number) => (
           <ImportantCard
             className="max-w-[110px] w-full"
@@ -107,10 +109,12 @@ const renderFooterLinks = () => {
   );
 };
 
-const renderConnectOptions = () => {
+const renderConnectOptions = (t: any) => {
   return (
     <ConntectOptionsContainer>
-      <p className="text-tertiary-200 text-xl font-sans font-bold">Connect</p>
+      <p className="text-tertiary-200 text-xl font-sans font-bold">
+        {t('footer.connect')}
+      </p>
       <ConnectOptions>
         {socialLinks.map((socialLink: INamedLink, idx: number) => (
           <ContactLink key={idx} {...socialLink} />
@@ -120,29 +124,29 @@ const renderConnectOptions = () => {
   );
 };
 
-const renderContactInfo = () => {
+const renderContactInfo = (t: any) => {
   return (
     <ContactInfo>
       <div className="flex flex-row sm:flex-col sm:items-start items-center">
         <ContactField
-          name="Contact No"
+          name={t('footer.contactNo')}
           icon={call}
           type="tel"
-          value="+91 94050 66433"
+          value={t('contactNoText.phone1')}
         />
         <strong className="text-3xl sm:hidden block">&nbsp;/</strong>
         <Link
-          href={'tel:+917172458671'}
+          href={`tel:${t('contactNoText.phone2')}`}
           className="font-sans font-semibold p-1 sm:text-base text-lg w-max underline ml-auto sm:-translate-x-[117.5%] whitespace-nowrap"
         >
-          +91 71724 58671
+          {t('contactNoText.phone2')}
         </Link>
       </div>
       <ContactField
-        name="Mail Us"
+        name={t('footer.mailUs')}
         icon={mail}
         type="mailto"
-        value="atalbotanicalgarden@mahaforest.gov.in"
+        value={t('mailUsText')}
       />
     </ContactInfo>
   );

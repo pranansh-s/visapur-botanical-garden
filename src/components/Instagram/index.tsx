@@ -1,12 +1,14 @@
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import { instagramPosts } from '@/constants/carousels';
 import Carousel from '../Carousel';
 
 const Instagram = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <InstagramPostsContainer>
-      <Heading>Follow Us</Heading>
+      <Heading>{t('instagram')}</Heading>
       <Carousel
         itemsVisible={3}
         variant="instagram"

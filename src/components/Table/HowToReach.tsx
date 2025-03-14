@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import Image from 'next/image';
 
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import reach1 from '../../../public/reach/reach-1.svg';
@@ -10,10 +11,11 @@ import reach4 from '../../../public/reach/reach-4.svg';
 import reach from '../../../public/reach/reach.svg';
 
 const HowToReach: React.FC = memo(() => {
+  const { t } = useTranslation();
   return (
     <HowToReachContainer>
       <Title>
-        How To Reach &nbsp;
+        {t('table.howToReach')}&nbsp;
         <Image width={40} src={reach} alt="" />
       </Title>
       <ReachPath src={reach1} alt="Chandrapur Railyway-Auto Path" />

@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { activities } from '@/constants';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
@@ -15,6 +16,7 @@ import ImageCard from '../common/ImageCard';
 
 const Activities = (): React.ReactElement => {
   const [popupVideo, setPopupVideo] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const openPopup = useCallback((videoUrl: string) => {
     document.body.classList.add('body-no-scroll');
@@ -38,7 +40,7 @@ const Activities = (): React.ReactElement => {
 
   return (
     <ActivitiesContainer>
-      <Heading name="Unforgettable Events | Activities" />
+      <Heading name={t('activity')} />
       <DotLottieReact
         src="/lottie/butterfly.lottie"
         loop

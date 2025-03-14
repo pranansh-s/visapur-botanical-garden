@@ -6,11 +6,13 @@ import Image from 'next/image';
 import { amenities } from '@/constants';
 import { IAmenity } from '@/types';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import { animationPreset } from '../../utils/anim';
 
 const Amenities: React.FC = memo(() => {
+  const { t } = useTranslation();
   const [page, setPage] = useState<number>(0);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const Amenities: React.FC = memo(() => {
             <Arrow>
               <Head />
             </Arrow>
-            <Text>{amenity.name}</Text>
+            <Text>{t(amenity.name)}</Text>
           </AmenityContainer>
         ))}
       </Container>

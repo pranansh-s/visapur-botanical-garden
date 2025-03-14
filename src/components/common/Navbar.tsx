@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { importants, languageOptions } from '@/constants';
+import i18n from '@/i18n';
 import { IImportant, ILanguageOption, INamedLink } from '@/types';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
@@ -16,7 +18,7 @@ import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
 
 import {
   burgerLinks,
-  navbarLinks,
+  navLinks,
   otherBurgerLinks,
   socialLinks,
 } from '@/constants/links';
@@ -30,10 +32,9 @@ import BuyTicket from './BuyTicket';
 const Navbar: React.FC = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const { t } = useTranslation();
   const activeIndex = useMemo(() => {
-    return navbarLinks.findIndex(
-      (value: INamedLink) => value.href === pathname
-    );
+    return navLinks.findIndex((value: INamedLink) => value.href === pathname);
   }, [pathname]);
 
   const [active, setActive] = useState<boolean>(false);
@@ -59,6 +60,10 @@ const Navbar: React.FC = () => {
     }
     return () => document.body.classList.remove('body-no-scroll');
   }, [active]);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <NavbarContainer
@@ -90,10 +95,14 @@ const Navbar: React.FC = () => {
           />
           <DividerVertical />
           <StyledImage src={govtLogo2} alt="Garden Logo" width={30} />
-          <Title>Shradheya Shri Atal Bihari Vajpayee Botanical Garden</Title>
+          <Title>{t('name')}</Title>
         </LogoSection>
         <HeaderOptions className="sm:flex hidden">
-          <LanguageSelect id="language">
+          <LanguageSelect
+            id="language"
+            defaultValue={i18n.resolvedLanguage}
+            onChange={e => changeLanguage(e.target.value)}
+          >
             {languageOptions.map((value: ILanguageOption, idx: number) => (
               <option key={idx} value={value.code}>
                 {value.name}
@@ -105,14 +114,14 @@ const Navbar: React.FC = () => {
             className="text-sm"
             iconSize={10}
           >
-            Education Program
+            {t('navbar.educationProgram')}
           </Button>
         </HeaderOptions>
         <BurgerMenu active={active} setActive={setActive} />
       </TopSection>
       <HorizontalDivider />
-      {renderDesktopNavbar(activeIndex, router)}
-      {renderBurgerNavbar(active, activeIndex, setActive, hideNews)}
+      {renderDesktopNavbar(activeIndex, t)}
+      {renderBurgerNavbar(active, activeIndex, setActive, hideNews, t)}
     </NavbarContainer>
   );
 };
@@ -121,7 +130,8 @@ const renderBurgerNavbar = (
   active: boolean,
   activeIndex: number,
   setActive: any,
-  hideNews: boolean
+  hideNews: boolean,
+  t: any
 ) => {
   return (
     <BurgerMenuContainer
@@ -129,14 +139,14 @@ const renderBurgerNavbar = (
     >
       <div className="grid grid-cols-2 w-full">
         <BurgerNavLinkContainer>
-          {navbarLinks.map((value: INamedLink, idx: number) => (
+          {navLinks.map((value: INamedLink, idx: number) => (
             <StyledBurgerLink
               key={idx}
               href={value.href}
               onClick={() => setActive(false)}
               selected={activeIndex == idx}
             >
-              {value.name}
+              {t(value.name)}
             </StyledBurgerLink>
           ))}
         </BurgerNavLinkContainer>
@@ -147,7 +157,7 @@ const renderBurgerNavbar = (
               key={idx}
               href={value.href}
             >
-              {value.name}
+              {t(value.name)}
             </BurgerLink>
           ))}
         </BurgerNavLinkContainer>
@@ -160,7 +170,7 @@ const renderBurgerNavbar = (
             onClick={() => setActive(false)}
             href={value.href}
           >
-            {value.name}
+            {t(value.name)}
           </BurgerLink>
         ))}
       </BurgerNavLinkContainer>
@@ -175,7 +185,7 @@ const renderBurgerNavbar = (
       </Importants>
       <ContactLinks>
         <span className="w-full text-tertiary-200 text-lg font-semibold">
-          Contact Us
+          {t('navbar.contactUs')}
         </span>
         {socialLinks.map((socialLink: INamedLink, idx: number) => (
           <ContactLink key={idx} {...socialLink} />
@@ -185,18 +195,18 @@ const renderBurgerNavbar = (
   );
 };
 
-const renderDesktopNavbar = (activeIndex: number, router: any) => {
+const renderDesktopNavbar = (activeIndex: number, t: any) => {
   return (
     <>
       <NavLinkContainer className="sm:flex hidden">
-        {navbarLinks.map((value: INamedLink, idx: number) => (
+        {navLinks.map((value: INamedLink, idx: number) => (
           <StyledNavLink
             key={idx}
             href={value.href}
             selected={activeIndex === idx}
             target={value.href.startsWith('https') ? '_blank' : '_self'}
           >
-            {value.name}
+            {t(value.name)}
           </StyledNavLink>
         ))}
         <BuyTicket className="scale-[0.9]">

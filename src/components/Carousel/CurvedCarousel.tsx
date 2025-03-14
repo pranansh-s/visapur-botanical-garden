@@ -4,20 +4,22 @@ import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 
 import { ICurvedCarouselInfo } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import train1 from '../../../public/train-1.svg';
 import tree1 from '../../../public/tree-1.svg';
 
 import { attractions } from '@/constants/attractions';
-import { butteryflies } from '@/constants/butterflies';
+import { butterflies } from '@/constants/butterflies';
 import { fishes } from '@/constants/fishes';
 import Button from '../common/Button';
 
-const options = [butteryflies, fishes, attractions];
+const options = [butterflies, fishes, attractions];
 
 const CurvedCarousel: React.FC = memo(() => {
   const [currentState, setCurrentState] = useState<number>(0);
+  const { t } = useTranslation();
   const totalItems = useMemo(
     () => options[currentState].length,
     [currentState]
@@ -88,7 +90,7 @@ const CurvedCarousel: React.FC = memo(() => {
           className="text-base"
           variant={currentState == 0 ? 'base' : 'light'}
         >
-          Butterflies
+          {t('carousel.options.butterflies')}
         </Button>
         <Button
           aria-label="fishes"
@@ -96,7 +98,7 @@ const CurvedCarousel: React.FC = memo(() => {
           className="text-base"
           variant={currentState == 1 ? 'base' : 'light'}
         >
-          Fishes
+          {t('carousel.options.fishes')}
         </Button>
         <Button
           aria-label="attractions"
@@ -104,7 +106,7 @@ const CurvedCarousel: React.FC = memo(() => {
           className="text-base"
           variant={currentState == 2 ? 'base' : 'light'}
         >
-          Attraction Points
+          {t('carousel.options.points')}
         </Button>
       </Options>
       <CardContainer>
@@ -142,13 +144,13 @@ const CurvedCarousel: React.FC = memo(() => {
         </Arrow>
         <ButterflyDescription>
           <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-3xl">
-            {options[currentState][currentItemIndex]!.text}
+            {t(options[currentState][currentItemIndex]!.text)}
           </h3>
           <span className="lg:text-lg sm:text-sm">
-            <i>({options[currentState][currentItemIndex]!.latinName})</i>
+            <i>{options[currentState][currentItemIndex]!.latinName}</i>
           </span>
           <p className="lg:text-base text-sm">
-            {options[currentState][currentItemIndex]!.descrp}
+            {t(options[currentState][currentItemIndex]!.descrp)}
           </p>
         </ButterflyDescription>
         <Arrow className="sm:right-10 right-1/4 sm:top-0 top-[80%] sm:translate-y-0 translate-y-1/2">

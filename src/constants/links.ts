@@ -1,82 +1,55 @@
 import { INamedLink } from '@/types';
 
 export const quickLinks: INamedLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'BLOG', href: '/' },
-  { name: 'About us', href: '/about' },
-  { name: 'Awards', href: '/' },
-  { name: 'Attraction points', href: '/plan-your-visit#things-to-offer' },
-  { name: 'Terms & conditions', href: '/terms-conditions' },
-  { name: 'Events', href: '/#table' },
-  { name: 'FAQs', href: '/about#faqs' },
+  { name: 'quickLinks.home', href: '/' },
+  { name: 'quickLinks.blog', href: '/' },
+  { name: 'quickLinks.aboutUs', href: '/about' },
+  { name: 'quickLinks.awards', href: '/' },
   {
-    name: 'Edutainment Tour',
+    name: 'quickLinks.attractionPoints',
+    href: '/plan-your-visit#things-to-offer',
+  },
+  { name: 'quickLinks.termsConditions', href: '/terms-conditions' },
+  { name: 'quickLinks.events', href: '/#table' },
+  { name: 'quickLinks.faqs', href: '/about#faqs' },
+  {
+    name: 'quickLinks.edutainmentTour',
     href: 'https://booking.atalbotanicalgarden.com/tour/',
   },
-  {
-    name: 'Privacy Policy',
-    href: '/privacy-policy',
-  },
-  { name: 'Shop', href: 'https://botanicool.in/' },
-  { name: 'Sitemap', href: '/sitemap.xml' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Contact', href: '/support' },
+  { name: 'quickLinks.privacyPolicy', href: '/privacy-policy' },
+  { name: 'quickLinks.shop', href: 'https://botanicool.in/' },
+  { name: 'quickLinks.sitemap', href: '/sitemap.xml' },
+  { name: 'quickLinks.gallery', href: '/gallery' },
+  { name: 'quickLinks.contact', href: '/support' },
 ];
 
 export const careerLinks: INamedLink[] = [
-  { name: 'Work with us', href: '/about#team' },
-  { name: 'Collaborations', href: '/about#team' },
-  { name: 'Tenders', href: '/about#team' },
+  { name: 'careerLinks.workWithUs', href: '/about#team' },
+  { name: 'careerLinks.collaborations', href: '/about#team' },
+  { name: 'careerLinks.tenders', href: '/about#team' },
 ];
 
 export const burgerLinks: INamedLink[] = [
+  { name: 'burgerLinks.faq', href: '/about#faqs' },
   {
-    name: 'FAQ',
-    href: '/about#faqs',
-  },
-  {
-    name: 'Edutainment Tour',
+    name: 'burgerLinks.edutainmentTour',
     href: 'https://booking.atalbotanicalgarden.com/tour/',
   },
-  {
-    href: '/gallery',
-    name: 'Gallery',
-  },
-  {
-    name: 'Blog',
-    href: '/',
-  },
-  {
-    name: 'Awards',
-    href: '/',
-  },
+  { name: 'burgerLinks.gallery', href: '/gallery' },
+  { name: 'burgerLinks.blog', href: '/' },
+  { name: 'burgerLinks.awards', href: '/' },
 ];
 
 export const otherBurgerLinks: INamedLink[] = [
   {
+    name: 'otherBurgerLinks.termsConditions',
     href: '/terms-conditions',
-    name: 'Terms & Conditions',
   },
-  {
-    href: '/privacy-policy',
-    name: 'Privacy Policy',
-  },
-  {
-    href: '/sitemap',
-    name: 'Sitemap',
-  },
-  {
-    href: '/about#team',
-    name: 'Work with us',
-  },
-  {
-    href: '/about#team',
-    name: 'Collaborations',
-  },
-  {
-    href: '/about#team',
-    name: 'Tenders',
-  },
+  { name: 'otherBurgerLinks.privacyPolicy', href: '/privacy-policy' },
+  { name: 'otherBurgerLinks.sitemap', href: '/sitemap.xml' },
+  { name: 'otherBurgerLinks.workWithUs', href: '/about#team' },
+  { name: 'otherBurgerLinks.collaborations', href: '/about#team' },
+  { name: 'otherBurgerLinks.tenders', href: '/about#team' },
 ];
 
 export const socialLinks: INamedLink[] = [
@@ -94,12 +67,18 @@ export const socialLinks: INamedLink[] = [
   { name: 'twitter', href: 'https://x.com/mahaatalgarden' },
 ];
 
-export const navbarLinks: INamedLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Plan Your Visit', href: '/plan-your-visit' },
-  { name: 'Things to Offer', href: '/plan-your-visit#things-to-offer' },
-  { name: 'Support', href: '/support' },
-  { name: 'Shop', href: 'https://botanicool.in/' },
-  { name: 'Experience', href: 'https://booking.atalbotanicalgarden.com/tour/' },
+export const navLinks: INamedLink[] = [
+  { name: 'navbarLinks.home', href: '/' },
+  { name: 'navbarLinks.about', href: '/about' },
+  { name: 'navbarLinks.planYourVisit', href: '/plan-your-visit' },
+  {
+    name: 'navbarLinks.thingsToOffer',
+    href: '/plan-your-visit#things-to-offer',
+  },
+  { name: 'navbarLinks.support', href: '/support' },
+  { name: 'navbarLinks.shop', href: 'https://botanicool.in/' },
+  {
+    name: 'navbarLinks.experience',
+    href: 'https://booking.atalbotanicalgarden.com/tour/',
+  },
 ];

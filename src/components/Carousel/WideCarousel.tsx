@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import { IWideCarouselItem } from '@/types';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 
@@ -18,6 +19,7 @@ import { NextArrow, PrevArrow } from './Arrows';
 
 const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
   ({ items }) => {
+    const { t } = useTranslation();
     const router = useRouter();
 
     const settings = {
@@ -46,30 +48,30 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
               <TextContainer>
                 <Body>
                   <span className="font-sans text-4xl md:text-6xl font-bold">
-                    {item.title}
+                    {t(item.title)}
                   </span>
                   <span className="font-bold text-lg md:text-2xl">
-                    {item.date}
+                    {t(item.date)}
                   </span>
                   <p className="text-sm md:text-base">
                     <span className="font-bold block text-base md:text-lg">
-                      Join us in celebrating {item.title}
+                      {t('carousel.joinUs')} {t(item.title)}
                     </span>
-                    {item.description}
+                    {t(item.description)}
                   </p>
                 </Body>
                 <BuyTicket className="md:scale-100 scale-75 h-max mx-auto md:flex hidden" />
               </TextContainer>
             ) : (
               <Text>
-                <TextTitle>{item.title}</TextTitle>
-                <p>&quot;{item.description}&quot;</p>
+                <TextTitle>{t(item.title)}</TextTitle>
+                <p>&quot;{t(item.description)}&quot;</p>
               </Text>
             )}
           </CarouselItem>
         );
       },
-      []
+      [t]
     );
 
     return (
@@ -95,11 +97,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
         </CarouselContainer>
         {!items[0].date && (
           <PlanVisit>
-            <PlanText>
-              We offer a serene escape into the world of flora and fauna.
-              Discover rare plants, enjoy scenic walks, and immerse yourself in
-              the beauty of nature.
-            </PlanText>
+            <PlanText>{t('planVisit.body')}</PlanText>
             <Button
               aria-label="plan-your-visit"
               className="sm:px-12 md:px-7 md:py-5 px-5 py-4 md:text-base text-sm h-max shadow-md"
@@ -112,7 +110,7 @@ const WideCarousel: React.FC<{ items: IWideCarouselItem[] }> = memo(
                 autoplay
                 className="absolute h-12 lg:h-20 translate-x-[85%] lg:translate-x-[45%] -translate-y-5"
               />
-              Plan Your Visit
+              {t('planVisit.name')}
             </Button>
             <BackgroundImage
               src={tree2}

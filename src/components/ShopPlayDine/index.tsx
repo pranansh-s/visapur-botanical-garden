@@ -2,14 +2,16 @@ import Image from 'next/image';
 
 import { shopPlayDineItems } from '@/constants';
 import { IVideoLink } from '@/types';
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import Heading from '../common/Heading';
 
 const ShopPlayDine = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <ShopContainer>
-      <Heading name="Shop, Play & Dine" />
+      <Heading name={t('shopPlayDine')} />
       <CardContainer>
         {shopPlayDineItems.map((item: IVideoLink, idx: number) => (
           <Image

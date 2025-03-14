@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import { teamMembers } from '@/constants/carousels';
@@ -8,15 +9,12 @@ import Heading from '../common/Heading';
 import Guides from './Guides';
 
 const TeamsGuides: React.FC = memo(() => {
+  const { t } = useTranslation();
   return (
     <TeamContainer id="team">
-      <Heading name="Our Team" />
+      <Heading name={t('aboutUs.team.title')} />
       <p className="text-tertiary-300 font-serif md:text-base text-sm">
-        Our dedicated team of higher authorities, horticulturists, botanists,
-        and nature enthusiasts work together to cultivate and preserve the
-        beauty of our garden. With a deep love for plants and the environment,
-        we are committed to nurturing biodiversity, educating the community, and
-        creating a tranquil space for visitors to connect with nature
+        {t('aboutUs.team.body')}
       </p>
       <Carousel
         className="!my-12"
@@ -26,14 +24,8 @@ const TeamsGuides: React.FC = memo(() => {
       />
       <Guides />
       <div className="bg-tertiary-300 text-white font-sans p-12 sm:p-24 h-[300px] sm:h-[250px] flex md:flex-row flex-col items-center md:space-y-0 space-y-12 space-x-0 md:space-x-24 lg:space-x-48 leading-[2rem] my-12 relative">
-        <p className="text-2xl mr-auto">
-          We&apos;re looking for talented people to join us!
-        </p>
-        <p className="md:w-1/3 w-full">
-          Join the team of Visapur Garden and become a part of a dynamic
-          community that values creativity, innovation and preservation of our
-          rich heritage.
-        </p>
+        <p className="text-2xl mr-auto">{t('aboutUs.team.join.title')}</p>
+        <p className="md:w-1/3 w-full">{t('aboutUs.team.join.body')}</p>
         <button aria-label="join-us" className="absolute bottom-10 right-10">
           <svg
             fill="white"

@@ -4,6 +4,7 @@ import React, { HTMLAttributes, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { ICarouselItem } from '@/types';
+import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import tw from 'tailwind-styled-components';
 
@@ -35,6 +36,7 @@ const Carousel = ({
   dots,
   ...props
 }: CarouselProps) => {
+  const { t } = useTranslation();
   const settings = {
     dots,
     infinite: true,
@@ -158,11 +160,11 @@ const Carousel = ({
                     </div>
                   ) : (
                     <p className="text-tertiary-200 mt-2 font-semibold text-xl lg:text-base font-serif uppercase text-center">
-                      {item.title}
+                      {t(item.title ?? '')}
                     </p>
                   )}
                   <span className="font-bold md:text-sm text-xs text-tertiary-300 font-serif uppercase text-center">
-                    {item.subText}
+                    {t(item.subText ?? '')}
                   </span>
                 </div>
               )}

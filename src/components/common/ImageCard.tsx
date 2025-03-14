@@ -1,6 +1,7 @@
 import { forwardRef, HTMLAttributes } from 'react';
 import Image from 'next/image';
 
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 export interface ImageCardProps extends HTMLAttributes<HTMLLIElement> {
@@ -11,6 +12,7 @@ export interface ImageCardProps extends HTMLAttributes<HTMLLIElement> {
 
 const ImageCard = forwardRef<HTMLLIElement, ImageCardProps>(
   ({ src, name, className, onClick }, ref) => {
+    const { t } = useTranslation();
     return (
       <ImageCardContainer ref={ref} onClick={onClick} className={className}>
         <Image
@@ -20,7 +22,7 @@ const ImageCard = forwardRef<HTMLLIElement, ImageCardProps>(
           className="object-cover w-full h-full"
           alt={name}
         />
-        <NameText>{name}</NameText>
+        <NameText>{t(name)}</NameText>
       </ImageCardContainer>
     );
   }

@@ -52,5 +52,5 @@ HiddenAnswer.displayName = 'HiddenAnswer';
 export default HiddenAnswer;
 
 const HiddenAnswerContainer = tw.div`
-    border-b-[1px] border-[#EDA0174D] space-y-3 flex flex-col p-1 overflow-hidden
+  border-b-[1px] border-[#EDA0174D] space-y-3 flex flex-col p-1 overflow-hidden
 `;

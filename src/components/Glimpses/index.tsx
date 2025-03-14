@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { useTranslation } from 'react-i18next';
 import tw from 'tailwind-styled-components';
 
 import honey1 from '../../../public/honey-1.svg';
@@ -9,9 +10,10 @@ import Carousel from '../Carousel';
 import Heading from '../common/Heading';
 
 const Glimpses = (): React.ReactElement => {
+  const { t } = useTranslation();
   return (
     <GlimpsesContainer>
-      <Heading name="Glimpses" />
+      <Heading name={t('glimpses')} />
       <Carousel items={glimpsesItems} />
       <BackgroundImage
         src={honey1}
