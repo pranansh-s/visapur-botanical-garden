@@ -118,6 +118,17 @@ const Navbar: React.FC = () => {
           </Button>
         </HeaderOptions>
         <BurgerMenu active={active} setActive={setActive} />
+        <MobileLanguageSelect
+          id="language"
+          defaultValue={i18n.resolvedLanguage}
+          onChange={e => changeLanguage(e.target.value)}
+        >
+          {languageOptions.map((value: ILanguageOption, idx: number) => (
+            <option key={idx} value={value.code}>
+              {value.name}
+            </option>
+          ))}
+        </MobileLanguageSelect>
       </TopSection>
       <HorizontalDivider />
       {renderDesktopNavbar(activeIndex, t)}
@@ -255,6 +266,10 @@ const HeaderOptions = tw.div`
 
 const LanguageSelect = tw.select`
   bg-transparent focus:outline-none py-2
+`;
+
+const MobileLanguageSelect = tw(LanguageSelect)`
+  sm:hidden block text-tertiary-200 font-sans font-bold text-sm
 `;
 
 const HorizontalDivider = tw.hr`
