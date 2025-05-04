@@ -560,5 +560,43 @@
     "support": "Support",
     "shop": "Shop",
     "experience": "Experience"
+  },
+  "fort": {
+    "intro": "Introduction to Manikgarh Fort",
+    "content": {
+      "part1": "Nestled in the Jiwati Tahsil, Chandrapur district of Maharashtra, Manikgarh Fort, also known as Gadchandur, beckons history enthusiasts and nature lovers alike. This ancient hill fort, standing tall at 1663 feet above sea level, reflects the architectural prowess of its Naga and Gond rulers dating back to the 9th century. Built with imposing black stones, its rampart walls enclose a valley dotted with remnants of ancient buildings and storage facilities. Despite the ravages of time, the fort's main entrance, adorned with a carved Naga image, remains remarkably intact, offering a glimpse into its glorious past.",
+      "part2": "Surrounded by dense forests teeming with wildlife, including panthers and wild boars, Manikgarh Fort not only captivates with its historical charm but also enchants with its natural beauty. From its strategic vantage points, visitors can savor breathtaking views of deep valleys and verdant landscapes, making it a photographer's paradise and a serene retreat for those seeking a deeper connection with history and nature.",
+      "part3": "Manikgarh Fort, at 507 meters above sea level, lies 35 kilometers southwest of Chandrapur. Constructed by Naga monarchs in the 9th century, the fort's fascinating architecture tells tales of historical mysteries to travelers. Once a magnificent stronghold built of large black stones, it now lies in ruins and is often inhabited by wild animals. Despite this, numerous nearby monuments beckon exploration."
+    },
+    "past": {
+      "sub": "Unveil the past through timeless insights",
+      "name": "Historical Information",
+      "content": "Manikgarh Fort, nestled in the wilderness of the Manikgarh hill range, stands as a testament to ancient architectural prowess and the rich history of the region. Located about two miles south of Chandrapur in Rajura tahsil, this fort overlooks the Wardha River, approximately 27 miles south of Chandrapur. Today, the fort lies in ruins, surrounded by dense jungle teeming with wildlife. According to historical accounts, the fort was built by Gahilu, the last of the Mana Naga Kings, around the 9th century A.D. The fort's name is derived from Manikadevi, the presiding deity of the Mana Nagas, also revered by the Bastar Nagas. An inscription in the ex-Bastar State refers to the goddess as Dantesvari, highlighting the cultural and religious significance of the site."
+    },
+    "historical": {
+      "sub": "Every photo a window to the past",
+      "name": "Historical Photo"
+    },
+    "photo": {
+      "sub": "Where every stone tells a story of ancient glory",
+      "name": "Photo Gallery"
+    },
+    "contact": {
+      "sub": "Where history, nature, and adventure meet",
+      "name": "Visit Manikgarh Fort",
+      "title": "Contact Information",
+      "location": {
+        "name": "Office Location",
+        "value": "Manikgad Fort, Nokhari Rd, Nagrala, Jiwati, Maharashtra 442908"
+      },
+      "email": {
+        "name": "Email Drop Us",
+        "value": "info@manikgarhfort.in"
+      },
+      "call": {
+        "name": "Call for Help",
+        "value": "+91 8208289864"
+      }
+    }
   }
 }
