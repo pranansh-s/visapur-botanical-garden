@@ -15,6 +15,7 @@ import tw from 'tailwind-styled-components';
 
 import govtLogo1 from '../../../public/icons/govt-logo-1.svg';
 import govtLogo2 from '../../../public/icons/govt-logo-2.svg';
+import language from '../../../public/language.svg';
 
 import {
   burgerLinks,
@@ -37,6 +38,8 @@ const Navbar: React.FC = () => {
     return navLinks.findIndex((value: INamedLink) => value.href === pathname);
   }, [pathname]);
 
+  const [activeLanguageDropdown, setActiveLanguageDropdown] =
+    useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
   const [hideNews, setHideNews] = useState<boolean>(false);
   const hasMounted = useRef(pathname === '/' ? false : true);
@@ -118,17 +121,28 @@ const Navbar: React.FC = () => {
           </Button>
         </HeaderOptions>
         <BurgerMenu active={active} setActive={setActive} />
-        <MobileLanguageSelect
-          id="language"
-          defaultValue={i18n.resolvedLanguage}
-          onChange={e => changeLanguage(e.target.value)}
-        >
-          {languageOptions.map((value: ILanguageOption, idx: number) => (
-            <option key={idx} value={value.code}>
-              {value.name}
-            </option>
-          ))}
-        </MobileLanguageSelect>
+        <Button
+          className="sm:hidden block ml-auto mr-24"
+          onClick={() => setActiveLanguageDropdown(prev => !prev)}
+          preIconNode={language}
+          iconSize={32}
+        />
+        {activeLanguageDropdown && (
+          <div className="z-50 relative flex space-y-12">
+            {languageOptions.map((lang: ILanguageOption, idx: number) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  changeLanguage(lang.code);
+                  setActiveLanguageDropdown(false);
+                }}
+                className="block w-28 text-left px-4 py-2 text-lg absolute right-0 mt-2 bg-white"
+              >
+                {lang.name}
+              </button>
+            ))}
+          </div>
+        )}
       </TopSection>
       <HorizontalDivider />
       {renderDesktopNavbar(activeIndex, t)}

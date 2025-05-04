@@ -96,7 +96,7 @@ export default PlanYourVisit;
 
 const Container = tw.div`
   xl:px-lg lg:px-md px-sm
-  sm:mt-48 mt-32
+  sm:pt-48 pt-32
   space-y-24 overflow-hidden
 `;
 

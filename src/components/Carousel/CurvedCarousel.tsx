@@ -116,8 +116,8 @@ const CurvedCarousel: React.FC = memo(() => {
               <Card
                 key={index}
                 style={getTransformStyles(index)}
-                width={200}
-                height={200}
+                width={100}
+                height={100}
                 src={item.src}
                 alt={item.latinName}
               />
@@ -143,7 +143,7 @@ const CurvedCarousel: React.FC = memo(() => {
           </ArrowText>
         </Arrow>
         <ButterflyDescription>
-          <h3 className="font-braah whitespace-nowrap lg:text-5xl sm:text-4xl text-3xl">
+          <h3 className="font-braah lg:text-5xl sm:text-4xl text-3xl">
             {t(options[currentState][currentItemIndex]!.text)}
           </h3>
           <span className="lg:text-lg sm:text-sm">

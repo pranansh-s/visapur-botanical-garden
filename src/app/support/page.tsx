@@ -90,7 +90,7 @@ export default Support;
 
 const Container = tw.div`
   xl:px-lg lg:px-md px-sm
-  sm:mt-48 mt-28
+  sm:pt-48 pt-28
   space-y-12
 `;
 

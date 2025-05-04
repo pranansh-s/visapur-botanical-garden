@@ -44,8 +44,8 @@ const Carousel = ({
     slidesToScroll: 1,
     autoplay: autoplay,
     autoplaySpeed: interval,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: showArrows ? <NextArrow /> : <></>,
+    prevArrow: showArrows ? <PrevArrow /> : <></>,
     responsive: [
       {
         breakpoint: 1366,
@@ -90,7 +90,7 @@ const Carousel = ({
           return (
             <CarouselItem
               key={index}
-              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[35rem] h-[30rem] sm:h-[29rem]' : ''} transition-transform duration-300 ease-out`}
+              className={`${variant === 'rotateScale' && !isCenterItem ? '-rotate-3 scale-75' : 'rotate-0 scale-100'} ${variant === 'basic' ? ' xl:h-[45rem] h-[40rem] sm:h-[38rem]' : ''} transition-transform duration-300 ease-out`}
             >
               {variant === 'instagram' ? (
                 <InstagramCard onClick={() => window.open(item.src, '_blank')}>
@@ -129,7 +129,7 @@ const Carousel = ({
                     loading="eager"
                     width={300}
                     height={300}
-                    className={`object-cover object-top rounded-lg ${variant === 'guides' ? 'h-[13rem] lg:h-[20rem]' : 'aspect-square'} ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
+                    className={`object-cover object-center rounded-lg ${variant === 'guides' ? 'h-[13rem] lg:h-[20rem]' : 'aspect-square'} ${variant === 'rotateScale' ? 'shadow-lg' : 'shadow-none'}`}
                   />
                   {variant === 'guides' ? (
                     <div className="p-3 space-y-2">

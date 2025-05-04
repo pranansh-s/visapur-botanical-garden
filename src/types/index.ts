@@ -52,6 +52,10 @@ export interface IImageCard {
   link?: string;
 }
 
+export interface IBlogs extends IImageCard {
+  date: string;
+}
+
 export interface IAmenity {
   name: string;
   icon: string;

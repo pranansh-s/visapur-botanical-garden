@@ -8,9 +8,6 @@ import Footer from '@/components/Footer';
 import './globals.css';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
-import i18n from '@/i18n';
-import { I18nextProvider } from 'react-i18next';
-
 const merriweather = Merriweather({
   subsets: ['latin'],
   variable: '--font-merriweather',

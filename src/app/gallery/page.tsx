@@ -82,6 +82,6 @@ export default Gallery;
 
 const Container = tw.div`
     xl:px-lg lg:px-md px-sm
-    sm:mt-[12rem] mt-[7rem]
+    sm:pt-[12rem] pt-[7rem]
     flex flex-wrap gap-6 justify-center
 `;

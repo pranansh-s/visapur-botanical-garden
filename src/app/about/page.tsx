@@ -73,7 +73,7 @@ export default AboutUs;
 
 const Container = tw.div`
   xl:px-lg lg:px-md px-sm
-  md:mt-[28rem] sm:mt-[12rem] mt-[7rem]
+  md:pt-[28rem] sm:pt-[12rem] pt-[7rem]
   space-y-24
 `;
 

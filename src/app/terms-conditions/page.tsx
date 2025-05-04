@@ -5,7 +5,7 @@ import tw from 'tailwind-styled-components';
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="xl:px-lg lg:px-md px-sm sm:mt-52 mt-32 font-serif space-y-8">
+    <div className="xl:px-lg lg:px-md px-sm sm:pt-52 pt-32 font-serif space-y-8">
       <h1 className="text-2xl md:text-4xl font-bold mb-8 text-tertiary-300">
         Terms & Conditions
       </h1>
