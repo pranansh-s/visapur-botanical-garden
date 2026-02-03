@@ -3,7 +3,8 @@
 🌿 **Live Demo:** [visapur-garden.vercel.app](https://visapur-garden.vercel.app)
 
 A modern, performant website built for Atal Bihari Vajpayee Visapur Botanical Garden. This government contract project was developed to provide an elegant online presence for the garden, featuring information about its flora, visiting hours, and conservation efforts.
-The project's scope and content were based on the client's initial requirements. Please note that the garden's branding, details, or operational status may have changed since development.
+
+The project's scope and content were based on the client's initial requirements. *Please note that the garden's branding, details, or operational status may have changed since development.*
 
 ## ✨ Features
 
